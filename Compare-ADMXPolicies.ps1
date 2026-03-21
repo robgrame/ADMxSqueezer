@@ -331,6 +331,27 @@ foreach ($lang in $commonLangs) {
     Write-Host "  ADML written: $lang" -ForegroundColor DarkGray
 }
 
+# --- Copy google.admx and google.adml (required by Intune as dependency) ---
+$googleAdmxSource = Join-Path $newerAdmxDir 'google.admx'
+if (Test-Path $googleAdmxSource) {
+    Copy-Item -Path $googleAdmxSource -Destination (Join-Path $outputSubFolder 'google.admx') -Force
+    Write-Host "`ngoogle.admx copied" -ForegroundColor Green
+
+    foreach ($lang in $commonLangs) {
+        $googleAdmlSource = Join-Path $newerAdmxDir (Join-Path $lang 'google.adml')
+        if (Test-Path $googleAdmlSource) {
+            $langFolder = Join-Path $outputSubFolder $lang
+            if (-not (Test-Path $langFolder)) {
+                New-Item -ItemType Directory -Path $langFolder -Force | Out-Null
+            }
+            Copy-Item -Path $googleAdmlSource -Destination (Join-Path $langFolder 'google.adml') -Force
+        }
+    }
+    Write-Host "google.adml copied for $($commonLangs.Count) languages" -ForegroundColor Green
+} else {
+    Write-Host "`nWARNING: google.admx not found at $googleAdmxSource" -ForegroundColor Yellow
+}
+
 # --- Summary ---
 Write-Host "`n--- Summary ---" -ForegroundColor Cyan
 Write-Host "Delta label:       $deltaLabel"
