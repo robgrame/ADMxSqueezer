@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 of later</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="Extensions_group">Extensies</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Afgedwongen geïnstalleerde extensies met schendingen die geen malware zijn aanzetten</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Hiermee bepaal je of extensies die zijn verwijderd wegens schendingen van het beleid tegen malware nog steeds kunnen worden afgedwongen in omgevingen met een laag vertrouwen.
+
+Hier vind je meer informatie over schendingen die geen malware zijn en over verwijderingen: https://developer.chrome.com/docs/webstore/review-process#warning
+
+Nadat de schending die geen malware is, is opgelost, blijft de extensie aanstaan en kan deze niet worden uitgezet of verwijderd.
+
+In Microsoft® Windows® is dit beleid niet beschikbaar voor instanties die zijn gekoppeld aan een Microsoft® Active Directory®-domein, zijn gekoppeld aan Microsoft® Azure® Active Directory® of zijn ingeschreven voor Chrome Enterprise Core.
+
+In macOS is dit beleid niet beschikbaar voor instanties die worden beheerd via MDM, via MCX aan een domein zijn gekoppeld of zijn ingeschreven voor Chrome Enterprise Core.
+
+Afgedwongen geïnstalleerde extensies met schendingen die geen malware zijn, blijven in deze gevallen aanstaan.
+
+Op dit moment blijft een afgedwongen geïnstalleerde extensie met schendingen die geen malware zijn, geïnstalleerd en aangezet in Chrome.
+
+Als je het beleid toepast, blijven geforceerd geïnstalleerde extensies hetzelfde gedrag vertonen (dat wil zeggen: aanblijven) ongeacht schendingen die geen malware zijn.
+
+Als je het beleid niet toepast of niet instelt, worden geforceerd geïnstalleerde extensies met schendingen die geen malware zijn, uitgezet.
+
+Dit beleid is beschikbaar voor 3 mijlpalen.</string>
+      <string id="GenerativeAI_group">Generatieve AI</string>
+      <string id="GeminiActOnWebSettings">Hiermee kunnen Gemini-app-integraties rechtstreeks acties uitvoeren op webpagina's</string>
+      <string id="GeminiActOnWebSettings_Explain">Hiermee bepaal je of de Gemini-app actie mag ondernemen op de webpagina's namens de gebruiker.
+
+0/niet ingesteld = De Gemini-app mag actie ondernemen op de webpagina's.
+
+1 = De Gemini-app mag geen actie ondernemen op de webpagina's.
+
+Dit beleid heeft geen effect als de Gemini-app is uitgezet. De Gemini-app kan bijvoorbeeld worden uitgezet met het beleid GeminiSettings.
+
+Ga voor meer informatie over Gemini in Chrome naar https://support.google.com/chrome/a/answer/16291696.
+
+Activering van Gemini is niet in alle landen of talen beschikbaar. Als je dit beleid instelt, garandeert dit niet dat de functie wordt aangezet. De functie blijft afhankelijk van de beschikbaarheid. Check de release-opmerkingen voor Chrome Enterprise voor meer informatie over de uitrol: https://support.google.com/chrome/a/answer/7679408?hl=nl</string>
+      <string id="GeminiActOnWebSettings_Enabled">Toestaan dat de Gemini-app actie onderneemt op de webpagina's.</string>
+      <string id="GeminiActOnWebSettings_Disabled">De Gemini-app niet toestaan om actie te ondernemen op de webpagina's.</string>
+      <string id="LocalNetworkAccessSettings_group">Instellingen voor toegang tot lokaal netwerk</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Bepaalt of je je (tijdelijk) wilt afmelden voor beperkingen voor toegang tot lokaal netwerk</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Als je dit beleid toepast, worden er alleen waarschuwingen getoond in Chrome DevTools voor Local Network Access-verzoeken omdat de Local Network Access-controles mislukken.
+
+Als je dit beleid niet toepast of niet instelt, wordt de standaardafhandeling van deze verzoeken gebruikt voor Local Network Access-verzoeken.
+
+Zie https://wicg.github.io/local-network-access/ voor beperkingen voor Local Network Access.
+
+Dit bedrijfsbeleid is tijdelijk en wordt verwijderd na M146.
+
+Op de lange termijn kun je het beleid LocalNetworkAccessAllowedForUrls gebruiken om URL-patronen op de toelatingslijst te zetten waarvoor het recht Local Network Access automatisch moet worden verleend.
+
+Als je het beleid LocalNetworkAccessRestrictionsEnabled aanzet, krijgt het voorrang op dit beleid.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Google Developer Program-profielen aanzetten in Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Dit beleid beheert de integratie van het Google Developer Program met Chrome DevTools. Het Google Developer Program-profiel van de gebruiker wordt getoond in Chrome DevTools en gebruikers krijgen badges voor specifieke acties in Chrome DevTools.
+
+Als je het beleid instelt op 0 (Aangezet) of geen beleidswaarde instelt, wordt de integratie van het Google Developer Program met Chrome DevTools toegestaan en wordt het delen van het gebruik van de Chrome DevTools-tool toegestaan om badges te kunnen toekennen.
+
+Als je het beleid instelt op 1 (Aangezet zonder badges), kun je het Google Developer Program integreren met Chrome DevTools, maar kun je het gebruik van de Chrome DevTools-tool niet delen met het Google-ontwikkelaarsprogramma. Er worden geen badges toegekend.
+
+Als je het beleid instelt op 2 (Uitgezet), staat het de integratie van het Google Developer Program met Chrome DevTools niet toe.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Integratie met het Google Developer Program aanzetten in Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Integratie van het Google Developer Program aanzetten in Chrome DevTools, maar zonder toolgebruik te delen (voor het toekennen van badges).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Integratie met het Google Developer Program niet aanzetten in Chrome DevTools.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Hiermee kunnen Gemini-app-integraties rechtstreeks acties uitvoeren op webpagina's</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Google Developer Program-profielen aanzetten in Chrome DevTools</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

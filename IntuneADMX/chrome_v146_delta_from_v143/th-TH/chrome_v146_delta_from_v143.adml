@@ -1,0 +1,393 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v143-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 ขึ้นไป</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - การตั้งค่าเริ่มต้น (ผู้ใช้แทนที่ได้)</string>
+      <string id="GenerativeAI_group">Generative AI</string>
+      <string id="GeminiActOnWebAllowedForURLs">อนุญาตให้การผสานรวมแอป Gemini ดำเนินการในเว็บไซต์ที่ระบุโดยตรง</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">อนุญาตให้ตั้งค่ารายการรูปแบบ URL ซึ่งระบุเว็บไซต์ที่การผสานรวมแอป Gemini สามารถดำเนินการในหน้าเว็บโดยตรง
+
+URL ที่ไม่ตรงกับรายการที่อนุญาตหรือรายการที่บล็อกจะใช้ GeminiActOnWebSettings
+
+URL ที่ตรงกับทั้งรายการที่อนุญาตและรายการที่บล็อกจะได้รับอนุญาต
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ URL ที่ถูกต้องได้ที่ https://support.google.com/chrome/a?p=url_blocklist_filter_format
+
+ค่าตัวอย่าง:
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">บล็อกการผสานรวมแอป Gemini เพื่อดำเนินการในเว็บไซต์ที่ระบุโดยตรง</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">อนุญาตให้ตั้งค่ารายการรูปแบบ URL ซึ่งระบุเว็บไซต์ที่การผสานรวมแอป Gemini ไม่สามารถดำเนินการในหน้าเว็บโดยตรง
+
+URL ที่ไม่ตรงกับรายการที่อนุญาตหรือรายการที่บล็อกจะใช้ GeminiActOnWebSettings
+
+URL ที่ตรงกับทั้งรายการที่อนุญาตและรายการที่บล็อกจะได้รับอนุญาต
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ URL ที่ถูกต้องได้ที่ https://support.google.com/chrome/a?p=url_blocklist_filter_format
+
+ค่าตัวอย่าง:
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="SearchContentSharingSettings">เปิดใช้การแชร์เนื้อหาด้วยการผสานรวม Google AI Mode และ Lens</string>
+      <string id="SearchContentSharingSettings_Explain">นโยบายนี้ควบคุมการแชร์เนื้อหาของหน้าและไฟล์กับ Google AI Mode และ Lens ผ่านแผงด้านข้างหรือแท็บของ Google Chrome
+
+โปรดทราบว่านโยบายนี้ไม่มีผลต่อ Google AI Mode บนเว็บ โดยจะควบคุมเฉพาะวิธีที่ผู้ใช้แชร์ข้อมูลกับแอปเมื่อใช้ Google Chrome
+
+0/ไม่ได้ตั้งค่า = ผู้ใช้จะแชร์เนื้อหาของหน้าหรือไฟล์กับ Google AI Mode ได้
+
+1 = ผู้ใช้แชร์เนื้อหาในหน้าหรือไฟล์กับ Google AI Mode ไม่ได้ จุดแรกเข้าสำหรับการแชร์บริบทและแผงด้านข้างจะถูกปิดใช้หรือซ่อนไว้
+
+ระบบจะไม่สนใจนโยบายนี้เมื่อ Google Search ไม่ใช่เครื่องมือค้นหาเริ่มต้นของผู้ใช้ เนื่องจากฟีเจอร์นี้ปิดใช้อยู่
+
+นโยบายนี้ไม่ขึ้นอยู่กับนโยบาย AIModeSettings นโยบาย AIModeSettings จะควบคุมเฉพาะจุดแรกเข้าในแถบอเนกประสงค์หรือช่องค้นหาใน NTP ขณะที่นโยบายนี้ควบคุมการแชร์บริบทผ่านแผงด้านข้างหรือแท็บ
+
+และนโยบายนี้ก็ไม่ได้ควบคุมการผสานรวม Google Gemini ซึ่ง GeminiSettings สามารถปิดใช้ได้
+
+หากไม่ได้ตั้งค่านโยบาย ลักษณะการทำงานจะกำหนดโดยนโยบาย GenAiDefaultSettings
+
+ดูข้อมูลเพิ่มเติมเกี่ยวกับการจัดการข้อมูลสำหรับฟีเจอร์ Generative AI ได้ที่ https://support.google.com/chrome/a?p=generative_ai_settings</string>
+      <string id="SearchContentSharingSettings_Allowed">อนุญาตให้แชร์เนื้อหากับการผสานรวม Google AI Mode</string>
+      <string id="SearchContentSharingSettings_Disabled">ไม่อนุญาตให้แชร์เนื้อหากับการผสานรวม Google AI Mode</string>
+      <string id="LocalNetworkAccessSettings_group">การตั้งค่าการเข้าถึงเครือข่ายภายใน</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">ลบล้างการแมปพื้นที่ที่อยู่ IP</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">ซึ่งสามารถใช้เพื่อถือว่าช่วงที่อยู่ภายในบางช่วงเป็น "สาธารณะ" และจึงไม่ต้องมีการตรวจสอบ Local Network Access ในทางกลับกัน คุณสามารถใช้ตัวเลือกนี้เพื่อถือว่าช่วงที่อยู่สาธารณะบางช่วงที่อาจใช้ภายในเป็น "ในระบบ" เพื่อให้ได้รับการปกป้องโดยการตรวจสอบ Local Network Access
+
+การลบล้างพื้นที่ที่อยู่ IP มี 2 รูปแบบดังนี้
+
+[cidr]=[public|local|loopback]
+
+โดยที่ [cidr] คือช่วงที่อยู่ IP ในรูปแบบ CIDR (ดูส่วนที่ 3.1 ของ https://tools.ietf.org/html/rfc4632 สำหรับ IPv4 และส่วนที่ 2.3 ของ https://tools.ietf.org/html/rfc4291 สำหรับ IPv6) ต้องระบุที่อยู่ IPv6 ในรูปแบบที่ปลอดภัยสำหรับ URL (อยู่ในวงเล็บ) การลบล้าง CIDR มีผลกับพอร์ตทั้งหมด
+
+หรือ
+
+[ip-address]:[port]=[public|local|loopback]
+
+ดูข้อมูลเพิ่มเติมเกี่ยวกับ Local Network Access ได้ที่ https://wicg.github.io/local-network-access/ และ https://developer.chrome.com/blog/local-network-access
+
+นโยบายนี้ไม่รองรับการรีเฟรชแบบไดนามิก
+
+การลบล้างจากการเปลี่ยนบรรทัดคำสั่ง --ip-address-space-overrides จะมีความสำคัญเหนือกว่าการลบล้างที่ตั้งค่าโดยนโยบายนี้
+
+ค่าตัวอย่าง:
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">อนุญาตคำขอเข้าถึงเครือข่ายภายใน (LNA) ในเฟรมย่อยโดยที่ไม่มีการมอบสิทธิ์อย่างชัดเจน</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">โดยค่าเริ่มต้นแล้ว จะอนุญาตให้ขอสิทธิ์เข้าถึงเครือข่ายภายใน (LNA) ในเฟรมย่อยแบบข้ามต้นทางได้ต่อเมื่อมีการมอบสิทธิ์อย่างชัดเจนเท่านั้น นโยบายนี้ใช้เพื่อลบล้างลักษณะการทำงานเริ่มต้นนี้ โดยกำหนดค่าเริ่มต้นให้เฟรมย่อยรับช่วงสิทธิ์ LNA มา เว้นแต่จะมีการปฏิเสธอย่างชัดเจนในนโยบายสิทธิ์
+
+หากตั้งค่านโยบายนี้เป็น "เปิดใช้" เฟรมย่อยก็จะได้รับมอบสิทธิ์ฟีเจอร์นโยบายสิทธิ์ LNA ทั้งหมดโดยค่าเริ่มต้น และสามารถส่งคำขอเข้าถึงเครือข่ายภายในได้ (ซึ่งจะเรียกให้แสดงข้อความขออนุญาต)
+
+หากตั้งค่านโยบายนี้เป็น "ปิดใช้" หรือไม่ได้ตั้งค่าไว้ เฟรมย่อยก็จำเป็นต้องได้รับมอบสิทธิ์ฟีเจอร์นโยบายสิทธิ์อย่างชัดเจน จึงจะสามารถส่งคำขอเข้าถึงเครือข่ายภายในและเรียกให้แสดงข้อความขออนุญาต
+
+นโยบายนี้จะใช้กับฟีเจอร์นโยบายสิทธิ์ "local-network-access", "loopback-network" และ "local-network"
+
+ดูข้อมูลเพิ่มเติมเกี่ยวกับการเข้าถึงเครือข่ายภายในได้ที่ https://wicg.github.io/local-network-access/ และ https://developer.chrome.com/blog/local-network-access
+
+ดูข้อมูลเพิ่มเติมเกี่ยวกับนโยบายสิทธิ์ได้ที่ https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy</string>
+      <string id="LocalNetworkAllowedForUrls">อนุญาตให้เว็บไซต์ส่งคำขอเครือข่ายไปยังอุปกรณ์ปลายทางของเครือข่ายภายใน</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">รายการรูปแบบ URL คำขอเครือข่ายที่เริ่มต้นมาจากเว็บไซต์ที่แสดงโดยต้นทางที่ตรงกันไปยังอุปกรณ์ปลายทางของเครือข่ายภายในจะไม่ต้องมีการตรวจสอบLocal Network Access
+
+สำหรับต้นทางที่ไม่รวมอยู่ในรูปแบบที่ระบุไว้ที่นี่ ระบบจะใช้การกำหนดค่าส่วนตัวของผู้ใช้
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ URL ที่ถูกต้องได้ที่ https://chromeenterprise.google/policies/url-patterns/
+
+ดูข้อจำกัดของLocal Network Accessได้ที่ https://wicg.github.io/local-network-access/
+
+มีนโยบายหลายรายการที่ระบุต้นทางซึ่งส่งผลต่อการส่งคำขอไปยังอุปกรณ์ปลายทางของเครือข่ายภายใน หากต้นทางตรงกับนโยบายต่อไปนี้มากกว่า 1 รายการ นโยบายจะมีผลก่อนหลังตามลำดับดังนี้
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+ค่าตัวอย่าง:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">บล็อกเว็บไซต์ไม่ให้ส่งคำขอเครือข่ายไปยังอุปกรณ์ปลายทางของเครือข่ายภายใน</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">รายการรูปแบบ URL คำขอเครือข่ายที่เริ่มต้นมาจากเว็บไซต์ที่แสดงโดยต้นทางที่ตรงกันไปยังอุปกรณ์ปลายทางของเครือข่ายภายในจะถูกบล็อกไม่ให้ส่งคำขอLocal Network Access
+
+สำหรับต้นทางที่ไม่รวมอยู่ในรูปแบบที่ระบุไว้ที่นี่ ระบบจะใช้การกำหนดค่าส่วนตัวของผู้ใช้
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ URL ที่ถูกต้องได้ที่ https://chromeenterprise.google/policies/url-patterns/
+
+ดูข้อจำกัดของLocal Network Accessได้ที่ https://wicg.github.io/local-network-access/
+
+มีนโยบายหลายรายการที่ระบุต้นทางซึ่งส่งผลต่อการส่งคำขอไปยังอุปกรณ์ปลายทางของเครือข่ายภายใน หากต้นทางตรงกับนโยบายต่อไปนี้มากกว่า 1 รายการ นโยบายจะมีผลก่อนหลังตามลำดับดังนี้
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+ค่าตัวอย่าง:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">อนุญาตให้เว็บไซต์ส่งคำขอเครือข่ายไปยังอุปกรณ์ที่ใช้</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">รายการรูปแบบ URL คำขอเครือข่ายที่เริ่มต้นมาจากเว็บไซต์ที่แสดงโดยต้นทางที่ตรงกันไปยังอุปกรณ์ที่ใช้จะไม่ต้องมีการตรวจสอบLocal Network Access
+
+สำหรับต้นทางที่ไม่รวมอยู่ในรูปแบบที่ระบุไว้ที่นี่ ระบบจะใช้การกำหนดค่าส่วนตัวของผู้ใช้
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ URL ที่ถูกต้องได้ที่ https://chromeenterprise.google/policies/url-patterns/
+
+ดูข้อจำกัดของLocal Network Accessได้ที่ https://wicg.github.io/local-network-access/
+
+มีนโยบายหลายรายการที่ระบุต้นทางซึ่งส่งผลต่อการส่งคำขอไปยังอุปกรณ์ที่ใช้ หากต้นทางตรงกับนโยบายต่อไปนี้มากกว่า 1 รายการ นโยบายจะมีผลก่อนหลังตามลำดับดังนี้
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+ค่าตัวอย่าง:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">บล็อกเว็บไซต์ไม่ให้ส่งคำขอเครือข่ายไปยังอุปกรณ์ที่ใช้</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">รายการรูปแบบ URL คำขอเครือข่ายที่เริ่มต้นมาจากเว็บไซต์ที่แสดงโดยต้นทางที่ตรงกันไปยังอุปกรณ์ที่ใช้จะถูกบล็อกไม่ให้ส่งคำขอLocal Network Access
+
+สำหรับต้นทางที่ไม่รวมอยู่ในรูปแบบที่ระบุไว้ที่นี่ ระบบจะใช้การกำหนดค่าส่วนตัวของผู้ใช้
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ URL ที่ถูกต้องได้ที่ https://chromeenterprise.google/policies/url-patterns/
+
+ดูข้อจำกัดของLocal Network Accessได้ที่ https://wicg.github.io/local-network-access/
+
+มีนโยบายหลายรายการที่ระบุต้นทางซึ่งส่งผลต่อการส่งคำขอไปยังอุปกรณ์ที่ใช้ หากต้นทางตรงกับนโยบายต่อไปนี้มากกว่า 1 รายการ นโยบายจะมีผลก่อนหลังตามลำดับดังนี้
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+ค่าตัวอย่าง:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="ContentSettings_group">การตั้งค่าเนื้อหา</string>
+      <string id="DefaultIdleDetectionSetting">การตั้งค่าการตรวจจับการไม่ได้ใช้งานเริ่มต้น</string>
+      <string id="DefaultIdleDetectionSetting_Explain">ช่วยให้คุณกำหนดว่าเว็บไซต์จะได้รับอนุญาตให้ใช้ Idle Detection API หรือไม่
+
+เมื่อตั้งค่านโยบายนี้เป็น 1 - AllowIdleDetection เว็บไซต์จะใช้ API ได้โดยไม่ต้องขอสิทธิ์จากผู้ใช้
+
+เมื่อตั้งค่านโยบายนี้เป็น 2 - BlockIdleDetection เว็บไซต์จะใช้ API ไม่ได้ ไม่ว่าผู้ใช้จะมีสิทธิ์หรือไม่ก็ตาม
+
+เมื่อตั้งค่านโยบายนี้เป็น 3 - AskIdleDetection หรือไม่ได้ตั้งค่า เว็บไซต์จะใช้ API ไม่ได้หากไม่ได้รับอนุญาตจากผู้ใช้</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">อนุญาตให้เว็บไซต์ตรวจจับสถานะไม่ได้ใช้งานโดยไม่ต้องขอผู้ใช้</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">ไม่อนุญาตให้เว็บไซต์ใดๆ ตรวจหาสถานะที่ไม่ได้ใช้งานของผู้ใช้</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">ถามทุกครั้งที่เว็บไซต์ต้องการตรวจจับสถานะที่ไม่ได้ใช้งานของผู้ใช้</string>
+      <string id="GeolocationBlockedForUrls">บล็อกตำแหน่งทางภูมิศาสตร์ในเว็บไซต์เหล่านี้</string>
+      <string id="GeolocationBlockedForUrls_Explain">การตั้งค่านโยบายช่วยให้คุณสร้างรายการรูปแบบ URL ซึ่งระบุเว็บไซต์ที่ไม่ได้รับอนุญาตให้เข้าถึงตำแหน่งทางภูมิศาสตร์ของผู้ใช้ และยังป้องกันไม่ให้ขอการให้สิทธิ์จากผู้ใช้เพื่อดำเนินการดังกล่าว
+
+การไม่ตั้งค่านโยบายหมายความว่า DefaultGeolocationSetting จะมีผลกับทุกเว็บไซต์ (หากตั้งค่าไว้) แต่หากไม่ได้ตั้งค่าไว้ การตั้งค่าส่วนตัวของผู้ใช้จะมีผล
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ url ที่ถูกต้องได้ที่ https://chromeenterprise.google/policies/url-patterns ใช้ไวลด์การ์ด (*) ได้
+
+ค่าตัวอย่าง:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">อนุญาตการตรวจจับการไม่ได้ใช้งานในเว็บไซต์เหล่านี้</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">ช่วยให้คุณกำหนดรายการรูปแบบ URL ซึ่งระบุเว็บไซต์ที่ได้รับอนุญาตให้ใช้ Idle Detection API โดยไม่ต้องขอสิทธิ์จากผู้ใช้ รายการที่บล็อกมีลำดับความสำคัญสูงกว่ารายการที่อนุญาต ส่วนรายการที่อนุญาตมีลำดับความสำคัญสูงกว่าค่าเริ่มต้นที่กำหนดไว้
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ URL ที่ถูกต้องของเว็บไซต์ได้ที่ https://chromeenterprise.google/policies/url-patterns ใช้ไวลด์การ์ด (*) ได้ นโยบายนี้จะจับคู่โดยอิงตามต้นทางเท่านั้น ระบบจึงไม่สนใจเส้นทางใดก็ตามในรูปแบบ URL
+
+หากไม่ได้ตั้งค่านโยบายนี้ ระบบจะใช้ค่าเริ่มต้นส่วนกลางกับเว็บไซต์ทั้งหมด ซึ่งกำหนดโดยนโยบาย DefaultIdleDetectionSetting (การตั้งค่าการตรวจจับการไม่ได้ใช้งานเริ่มต้น) หากมีการตั้งค่าไว้ หรือโดยการกำหนดค่าส่วนตัวของผู้ใช้
+
+ค่าตัวอย่าง:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">บล็อกการตรวจจับการไม่ได้ใช้งานในเว็บไซต์เหล่านี้</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">ให้คุณกำหนดรายการรูปแบบ URL ซึ่งระบุเว็บไซต์ที่ไม่ได้รับอนุญาตให้ใช้ Idle Detection API
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ URL ที่ถูกต้องของเว็บไซต์ได้ที่ https://chromeenterprise.google/policies/url-patterns ใช้ไวลด์การ์ด (*) ได้ นโยบายนี้จะจับคู่โดยอิงตามต้นทางเท่านั้น ระบบจึงไม่สนใจเส้นทางใดก็ตามในรูปแบบ URL
+
+หากไม่ได้ตั้งค่านโยบายนี้ ระบบจะใช้ค่าเริ่มต้นส่วนกลางกับเว็บไซต์ทั้งหมด ซึ่งกำหนดโดยนโยบาย DefaultIdleDetectionSetting (การตั้งค่าการตรวจจับการไม่ได้ใช้งานเริ่มต้น) หากมีการตั้งค่าไว้ หรือโดยการกำหนดค่าส่วนตัวของผู้ใช้
+
+ค่าตัวอย่าง:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">อนุญาตตำแหน่งทางภูมิศาสตร์ที่แน่นอนในเว็บไซต์เหล่านี้</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">การตั้งค่านโยบายช่วยให้คุณสร้างรายการรูปแบบ URL ซึ่งระบุเว็บไซต์ที่ได้รับอนุญาตให้เข้าถึงตำแหน่งทางภูมิศาสตร์ที่มีความแม่นยำสูงของผู้ใช้โดยไม่ต้องขอสิทธิ์จากผู้ใช้ก่อน
+
+การไม่ตั้งค่านโยบายหมายความว่า DefaultGeolocationSetting จะมีผลกับทุกเว็บไซต์ (หากตั้งค่าไว้) แต่หากไม่ได้ตั้งค่าไว้ การตั้งค่าส่วนตัวของผู้ใช้จะมีผล
+
+ดูข้อมูลโดยละเอียดเกี่ยวกับรูปแบบ url ที่ถูกต้องได้ที่ https://chromeenterprise.google/policies/url-patterns ใช้ไวลด์การ์ด (*) ได้
+
+ค่าตัวอย่าง:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="CryptographyCompliance_group">นโยบายการปฏิบัติตามข้อกำหนดด้านวิทยาการเข้ารหัส</string>
+      <string id="PreferSlowCiphers">เลือกใช้อัลกอริทึมการเข้ารหัสลับที่เฉพาะเจาะจงสำหรับ TLS</string>
+      <string id="PreferSlowCiphers_Explain">นโยบายนี้กำหนดค่า Google Chrome เพื่อจัดลำดับการเข้ารหัสลับที่ต้องการใน TLS 1.3 เพื่อแสดงถึงความต้องการอัลกอริทึมที่ได้รับการอนุมัติจากระเบียบการปฏิบัติตามข้อกำหนดที่เฉพาะเจาะจง
+
+การตั้งค่านโยบายนี้ไม่ได้รับประกันว่าอัลกอริทึมที่เฉพาะเจาะจงจะได้รับการเจรจา
+
+นโยบายนี้มีขึ้นเพื่อให้ผู้ให้บริการเซิร์ฟเวอร์ที่ต้องการรองรับไคลเอ็นต์ทั้งที่มีและไม่มีข้อกำหนดด้านการปฏิบัติตามข้อกำหนดสามารถแยกความแตกต่างระหว่างไคลเอ็นต์เหล่านั้น และเลือกใช้เฉพาะอัลกอริทึมที่ไม่ใช่ค่าเริ่มต้นบางรายการซึ่งมีวิทยาการเข้ารหัสที่มีความปลอดภัยระดับสูงสำหรับไคลเอ็นต์ที่กำหนดค่าไว้อย่างชัดเจนให้ต้องการใช้อัลกอริทึมเหล่านั้น
+
+การตั้งค่านโยบายเป็น "cnsa" จะกำหนดค่า Google Chrome ให้เลือกใช้การเข้ารหัสที่จำเป็นสำหรับการปฏิบัติตามข้อกำหนดของชุดอัลกอริทึมเพื่อความมั่นคงแห่งชาติเชิงพาณิชย์เวอร์ชัน 1.0 และ 2.0 (Commercial National Security Algorithm Suite 1.0 และ 2.0 หรือ CNSA 1.0 และ 2.0)
+
+การไม่ตั้งค่านโยบายหรือตั้งค่าเป็น "default" จะกำหนดค่า Google Chrome ให้ใช้การเข้ารหัสตามค่าเริ่มต้น
+
+ไม่จำเป็นต้องตั้งค่านโยบายนี้เพื่อความปลอดภัย วิทยาการเข้ารหัสเริ่มต้นที่ Google Chrome ใช้มีความปลอดภัยเพียงพอที่จะป้องกันการโจมตีแบบบรูตฟอร์ซโดยใช้พลังงานทั้งหมดของดวงอาทิตย์
+
+การตั้งค่านโยบายนี้จะทำให้ Google Chrome ทำงานช้าลงเมื่อเข้าถึงเว็บไซต์
+
+นโยบายนี้มีผลเฉพาะกับ TLS 1.3 และ QUIC เท่านั้น โดยไม่มีผลกับ TLS เวอร์ชันก่อนหน้า
+
+ค่าตัวอย่าง: cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">เลือกใช้การเข้ารหัสที่เป็นไปตามข้อกำหนดของ CNSA 1.0 และ 2.0</string>
+      <string id="PreferSlowCiphers_Default">ใช้ลำดับการเข้ารหัสเริ่มต้นของ Google Chrome</string>
+      <string id="PreferSlowKexAlgorithms">เลือกใช้อัลกอริทึมการแลกเปลี่ยนคีย์ที่เฉพาะเจาะจงสำหรับ TLS</string>
+      <string id="PreferSlowKexAlgorithms_Explain">นโยบายนี้กำหนดค่า Google Chrome เพื่อจัดลำดับอัลกอริทึมของข้อตกลงเกี่ยวกับคีย์ที่ต้องการ (กลุ่มที่รองรับ) ใน TLS 1.3 เพื่อแสดงถึงความต้องการอัลกอริทึมที่ได้รับการอนุมัติจากระเบียบการปฏิบัติตามข้อกำหนดที่เฉพาะเจาะจง
+
+การตั้งค่านโยบายนี้ไม่ได้รับประกันว่าอัลกอริทึมที่เฉพาะเจาะจงจะได้รับการเจรจา
+
+นโยบายนี้มีขึ้นเพื่อให้ผู้ให้บริการเซิร์ฟเวอร์ที่ต้องการรองรับไคลเอ็นต์ทั้งที่มีและไม่มีข้อกำหนดด้านการปฏิบัติตามข้อกำหนดสามารถแยกความแตกต่างระหว่างไคลเอ็นต์เหล่านั้น และเลือกใช้เฉพาะอัลกอริทึมที่ไม่ใช่ค่าเริ่มต้นบางรายการซึ่งมีวิทยาการเข้ารหัสที่มีความปลอดภัยระดับสูงสำหรับไคลเอ็นต์ที่กำหนดค่าไว้อย่างชัดเจนให้ต้องการใช้อัลกอริทึมเหล่านั้น
+
+การตั้งค่านโยบายเป็น "cnsa2" จะกำหนดค่า Google Chrome ให้เลือกใช้วิธีการแลกเปลี่ยนคีย์ที่จำเป็นสำหรับการปฏิบัติตามข้อกำหนดของชุดอัลกอริทึมเพื่อความมั่นคงแห่งชาติเชิงพาณิชย์เวอร์ชัน 2.0 (Commercial National Security Algorithm Suite 2.0 หรือ CNSA 2.0)
+
+การไม่ตั้งค่านโยบาย หรือตั้งค่าเป็น "default" จะกำหนดค่า Google Chrome ให้ใช้วิธีการแลกเปลี่ยนคีย์ตามค่าเริ่มต้น
+
+หากตั้งค่านโยบายนี้เป็นค่าที่จะกำหนดค่า Google Chrome ให้เลือกใช้อัลกอริทึมของข้อตกลงเกี่ยวกับคีย์ในการเข้ารหัสเพื่อรักษาความปลอดภัยจากคอมพิวเตอร์ควอนตัม แต่ PostQuantumKeyAgreementEnabled ปิดใช้อยู่ การตั้งค่าของ PostQuantumKeyAgreementEnabled จะมีความสำคัญเหนือกว่า
+
+ไม่จำเป็นต้องตั้งค่านโยบายนี้เพื่อความปลอดภัย วิทยาการเข้ารหัสเริ่มต้นที่ Google Chrome ใช้มีความปลอดภัยเพียงพอที่จะป้องกันการโจมตีแบบบรูตฟอร์ซโดยใช้พลังงานทั้งหมดของดวงอาทิตย์
+
+การตั้งค่านโยบายนี้จะทำให้ Google Chrome ทำงานช้าลงเมื่อเข้าถึงเว็บไซต์
+
+นโยบายนี้มีผลเฉพาะกับ TLS 1.3 และ QUIC เท่านั้น โดยไม่มีผลกับ TLS เวอร์ชันก่อนหน้า
+
+ค่าตัวอย่าง: cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">เลือกใช้วิธีการแลกเปลี่ยนคีย์ที่เป็นไปตามข้อกำหนดของ CNSA 2.0</string>
+      <string id="PreferSlowKexAlgorithms_Default">ใช้กลุ่มที่รองรับเริ่มต้นของ Google Chrome</string>
+      <string id="Proxy_group">พร็อกซีเซิร์ฟเวอร์</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">ควบคุมผู้ใช้ที่มีการจัดการซึ่งตั้งค่านโยบาย ProxyOverrideRules ได้</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">เมื่อตั้งค่านโยบายนี้เป็น 0 หรือไม่ได้ตั้งค่า ระบบจะใช้นโยบาย ProxyOverrideRules ในระดับผู้ใช้กับผู้ใช้ที่เชื่อมโยงเท่านั้น
+เมื่อตั้งค่านโยบายนี้เป็น 1 ระบบจะใช้นโยบาย ProxyOverrideRules ในระดับผู้ใช้ แม้ว่าผู้ใช้รายนั้นจะไม่ได้เป็นผู้ใช้ที่เชื่อมโยงก็ตาม</string>
+      <string id="CacheEncryptionEnabled">นโยบายนี้ช่วยให้ผู้ดูแลระบบเข้ารหัสแคช http ในดิสก์ได้</string>
+      <string id="CacheEncryptionEnabled_Explain">นโยบายนี้ช่วยให้ผู้ดูแลระบบเข้ารหัสแคช http ของเบราว์เซอร์ในดิสก์ได้
+
+เมื่อเปิดใช้นโยบายนี้ ระบบจะเข้ารหัสแคชของเบราว์เซอร์
+
+เมื่อปิดใช้นโยบายนี้หรือไม่ได้ตั้งค่า ระบบจะไม่เข้ารหัสแคชของเบราว์เซอร์
+
+การเข้ารหัสแคชของเบราว์เซอร์อาจส่งผลกระทบต่อประสิทธิภาพ</string>
+      <string id="ForceForegroundPriorityForAllTabs">บังคับให้ทุกแท็บทำงานที่ลำดับความสำคัญเบื้องหน้า</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">นโยบายนี้ควบคุมว่าจะบังคับให้เนื้อหาเว็บเบื้องหลังทำงานที่ลำดับความสำคัญเบื้องหน้าหรือไม่
+
+โดยค่าเริ่มต้น เบราว์เซอร์จะเพิ่มประสิทธิภาพทรัพยากรโดยลดความสำคัญของเนื้อหาในแท็บเบื้องหลัง การเปิดใช้นโยบายนี้จะลบล้างลักษณะการทำงานดังกล่าว ทำให้ระบบกำหนดเวลาแท็บเบื้องหลังในลักษณะเดียวกับแท็บที่ใช้งานอยู่
+
+โปรดทราบว่าการบังคับให้เนื้อหาเบื้องหลังทำงานที่ลำดับความสำคัญเบื้องหน้าอาจส่งผลต่อการตอบสนองของแท็บที่ใช้งานอยู่เล็กน้อย
+
+หากตั้งค่านโยบายนี้เป็น "เปิดใช้" เนื้อหาเว็บทั้งหมดจะทำงานที่ลำดับความสำคัญเบื้องหน้า โดยไม่คำนึงถึงสถานะการมองเห็น
+
+หากตั้งค่านโยบายนี้เป็น "ปิดใช้" หรือไม่ได้ตั้งค่า เบราว์เซอร์จะกำหนดลำดับความสำคัญตามแบบมาตรฐาน (เช่น ลดลำดับความสำคัญของเนื้อหาที่มองไม่เห็น ไม่เล่นเสียง ไม่เข้าร่วมวิดีโอคอล...)</string>
+      <string id="HttpsOnlyMode">อนุญาตให้เปิดใช้โหมด "HTTPS เท่านั้น"</string>
+      <string id="HttpsOnlyMode_Explain">นโยบายนี้ควบคุมว่าผู้ใช้เปิดใช้โหมด HTTPS เท่านั้น (ใช้การเชื่อมต่อที่ปลอดภัยทุกครั้ง) ในการตั้งค่าได้หรือไม่ โหมด HTTPS เท่านั้นจะอัปเกรดการนำทางทั้งหมดให้เป็นแบบ HTTPS
+
+หากไม่ได้ตั้งค่านี้ไว้ หรือตั้งค่าเป็น "อนุญาต" ผู้ใช้จะได้รับอนุญาตให้เปิดใช้โหมด HTTPS เท่านั้น
+
+หากตั้งค่านี้เป็น "ไม่อนุญาต" ระบบจะปิดใช้โหมด HTTPS เท่านั้น
+
+หากตั้งค่านี้เป็น "force_enabled" ระบบจะเปิดใช้โหมด HTTPS เท่านั้นในโหมดเข้มงวด
+
+หากตั้งค่านี้เป็น "force_balanced_enabled" ระบบจะเปิดใช้โหมด HTTPS เท่านั้นในโหมดสมดุล
+
+ระบบรองรับ "force_enabled" ตั้งแต่เวอร์ชัน M112 เป็นต้นไป และรองรับ "force_balanced_enabled" ตั้งแต่เวอร์ชัน M129 เป็นต้นไป
+
+นอกจากนี้ยังสามารถแนะนำ "force_enabled" และ "force_balanced_enabled" ให้ผู้ใช้ได้ด้วย
+ในขั้นเริ่มต้น ระบบจะตั้งโหมด HTTPS เท่านั้นไว้เป็น "เข้มงวด" หรือ "สมดุล" แต่ผู้ใช้สามารถ
+เปลี่ยนได้
+
+หากตั้งค่านโยบายนี้เป็นค่าที่ Chrome เวอร์ชันที่ได้รับนโยบายไม่รองรับ Chrome จะใช้การตั้งค่าที่อนุญาตโดยค่าเริ่มต้น
+
+ฟีเจอร์นี้จะใช้นโยบาย HttpAllowlist แยกต่างหากเพื่อยกเว้นชื่อโฮสต์หรือรูปแบบชื่อโฮสต์ที่ต้องการไม่ให้อัปเกรดเป็น HTTPS ได้
+
+ค่าตัวอย่าง: disallowed</string>
+      <string id="HttpsOnlyMode_allowed">ไม่จำกัดการตั้งค่าโหมด HTTPS เท่านั้นของผู้ใช้</string>
+      <string id="HttpsOnlyMode_disallowed">ปิดใช้โหมด HTTPS เท่านั้น</string>
+      <string id="HttpsOnlyMode_force_enabled">เปิดใช้โหมด HTTPS เท่านั้นในโหมดเข้มงวด</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">เปิดใช้โหมด HTTPS เท่านั้นในโหมดสมดุล</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">จำกัดบัญชี Google ที่มีสิทธิ์ในการบันทึกไฟล์ PDF ไปยัง Google ไดรฟ์จากโปรแกรมอ่าน PDF Google Chrome</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">มีนิพจน์ทั่วไปเพื่อกำหนดบัญชี Google ที่มีสิทธิ์ในการบันทึกไฟล์ PDF ไปยัง Google ไดรฟ์จากโปรแกรมอ่าน PDF ของ Google Chrome
+
+ระบบจะแสดงข้อผิดพลาด หากผู้ใช้พยายามอัปโหลดไฟล์ PDF ไปยัง Google ไดรฟ์โดยใช้บัญชีที่ไม่ตรงกับรูปแบบนี้
+
+หากไม่ได้ตั้งค่านโยบายนี้หรือเว้นว่างไว้ ผู้ใช้จะใช้บัญชี Google ใดก็ได้เพื่อบันทึกไฟล์ PDF ไปยัง Google ไดรฟ์
+
+ค่าตัวอย่าง: .*@example\.com</string>
+      <string id="SilentPrintingEnabled">เปิดใช้การพิมพ์แบบเงียบ</string>
+      <string id="SilentPrintingEnabled_Explain">การตั้งค่านโยบายนี้เป็น "จริง" จะเปิดใช้การพิมพ์แบบเงียบ ซึ่งจะปิดหน้าต่างแสดงตัวอย่างการพิมพ์ทันทีเมื่อเปิด และพิมพ์ไปยังเครื่องพิมพ์เริ่มต้นด้วยตัวเลือกเริ่มต้น หากเครื่องพิมพ์เริ่มต้นคือ "บันทึกเป็น PDF" ระบบจะบันทึกไฟล์ลงในโฟลเดอร์ดาวน์โหลด
+
+การไม่ตั้งค่านโยบายนี้หรือตั้งค่านโยบายนี้เป็น "เท็จ" จะปิดใช้การพิมพ์แบบเงียบ ซึ่งจะไม่ปิดหน้าต่างแสดงตัวอย่างการพิมพ์โดยอัตโนมัติ และกำหนดให้ผู้ใช้ต้องเลือกตามปกติ</string>
+      <string id="StaticStorageQuotaEnabled">ควบคุมว่า API โควต้าพื้นที่เก็บข้อมูลจะแสดงค่าแบบคงที่ไหม</string>
+      <string id="StaticStorageQuotaEnabled_Explain">เมื่อเปิดใช้ API โควต้าพื้นที่เก็บข้อมูลจะแสดงค่าแบบคงที่ซึ่งเท่ากับการใช้งาน + ขั้นต่ำ (10 GiB, ปัดเศษดิสก์ขึ้นเป็น 1 GiB ที่ใกล้ที่สุด)
+เมื่อปิดใช้ API โควต้าพื้นที่เก็บข้อมูลจะแสดงค่าแบบไดนามิกซึ่งเป็นสัดส่วนกับพื้นที่ทั้งหมดที่พร้อมใช้งานในอุปกรณ์ โดยไม่คำนึงถึงการใช้งาน
+หากไม่ได้ตั้งค่า API โควต้าพื้นที่เก็บข้อมูลจะใช้ลักษณะการทำงานเริ่มต้นของ Chrome
+เว็บไซต์ที่มีสิทธิ์พื้นที่เก็บข้อมูลไม่จำกัดจะไม่ได้รับผลกระทบจากการตั้งค่านี้ โควต้าที่บังคับใช้จะไม่ได้รับผลกระทบเช่นกัน</string>
+      <string id="WebAppInstallByUserEnabled">เปิดใช้การติดตั้งเว็บแอปของผู้ใช้จากเบราว์เซอร์</string>
+      <string id="WebAppInstallByUserEnabled_Explain">นโยบายนี้ควบคุมว่าผู้ใช้จะติดตั้งเว็บแอปผ่านเบราว์เซอร์ได้หรือไม่
+หากเปิดใช้หรือไม่ได้กำหนดค่านโยบายนี้ ผู้ใช้จะติดตั้งเว็บแอปผ่านเบราว์เซอร์ได้
+หากปิดใช้นโยบายนี้ ผู้ใช้จะติดตั้งเว็บแอปผ่านเบราว์เซอร์ไม่ได้ และระบบจะยกเว้นประเภทข้อมูล "แอป" จากการซิงค์สำหรับ Chrome Sync
+นโยบายนี้ไม่รองรับการรีเฟรชแบบไดนามิก การเปลี่ยนแปลงใดๆ ไม่ว่าจะเป็นการเปิดใช้ การปิดใช้ หรือการยกเลิก จะมีผลก็ต่อเมื่อรีสตาร์ทเบราว์เซอร์แล้วเท่านั้น
+นโยบายนี้ไม่มีผลต่อนโยบาย "WebAppInstallForceList"</string>
+      <string id="XSLTEnabled">ควบคุมความพร้อมใช้งานของฟีเจอร์ XSLT</string>
+      <string id="XSLTEnabled_Explain">นโยบายนี้ควบคุมความพร้อมใช้งานของฟีเจอร์ XSLT (XSLTProcessor JavaScript API และคำสั่งการประมวลผล XSL)
+หากตั้งค่านโยบายนี้เป็น "เปิดใช้" XSLT จะพร้อมใช้งาน ไม่ว่าสถานะเริ่มต้นของฟีเจอร์ในเบราว์เซอร์จะเป็นอย่างไร
+หากตั้งค่านโยบายนี้เป็น "ปิดใช้" XSLT จะใช้งานไม่ได้ ไม่ว่าสถานะเริ่มต้นของฟีเจอร์ในเบราว์เซอร์จะเป็นอย่างไร
+หากไม่ได้ตั้งค่านโยบายนี้ ความพร้อมใช้งานของ XSLT จะกำหนดโดยการตั้งค่าเริ่มต้นของเบราว์เซอร์และการทดสอบในวงจำกัด
+นโยบายนี้เป็นมาตรการชั่วคราวและจะถูกนำออกใน M164</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">อนุญาตให้การผสานรวมแอป Gemini ดำเนินการในเว็บไซต์ที่ระบุโดยตรง</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">บล็อกการผสานรวมแอป Gemini เพื่อดำเนินการในเว็บไซต์ที่ระบุโดยตรง</listBox></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">เปิดใช้การแชร์เนื้อหาด้วยการผสานรวม Google AI Mode และ Lens</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">ลบล้างการแมปพื้นที่ที่อยู่ IP</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">อนุญาตให้เว็บไซต์ส่งคำขอเครือข่ายไปยังอุปกรณ์ปลายทางของเครือข่ายภายใน</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">บล็อกเว็บไซต์ไม่ให้ส่งคำขอเครือข่ายไปยังอุปกรณ์ปลายทางของเครือข่ายภายใน</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">อนุญาตให้เว็บไซต์ส่งคำขอเครือข่ายไปยังอุปกรณ์ที่ใช้</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">บล็อกเว็บไซต์ไม่ให้ส่งคำขอเครือข่ายไปยังอุปกรณ์ที่ใช้</listBox></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">การตรวจจับเมื่อไม่ใช้งาน</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">บล็อกตำแหน่งทางภูมิศาสตร์ในเว็บไซต์เหล่านี้</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">เว็บไซต์ที่อนุญาตสำหรับการตรวจจับการไม่ได้ใช้งาน</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">เว็บไซต์ที่บล็อกสำหรับการตรวจจับการไม่ได้ใช้งาน</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">อนุญาตตำแหน่งทางภูมิศาสตร์ที่แน่นอนในเว็บไซต์เหล่านี้</listBox></presentation>
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">เลือกใช้อัลกอริทึมการเข้ารหัสลับที่เฉพาะเจาะจงสำหรับ TLS</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">เลือกใช้อัลกอริทึมการแลกเปลี่ยนคีย์ที่เฉพาะเจาะจงสำหรับ TLS</dropdownList></presentation>
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">ควบคุมผู้ใช้ที่มีการจัดการซึ่งตั้งค่านโยบาย ProxyOverrideRules ได้:</decimalTextBox></presentation>
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">อนุญาตให้เปิดใช้โหมด "HTTPS เท่านั้น"</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>จำกัดบัญชี Google ที่มีสิทธิ์ในการบันทึกไฟล์ PDF ไปยัง Google ไดรฟ์จากโปรแกรมอ่าน PDF Google Chrome</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

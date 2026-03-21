@@ -1,0 +1,392 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v143-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 ou version ultérieure</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - Paramètres par défaut (les utilisateurs peuvent les contourner)</string>
+      <string id="CacheEncryptionEnabled">Cette règle permet aux administrateurs de chiffrer le cache HTTP sur le disque.</string>
+      <string id="CacheEncryptionEnabled_Explain">Cette règle permet aux administrateurs de chiffrer le cache HTTP du navigateur sur le disque.
+
+Lorsque cette règle est activée, le cache du navigateur est chiffré.
+
+Si elle est désactivée ou qu'elle n'est pas configurée, le cache du navigateur n'est pas chiffré.
+
+Le chiffrement du cache du navigateur peut avoir un impact sur les performances.</string>
+      <string id="ForceForegroundPriorityForAllTabs">Forcer la priorité au premier plan pour tous les onglets</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">Cette règle permet de définir si le contenu Web en arrière-plan doit être exécuté avec la priorité au premier plan.
+
+Par défaut, le navigateur optimise les ressources en réduisant la priorité du contenu des onglets en arrière-plan. L'activation de cette règle remplace ce comportement. Les onglets en arrière-plan sont donc traités de la même manière que l'onglet actif.
+
+Sachez que forcer l'exécution du contenu en arrière-plan avec la priorité au premier plan peut légèrement affecter la réactivité de l'onglet actif.
+
+Si cette règle est activée, tout le contenu Web s'exécute avec la priorité au premier plan, quel que soit son état de visibilité.
+
+Si cette règle est désactivée ou n'est pas configurée, le navigateur détermine la priorité en fonction de paramètres standards (par exemple, en réduisant la priorité du contenu qui n'est pas visible, qui ne lit pas de contenu audio, qui ne participe pas à des appels vidéo, etc.).</string>
+      <string id="HttpsOnlyMode">Autoriser l'activation du mode HTTPS uniquement</string>
+      <string id="HttpsOnlyMode_Explain">Cette règle détermine si les utilisateurs peuvent activer ou non le mode HTTPS uniquement (toujours utiliser une connexion sécurisée) dans les paramètres. Ce mode fait passer toutes les navigations en HTTPS.
+
+Si ce paramètre n'est pas défini ou s'il est défini sur "allowed", les utilisateurs seront autorisés à activer le mode HTTPS uniquement.
+
+Si ce paramètre est défini sur "disallowed", le mode HTTPS uniquement sera désactivé.
+
+Si ce paramètre est défini sur "force_enabled", le mode HTTPS uniquement sera activé en mode strict.
+
+Si ce paramètre est défini sur "force_balanced_enabled", le mode HTTPS uniquement sera activé en mode équilibré.
+
+"force_enabled" est pris en charge à partir de M112 et "force_balanced_enabled" à partir de M129.
+
+"force_enabled" et "force_balanced_enabled" peuvent aussi être recommandés aux utilisateurs.
+Le mode HTTPS uniquement sera initialement défini sur "Strict" ou "Équilibré", mais les utilisateurs pourront le modifier.
+
+Si vous définissez cette règle sur une valeur non prise en charge par la version de Chrome qui la reçoit, Chrome utilisera le paramètre autorisé par défaut.
+
+La règle HttpAllowlist distincte permet d'éviter que cette fonctionnalité mette à niveau des noms d'hôte ou des modèles du nom d'hôte spécifiques vers HTTPS.
+
+Exemple de valeur : disallowed</string>
+      <string id="HttpsOnlyMode_allowed">Ne pas restreindre le paramètre du mode HTTPS uniquement pour les utilisateurs</string>
+      <string id="HttpsOnlyMode_disallowed">Désactiver le mode HTTPS uniquement</string>
+      <string id="HttpsOnlyMode_force_enabled">Activer le mode HTTPS uniquement en mode strict</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">Activer le mode HTTPS uniquement en mode équilibré</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">Limiter les comptes Google éligibles à l'enregistrement de fichiers PDF dans Google Drive à partir du lecteur PDF Google Chrome</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">Contient une expression régulière permettant de déterminer les comptes Google éligibles à l'enregistrement de fichiers PDF dans Google Drive à partir du lecteur PDF Google Chrome.
+
+Une erreur s'affiche si un utilisateur tente d'importer un fichier PDF dans Google Drive à l'aide d'un compte qui ne correspond pas à ce format.
+
+Si cette règle n'est pas configurée ou est laissée vide, l'utilisateur peut utiliser n'importe quel compte Google pour enregistrer des fichiers PDF dans Google Drive.
+
+Exemple de valeur : .*@example\.com</string>
+      <string id="SilentPrintingEnabled">Activer l'impression silencieuse</string>
+      <string id="SilentPrintingEnabled_Explain">Si cette règle est définie sur "True", l'impression silencieuse est activée. La fenêtre d'aperçu avant impression se ferme immédiatement lorsqu'elle s'ouvre, et l'impression est lancée sur l'imprimante par défaut avec les options par défaut. Si l'imprimante par défaut est définie sur "Enregistrer au format PDF", le fichier sera enregistré dans le dossier "Téléchargements".
+
+Si cette règle n'est pas configurée ou qu'elle est définie sur "False", l'impression silencieuse est désactivée. La fenêtre d'aperçu avant impression ne se ferme pas automatiquement et l'utilisateur doit sélectionner une option comme d'habitude.</string>
+      <string id="StaticStorageQuotaEnabled">Contrôler si les API de quota de stockage renvoient des valeurs statiques</string>
+      <string id="StaticStorageQuotaEnabled_Explain">Lorsque cette règle est activée, les API de quota de stockage renvoient une valeur statique égale à l'utilisation + min (10 Gio, espace disque arrondi à l'entier le plus proche de 1 Gio).
+Lorsque cette règle est désactivée, les API de quota de stockage renvoient généralement une valeur dynamique proportionnelle à l'espace total disponible sur l'appareil, quelle que soit l'utilisation.
+Si cette règle n'est pas configurée, les API de quota de stockage utilisent le comportement Chrome par défaut.
+Les sites disposant d'autorisations de stockage illimité ne sont pas concernés par ce paramètre. Le quota appliqué n'est pas non plus affecté.</string>
+      <string id="WebAppInstallByUserEnabled">Autoriser les utilisateurs à installer des applications Web depuis le navigateur</string>
+      <string id="WebAppInstallByUserEnabled_Explain">Cette règle détermine si les utilisateurs peuvent installer des applications Web via le navigateur.
+Si vous activez cette règle ou ne la configurez pas, les utilisateurs peuvent installer des applications Web via le navigateur.
+Si vous désactivez cette règle, les utilisateurs ne peuvent pas installer d'applications Web via le navigateur, et le type de données "applications" est exclu de la synchronisation pour Chrome Sync.
+Cette règle n'est pas compatible avec l'actualisation dynamique. Toute modification (activation, désactivation ou non-configuration) ne prend effet qu'après le redémarrage du navigateur.
+Cette règle n'affecte pas la règle "WebAppInstallForceList".</string>
+      <string id="XSLTEnabled">Contrôler la disponibilité de la fonctionnalité XSLT</string>
+      <string id="XSLTEnabled_Explain">Cette règle contrôle la disponibilité de la fonctionnalité XSLT (l'API JavaScript XSLTProcessor et l'instruction de traitement XSL).
+Si cette règle est activée, XSLT sera disponible, quel que soit l'état par défaut de la fonctionnalité dans le navigateur.
+Si cette règle est désactivée, XSLT ne sera pas disponible, quel que soit l'état par défaut de la fonctionnalité dans le navigateur.
+Si cette règle n'est pas configurée, la disponibilité de XSLT sera déterminée par les paramètres par défaut du navigateur et les tests en conditions réelles.
+Cette règle est une solution temporaire et sera supprimée dans M164.</string>
+      <string id="GenerativeAI_group">IA générative</string>
+      <string id="GeminiActOnWebAllowedForURLs">Autoriser les intégrations de l'appli Gemini à agir directement sur les sites spécifiés</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">Permet de définir une liste de formats d'URL indiquant les sites sur lesquels les intégrations de l'appli Gemini peuvent agir directement sur les pages Web.
+
+Les URL qui ne correspondent ni à la liste d'autorisation, ni à la liste de blocage utilisent GeminiActOnWebSettings.
+
+Les URL correspondant à la fois à la liste d'autorisation et à la liste de blocage sont autorisées.
+
+Pour en savoir plus sur les formats d‘URL valides, veuillez consulter https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Exemple de valeur :
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">Empêcher les intégrations de l'appli Gemini d'agir directement sur les sites spécifiés</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">Permet de définir une liste de formats d'URL indiquant les sites sur lesquels les intégrations de l'appli Gemini ne peuvent pas agir directement sur les pages Web.
+
+Les URL qui ne correspondent ni à la liste d'autorisation, ni à la liste de blocage utilisent GeminiActOnWebSettings.
+
+Les URL correspondant à la fois à la liste d'autorisation et à la liste de blocage sont autorisées.
+
+Pour en savoir plus sur les formats d‘URL valides, veuillez consulter https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Exemple de valeur :
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="SearchContentSharingSettings">Activer le partage de contenu avec les intégrations du Google AI Mode et de Lens</string>
+      <string id="SearchContentSharingSettings_Explain">Cette règle contrôle le partage du contenu de la page ou du fichier avec le Google AI Mode et Lens via le panneau latéral ou les onglets de Google Chrome.
+
+Sachez que cette règle n'a pas d'incidence sur le Google AI Mode sur le Web. Elle contrôle uniquement la façon dont les utilisateurs peuvent partager des informations avec ce mode lorsqu'ils utilisent Google Chrome.
+
+0/Non configurée : les utilisateurs peuvent partager le contenu de la page ou du fichier avec le Google AI Mode.
+
+1 : les utilisateurs ne peuvent pas partager le contenu de la page ou du fichier avec le Google AI Mode. Les points d'entrée pour partager le contexte et le panneau latéral sont alors désactivés ou masqués.
+
+Cette règle est ignorée lorsque la Google Search n'est pas le moteur de recherche par défaut des utilisateurs, car la fonctionnalité est désactivée.
+
+Cette règle est indépendante de la règle AIModeSettings. La règle AIModeSettings ne contrôle que les points d'entrée sur l'omnibox ou le champ de recherche de la page "Nouvel onglet", tandis que cette règle contrôle le partage de contexte via le panneau latéral ou les onglets.
+
+Cette règle ne contrôle pas non plus l'intégration de Google Gemini, qui peut être désactivée par GeminiSettings.
+
+Si cette règle n'est pas configurée, son comportement est déterminé par la règle GenAiDefaultSettings.
+
+Pour en savoir plus sur la gestion des données pour les fonctionnalités d'IA générative, veuillez consulter https://support.google.com/chrome/a?p=generative_ai_settings.</string>
+      <string id="SearchContentSharingSettings_Allowed">Autoriser le partage de contenu avec les intégrations Google AI Mode.</string>
+      <string id="SearchContentSharingSettings_Disabled">Ne pas autoriser le partage de contenu avec les intégrations Google AI Mode.</string>
+      <string id="LocalNetworkAccessSettings_group">Paramètres d'accès au réseau local</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">Remplacer les mappages d'espace d'adressage IP</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">Vous pouvez utiliser cette option pour traiter certaines plages d'adresses internes comme "publiques", afin qu'elles ne soient pas soumises aux vérifications de l‘Local Network Access. Inversement, cette option peut être utilisée pour traiter certaines plages d'adresses publiques susceptibles d'être utilisées en interne comme "locales", afin qu'elles soient protégées par des vérifications de l‘Local Network Access.
+
+Les remplacements d'espace d'adressage IP prennent deux formes :
+
+[cidr]=[public|local|loopback]
+
+où [cidr] est une plage d'adresses IP au format CIDR (voir la section 3.1 sur https://tools.ietf.org/html/rfc4632 pour IPv4 et la section 2.3 sur https://tools.ietf.org/html/rfc4291 pour IPv6). Les adresses IPv6 doivent être spécifiées au format URL-safe (entre crochets). Les remplacements CIDR s'appliquent à tous les ports.
+
+ou
+
+[adresse IP]:[port]=[public|local|bouclage]
+
+Pour en savoir plus sur l‘Local Network Access, consultez https://wicg.github.io/local-network-access/ et https://developer.chrome.com/blog/local-network-access.
+
+Cette règle ne prend pas en charge l'actualisation dynamique.
+
+Les remplacements du commutateur de ligne de commande --ip-address-space-overrides prévalent sur les remplacements définis par cette règle.
+
+Exemple de valeur :
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">Autoriser les demandes d'accès au réseau local (LNA) dans les sous-frames sans délégation explicite</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">Par défaut, les autorisations d'accès au réseau local (LNA) ne peuvent être demandées dans les sous-frames multi-origine que si elles sont explicitement déléguées. Cette règle peut être utilisée pour remplacer ce comportement par défaut afin que les autorisations LNA soient héritées par défaut dans les sous-frames, sauf si elles sont explicitement refusées dans la règle sur les autorisations.
+
+Si cette règle est activée, toutes les fonctionnalités de la règle sur les autorisations LNA sont déléguées par défaut aux sous-frames, qui peuvent envoyer des requêtes réseau locales (ce qui déclenche l'invite d'autorisation).
+
+Si cette règle est désactivée ou n'est pas configurée, la fonctionnalité de la règle sur les autorisations doit être déléguée explicitement aux sous-frames pour qu'ils puissent envoyer des requêtes réseau locales et déclencher l'invite d'autorisation.
+
+Cette règle s'applique aux fonctionnalités "local-network-access", "loopback-network" et "local-network" de la règle sur les autorisations.
+
+Pour en savoir plus sur l'accès au réseau local, consultez https://wicg.github.io/local-network-access/ et https://developer.chrome.com/blog/local-network-access.
+
+Pour en savoir plus sur la règle sur les autorisations, consultez https://developer.mozilla.org/fr/docs/Web/HTTP/Guides/Permissions_Policy.</string>
+      <string id="LocalNetworkAllowedForUrls">Autoriser les sites à envoyer des requêtes réseau à des points de terminaison du réseau local.</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">Liste de formats d'URL. Les requêtes réseau initiées à partir de sites desservis par des origines qui figurent sur la liste et adressées à des points de terminaison du réseau local ne sont pas soumises aux vérifications de Local Network Access.
+
+Pour les origines autres que celles représentées par les formats spécifiés ici, la configuration personnelle de l'utilisateur s'applique.
+
+Pour en savoir plus sur les formats d'URL valides, veuillez consulter https://chromeenterprise.google/policies/url-patterns/.
+
+Pour connaître les restrictions concernant Local Network Access, consultez https://wicg.github.io/local-network-access/.
+
+Plusieurs règles listent des origines qui ont un impact sur les requêtes adressées à des points de terminaison du réseau local. Ces règles s'appliquent selon l'ordre de priorité suivant si une origine figure sur la liste de formats d'URL de plusieurs d'entre elles :
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Exemple de valeur :
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">Empêcher les sites d'adresser des requêtes réseau à des points de terminaison du réseau local.</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">Liste de formats d'URL. Les requêtes réseau initiées à partir de sites Web desservis par des origines qui figurent sur la liste et adressées à des points de terminaison du réseau local ne sont pas autorisées à émettre de requêtes Local Network Access.
+
+Pour les origines autres que celles représentées par les formats spécifiés ici, la configuration personnelle de l'utilisateur s'applique.
+
+Pour en savoir plus sur les formats d'URL valides, veuillez consulter https://chromeenterprise.google/policies/url-patterns/.
+
+Pour connaître les restrictions concernant Local Network Access, consultez https://wicg.github.io/local-network-access/.
+
+Plusieurs règles listent des origines qui ont un impact sur les requêtes adressées à des points de terminaison du réseau local. Ces règles s'appliquent selon l'ordre de priorité suivant si une origine figure sur la liste de formats d'URL de plusieurs d'entre elles :
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Exemple de valeur :
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">Autoriser les sites à adresser des requêtes réseau à l'appareil local.</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">Liste de formats d'URL. Les requêtes réseau initiées à partir de sites desservis par des origines qui figurent sur la liste et adressées à l'appareil local ne sont pas soumises aux vérifications de Local Network Access.
+
+Pour les origines autres que celles représentées par les formats spécifiés ici, la configuration personnelle de l'utilisateur s'applique.
+
+Pour en savoir plus sur les formats d'URL valides, veuillez consulter https://chromeenterprise.google/policies/url-patterns/.
+
+Pour connaître les restrictions concernant Local Network Access, consultez https://wicg.github.io/local-network-access/.
+
+Plusieurs règles listent des origines qui ont un impact sur les requêtes adressées à l'appareil local. Ces règles s'appliquent selon l'ordre de priorité suivant si une origine figure sur la liste de formats d'URL de plusieurs d'entre elles :
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Exemple de valeur :
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">Empêcher les sites d'adresser des requêtes réseau à l'appareil local.</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">Liste de formats d'URL. Les requêtes réseau initiées à partir de sites Web desservis par des origines qui figurent sur la liste et adressées à l'appareil local ne sont pas autorisées à émettre de requêtes Local Network Access.
+
+Pour les origines autres que celles représentées par les formats spécifiés ici, la configuration personnelle de l'utilisateur s'applique.
+
+Pour en savoir plus sur les formats d'URL valides, veuillez consulter https://chromeenterprise.google/policies/url-patterns/.
+
+Pour connaître les restrictions concernant Local Network Access, consultez https://wicg.github.io/local-network-access/.
+
+Plusieurs règles listent des origines qui ont un impact sur les requêtes adressées à l'appareil local. Ces règles s'appliquent selon l'ordre de priorité suivant si une origine figure sur la liste de formats d'URL de plusieurs d'entre elles :
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Exemple de valeur :
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="ContentSettings_group">Paramètres du contenu</string>
+      <string id="DefaultIdleDetectionSetting">Paramètre de détection d'inactivité par défaut</string>
+      <string id="DefaultIdleDetectionSetting_Explain">Permet de définir si les sites Web sont autorisés à utiliser l'API Idle Detection.
+
+Si cette règle est définie sur "1 - AllowIdleDetection", les sites Web peuvent utiliser l'API sans demander l'autorisation de l'utilisateur.
+
+Si cette règle est définie sur 2 : BlockIdleDetection, les sites Web ne peuvent pas utiliser l'API, même si l'utilisateur a donné son autorisation.
+
+Si cette règle est définie sur "3 - AskIdleDetection" ou n'est pas configurée, les sites Web ne peuvent pas utiliser l'API sans l'autorisation de l'utilisateur.</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">Autoriser les sites à détecter l'état d'inactivité sans demander l'autorisation de l'utilisateur</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">Interdire à tous les sites de détecter l'état d'inactivité de l'utilisateur</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">Demander chaque fois qu'un site souhaite détecter l'état d'inactivité de l'utilisateur</string>
+      <string id="GeolocationBlockedForUrls">Bloquer la géolocalisation sur ces sites</string>
+      <string id="GeolocationBlockedForUrls_Explain">Définir cette règle vous permet de définir une liste de formats d'URL indiquant les sites non autorisés à accéder à la géolocalisation de l'utilisateur et qui ne peuvent pas demander l'autorisation de le faire à l'utilisateur.
+
+Si cette règle n'est pas configurée, la règle DefaultGeolocationSetting s'applique pour tous les sites, à condition qu'elle soit définie. Si ce n'est pas le cas, le paramètre défini par l'utilisateur s'applique.
+
+Pour en savoir plus sur les formats d‘url valides, veuillez consulter https://chromeenterprise.google/policies/url-patterns. Les caractères génériques (*) sont autorisés.
+
+Exemple de valeur :
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">Autoriser la détection d'inactivité sur ces sites</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">Permet de lister les formats d'URL pour lesquels les sites sont autorisés à utiliser l'API Idle Detection sans demander l'autorisation de l'utilisateur. Les entrées de la liste de blocage ont une priorité plus élevée que celles de la liste d'autorisation, qui ont une priorité plus élevée que la valeur configurée par défaut.
+
+Pour en savoir plus sur les formats d'URL de site valides, veuillez consulter https://chromeenterprise.google/policies/url-patterns. Les caractères génériques (*) sont autorisés. Cette règle ne tient compte que de l'origine. Ainsi, tout chemin d'accès dans le format d'URL est ignoré.
+
+Si cette règle n'est pas configurée, la valeur globale par défaut est utilisée pour tous les sites. Cette valeur est configurée par la règle DefaultIdleDetectionSetting (Paramètre de détection d'inactivité par défaut) si celle-ci est définie ou, à défaut, par la configuration personnelle de l'utilisateur.
+
+Exemple de valeur :
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">Bloquer la détection d'inactivité sur ces sites</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">Permet de lister les formats d'URL pour lesquels les sites ne sont pas autorisés à utiliser l'API Idle Detection.
+
+Pour en savoir plus sur les formats d'URL de sites valides, veuillez consulter https://chromeenterprise.google/policies/url-patterns. Les caractères génériques (*) sont autorisés. Cette règle ne tient compte que de l'origine. Ainsi, tout chemin d'accès dans le format d'URL est ignoré.
+
+Si cette règle n'est pas configurée, la valeur globale par défaut est utilisée pour tous les sites. Cette valeur est configurée par la règle DefaultIdleDetectionSetting (Paramètre de détection d'inactivité par défaut) si celle-ci est définie ou, à défaut, par la configuration personnelle de l'utilisateur.
+
+Exemple de valeur :
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">Autoriser la géolocalisation précise sur ces sites</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">Cette règle permet de lister les formats d'URL pour lesquels les sites sont autorisés à accéder à la géolocalisation haute précision de l'utilisateur sans avoir à lui demander son autorisation au préalable.
+
+Si cette règle n'est pas configurée, la règle DefaultGeolocationSetting s'applique pour tous les sites, à condition qu'elle soit définie. Si ce n'est pas le cas, le paramètre défini par l'utilisateur s'applique.
+
+Pour en savoir plus sur les formats d‘url valides, veuillez consulter https://chromeenterprise.google/policies/url-patterns. Les caractères génériques (*) sont autorisés.
+
+Exemple de valeur :
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="CryptographyCompliance_group">Règles de conformité de la cryptographie</string>
+      <string id="PreferSlowCiphers">Privilégier des algorithmes de chiffrement spécifiques pour TLS</string>
+      <string id="PreferSlowCiphers_Explain">Cette règle configure Google Chrome pour qu'il ordonne ses algorithmes de chiffrement préférés dans TLS 1.3 afin de refléter une préférence pour les algorithmes approuvés par un régime de conformité spécifique.
+
+Configurer cette règle ne garantit pas que des algorithmes spécifiques seront négociés.
+
+Cette règle permet aux opérateurs de serveur qui souhaitent prendre en charge les clients avec et sans exigences de conformité de faire la distinction entre ces clients, et d'utiliser uniquement certains algorithmes non définis par défaut avec une force cryptographique accrue pour ceux dont la préférence est explicitement configurée.
+
+Si vous définissez la règle sur "cnsa", Google Chrome privilégie les algorithmes de chiffrement requis pour la conformité avec les versions 1.0 et 2.0 de la suite Commercial National Security Algorithm (CNSA 1.0 et 2.0, suite d'algorithmes de sécurité nationale commerciale).
+
+Si vous ne configurez pas la règle ou si vous la définissez sur "default", Google Chrome utilise ses algorithmes de chiffrement par défaut.
+
+La configuration de cette règle n'est pas requise pour la sécurité. La cryptographie par défaut utilisée par Google Chrome est suffisamment robuste pour résister à une attaque par force brute utilisant toute la puissance du Soleil.
+
+Si vous configurez cette règle, Google Chrome sera plus lent lors de l'accès aux sites Web.
+
+Cette règle n'affecte que TLS 1.3 et QUIC. Elle n'affecte pas les versions antérieures de TLS.
+
+Exemple de valeur : cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">Privilégier les algorithmes de chiffrement répondant aux exigences de la suite CNSA 1.0 et 2.0</string>
+      <string id="PreferSlowCiphers_Default">Utiliser l'ordre des algorithmes de chiffrement par défaut de Google Chrome</string>
+      <string id="PreferSlowKexAlgorithms">Privilégier des algorithmes d'échange de clés spécifiques pour TLS</string>
+      <string id="PreferSlowKexAlgorithms_Explain">Cette règle configure Google Chrome pour qu'il ordonne ses algorithmes d'accord de clé préférés (groupes compatibles) dans TLS 1.3 afin de refléter une préférence pour les algorithmes approuvés par un régime de conformité spécifique.
+
+Configurer cette règle ne garantit pas que des algorithmes spécifiques seront négociés.
+
+Cette règle permet aux opérateurs de serveur qui souhaitent prendre en charge les clients avec et sans exigences de conformité de faire la distinction entre ces clients, et d'utiliser uniquement certains algorithmes non définis par défaut avec une force cryptographique accrue pour ceux dont la préférence est explicitement configurée.
+
+Si vous définissez la règle sur "cnsa2", Google Chrome privilégie les méthodes d'échange de clés requises pour la conformité avec la suite Commercial National Security Algorithm 2.0 (CNSA 2.0, suite d'algorithmes de sécurité nationale commerciale).
+
+Si vous ne configurez pas la règle ou si vous la définissez sur "default", Google Chrome utilise ses méthodes d'échange de clés par défaut.
+
+Si cette règle est définie sur une valeur qui configure Google Chrome de sorte à privilégier un algorithme d'accord de clé post-quantique, mais que PostQuantumKeyAgreementEnabled est désactivé, le paramètre de PostQuantumKeyAgreementEnabled prévaut.
+
+La configuration de cette règle n'est pas requise pour la sécurité. La cryptographie par défaut utilisée par Google Chrome est suffisamment robuste pour résister à une attaque par force brute utilisant toute la puissance du Soleil.
+
+Si vous configurez cette règle, Google Chrome sera plus lent lors de l'accès aux sites Web.
+
+Cette règle n'affecte que TLS 1.3 et QUIC. Elle n'affecte pas les versions antérieures de TLS.
+
+Exemple de valeur : cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">Privilégier les méthodes d'échange de clés répondant aux exigences de la suite CNSA 2.0</string>
+      <string id="PreferSlowKexAlgorithms_Default">Utiliser les groupes compatibles par défaut de Google Chrome</string>
+      <string id="Proxy_group">Serveur proxy</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">Contrôle les utilisateurs gérés autorisés à définir la règle ProxyOverrideRules.</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">Si cette règle est définie sur 0 ou n'est pas configurée, la règle ProxyOverrideRules ne s'applique qu'au niveau de l'utilisateur à condition qu'il soit affilié.
+Si cette règle est définie sur 1, la règle ProxyOverrideRules s'applique au niveau de l'utilisateur, même si celui-ci n'est pas affilié.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">Autoriser l'activation du mode HTTPS uniquement</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>Limiter les comptes Google éligibles à l'enregistrement de fichiers PDF dans Google Drive à partir du lecteur PDF Google Chrome</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">Autoriser les intégrations de l'appli Gemini à agir directement sur les sites spécifiés</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">Empêcher les intégrations de l'appli Gemini d'agir directement sur les sites spécifiés</listBox></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">Activer le partage de contenu avec les intégrations du Google AI Mode et de Lens</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">Remplacer les mappages d'espace d'adressage IP</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">Autoriser les sites à envoyer des requêtes réseau à des points de terminaison du réseau local.</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">Empêcher les sites d'adresser des requêtes réseau à des points de terminaison du réseau local.</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">Autoriser les sites à adresser des requêtes réseau à l'appareil local.</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">Empêcher les sites d'adresser des requêtes réseau à l'appareil local.</listBox></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">Détection d'inactivité</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">Bloquer la géolocalisation sur ces sites</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">Sites autorisés pour la détection d'inactivité</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">Sites bloqués pour la détection d'inactivité</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">Autoriser la géolocalisation précise sur ces sites</listBox></presentation>
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">Privilégier des algorithmes de chiffrement spécifiques pour TLS</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">Privilégier des algorithmes d'échange de clés spécifiques pour TLS</dropdownList></presentation>
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">Contrôle les utilisateurs gérés autorisés à définir la règle ProxyOverrideRules.:</decimalTextBox></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

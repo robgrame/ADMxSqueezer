@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 이상</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Chrome DevTools에서 Google Developer Program 프로필을 사용 설정합니다.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">이 정책은 Google Developer Program과 Chrome DevTools의 통합을 제어합니다. 사용자의 Google Developer Program 프로필이 Chrome DevTools에 표시되며 사용자는 Chrome DevTools 내에서 특정 작업을 수행하면 배지를 받습니다.
+
+정책을 0 - '사용 설정됨'으로 설정하거나 정책 값을 설정하지 않으면 Google Developer Program과 Chrome DevTools가 통합되고 배지를 수여할 수 있도록 Chrome DevTools 도구 사용량이 공유됩니다.
+
+정책을 1- '배지 없이 사용 설정됨'으로 설정하면 Google Developer Program과 Chrome DevTools의 통합은 허용되지만, Chrome DevTools 도구 사용량을 Google Developer Program과 공유하는 것은 허용되지 않으므로 배지는 수여되지 않습니다.
+
+정책을 2- '사용 중지됨'으로 설정하면 Google Developer Program과 Chrome DevTools를 통합할 수 없습니다.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Chrome DevTools에서 Google Developer Program 통합을 사용 설정합니다.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Chrome DevTools에서 Google Developer Program 통합을 사용 설정하지만, 도구 사용량(배지 수여용)은 공유하지 않습니다.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Chrome DevTools에서 Google Developer Program 통합을 사용 설정하지 않습니다.</string>
+      <string id="LocalNetworkAccessSettings_group">로컬 네트워크 액세스 설정</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">로컬 네트워크 액세스 제한을 일시적으로 선택 해제할지 지정</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">정책을 사용 설정하면 Local Network Access
+요청은 Local Network Access 검사 실패로 인해 Chrome DevTools에서만 경고를 표시합니다.
+
+정책을 사용 중지하거나 설정하지 않으면 Local Network Access 요청에서 이러한 요청의
+기본 처리를 사용합니다.
+
+Local Network Access 제한사항에 관한 내용은 링크(https://wicg.github.io/local-network-access/)를 참고하세요.
+
+이 기업 정책은 일시적이며, M146 이후 삭제될 예정입니다.
+
+장기적으로 LocalNetworkAccessAllowedForUrls 정책을 사용하여
+Local Network Access 권한이 자동으로 부여되어야 하는 URL 패턴을
+허용 목록에 추가할 수 있습니다.
+
+LocalNetworkAccessRestrictionsEnabled 정책이 사용 설정된 경우
+이 정책보다 우선 적용됩니다.</string>
+      <string id="GenerativeAI_group">생성형 AI</string>
+      <string id="GeminiActOnWebSettings">Gemini 앱 통합이 웹페이지에서 직접 작동하도록 허용합니다.</string>
+      <string id="GeminiActOnWebSettings_Explain">Gemini 앱이 사용자를 대신하여 웹페이지에서 작업을 실행하도록 허용할지 제어합니다.
+
+0/설정 안 함 = Gemini 앱이 웹페이지에서 작업을 실행하도록 허용합니다.
+
+1 = Gemini 앱이 웹페이지에서 작업을 실행하도록 허용하지 않습니다.
+
+Gemini 앱이 사용 중지되면 이 정책은 아무런 영향을 미치지 않습니다. 예를 들어 GeminiSettings 정책으로 Gemini 앱을 사용 중지할 수 있습니다.
+
+Chrome의 Gemini에 관한 자세한 내용은 https://support.google.com/chrome/a/answer/16291696 페이지를 참고하세요.
+
+일부 국가 또는 언어에서는 Gemini가 작동하지 않습니다. 이 정책을 설정해도 기능이 사용 설정된다는 보장은 없으며, 기능은 사용 가능 여부에 따라 달라집니다. 출시에 관한 자세한 내용은 Enterprise 출시 노트(https://support.google.com/chrome/a/answer/7679408?hl=ko)를 참고하세요.</string>
+      <string id="GeminiActOnWebSettings_Enabled">Gemini 앱이 웹페이지에서 작업을 실행하도록 허용합니다.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Gemini 앱이 웹페이지에서 작업을 실행하도록 허용하지 않습니다.</string>
+      <string id="Extensions_group">확장 프로그램</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">멀웨어 외 위반 사항이 있는 강제 설치 확장 프로그램 사용 설정</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">멀웨어 외 위반으로 인해 삭제된 확장 프로그램을 신뢰도가 낮은 환경에서 계속 강제 설치할 수 있는지 제어합니다.
+
+멀웨어 외 위반 및 삭제에 관한 자세한 내용은 여기(https://developer.chrome.com/docs/webstore/review-process#warning)에서 확인할 수 있습니다.
+
+멀웨가 외 위반 사항이 해결되면 확장 프로그램이 사용 설정된 상태로 유지되며 사용 중지하거나 삭제할 수 없습니다.
+
+Microsoft® Windows®의 경우, 이 정책은 Microsoft® Active Directory® 도메인에 연결되거나, Microsoft® Azure® Active Directory®에 연결되거나 또는 Chrome Enterprise Core에 등록된 인스턴스에서 사용할 수 없습니다.
+
+macOS의 경우, 이 정책은 MDM을 통해 관리되거나, MCX를 통해 도메인에 연결되거나 또는 Chrome Enterprise Core에 등록된 인스턴스에서 사용할 수 없습니다.
+
+멀웨어 외 위반 사항이 있는 강제 설치된 확장 프로그램은 이러한 인스턴스에서 사용 설정된 상태로 유지됩니다.
+
+현재는 멀웨어 외 위반 사항이 있는 강제 설치된 확장 프로그램이 Chrome에 설치되어 사용 설정된 상태로 유지됩니다.
+
+정책을 사용 설정하면 멀웨어 외 위반 사항과 관계없이 강제 설치된 확장 프로그램이 동일하게(사용 설정된 상태로) 작동합니다.
+
+정책을 사용 중지하거나 설정하지 않으면 멀웨어 외 위반 사항이 있는 강제 설치된 확장 프로그램이 사용 중지됩니다.
+
+이 정책은 3개의 마일스톤 동안 사용할 수 있습니다.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Chrome DevTools에서 Google Developer Program 프로필을 사용 설정합니다.</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Gemini 앱 통합이 웹페이지에서 직접 작동하도록 허용합니다.</dropdownList></presentation>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

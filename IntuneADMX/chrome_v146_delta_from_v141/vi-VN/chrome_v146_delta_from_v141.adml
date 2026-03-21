@@ -1,0 +1,442 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 trở lên</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - Cài đặt mặc định (người dùng có thể ghi đè)</string>
+      <string id="GenerativeAI_group">AI tạo sinh</string>
+      <string id="GeminiActOnWebAllowedForURLs">Cho phép các thành phần tích hợp của ứng dụng Gemini trực tiếp hành động trên các trang web được chỉ định</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">Cho phép thiết lập danh sách các mẫu URL chỉ định những trang web mà các thành phần tích hợp của ứng dụng Gemini có thể trực tiếp hành động trên các trang web.
+
+Những URL không khớp với danh sách cho phép hoặc danh sách chặn sẽ sử dụng GeminiActOnWebSettings.
+
+Những URL khớp với cả danh sách cho phép và danh sách chặn đều được cho phép.
+
+Để biết thông tin chi tiết về các mẫu URL hợp lệ, vui lòng xem tại https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Giá trị mẫu:
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">Chặn các thành phần tích hợp của ứng dụng Gemini trực tiếp hành động trên các trang web được chỉ định</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">Cho phép thiết lập danh sách các mẫu URL chỉ định những trang web mà các thành phần tích hợp của ứng dụng Gemini không thể trực tiếp hành động trên các trang web.
+
+Những URL không khớp với danh sách cho phép hoặc danh sách chặn sẽ sử dụng GeminiActOnWebSettings.
+
+Những URL khớp với cả danh sách cho phép và danh sách chặn đều được cho phép.
+
+Để biết thông tin chi tiết về các mẫu URL hợp lệ, vui lòng xem tại https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Giá trị mẫu:
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebSettings">Cho phép tích hợp ứng dụng Gemini để trực tiếp thực hiện hành động trên các trang web</string>
+      <string id="GeminiActOnWebSettings_Explain">Kiểm soát việc ứng dụng Gemini có được phép hành động trên các trang web thay mặt người dùng hay không.
+
+0/không đặt  = Ứng dụng Gemini được phép hành động trên các trang web.
+
+1 = Ứng dụng Gemini không được phép hành động trên các trang web.
+
+Chính sách này không có hiệu lực khi ứng dụng Gemini bị tắt. Ví dụ: Ứng dụng Gemini có thể bị tắt theo chính sách GeminiSettings.
+
+Để biết thêm thông tin về Gemini trong Chrome, vui lòng truy cập https://support.google.com/chrome/a/answer/16291696.
+
+Một số quốc gia hoặc một số ngôn ngữ không hỗ trợ việc kích hoạt các tính năng của Gemini. Việc thiết lập chính sách này không đảm bảo rằng tính năng sẽ được kích hoạt; điều này vẫn tuỳ thuộc vào khả năng sử dụng tính năng. Để biết thêm thông tin về việc ra mắt tính năng, hãy xem Ghi chú phát hành của Enterprise: https://support.google.com/chrome/a/answer/7679408?hl=en</string>
+      <string id="GeminiActOnWebSettings_Enabled">Cho phép ứng dụng Gemini thực hiện hành động trên các trang web.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Không cho phép ứng dụng Gemini thực hiện hành động trên các trang web.</string>
+      <string id="SearchContentSharingSettings">Bật tính năng chia sẻ nội dung bằng các công cụ tích hợp Google AI Mode và Lens</string>
+      <string id="SearchContentSharingSettings_Explain">Chính sách này kiểm soát việc chia sẻ nội dung của trang và tệp với Google AI Mode và Lens thông qua bảng điều khiển bên hoặc các thẻ của Google Chrome.
+
+Xin lưu ý rằng chính sách này không ảnh hưởng đến Google AI Mode trên web. Chính sách này chỉ kiểm soát cách người dùng có thể chia sẻ thông tin khi sử dụng Google Chrome.
+
+0/chưa đặt = người dùng có thể chia sẻ nội dung của trang hoặc tệp với Google AI Mode.
+
+1 = người dùng không thể chia sẻ nội dung của trang hoặc tệp với Google AI Mode. Các điểm truy cập để chia sẻ ngữ cảnh và bảng điều khiển bên sẽ bị tắt hoặc ẩn.
+
+Chính sách này sẽ bị bỏ qua khi Google Search không phải là công cụ tìm kiếm mặc định của người dùng vì tính năng này bị tắt.
+
+Chính sách này không phụ thuộc vào chính sách AIModeSettings. Chính sách AIModeSettings chỉ kiểm soát các điểm truy cập trên thanh địa chỉ hoặc hộp tìm kiếm trên NTP trong khi chính sách này kiểm soát việc chia sẻ ngữ cảnh thông qua bảng điều khiển bên hoặc các thẻ.
+
+Chính sách này cũng không kiểm soát công cụ tích hợp Google Gemini. Bạn có thể tắt công cụ tích hợp này bằng GeminiSettings.
+
+Nếu bạn không đặt chính sách này, hành vi của chính sách sẽ do chính sách GenAiDefaultSettings xác định.
+
+Để biết thêm thông tin về cách xử lý dữ liệu cho các tính năng AI tạo sinh, vui lòng truy cập https://support.google.com/chrome/a?p=generative_ai_settings.</string>
+      <string id="SearchContentSharingSettings_Allowed">Cho phép chia sẻ nội dung bằng các công cụ tích hợp Google AI Mode.</string>
+      <string id="SearchContentSharingSettings_Disabled">Không cho phép chia sẻ nội dung bằng các công cụ tích hợp Google AI Mode.</string>
+      <string id="CryptographyCompliance_group">Chính sách tuân thủ về mật mã</string>
+      <string id="PreferSlowCiphers">Ưu tiên các thuật toán mật mã mã hoá cụ thể cho TLS</string>
+      <string id="PreferSlowCiphers_Explain">Chính sách này định cấu hình Google Chrome để sắp xếp thứ tự các thuật toán mật mã mã hoá được ưu tiên trong giao thức TLS 1.3 nhằm thể hiện mức độ ưu tiên đối với các thuật toán đã được một cơ chế tuân thủ cụ thể phê duyệt.
+
+Việc đặt chính sách này không đảm bảo rằng thuật toán cụ thể sẽ được thương lượng.
+
+Chính sách này được thiết lập để cho phép các nhà điều hành máy chủ muốn hỗ trợ cả những máy khách có và không có yêu cầu tuân thủ phân biệt các máy khách đó, đồng thời chỉ sử dụng một số thuật toán không mặc định có độ mạnh mật mã cao hơn đối với những máy khách được định cấu hình rõ ràng để ưu tiên chúng.
+
+Việc đặt chính sách thành "cnsa" sẽ định cấu hình Google Chrome để ưu tiên các thuật toán mật mã cần thiết cho việc tuân thủ phiên bản 1.0 và 2.0 của Bộ thuật toán bảo mật quốc gia thương mại (CNSA 1.0 và 2.0).
+
+Nếu bạn không đặt chính sách này hoặc đặt chính sách này thành "default", thì Google Chrome sẽ được định cấu hình để sử dụng các thuật toán mật mã mặc định.
+
+Bạn không cần đặt chính sách này để đảm bảo bảo mật. Mật mã mặc định mà Google Chrome sử dụng đủ mạnh để chống chịu một cuộc tấn công brute force dùng toàn bộ năng lượng của Mặt trời.
+
+Nếu bạn đặt chính sách này, Google Chrome sẽ chậm hơn khi truy cập vào các trang web.
+
+Chính sách này chỉ ảnh hưởng đến TLS 1.3 và QUIC, chứ không ảnh hưởng đến các phiên bản TLS trước đó.
+
+Giá trị mẫu: cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">Ưu tiên các thuật toán mật mã đáp ứng yêu cầu của CNSA 1.0 và 2.0</string>
+      <string id="PreferSlowCiphers_Default">Sử dụng thứ tự thuật toán mật mã mặc định của Google Chrome</string>
+      <string id="PreferSlowKexAlgorithms">Ưu tiên các thuật toán trao đổi khoá cụ thể cho TLS</string>
+      <string id="PreferSlowKexAlgorithms_Explain">Chính sách này định cấu hình Google Chrome để sắp xếp thứ tự thuật toán thoả thuận về khoá được ưu tiên (nhóm được hỗ trợ) trong giao thức TLS 1.3 nhằm thể hiện mức độ ưu tiên đối với các thuật toán đã được một cơ chế tuân thủ cụ thể phê duyệt.
+
+Việc đặt chính sách này không đảm bảo rằng thuật toán cụ thể sẽ được thương lượng.
+
+Chính sách này được thiết lập để cho phép các nhà điều hành máy chủ muốn hỗ trợ cả những máy khách có và không có yêu cầu tuân thủ phân biệt các máy khách đó, đồng thời chỉ sử dụng một số thuật toán không mặc định có độ mạnh mật mã cao hơn đối với những máy khách được định cấu hình rõ ràng để ưu tiên chúng.
+
+Việc đặt chính sách thành "cnsa2" sẽ định cấu hình Google Chrome để ưu tiên các phương thức trao đổi khoá cần thiết cho việc tuân thủ Bộ thuật toán bảo mật quốc gia thương mại 2.0 (CNSA 2.0).
+
+Nếu bạn không đặt chính sách này hoặc đặt thành "default", thì Google Chrome sẽ được định cấu hình để sử dụng các phương thức trao đổi khoá mặc định.
+
+Nếu bạn đặt chính sách này thành một giá trị định cấu hình Google Chrome để ưu tiên thuật toán thoả thuận về khoá hậu lượng tử nhưng Tắt PostQuantumKeyAgreementEnabled, thì chế độ cài đặt của PostQuantumKeyAgreementEnabled sẽ được ưu tiên.
+
+Bạn không cần đặt chính sách này để đảm bảo bảo mật. Mật mã mặc định mà Google Chrome sử dụng đủ mạnh để chống chịu một cuộc tấn công brute force dùng toàn bộ năng lượng của Mặt trời.
+
+Nếu bạn đặt chính sách này, Google Chrome sẽ chậm hơn khi truy cập vào các trang web.
+
+Chính sách này chỉ ảnh hưởng đến TLS 1.3 và QUIC, chứ không ảnh hưởng đến các phiên bản TLS trước đó.
+
+Giá trị mẫu: cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">Ưu tiên các phương thức trao đổi khoá đáp ứng các yêu cầu của CNSA 2.0</string>
+      <string id="PreferSlowKexAlgorithms_Default">Sử dụng các nhóm được hỗ trợ mặc định của Google Chrome</string>
+      <string id="LocalNetworkAccessSettings_group">Cài đặt Quyền truy cập mạng cục bộ</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">Ghi đè ánh xạ không gian địa chỉ IP</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">Bạn có thể dùng chế độ này để coi một số dải địa chỉ nội bộ là "công khai" và do đó không phải trải qua các quy trình kiểm tra Local Network Access. Ngược lại, bạn cũng có thể dùng tính năng này để coi một số dải địa chỉ công khai có thể được dùng nội bộ là "cục bộ" để các dải địa chỉ này được bảo vệ bằng các quy trình kiểm tra Local Network Access.
+
+Quy tắc ghi đè không gian địa chỉ IP có hai dạng:
+
+[cidr]=[public|local|loopback]
+
+trong đó [cidr] là một dải địa chỉ IP theo ký pháp CIDR (xem mục 3.1 của https://tools.ietf.org/html/rfc4632 đối với IPv4 và mục 2.3 của https://tools.ietf.org/html/rfc4291 đối với IPv6). Bạn phải chỉ định địa chỉ IPv6 theo định dạng an toàn cho URL (có dấu ngoặc). Quy tắc ghi đè CIDR áp dụng cho tất cả các cổng.
+
+hoặc
+
+[ip-address]:[port]=[public|local|loopback]
+
+Để biết thêm thông tin về Local Network Access, hãy xem https://wicg.github.io/local-network-access/ và https://developer.chrome.com/blog/local-network-access.
+
+Chính sách này không hỗ trợ tính năng làm mới động.
+
+Các quy tắc ghi đè từ nút chuyển dòng lệnh --ip-address-space-overrides được ưu tiên hơn các quy tắc ghi đè được đặt theo chính sách này.
+
+Giá trị mẫu:
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">Cho phép các yêu cầu về Quyền truy cập mạng cục bộ (LNA) trong khung phụ mà không cần uỷ quyền rõ ràng</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">Theo mặc định, các quyền đối với Quyền truy cập mạng cục bộ (LNA) chỉ được phép yêu cầu trong các khung phụ trên nhiều nguồn gốc nếu được uỷ quyền rõ ràng. Bạn có thể sử dụng chính sách này để ghi đè chế độ mặc định này, sao cho quyền LNA được kế thừa theo mặc định vào các khung con, trừ phi bị từ chối rõ ràng trong chính sách quyền.
+
+Nếu bạn đặt chính sách này thành bật, thì theo mặc định, các khung con sẽ được uỷ quyền tất cả các tính năng của chính sách quyền LNA và có thể gửi yêu cầu đến mạng cục bộ (kích hoạt lời nhắc cấp quyền).
+
+Nếu bạn đặt chính sách này thành tắt hoặc không đặt, thì các khung con phải được uỷ quyền rõ ràng tính năng chính sách quyền để đưa ra yêu cầu về mạng cục bộ và kích hoạt lời nhắc về quyền.
+
+Chính sách này áp dụng cho các tính năng của chính sách quyền "local-network-access", "loopback-network" và "local-network".
+
+Để biết thêm thông tin về Quyền truy cập mạng cục bộ, hãy xem https://wicg.github.io/local-network-access/ và https://developer.chrome.com/blog/local-network-access.
+
+Để biết thêm thông tin về chính sách quyền, hãy xem https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy.</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Chỉ định xem có (tạm thời) chọn không áp dụng các quy định hạn chế về Quyền truy cập mạng cục bộ hay không</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Nếu bạn đặt chính sách này thành Enabled (Bật), các yêu cầu Local Network Access sẽ chỉ hiển thị cảnh báo trong Chrome DevTools do không kiểm tra được Local Network Access.
+
+Nếu bạn đặt chính sách này thành Disabled (Tắt) hoặc không đặt, các yêu cầu Local Network Access sẽ sử dụng
+chế độ xử lý mặc định cho các yêu cầu này.
+
+Hãy truy cập vào trang https://wicg.github.io/local-network-access/ để biết các quy định hạn chế về Local Network Access.
+
+Chính sách doanh nghiệp này chỉ có hiệu lực tạm thời và sẽ bị xoá sau phiên bản M152.
+
+Về lâu dài, bạn có thể sử dụng chính sách LocalNetworkAccessAllowedForUrls để đưa các mẫu URL vào danh sách cho phép. Các mẫu URL này sẽ tự động được cấp quyền Local Network Access.</string>
+      <string id="LocalNetworkAllowedForUrls">Cho phép các trang web gửi yêu cầu mạng đến thiết bị đầu cuối trên mạng cục bộ.</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">Danh sách mẫu URL. Yêu cầu mạng gửi tới thiết bị đầu cuối trên mạng cục bộ, nếu được khởi tạo từ các trang web có nguồn gốc trùng khớp, sẽ không phải trải qua các bước kiểm tra Local Network Access.
+
+Đối với những nguồn gốc không được áp dụng các mẫu nêu ở đây, cấu hình cá nhân của người dùng sẽ được áp dụng.
+
+Để biết thông tin chi tiết về các mẫu URL hợp lệ, vui lòng truy cập https://chromeenterprise.google/policies/url-patterns/.
+
+Hãy truy cập vào https://wicg.github.io/local-network-access/ để biết các quy định hạn chế về Local Network Access.
+
+Có nhiều chính sách liệt kê những nguồn gốc ảnh hưởng đến các yêu cầu gửi đến thiết bị đầu cuối trên mạng cục bộ. Nếu một nguồn gốc khớp với nhiều chính sách trong số các chính sách sau đây, thì các chính sách sẽ được ưu tiên theo thứ tự sau:
+
+– LocalNetworkBlockedForUrls
+– LocalNetworkAllowedForUrls
+– LocalNetworkAccessBlockedForUrls
+– LocalNetworkAccessAllowedForUrls
+
+Giá trị mẫu:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">Không cho phép các trang web gửi yêu cầu mạng đến thiết bị đầu cuối trên mạng cục bộ.</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">Danh sách mẫu URL. Yêu cầu mạng gửi tới thiết bị đầu cuối trên mạng cục bộ, nếu được khởi tạo từ các trang web có nguồn gốc trùng khớp, sẽ không được phép gửi các yêu cầu Local Network Access.
+
+Đối với những nguồn gốc không được áp dụng các mẫu nêu ở đây, cấu hình cá nhân của người dùng sẽ được áp dụng.
+
+Để biết thông tin chi tiết về các mẫu URL hợp lệ, vui lòng truy cập https://chromeenterprise.google/policies/url-patterns/.
+
+Hãy truy cập vào https://wicg.github.io/local-network-access/ để biết các quy định hạn chế về Local Network Access.
+
+Có nhiều chính sách liệt kê những nguồn gốc ảnh hưởng đến các yêu cầu gửi đến thiết bị đầu cuối trên mạng cục bộ. Nếu một nguồn gốc khớp với nhiều chính sách trong số các chính sách sau đây, thì các chính sách sẽ được ưu tiên theo thứ tự sau:
+
+– LocalNetworkBlockedForUrls
+– LocalNetworkAllowedForUrls
+– LocalNetworkAccessBlockedForUrls
+– LocalNetworkAccessAllowedForUrls
+
+Giá trị mẫu:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">Cho phép các trang web gửi yêu cầu mạng đến thiết bị cục bộ.</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">Danh sách mẫu URL. Yêu cầu mạng gửi tới thiết bị cục bộ, nếu được khởi tạo từ các trang web có nguồn gốc trùng khớp, sẽ không phải trải qua các bước kiểm tra Local Network Access.
+
+Đối với những nguồn gốc không được áp dụng các mẫu nêu ở đây, cấu hình cá nhân của người dùng sẽ được áp dụng.
+
+Để biết thông tin chi tiết về các mẫu URL hợp lệ, vui lòng truy cập https://chromeenterprise.google/policies/url-patterns/.
+
+Hãy truy cập vào https://wicg.github.io/local-network-access/ để biết các quy định hạn chế về Local Network Access.
+
+Có nhiều chính sách liệt kê những nguồn gốc ảnh hưởng đến các yêu cầu gửi đến thiết bị cục bộ. Nếu một nguồn gốc khớp với nhiều chính sách trong số các chính sách sau đây, thì các chính sách sẽ được ưu tiên theo thứ tự sau:
+
+– LoopbackNetworkBlockedForUrls
+– LoopbackNetworkAllowedForUrls
+– LocalNetworkAccessBlockedForUrls
+– LocalNetworkAccessAllowedForUrls
+
+Giá trị mẫu:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">Không cho phép các trang web gửi yêu cầu mạng đến thiết bị cục bộ.</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">Danh sách mẫu URL. Yêu cầu mạng gửi tới thiết bị cục bộ, nếu được khởi tạo từ các trang web có nguồn gốc trùng khớp, sẽ không được phép gửi các yêu cầu Local Network Access.
+
+Đối với những nguồn gốc không được áp dụng các mẫu nêu ở đây, cấu hình cá nhân của người dùng sẽ được áp dụng.
+
+Để biết thông tin chi tiết về các mẫu URL hợp lệ, vui lòng truy cập https://chromeenterprise.google/policies/url-patterns/.
+
+Hãy truy cập vào https://wicg.github.io/local-network-access/ để biết các quy định hạn chế về Local Network Access.
+
+Có nhiều chính sách liệt kê những nguồn gốc ảnh hưởng đến các yêu cầu gửi đến thiết bị cục bộ. Nếu một nguồn gốc khớp với nhiều chính sách trong số các chính sách sau đây, thì các chính sách sẽ được ưu tiên theo thứ tự sau:
+
+– LoopbackNetworkBlockedForUrls
+– LoopbackNetworkAllowedForUrls
+– LocalNetworkAccessBlockedForUrls
+– LocalNetworkAccessAllowedForUrls
+
+Giá trị mẫu:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="ContentSettings_group">Cài đặt nội dung</string>
+      <string id="DefaultIdleDetectionSetting">Chế độ cài đặt mặc định cho tính năng phát hiện trạng thái không hoạt động</string>
+      <string id="DefaultIdleDetectionSetting_Explain">Cho phép bạn thiết lập việc các trang web có được sử dụng Idle Detection API hay không.
+
+Khi bạn đặt chính sách này thành 1 – AllowIdleDetection, các trang web có thể sử dụng API này mà không cần xin phép người dùng.
+
+Khi bạn đặt chính sách này thành 2 – BlockIdleDetection, các trang web không thể sử dụng API này, mặc dù được người dùng cho phép.
+
+Khi bạn đặt chính sách này thành 3 – AskIdleDetection hoặc không đặt chính sách này, các trang web không thể sử dụng API này mà không có sự cho phép của người dùng.</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">Cho phép các trang web phát hiện trạng thái không hoạt động mà không cần hỏi người dùng</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">Không cho phép bất kỳ trang web nào phát hiện trạng thái không hoạt động của người dùng</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">Hỏi mỗi lần một trang web muốn phát hiện trạng thái không hoạt động của người dùng</string>
+      <string id="GeolocationBlockedForUrls">Chặn quyền truy cập vào dữ liệu định vị vị trí trên các trang web này</string>
+      <string id="GeolocationBlockedForUrls_Explain">Nếu đặt chính sách này, bạn có thể thiết lập danh sách các mẫu URL chỉ định những trang web không được phép truy cập vào thông tin định vị vị trí của người dùng và cũng không được phép yêu cầu người dùng cấp quyền để làm vậy.
+
+Nếu bạn không đặt chính sách này, DefaultGeolocationSetting (nếu được đặt) sẽ áp dụng cho tất cả các trang web. Nếu không, chế độ cài đặt do người dùng chọn sẽ được áp dụng.
+
+Để biết thông tin chi tiết về các mẫu url hợp lệ, vui lòng truy cập vào https://chromeenterprise.google/policies/url-patterns. Cho phép sử dụng ký tự đại diện *.
+
+Giá trị mẫu:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">Cho phép các trang web này phát hiện trạng thái không hoạt động</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">Cho phép bạn thiết lập danh sách các mẫu URL chỉ định những trang web được phép sử dụng Idle Detection API mà không cần hỏi người dùng. Các mục trong danh sách chặn có mức độ ưu tiên cao hơn trong danh sách cho phép và do đó có mức độ ưu tiên cao hơn so với giá trị mặc định được định cấu hình.
+
+Để biết thông tin chi tiết về các mẫu URL trang web hợp lệ, vui lòng truy cập vào https://chromeenterprise.google/policies/url-patterns. Cho phép sử dụng ký tự đại diện *. Chính sách này chỉ đối chiếu dựa trên nguồn gốc, nên mọi đường dẫn trong mẫu URL sẽ bị bỏ qua.
+
+Nếu bạn không đặt chính sách này, thì giá trị mặc định chung sẽ được sử dụng cho tất cả các trang web. Giá trị này được định cấu hình theo chính sách DefaultIdleDetectionSetting (Chế độ cài đặt mặc định cho tính năng phát hiện trạng thái không hoạt động) nếu bạn đã đặt chính sách này, hoặc theo cấu hình cá nhân của người dùng nếu bạn chưa đặt chính sách này.
+
+Giá trị mẫu:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">Chặn tính năng phát hiện trạng thái không hoạt động trên các trang web này</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">Cho phép bạn thiết lập danh sách các mẫu URL để chỉ định những trang web không được phép sử dụng Idle Detection API.
+
+Để biết thông tin chi tiết về các mẫu URL trang web hợp lệ, vui lòng truy cập vào https://chromeenterprise.google/policies/url-patterns. Cho phép sử dụng ký tự đại diện *. Chính sách này chỉ đối chiếu dựa trên nguồn gốc, nên mọi đường dẫn trong mẫu URL sẽ bị bỏ qua.
+
+Nếu bạn không đặt chính sách này, thì giá trị mặc định chung sẽ được sử dụng cho tất cả các trang web. Giá trị này được định cấu hình theo chính sách DefaultIdleDetectionSetting (Chế độ cài đặt mặc định cho tính năng phát hiện trạng thái không hoạt động) nếu bạn đã đặt chính sách này, hoặc theo cấu hình cá nhân của người dùng nếu bạn chưa đặt chính sách này.
+
+Giá trị mẫu:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">Cho phép sử dụng thông tin định vị vị trí chính xác trên những trang web này</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">Nếu đặt chính sách này, bạn có thể thiết lập danh sách các mẫu URL chỉ định những trang web được phép truy cập vào thông tin định vị vị trí có độ chính xác cao của người dùng mà không cần yêu cầu người dùng cấp quyền tương ứng.
+
+Nếu bạn không đặt chính sách này, DefaultGeolocationSetting (nếu được đặt) sẽ áp dụng cho tất cả các trang web. Nếu không, chế độ cài đặt cá nhân của người dùng sẽ được áp dụng.
+
+Để biết thông tin chi tiết về các mẫu url hợp lệ, vui lòng truy cập vào https://chromeenterprise.google/policies/url-patterns. Cho phép sử dụng ký tự đại diện *.
+
+Giá trị mẫu:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="RemovedPolicies_group">Các chính sách bị xóa</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Bật các tiện ích bị buộc cài đặt có hành vi vi phạm không liên quan đến phần mềm độc hại</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Chính sách này đã bị xóa vì không tương thích với phiên bản Google Chrome này. Hãy đọc thêm tại https://support.google.com/chrome/a/answer/7643500</string>
+      <string id="CacheEncryptionEnabled">Chính sách này cho phép quản trị viên mã hoá bộ nhớ đệm http trên ổ đĩa.</string>
+      <string id="CacheEncryptionEnabled_Explain">Chính sách này cho phép quản trị viên mã hoá bộ nhớ đệm http của trình duyệt trên ổ đĩa.
+
+Khi bạn đặt chính sách này thành Enabled (Bật), bộ nhớ đệm của trình duyệt sẽ được mã hoá.
+
+Khi bạn không đặt chính sách này hoặc đặt thành Disabled (Tắt), bộ nhớ đệm của trình duyệt sẽ không được mã hoá.
+
+Việc mã hoá bộ nhớ đệm của trình duyệt có thể ảnh hưởng đến hiệu suất.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Bật Hồ sơ Google Developer Program trong Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Chính sách này kiểm soát việc tích hợp Google Developer Program với Chrome DevTools. Hồ sơ của người dùng trong Google Developer Program được hiển thị trong Chrome DevTools và người dùng nhận được huy hiệu khi thực hiện các hành động cụ thể trong Chrome DevTools.
+
+Việc đặt chính sách này thành 0 – "Đã bật" hoặc không đặt giá trị chính sách nào sẽ cho phép tích hợp Google Developer Program với Chrome DevTools và cho phép chia sẻ thông tin về việc sử dụng công cụ Chrome DevTools để có thể trao huy hiệu.
+
+Khi bạn đặt chính sách này thành 1 ("Đã bật mà không có huy hiệu"), bạn có thể tích hợp Google Developer Program với Chrome DevTools nhưng không thể chia sẻ thông tin về việc sử dụng công cụ Chrome DevTools với Google Developer Program. Không có huy hiệu nào được trao.
+
+Nếu bạn đặt chính sách này thành 2 – "Đã tắt", thì bạn sẽ không thể tích hợp Google Developer Program với Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Bật tính năng tích hợp Google Developer Program trong Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Bật tính năng tích hợp Google Developer Program trong Chrome DevTools, nhưng không chia sẻ thông tin về việc sử dụng công cụ (để trao huy hiệu).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Không bật tính năng tích hợp Google Developer Program trong Chrome DevTools.</string>
+      <string id="ForceForegroundPriorityForAllTabs">Buộc chế độ ưu tiên nền trước đối với tất cả các thẻ</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">Chính sách này kiểm soát việc nội dung trên web chạy nền có bị buộc phải chạy ở
+chế độ ưu tiên nền trước hay không.
+
+Theo mặc định, trình duyệt sẽ tối ưu hoá tài nguyên bằng cách giảm mức độ ưu tiên của nội dung trong
+các thẻ chạy nền. Nếu bạn bật chính sách này, hành vi đó sẽ được ghi đè, khiến
+các thẻ chạy nền được lên lịch giống như thẻ đang hoạt động.
+
+Lưu ý rằng việc buộc nội dung chạy nền chạy ở chế độ ưu tiên nền trước có thể
+ảnh hưởng đôi chút đến khả năng phản hồi của thẻ đang hoạt động.
+
+Nếu bạn đặt chính sách này thành Enabled (Bật), tất cả nội dung trên web sẽ chạy ở chế độ ưu tiên nền trước
+bất kể trạng thái hiển thị của nội dung.
+
+Nếu bạn đặt thành Disabled (Tắt) hoặc không đặt chính sách này, trình duyệt sẽ xác định mức độ ưu tiên
+dựa trên suy đoán tiêu chuẩn (ví dụ: giảm mức độ ưu tiên của nội dung không
+hiển thị, không phát âm thanh, không tham gia cuộc gọi video...).</string>
+      <string id="HttpsOnlyMode">Cho phép bật chế độ Chỉ HTTPS</string>
+      <string id="HttpsOnlyMode_Explain">Chính sách này kiểm soát việc người dùng có thể bật chế độ Chỉ giao thức HTTPS (Luôn sử dụng kết nối bảo mật) trong phần Cài đặt hay không. Chế độ Chỉ giao thức HTTPS nâng mọi hình thức chuyển hướng lên giao thức HTTPS.
+
+Nếu bạn không đặt chế độ cài đặt này hoặc đặt thành "allowed" (cho phép), thì người dùng sẽ được phép bật chế độ Chỉ giao thức HTTPS.
+
+Nếu bạn đặt chế độ cài đặt này thành "disallowed" (không cho phép), thì chế độ Chỉ giao thức HTTPS sẽ bị tắt.
+
+Nếu bạn đặt chế độ cài đặt này thành "force_enabled" (buộc bật), thì chế độ Chỉ giao thức HTTPS sẽ bật ở chế độ Nghiêm ngặt.
+
+Nếu bạn đặt chế độ cài đặt này thành "force_balanced_enabled" (buộc bật ở chế độ Cân bằng), thì chế độ Chỉ giao thức HTTPS sẽ bật ở chế độ Cân bằng.
+
+Tuỳ chọn "force_enabled" (buộc bật) được hỗ trợ từ M112 trở đi, tuỳ chọn "force_balanced_enabled" (buộc bật ở chế độ Cân bằng) được hỗ trợ từ M129 trở đi.
+
+Bạn cũng có thể đề xuất tuỳ chọn "force_enabled" và "force_balanced_enabled" cho người dùng.
+Chế độ Chỉ giao thức HTTPS ban đầu sẽ được đặt thành Nghiêm ngặt hoặc Cân bằng, nhưng người dùng có thể thay đổi chế độ này.
+
+Nếu bạn đặt chính sách này thành một giá trị mà phiên bản Chrome nhận được chính sách không hỗ trợ, thì Chrome sẽ mặc định sử dụng chế độ cài đặt được cho phép.
+
+Bạn có thể sử dụng chính sách HttpAllowlist riêng biệt để miễn trừ việc nâng cấp lên HTTPS nhờ tính năng này cho các tên máy chủ hoặc mẫu tên máy chủ cụ thể.
+
+Giá trị mẫu: disallowed</string>
+      <string id="HttpsOnlyMode_allowed">Không hạn chế người dùng cài đặt chế độ Chỉ giao thức HTTPS</string>
+      <string id="HttpsOnlyMode_disallowed">Tắt chế độ Chỉ giao thức HTTPS</string>
+      <string id="HttpsOnlyMode_force_enabled">Bật chế độ Chỉ giao thức HTTPS ở chế độ Nghiêm ngặt</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">Bật chế độ Chỉ giao thức HTTPS ở chế độ Cân bằng</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">Hạn chế những Tài khoản Google đủ điều kiện lưu tệp PDF vào Google Drive từ Trình xem PDF Google Chrome</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">Chứa một biểu thức chính quy để xác định những Tài khoản Google đủ điều kiện lưu tệp PDF vào Google Drive từ Trình xem PDF Google Chrome.
+
+Thông báo lỗi sẽ xuất hiện nếu người dùng cố gắng tải một tệp PDF lên Google Drive bằng một tài khoản không khớp với mẫu này.
+
+Nếu bạn không đặt hoặc để trống chính sách này, thì người dùng có thể sử dụng bất kỳ tài khoản Google nào để lưu tệp PDF vào Google Drive.
+
+Giá trị mẫu: .*@example\.com</string>
+      <string id="SilentPrintingEnabled">Bật tính năng In thầm lặng</string>
+      <string id="SilentPrintingEnabled_Explain">Nếu bạn đặt chính sách này thành true, tính năng In thầm lặng sẽ bật. Khi đó, cửa sổ xem trước bản in sẽ đóng ngay sau khi mở và máy in mặc định với các lựa chọn mặc định sẽ được dùng để in. Nếu lựa chọn in mặc định là "Lưu dưới dạng PDF", tệp sẽ được lưu vào thư mục Tệp đã tải xuống.
+
+Nếu bạn không đặt chính sách này hoặc đặt chính sách này thành false, tính năng In thầm lặng sẽ bị tắt. Khi đó, cửa sổ xem trước bản in sẽ không tự động đóng và người dùng phải lựa chọn như bình thường.</string>
+      <string id="StaticStorageQuotaEnabled">Kiểm soát việc các API hạn mức bộ nhớ có trả về giá trị tĩnh hay không</string>
+      <string id="StaticStorageQuotaEnabled_Explain">Khi bật, các API hạn mức bộ nhớ sẽ trả về một giá trị tĩnh bằng với mức sử dụng cộng thêm mức tối thiểu (10 GiB, dung lượng ổ đĩa được làm tròn đến 1 GiB gần nhất).
+Khi tắt, các API hạn mức bộ nhớ thường sẽ trả về một giá trị động tỷ lệ với tổng dung lượng trống trên thiết bị, bất kể mức sử dụng.
+Nếu không được đặt, các API hạn mức bộ nhớ sẽ sử dụng chế độ mặc định của Chrome.
+Chế độ cài đặt này không ảnh hưởng đến những trang web có quyền truy cập bộ nhớ không giới hạn. Hạn mức được thực thi cũng không bị ảnh hưởng.</string>
+      <string id="WebAppInstallByUserEnabled">Cho phép người dùng cài đặt ứng dụng web từ trình duyệt</string>
+      <string id="WebAppInstallByUserEnabled_Explain">Chính sách này kiểm soát việc người dùng có thể cài đặt ứng dụng web thông qua trình duyệt hay không.
+Nếu bạn bật hoặc không định cấu hình chính sách này, người dùng sẽ có thể cài đặt các ứng dụng web thông qua trình duyệt.
+Nếu bạn tắt chính sách này, người dùng sẽ không thể cài đặt các ứng dụng web thông qua trình duyệt và loại dữ liệu "ứng dụng" sẽ bị loại trừ khỏi quá trình đồng bộ hoá đối với Chrome Sync.
+Chính sách này không hỗ trợ tính năng làm mới động. Mọi thay đổi, dù là bật, tắt hay không đặt, chỉ có hiệu lực sau khi bạn khởi động lại trình duyệt.
+Chính sách này không ảnh hưởng đến chính sách "WebAppInstallForceList".</string>
+      <string id="XSLTEnabled">Kiểm soát khả năng sử dụng tính năng XSLT</string>
+      <string id="XSLTEnabled_Explain">Chính sách này kiểm soát khả năng sử dụng tính năng XSLT (API XSLTProcessor JavaScript và hướng dẫn xử lý XSL).
+Nếu bạn đặt chính sách này thành Bật, thì tính năng XSLT sẽ hoạt động, bất kể trạng thái mặc định của tính năng này trong trình duyệt.
+Nếu bạn đặt chính sách này thành Tắt, thì tính năng XSLT sẽ không hoạt động, bất kể trạng thái mặc định của tính năng này trong trình duyệt.
+Nếu bạn không đặt chính sách này, thì khả năng sử dụng tính năng XSLT sẽ được xác định theo chế độ cài đặt mặc định của trình duyệt và các thử nghiệm thực tế.
+Đây là chính sách tạm thời và sẽ bị loại bỏ trong phiên bản M164.</string>
+      <string id="Proxy_group">Máy chủ proxy</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">Kiểm soát danh sách những người dùng được quản lý có thể đặt chính sách ProxyOverrideRules.</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">Khi bạn không đặt chính sách này hoặc đặt thành 0, chính sách ProxyOverrideRules sẽ chỉ được áp dụng ở phạm vi người dùng đối với người dùng liên kết.
+Khi bạn đặt chính sách này thành 1, chính sách ProxyOverrideRules sẽ được áp dụng ở phạm vi người dùng, ngay cả khi người dùng đó chưa được liên kết.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">Cho phép các thành phần tích hợp của ứng dụng Gemini trực tiếp hành động trên các trang web được chỉ định</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">Chặn các thành phần tích hợp của ứng dụng Gemini trực tiếp hành động trên các trang web được chỉ định</listBox></presentation>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Cho phép tích hợp ứng dụng Gemini để trực tiếp thực hiện hành động trên các trang web</dropdownList></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">Bật tính năng chia sẻ nội dung bằng các công cụ tích hợp Google AI Mode và Lens</dropdownList></presentation>
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">Ưu tiên các thuật toán mật mã mã hoá cụ thể cho TLS</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">Ưu tiên các thuật toán trao đổi khoá cụ thể cho TLS</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">Ghi đè ánh xạ không gian địa chỉ IP</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">Cho phép các trang web gửi yêu cầu mạng đến thiết bị đầu cuối trên mạng cục bộ.</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">Không cho phép các trang web gửi yêu cầu mạng đến thiết bị đầu cuối trên mạng cục bộ.</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">Cho phép các trang web gửi yêu cầu mạng đến thiết bị cục bộ.</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">Không cho phép các trang web gửi yêu cầu mạng đến thiết bị cục bộ.</listBox></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">Phát hiện trạng thái không hoạt động</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">Chặn quyền truy cập vào dữ liệu định vị vị trí trên các trang web này</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">Các trang web được phép phát hiện trạng thái không hoạt động</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">Các trang web bị chặn phát hiện trạng thái không hoạt động</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">Cho phép sử dụng thông tin định vị vị trí chính xác trên những trang web này</listBox></presentation>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Bật Hồ sơ Google Developer Program trong Chrome DevTools</dropdownList></presentation>
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">Cho phép bật chế độ Chỉ HTTPS</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>Hạn chế những Tài khoản Google đủ điều kiện lưu tệp PDF vào Google Drive từ Trình xem PDF Google Chrome</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">Kiểm soát danh sách những người dùng được quản lý có thể đặt chính sách ProxyOverrideRules.:</decimalTextBox></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

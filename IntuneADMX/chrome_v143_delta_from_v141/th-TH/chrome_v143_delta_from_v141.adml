@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 ขึ้นไป</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="GenerativeAI_group">Generative AI</string>
+      <string id="GeminiActOnWebSettings">อนุญาตให้การผสานรวมแอป Gemini ดำเนินการในหน้าเว็บโดยตรง</string>
+      <string id="GeminiActOnWebSettings_Explain">ควบคุมว่าจะอนุญาตให้แอป Gemini ดำเนินการในหน้าเว็บในนามของผู้ใช้หรือไม่
+
+0/ไม่ได้ตั้งค่า  = แอป Gemini ได้รับอนุญาตให้ดำเนินการในหน้าเว็บ
+
+1 = แอป Gemini ไม่ได้รับอนุญาตให้ดำเนินการในหน้าเว็บ
+
+นโยบายนี้จะไม่มีผลเมื่อปิดใช้แอป Gemini เช่น นโยบาย GeminiSettings ปิดใช้งานแอป Gemini ได้
+
+ดูข้อมูลเพิ่มเติมเกี่ยวกับ Gemini ใน Chrome ได้ที่ https://support.google.com/chrome/a/answer/16291696
+
+การเปิดใช้งาน Gemini ไม่พร้อมให้บริการในบางประเทศหรือบางภาษา การตั้งค่านโยบายนี้ไม่ได้รับประกันว่าฟีเจอร์จะเปิดใช้งานได้ โดยจะขึ้นอยู่กับความพร้อมให้บริการ ดูข้อมูลเพิ่มเติมเกี่ยวกับการเปิดตัวได้ที่บันทึกประจำรุ่นของ Enterprise: https://support.google.com/chrome/a/answer/7679408?hl=th</string>
+      <string id="GeminiActOnWebSettings_Enabled">อนุญาตให้แอป Gemini ดำเนินการในหน้าเว็บ</string>
+      <string id="GeminiActOnWebSettings_Disabled">ไม่อนุญาตให้แอป Gemini ดำเนินการในหน้าเว็บ</string>
+      <string id="LocalNetworkAccessSettings_group">การตั้งค่าการเข้าถึงเครือข่ายภายใน</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">ระบุว่าจะเลือกไม่ใช้ข้อจำกัดการเข้าถึงเครือข่ายภายใน (ชั่วคราว) หรือไม่</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">เมื่อตั้งค่านโยบายนี้เป็น "เปิดใช้" คำขอ Local Network Access จะแสดงคำเตือนใน Chrome DevTools เท่านั้นเนื่องจากการตรวจสอบ Local Network Access ล้มเหลว
+
+เมื่อตั้งค่านโยบายนี้เป็น "ปิดใช้" หรือไม่ได้ตั้งค่า คำขอ Local Network Access จะใช้การจัดการเริ่มต้นสำหรับคำขอเหล่านี้
+
+ดูข้อจำกัดของ Local Network Access ได้ที่ https://wicg.github.io/local-network-access/
+
+นโยบายระดับองค์กรนี้เป็นนโยบายชั่วคราวและจะถูกนำออกหลังจาก M146
+
+ในระยะยาว คุณสามารถใช้นโยบาย LocalNetworkAccessAllowedForUrls เพื่อสร้างรายการที่อนุญาตสำหรับรูปแบบ URL ที่ควรได้รับสิทธิ์ Local Network Access โดยอัตโนมัติ
+
+โปรดทราบว่าหากเปิดใช้นโยบาย LocalNetworkAccessRestrictionsEnabled นโยบายดังกล่าวจะมีความสำคัญเหนือกว่านโยบายนี้</string>
+      <string id="Extensions_group">ส่วนขยาย</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">เปิดใช้ส่วนขยายที่บังคับติดตั้งซึ่งมีการละเมิดที่ไม่ใช่มัลแวร์</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">ควบคุมว่าจะยังคงบังคับติดตั้งส่วนขยายที่ถูกนำออกเนื่องจากละเมิดนโยบายที่ไม่ใช่มัลแวร์ในสภาพแวดล้อมที่มีความน่าเชื่อถือต่ำได้หรือไม่
+
+ดูข้อมูลเพิ่มเติมเกี่ยวกับการละเมิดที่ไม่ใช่มัลแวร์และการนำออกได้ที่ https://developer.chrome.com/docs/webstore/review-process#warning
+
+เมื่อแก้ไขการละเมิดที่ไม่ใช่มัลแวร์แล้ว ส่วนขยายจะยังคงเปิดใช้อยู่ และจะปิดใช้หรือนำออกไม่ได้
+
+ใน Microsoft® Windows® นโยบายนี้ใช้ไม่ได้ในอินสแตนซ์ที่เข้าร่วมโดเมน Microsoft® Active Directory®, เข้าร่วม Microsoft® Azure® Active Directory® หรือลงทะเบียนใน Chrome Enterprise Core`
+
+ใน macOS นโยบายนี้ใช้ไม่ได้ในอินสแตนซ์ที่จัดการผ่าน MDM, เข้าร่วมโดเมนผ่าน MCX หรือลงทะเบียนใน Chrome Enterprise Core
+
+ส่วนขยายที่บังคับติดตั้งซึ่งมีการละเมิดที่ไม่ใช่มัลแวร์จะยังคงเปิดใช้อยู่ในอินสแตนซ์เหล่านี้
+
+ในปัจจุบัน ส่วนขยายที่บังคับติดตั้งซึ่งมีการละเมิดที่ไม่ใช่มัลแวร์จะยังคงติดตั้งและเปิดใช้อยู่ใน Chrome
+
+การตั้งค่านโยบายเป็น "เปิดใช้" จะทำให้ส่วนขยายที่บังคับติดตั้งทำงานเหมือนเดิม (เช่น ยังคงเปิดใช้อยู่) ไม่ว่าจะมีการละเมิดที่ไม่ใช่มัลแวร์หรือไม่ก็ตาม
+
+การตั้งค่านโยบายเป็น "ปิดใช้" หรือไม่ได้ตั้งค่านโยบายจะทำให้ส่วนขยายที่บังคับติดตั้งซึ่งมีการละเมิดที่ไม่ใช่มัลแวร์ถูกปิดใช้
+
+นโยบายนี้จะพร้อมใช้งาน 3 ช่วงเหตุการณ์สำคัญ</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">เปิดใช้โปรไฟล์ Google Developer Program ใน Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">นโยบายนี้ควบคุมการผสานรวม Google Developer Program เข้ากับ Chrome DevTools โปรไฟล์ Google Developer Program ของผู้ใช้จะแสดงใน Chrome DevTools และผู้ใช้จะได้รับป้ายเมื่อดำเนินการบางอย่างภายใน Chrome DevTools
+
+การตั้งค่านโยบายเป็น 0 - "เปิดใช้" หรือไม่ตั้งค่าใดๆ ในนโยบายจะอนุญาตให้ผสานรวม Google Developer Program เข้ากับ Chrome DevTools และอนุญาตให้แชร์การใช้งานเครื่องมือ Chrome DevTools เพื่อให้สามารถมอบป้ายได้
+
+การตั้งค่านโยบายเป็น 1 - "เปิดใช้โดยไม่มีป้าย" จะอนุญาตให้ผสานรวม Google Developer Program เข้ากับ Chrome DevTools แต่ไม่อนุญาตให้แชร์การใช้งานเครื่องมือ Chrome DevTools กับ Google Developer Program นั่นหมายความว่าระบบจะไม่มอบป้ายให้
+
+การตั้งค่านโยบายเป็น 2 - "ปิดใช้" จะไม่อนุญาตให้ผสานรวม Google Developer Program เข้ากับ Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">เปิดใช้การผสานรวม Google Developer Program ใน Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">เปิดใช้การผสานรวม Google Developer Program ใน Chrome DevTools แต่ไม่ต้องแชร์การใช้งานเครื่องมือ (สำหรับการมอบป้าย)</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">ไม่ต้องเปิดใช้การผสานรวม Google Developer Program ใน Chrome DevTools</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">อนุญาตให้การผสานรวมแอป Gemini ดำเนินการในหน้าเว็บโดยตรง</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">เปิดใช้โปรไฟล์ Google Developer Program ใน Chrome DevTools</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,392 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v143-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 以降</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - デフォルト設定（ユーザーによるオーバーライド可能）</string>
+      <string id="CacheEncryptionEnabled">このポリシーでは、管理者がディスク上の HTTP キャッシュを暗号化できるようにします。</string>
+      <string id="CacheEncryptionEnabled_Explain">このポリシーでは、管理者がディスク上のブラウザ HTTP キャッシュを暗号化できるようにします。
+
+このポリシーを有効に設定した場合、ブラウザ キャッシュが暗号化されます。
+
+このポリシーを無効に設定するか未設定のままにした場合、ブラウザ キャッシュは暗号化されません。
+
+ブラウザ キャッシュの暗号化は、パフォーマンスに影響する可能性があります。</string>
+      <string id="ForceForegroundPriorityForAllTabs">すべてのタブでフォアグラウンドの優先度を適用する</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">このポリシーでは、バックグラウンドのウェブ コンテンツをフォアグラウンドの優先度で強制的に実行するかどうかを制御します。
+
+デフォルトでは、ブラウザはバックグラウンドのタブのコンテンツの優先度を下げて、リソースを最適化しています。このポリシーを有効にした場合、その動作がオーバーライドされ、バックグラウンドのタブがアクティブなタブと同じようにスケジュールされます。
+
+バックグラウンドのコンテンツをフォアグラウンドの優先度で実行すると、アクティブなタブの応答性にわずかな影響が生じる可能性があります。
+
+このポリシーを有効に設定した場合、ウェブ コンテンツは表示状態に関係なく、すべてフォアグラウンドの優先度で実行されます。
+
+このポリシーを無効に設定するか未設定のままにした場合、ブラウザは標準的なヒューリスティック（表示されていないコンテンツ、音声を再生していないコンテンツ、ビデオ通話に参加していないコンテンツの優先度を下げるなど）に基づいて優先度を決定します。</string>
+      <string id="HttpsOnlyMode">HTTPS 専用モードの有効化を許可する</string>
+      <string id="HttpsOnlyMode_Explain">このポリシーでは、ユーザーが [設定] で HTTPS 優先モード（常に安全な接続を使用する）を有効にできるかどうかを管理します。HTTPS 優先モードでは、移動先がすべて HTTPS にアップグレードされます。
+
+未設定のままにした場合や「allowed（許可する）」に設定した場合、ユーザーは HTTPS 優先モードを有効にできます。
+
+この設定を「disallowed（許可しない）」に設定した場合、HTTPS 優先モードは無効になります。
+
+この設定を「force_enabled（強制的に有効にする）」に設定した場合、HTTPS 優先モードが厳格モードで有効になります。
+
+この設定を「force_balanced_enabled（強制的にバランスモードで有効にする）」に設定した場合、HTTPS 優先モードがバランスモードで有効になります。
+
+「force_enabled」は M112 以降、「force_balanced_enabled」は M129 以降でサポートされます。
+
+「force_enabled」と「force_balanced_enabled」はユーザーにも推奨できる設定です。
+HTTPS 優先モードは、初期設定では厳格モードまたはバランスモードになりますが、ユーザーはこれを変更できます。
+
+ポリシーを受け取る Chrome のバージョンでサポートされていない値を指定した場合、Chrome ではデフォルトの「allowed」の設定が使用されます。
+
+HttpAllowlist ポリシーを別途設定して、この機能による HTTPS へのアップグレードを特定のホスト名またはホスト名のパターンに適用しないよう指定できます。
+
+サンプル値: disallowed</string>
+      <string id="HttpsOnlyMode_allowed">ユーザーの HTTPS 優先モード設定を制限しない</string>
+      <string id="HttpsOnlyMode_disallowed">HTTPS 優先モードを無効にする</string>
+      <string id="HttpsOnlyMode_force_enabled">HTTPS 優先モードを厳格モードで有効にする</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">HTTPS 優先モードをバランスモードで有効にする</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">Google Chrome PDF ビューアから Google ドライブに PDF ファイルを保存できる Google アカウントを制限する</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">Google Chrome PDF ビューアから Google ドライブに PDF ファイルを保存できる Google アカウントかどうかを判別する正規表現を指定します。
+
+ユーザーがこのパターンと一致しないアカウントを使用して Google ドライブに PDF ファイルをアップロードしようとした場合、エラーが表示されます。
+
+このポリシーを未設定のままにするか空白にした場合、ユーザーは任意の Google アカウントを使用して Google ドライブに PDF ファイルを保存できます。
+
+サンプル値: .*@example\.com</string>
+      <string id="SilentPrintingEnabled">サイレント印刷を有効にする</string>
+      <string id="SilentPrintingEnabled_Explain">このポリシーを true に設定した場合、サイレント印刷が有効になります。サイレント印刷では、印刷プレビュー ウィンドウが開くとすぐに閉じ、デフォルトのプリンタでデフォルトのオプションを使用して印刷します。デフォルトのプリンタが [PDF に保存] の場合、ファイルはダウンロード フォルダに保存されます。
+
+このポリシーを未設定のままにするか false に設定した場合、サイレント印刷は無効になります。印刷プレビュー ウィンドウは自動的に閉じられず、通常どおりユーザーが選択する必要があります。</string>
+      <string id="StaticStorageQuotaEnabled">保存容量 API で静的な値を返すかどうかを制御する</string>
+      <string id="StaticStorageQuotaEnabled_Explain">有効にした場合、保存容量 API は、使用量に最小値（10 GiB、ディスク容量は 1 GiB 単位で切り上げ）を加算した値に相当する静的な値を返します。
+無効にした場合、保存容量 API は通常、使用量に関係なく、デバイスで使用可能な合計容量に比例した動的な値を返します。
+未設定の場合、保存容量 API は Chrome のデフォルトの動作を使用します。
+無制限ストレージの権限を持つサイトは、この設定の影響を受けません。適用される容量も影響を受けません。</string>
+      <string id="WebAppInstallByUserEnabled">ユーザーがブラウザからウェブアプリをインストールできるようにする</string>
+      <string id="WebAppInstallByUserEnabled_Explain">このポリシーでは、ユーザーがブラウザからウェブアプリをインストールできるかどうかを制御します。
+このポリシーを有効に設定するか未設定のままにした場合、ユーザーはブラウザからウェブアプリをインストールできます。
+このポリシーを無効に設定した場合、ユーザーはブラウザからウェブアプリをインストールできず、「アプリ」データタイプが Chrome Sync の同期対象から除外されます。
+このポリシーでは、動的リフレッシュはサポートされません。有効、無効、または未設定にした場合のいずれでも、変更内容はブラウザを再起動した後にのみ有効になります。
+このポリシーは「WebAppInstallForceList」ポリシーには影響しません。</string>
+      <string id="XSLTEnabled">XSLT 機能を使用できるかどうかを制御する</string>
+      <string id="XSLTEnabled_Explain">このポリシーでは、XSLT 機能（XSLTProcessor JavaScript API と XSL 処理命令）を使用できるかどうかを制御します。
+このポリシーを有効に設定した場合、ブラウザでの XSLT 機能のデフォルトの状態に関係なく、この機能を使用できます。
+このポリシーを無効に設定した場合、ブラウザでの XSLT 機能のデフォルトの状態に関係なく、この機能は使用できません。
+このポリシーを未設定のままにした場合、XSLT を使用できるかどうかはブラウザのデフォルト設定とフィールド トライアルによって決まります。
+このポリシーは一時的なもので、M164 で削除される予定です。</string>
+      <string id="ContentSettings_group">コンテンツの設定</string>
+      <string id="DefaultIdleDetectionSetting">アイドル状態の検出のデフォルト設定</string>
+      <string id="DefaultIdleDetectionSetting_Explain">ウェブサイトで Idle Detection API の使用を許可するかどうかを設定できます。
+
+このポリシーを「1」（AllowIdleDetection）に設定した場合、ウェブサイトはユーザーに許可を求めることなく API を使用できます。
+
+このポリシーを「2」（BlockIdleDetection）に設定した場合、ウェブサイトはユーザーが許可するかどうかにかかわらず API を使用できません。
+
+このポリシーを「3」（AskIdleDetection）に設定するか未設定のままにした場合、ウェブサイトはユーザーの許可なしに API を使用できません。</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">ユーザーに確認せずに、サイトにアイドル状態の検出を許可する</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">ユーザーのアイドル状態の検出をどのサイトにも許可しない</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">サイトがユーザーのアイドル状態の検出を要求するたびに確認する</string>
+      <string id="GeolocationBlockedForUrls">位置情報をブロックするサイトを指定する</string>
+      <string id="GeolocationBlockedForUrls_Explain">このポリシーでは、ユーザーの位置情報へのアクセスを許可せず、ユーザーにその権限を求めることも許可しないサイトの URL パターンリストを指定できます。
+
+このポリシーを未設定のままにした場合、DefaultGeolocationSetting が設定されていれば、その設定がすべてのサイトで適用されます。設定されていなければ、ユーザーの個人設定が適用されます。
+
+有効な url パターンについて詳しくは、https://chromeenterprise.google/policies/url-patterns をご覧ください。ワイルドカード（*）を使用できます。
+
+サンプル値:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">アイドル状態の検出を許可するサイトを指定する</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">ユーザーに確認せずに Idle Detection API の使用を許可するサイトの URL パターンのリストを指定できます。ブロックリストのエントリの優先度は許可リストのエントリより高く、許可リストのエントリの優先度は設定されたデフォルト値より高くなります。
+
+有効なサイトの URL パターンについて詳しくは、https://chromeenterprise.google/policies/url-patterns をご覧ください。ワイルドカード（*）を使用できます。このポリシーでは、オリジンのみが照合されるため、URL パターンのパスは無視されます。
+
+このポリシーを未設定のままにした場合、すべてのサイトでグローバル デフォルト値が使用されます。デフォルト値は、DefaultIdleDetectionSetting（アイドル状態の検出のデフォルト設定）ポリシーで設定されていればその値、設定されていなければユーザーの個人設定の値になります。
+
+サンプル値:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">アイドル状態の検出をブロックするサイトを指定する</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">Idle Detection API の使用を許可しないサイトの URL パターンのリストを指定できます。
+
+有効なサイトの URL パターンについて詳しくは、https://chromeenterprise.google/policies/url-patterns をご覧ください。ワイルドカード（*）を使用できます。このポリシーでは、オリジンのみが照合されるため、URL パターンのパスは無視されます。
+
+このポリシーを未設定のままにした場合、すべてのサイトでグローバル デフォルト値が使用されます。デフォルト値は、DefaultIdleDetectionSetting（アイドル状態の検出のデフォルト設定）ポリシーで設定されていればその値、設定されていなければユーザーの個人設定の値になります。
+
+サンプル値:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">正確な位置情報を許可するサイトを指定する</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">このポリシーでは、ユーザーに許可を求めずに、ユーザーの高精度な位置情報へのアクセスを許可するサイトの URL パターンリストを指定できます。
+
+このポリシーを未設定のままにした場合、DefaultGeolocationSetting が設定されていれば、その設定がすべてのサイトに適用されます。設定されていなければユーザーの個人設定が適用されます。
+
+有効な url パターンについて詳しくは、https://chromeenterprise.google/policies/url-patterns をご覧ください。ワイルドカード（*）を使用できます。
+
+サンプル値:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="Proxy_group">プロキシ サーバー</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">ProxyOverrideRules ポリシーを設定できる管理対象ユーザーを制御する。</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">このポリシーを 0 に設定するか未設定のままにした場合、ProxyOverrideRules ポリシーは関連付けられたユーザーのユーザー スコープでのみ適用されます。
+このポリシーを 1 に設定した場合、関連付けられていないユーザーであっても、ProxyOverrideRules ポリシーが該当のユーザー スコープで適用されます。</string>
+      <string id="LocalNetworkAccessSettings_group">ローカル ネットワーク アクセスの設定</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">IP アドレス空間のマッピングをオーバーライドする</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">特定の内部アドレス範囲を「公開」として扱い、Local Network Access のチェックが行われないようにするために使用できます。もしくは、内部で使用される可能性のある特定の公開アドレス範囲を「ローカル」として扱い、Local Network Access のチェックで保護されるようにすることもできます。
+
+IP アドレス空間のオーバーライドには次の 2 つの形式があります。
+
+[cidr]=[public|local|loopback]
+
+[cidr] は CIDR 表記の IP アドレス範囲です（IPv4 の場合は https://tools.ietf.org/html/rfc4632 のセクション 3.1、IPv6 の場合は https://tools.ietf.org/html/rfc4291 のセクション 2.3 をご覧ください）。IPv6 アドレスは、URL セーフ（かっこ付き）の形式で指定する必要があります。CIDR のオーバーライドはすべてのポートに適用されます。
+
+または
+
+[ip-address]:[port]=[public|local|loopback]
+
+Local Network Access について詳しくは、https://wicg.github.io/local-network-access/ および https://developer.chrome.com/blog/local-network-access をご覧ください。
+
+このポリシーでは、動的リフレッシュはサポートされません。
+
+コマンドライン スイッチ --ip-address-space-overrides によるオーバーライドは、このポリシーで設定されたオーバーライドより優先されます。
+
+サンプル値:
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">明示的な委任なしでサブフレームからのローカル ネットワーク アクセス（LNA）リクエストを許可する</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">デフォルトでは、ローカル ネットワーク アクセス（LNA）の権限は、明示的に委任されている場合にのみ、クロスオリジンのサブフレームでリクエストできます。このポリシーを使用すると、デフォルトの動作をオーバーライドして、権限ポリシーで明示的に拒否されていない限り、デフォルトで LNA 権限をサブフレームに継承します。
+
+このポリシーを有効に設定した場合、デフォルトですべての LNA 権限ポリシー機能がサブフレームに委任され、ローカル ネットワーク リクエストが許可されます（権限プロンプトがトリガーされます）。
+
+このポリシーを無効に設定するか未設定のままにした場合は、権限ポリシー機能がサブフレームに明示的に委任されているときに限り、ローカル ネットワーク リクエストが許可され、権限プロンプトがトリガーされます。
+
+このポリシーは、権限ポリシー機能の "local-network-access"、"loopback-network"、"local-network" に適用されます。
+
+ローカル ネットワーク アクセスについて詳しくは、https://wicg.github.io/local-network-access/ および https://developer.chrome.com/blog/local-network-access をご覧ください。
+
+権限ポリシーの詳細については、https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy をご覧ください。</string>
+      <string id="LocalNetworkAllowedForUrls">ローカル ネットワーク エンドポイントへのネットワーク リクエストを許可するサイトを指定する</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">URL パターンのリストを指定します。このリストのパターンと一致するオリジンのウェブサイトで発行されたローカル ネットワーク エンドポイントへのネットワーク リクエストに対して、Local Network Access のチェックを行いません。
+
+ここで指定したパターンに含まれていないオリジンについては、ユーザーの個人設定が適用されます。
+
+有効な URL パターンについて詳しくは、https://chromeenterprise.google/policies/url-patterns/ をご覧ください。
+
+Local Network Access の制限については、https://wicg.github.io/local-network-access/ をご覧ください。
+
+ローカル ネットワーク エンドポイントへのリクエストを許可またはブロックするオリジンを指定するポリシーは複数あります。オリジンが以下の複数のポリシーと一致する場合、ポリシーは次の優先順位で適用されます。
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+サンプル値:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">ローカル ネットワーク エンドポイントへのネットワーク リクエストをブロックするサイトを指定する</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">URL パターンのリストを指定します。このリストのパターンと一致するオリジンのウェブサイトに対して、ローカル ネットワーク エンドポイントへの Local Network Access のネットワーク リクエストの発行をブロックします。
+
+ここで指定したパターンに含まれていないオリジンについては、ユーザーの個人設定が適用されます。
+
+有効な URL パターンについて詳しくは、https://chromeenterprise.google/policies/url-patterns/ をご覧ください。
+
+Local Network Access の制限については、https://wicg.github.io/local-network-access/ をご覧ください。
+
+ローカル ネットワーク エンドポイントへのリクエストを許可またはブロックするオリジンを指定するポリシーは複数あります。オリジンが以下の複数のポリシーと一致する場合、ポリシーは次の優先順位で適用されます。
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+サンプル値:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">ローカル デバイスへのネットワーク リクエストを許可するサイトを指定する</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">URL パターンのリストを指定します。このリストのパターンと一致するオリジンのウェブサイトで発行されたローカル デバイスへのネットワーク リクエストに対して、Local Network Access のチェックを行いません。
+
+ここで指定したパターンに含まれていないオリジンについては、ユーザーの個人設定が適用されます。
+
+有効な URL パターンについて詳しくは、https://chromeenterprise.google/policies/url-patterns/ をご覧ください。
+
+Local Network Access の制限については、https://wicg.github.io/local-network-access/ をご覧ください。
+
+ローカル デバイスへのリクエストを許可またはブロックするオリジンを指定するポリシーは複数あります。オリジンが以下の複数のポリシーと一致する場合、ポリシーは次の優先順位で適用されます。
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+サンプル値:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">ローカル デバイスへのネットワーク リクエストをブロックするサイトを指定する</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">URL パターンのリストを指定します。このリストのパターンと一致するオリジンのウェブサイトに対して、ローカル デバイスへの Local Network Access のネットワーク リクエストの発行をブロックします。
+
+ここで指定したパターンに含まれていないオリジンについては、ユーザーの個人設定が適用されます。
+
+有効な URL パターンについて詳しくは、https://chromeenterprise.google/policies/url-patterns/ をご覧ください。
+
+Local Network Access の制限については、https://wicg.github.io/local-network-access/ をご覧ください。
+
+ローカル デバイスへのリクエストを許可またはブロックするオリジンを指定するポリシーは複数あります。オリジンが以下の複数のポリシーと一致する場合、ポリシーは次の優先順位で適用されます。
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+サンプル値:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="CryptographyCompliance_group">暗号化コンプライアンス ポリシー</string>
+      <string id="PreferSlowCiphers">TLS で特定の暗号化アルゴリズムを優先する</string>
+      <string id="PreferSlowCiphers_Explain">このポリシーでは、Google Chrome で優先する TLS 1.3 の暗号化の順序を指定し、特定のコンプライアンス体制で承認されたアルゴリズムの優先順序を反映するように設定します。
+
+このポリシーを設定しても、特定のアルゴリズムがネゴシエートされるとは限りません。
+
+このポリシーは、コンプライアンス要件の有無にかかわらずクライアントをサポートしたいサーバー オペレーターが、それらのクライアントを区別し、暗号化強度の高い特定のデフォルト以外のアルゴリズムを優先するように明示的に設定されたクライアントに対してのみ使用できるようにするためのものです。
+
+このポリシーを「cnsa」に設定した場合は、Google Chrome で Commercial National Security Algorithm Suite バージョン 1.0 および 2.0（CNSA 1.0 および 2.0）に準拠するために必要な暗号を優先するように設定します。
+
+このポリシーを設定しない場合、または「default」に設定した場合、Google Chrome でデフォルトの暗号化を使用するように設定します。
+
+このポリシーの設定はセキュリティ上必須ではありません。Google Chrome で使用するデフォルトの暗号化は、いかなる総当たり攻撃にも十分耐えうるほど強力です。
+
+このポリシーを設定すると、ウェブサイトにアクセスする際に Google Chrome の動作が遅くなる場合があります。
+
+このポリシーは TLS 1.3 と QUIC にのみ影響し、以前のバージョンの TLS には影響しません。
+
+サンプル値: cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">CNSA 1.0 および 2.0 の要件を満たす暗号化を優先する</string>
+      <string id="PreferSlowCiphers_Default">Google Chrome のデフォルトの暗号化順序を使用する</string>
+      <string id="PreferSlowKexAlgorithms">TLS で特定の鍵交換アルゴリズムを優先する</string>
+      <string id="PreferSlowKexAlgorithms_Explain">このポリシーでは、Google Chrome で優先する TLS 1.3 の鍵交換アルゴリズム（サポートされているグループ）の順序を指定し、特定のコンプライアンス体制で承認されたアルゴリズムの優先順序を反映するように設定します。
+
+このポリシーを設定しても、特定のアルゴリズムがネゴシエートされるとは限りません。
+
+このポリシーは、コンプライアンス要件の有無にかかわらずクライアントをサポートしたいサーバー オペレーターが、それらのクライアントを区別し、暗号化強度の高い特定のデフォルト以外のアルゴリズムを優先するように明示的に設定されたクライアントに対してのみ使用できるようにするためのものです。
+
+このポリシーを「cnsa2」に設定した場合は、Google Chrome で Commercial National Security Algorithm Suite 2.0（CNSA 2.0）に準拠するために必要な鍵交換方式を優先するように設定します。
+
+このポリシーを設定しない場合、または「default」に設定した場合、Google Chrome でデフォルトの鍵交換方式を使用するように設定します。
+
+このポリシーを、Google Chrome でポスト量子鍵交換アルゴリズムを優先するように設定する値に設定しても、PostQuantumKeyAgreementEnabled が無効になっている場合は、PostQuantumKeyAgreementEnabled の設定が優先されます。
+
+このポリシーの設定はセキュリティ上必須ではありません。Google Chrome で使用するデフォルトの暗号化は、いかなる総当たり攻撃にも十分耐えうるほど強力です。
+
+このポリシーを設定すると、ウェブサイトにアクセスする際に Google Chrome の動作が遅くなる場合があります。
+
+このポリシーは TLS 1.3 と QUIC にのみ影響し、以前のバージョンの TLS には影響しません。
+
+サンプル値: cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">CNSA 2.0 の要件を満たす鍵交換方式を優先する</string>
+      <string id="PreferSlowKexAlgorithms_Default">Google Chrome のデフォルトのサポートされているグループを使用する</string>
+      <string id="GenerativeAI_group">生成 AI</string>
+      <string id="GeminiActOnWebAllowedForURLs">Gemini アプリの統合の直接実行を許可するサイトを指定する</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">ウェブページ上で Gemini アプリの統合の直接実行を許可するサイトの URL パターンのリストを指定できます。
+
+許可リストとブロックリストのどちらにも一致しない URL には、GeminiActOnWebSettings が使用されます。
+
+許可リストとブロックリストの両方に一致する URL には、直接実行が許可されます。
+
+有効な URL パターンについて詳しくは、https://support.google.com/chrome/a?p=url_blocklist_filter_format をご覧ください。
+
+サンプル値:
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">Gemini アプリの統合の直接実行をブロックするサイトを指定する</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">ウェブページ上で Gemini アプリの統合の直接実行をブロックするサイトの URL パターンのリストを指定できます。
+
+許可リストとブロックリストのどちらにも一致しない URL には、GeminiActOnWebSettings が使用されます。
+
+許可リストとブロックリストの両方に一致する URL には、直接実行が許可されます。
+
+有効な URL パターンについて詳しくは、https://support.google.com/chrome/a?p=url_blocklist_filter_format をご覧ください。
+
+サンプル値:
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="SearchContentSharingSettings">組み込みの Google AI Mode と Lens とのコンテンツの共有を有効にする</string>
+      <string id="SearchContentSharingSettings_Explain">このポリシーでは、Google Chrome のサイドパネルやタブでページやファイルのコンテンツを Google AI Mode や Lens と共有できるようにするかどうかを制御します。
+
+なお、このポリシーはウェブ上の Google AI Mode には影響しません。このポリシーは、ユーザーが Google Chrome の使用時に情報を共有するかどうかのみを制御します。
+
+0 / 未設定 = ユーザーはページやファイルのコンテンツを Google AI Mode と共有できます。
+
+1 = ユーザーはページやファイルのコンテンツを Google AI Mode と共有できません。コンテキストを共有するためのエントリ ポイントとサイドパネルは無効になるか、非表示になります。
+
+Google Search がユーザーのデフォルトの検索エンジンでない場合、この機能は無効になっているため、このポリシーは無視されます。
+
+このポリシーは、AIModeSettings ポリシーとは関係なく動作します。AIModeSettings ポリシーはアドレスバーまたは新しいタブページの検索ボックスのエントリ ポイントのみを制御し、このポリシーはサイドパネルやタブでのコンテキストの共有を制御します。
+
+また、このポリシーは、GeminiSettings を使用して無効にできる組み込みの Google Gemini にも影響しません。
+
+このポリシーを未設定のままにした場合、動作は GenAiDefaultSettings ポリシーによって決まります。
+
+生成 AI 機能のデータ処理について詳しくは、https://support.google.com/chrome/a?p=generative_ai_settings をご覧ください。</string>
+      <string id="SearchContentSharingSettings_Allowed">組み込みの Google AI Mode とのコンテンツの共有を許可する。</string>
+      <string id="SearchContentSharingSettings_Disabled">組み込みの Google AI Mode とのコンテンツの共有を許可しない。</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">HTTPS 専用モードの有効化を許可する</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>Google Chrome PDF ビューアから Google ドライブに PDF ファイルを保存できる Google アカウントを制限する</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">アイドル状態の検出</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">位置情報をブロックするサイトを指定する</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">アイドル状態の検出を許可するサイト</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">アイドル状態の検出をブロックするサイト</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">正確な位置情報を許可するサイトを指定する</listBox></presentation>
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">ProxyOverrideRules ポリシーを設定できる管理対象ユーザーを制御する。:</decimalTextBox></presentation>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">IP アドレス空間のマッピングをオーバーライドする</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">ローカル ネットワーク エンドポイントへのネットワーク リクエストを許可するサイトを指定する</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">ローカル ネットワーク エンドポイントへのネットワーク リクエストをブロックするサイトを指定する</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">ローカル デバイスへのネットワーク リクエストを許可するサイトを指定する</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">ローカル デバイスへのネットワーク リクエストをブロックするサイトを指定する</listBox></presentation>
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">TLS で特定の暗号化アルゴリズムを優先する</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">TLS で特定の鍵交換アルゴリズムを優先する</dropdownList></presentation>
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">Gemini アプリの統合の直接実行を許可するサイトを指定する</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">Gemini アプリの統合の直接実行をブロックするサイトを指定する</listBox></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">組み込みの Google AI Mode と Lens とのコンテンツの共有を有効にする</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

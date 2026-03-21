@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <policyNamespaces>
+    <target namespace="Google.Policies.Chrome.v143" prefix="chrome"/>
+    <using namespace="Google.Policies" prefix="Google"/>
+    <using namespace="Microsoft.Policies.Windows" prefix="windows"/>
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0"/>
+  <supportedOn>
+    <definitions>
+      <definition displayName="$(string.SUPPORTED_WIN7)" name="SUPPORTED_WIN7" />
+      <definition displayName="$(string.SUPPORTED_WIN7_ONLY)" name="SUPPORTED_WIN7_ONLY" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category displayName="$(string.googlechrome)" name="googlechrome"><parentCategory ref="Google:Cat_Google" /></category>
+    <category displayName="$(string.Extensions_group)" name="Extensions"><parentCategory ref="googlechrome" /></category>
+    <category displayName="$(string.GenerativeAI_group)" name="GenerativeAI"><parentCategory ref="googlechrome" /></category>
+    <category displayName="$(string.LocalNetworkAccessSettings_group)" name="LocalNetworkAccessSettings"><parentCategory ref="googlechrome" /></category>
+  </categories>
+  <policies>
+    <policy class="Both" displayName="$(string.ExtensionForceInstallWithNonMalwareViolationsEnabled)" explainText="$(string.ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain)" key="Software\Policies\Google\Chrome" name="ExtensionForceInstallWithNonMalwareViolationsEnabled" presentation="$(presentation.ExtensionForceInstallWithNonMalwareViolationsEnabled)" valueName="ExtensionForceInstallWithNonMalwareViolationsEnabled"><parentCategory ref="Extensions" /><supportedOn ref="SUPPORTED_WIN7" /><enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue></policy>
+    <policy class="Both" displayName="$(string.GeminiActOnWebSettings)" explainText="$(string.GeminiActOnWebSettings_Explain)" key="Software\Policies\Google\Chrome" name="GeminiActOnWebSettings" presentation="$(presentation.GeminiActOnWebSettings)"><parentCategory ref="GenerativeAI" /><supportedOn ref="SUPPORTED_WIN7" /><elements><enum id="GeminiActOnWebSettings" valueName="GeminiActOnWebSettings"><item displayName="$(string.GeminiActOnWebSettings_Enabled)"><value><decimal value="0" /></value></item><item displayName="$(string.GeminiActOnWebSettings_Disabled)"><value><decimal value="1" /></value></item></enum></elements></policy>
+    <policy class="Both" displayName="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut)" explainText="$(string.LocalNetworkAccessRestrictionsTemporaryOptOut_Explain)" key="Software\Policies\Google\Chrome" name="LocalNetworkAccessRestrictionsTemporaryOptOut" presentation="$(presentation.LocalNetworkAccessRestrictionsTemporaryOptOut)" valueName="LocalNetworkAccessRestrictionsTemporaryOptOut"><parentCategory ref="LocalNetworkAccessSettings" /><supportedOn ref="SUPPORTED_WIN7" /><enabledValue><decimal value="1" /></enabledValue><disabledValue><decimal value="0" /></disabledValue></policy>
+    <policy class="Both" displayName="$(string.DevToolsGoogleDeveloperProgramProfileAvailability)" explainText="$(string.DevToolsGoogleDeveloperProgramProfileAvailability_Explain)" key="Software\Policies\Google\Chrome" name="DevToolsGoogleDeveloperProgramProfileAvailability" presentation="$(presentation.DevToolsGoogleDeveloperProgramProfileAvailability)"><parentCategory ref="googlechrome" /><supportedOn ref="SUPPORTED_WIN7" /><elements><enum id="DevToolsGoogleDeveloperProgramProfileAvailability" valueName="DevToolsGoogleDeveloperProgramProfileAvailability"><item displayName="$(string.DevToolsGoogleDeveloperProgramProfileAvailability_Enabled)"><value><decimal value="0" /></value></item><item displayName="$(string.DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges)"><value><decimal value="1" /></value></item><item displayName="$(string.DevToolsGoogleDeveloperProgramProfileAvailability_Disabled)"><value><decimal value="2" /></value></item></enum></elements></policy>
+  </policies>
+</policyDefinitions>

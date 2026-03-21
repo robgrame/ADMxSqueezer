@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 ou version ultérieure</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Activer les profils Google Developer Program dans Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Cette règle contrôle l'intégration du Google Developer Program à Chrome DevTools. Le profil Google Developer Program de l'utilisateur s'affiche dans Chrome DevTools, et les utilisateurs reçoivent des badges lorsqu'ils effectuent des actions spécifiques dans Chrome DevTools.
+
+Si la règle est définie sur 0 (activée) ou si aucune valeur n'est définie pour la règle, l'intégration du Google Developer Program à Chrome DevTools est autorisée, et l'utilisation des Chrome DevTools peut être partagée afin de pouvoir attribuer des badges.
+
+Si la règle est définie sur 1 (activée sans badges), l'intégration du Google Developer Program à Chrome DevTools est autorisée, mais le partage de l'utilisation des Chrome DevTools avec le Google Developer Program ne l'est pas. Aucun badge ne sera attribué.
+
+Si la règle est définie sur 2 (désactivée), l'intégration du Google Developer Program à Chrome DevTools n'est pas autorisée.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Activer l'intégration du Google Developer Program dans Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Activer l'intégration du Google Developer Program dans Chrome DevTools, mais sans partager l'utilisation de l'outil (pour l'attribution de badges).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Ne pas activer l'intégration du Google Developer Program dans Chrome DevTools.</string>
+      <string id="Extensions_group">Extensions</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Activer les extensions installées d'office qui présentent des infractions non liées à des logiciels malveillants</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Détermine si les extensions supprimées en raison d'infractions non liées à des logiciels malveillants peuvent toujours être installées d'office dans des environnements de faible confiance.
+
+Pour en savoir plus sur les infractions non liées à des logiciels malveillants et les suppressions, consultez https://developer.chrome.com/docs/webstore/review-process#warning.
+
+Une fois l'infraction non liée à un logiciel malveillant résolue, l'extension restera activée et ne pourra pas être désactivée ni supprimée.
+
+Sous Microsoft® Windows®, cette règle n'est pas disponible sur les instances associées à un domaine Microsoft® Active Directory®, à Microsoft® Azure® Active Directory® ou qui bénéficient de la Chrome Enterprise Core.
+
+Sous macOS, cette règle n'est pas disponible sur les instances gérées via MDM, associées à un domaine via MCX ou qui bénéficient de la Chrome Enterprise Core.
+
+Les extensions installées d'office qui présentent des infractions non liées à des logiciels malveillants resteront activées sur ces instances.
+
+Actuellement, une extension installée d'office qui présente des infractions non liées à des logiciels malveillants reste installée et activée dans Chrome.
+
+Si cette règle est activée, les extensions installées d'office se comporteront de la même manière (autrement dit, elles resteront activées), quelles que soient les infractions non liées à des logiciels malveillants.
+
+Si cette règle est désactivée ou n'est pas configurée, les extensions installées d'office qui présentent des infractions non liées à des logiciels malveillants seront désactivées.
+
+Cette règle sera disponible pendant trois versions intermédiaires.</string>
+      <string id="GenerativeAI_group">IA générative</string>
+      <string id="GeminiActOnWebSettings">Autorise les intégrations de l'appli Gemini à agir directement sur les pages Web</string>
+      <string id="GeminiActOnWebSettings_Explain">Détermine si l'appli Gemini est autorisée à effectuer des actions sur les pages Web au nom de l'utilisateur.
+
+0/Non définie = L'appli Gemini est autorisée à effectuer des actions sur les pages Web.
+
+1 = L'appli Gemini n'est pas autorisée à effectuer des actions sur les pages Web.
+
+Cette règle n'a aucun effet lorsque l'appli Gemini est désactivée. Par exemple, l'appli Gemini peut être désactivée par la règle GeminiSettings.
+
+Pour en savoir plus sur Gemini dans Chrome, veuillez consulter https://support.google.com/chrome/a/answer/16291696.
+
+L'activation de Gemini n'est pas disponible dans tous les pays ni dans toutes les langues. La configuration de cette règle ne garantit pas que la fonctionnalité sera activée. Elle reste soumise à disponibilité. Pour en savoir plus sur le déploiement, consultez les notes de version Enterprise : https://support.google.com/chrome/a/answer/7679408?hl=fr</string>
+      <string id="GeminiActOnWebSettings_Enabled">Autoriser l'appli Gemini à effectuer des actions sur les pages Web.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Interdire à l'appli Gemini d'effectuer des actions sur les pages Web.</string>
+      <string id="LocalNetworkAccessSettings_group">Paramètres d'accès au réseau local</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Indique si les restrictions d'accès au réseau local doivent être (temporairement) désactivées</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Si cette règle est activée, les requêtes Local Network Access n'afficheront des avertissements dans Chrome DevTools qu'en cas d'échec des vérifications Local Network Access.
+
+Si cette règle est désactivée ou n'est pas configurée, les requêtes Local Network Access utiliseront le traitement par défaut.
+
+Pour connaître les restrictions concernant Local Network Access, consultez https://wicg.github.io/local-network-access/.
+
+Cette règle d'entreprise est temporaire et sera supprimée après M146.
+
+À long terme, la règle LocalNetworkAccessAllowedForUrls peut être utilisée pour ajouter à la liste d'autorisation les formats d'URL auxquels l'autorisation Local Network Access doit être automatiquement accordée.
+
+Notez que si la règle LocalNetworkAccessRestrictionsEnabled est activée, elle prévaut sur cette règle.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Activer les profils Google Developer Program dans Chrome DevTools</dropdownList></presentation>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Autorise les intégrations de l'appli Gemini à agir directement sur les pages Web</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

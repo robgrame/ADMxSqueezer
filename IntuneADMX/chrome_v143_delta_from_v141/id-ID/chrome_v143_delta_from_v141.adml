@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 atau lebih baru</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="GenerativeAI_group">AI Generatif</string>
+      <string id="GeminiActOnWebSettings">Mengizinkan integrasi aplikasi Gemini untuk langsung bertindak di halaman web</string>
+      <string id="GeminiActOnWebSettings_Explain">Mengontrol apakah aplikasi Gemini diizinkan untuk mengambil tindakan di halaman web atas nama pengguna.
+
+0/tidak disetel = Aplikasi Gemini diizinkan untuk mengambil tindakan di halaman web.
+
+1 = Aplikasi Gemini tidak diizinkan untuk mengambil tindakan di halaman web.
+
+Kebijakan ini tidak akan berpengaruh jika aplikasi Gemini dinonaktifkan. Misalnya, aplikasi Gemini dapat dinonaktifkan oleh kebijakan GeminiSettings.
+
+Untuk mengetahui informasi selengkapnya tentang Gemini di Chrome, lihat https://support.google.com/chrome/a/answer/16291696.
+
+Aktivasi Gemini hanya tersedia di negara atau bahasa tertentu. Menyetel kebijakan ini tidak menjamin fitur akan diaktifkan; fitur tetap bergantung pada ketersediaan. Untuk mengetahui info selengkapnya tentang peluncuran, baca Catatan Rilis Enterprise: https://support.google.com/chrome/a/answer/7679408?hl=id</string>
+      <string id="GeminiActOnWebSettings_Enabled">Izinkan aplikasi Gemini melakukan tindakan di halaman web.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Jangan izinkan aplikasi Gemini mengambil tindakan di halaman web.</string>
+      <string id="Extensions_group">Ekstensi</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Aktifkan Ekstensi yang Diinstal Otomatis dengan Pelanggaran Non-Malware</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Mengontrol apakah ekstensi yang dihapus karena pelanggaran non-malware masih dapat diinstal otomatis di lingkungan dengan tingkat kepercayaan rendah.
+
+Informasi selengkapnya tentang pelanggaran non-malware dan penghapusan dapat ditemukan di sini. https://developer.chrome.com/docs/webstore/review-process#warning
+
+Setelah pelanggaran non-malware diselesaikan, ekstensi akan tetap diaktifkan dan tidak dapat dinonaktifkan atau dihapus.
+
+Di Microsoft® Windows®, kebijakan ini tidak tersedia pada instance yang dihubungkan ke domain Microsoft® Active Directory®, dihubungkan ke Microsoft® Azure® Active Directory® atau didaftarkan di Chrome Enterprise Core`.
+
+Di macOS, kebijakan ini tidak tersedia pada instance yang dikelola melalui MDM, dihubungkan ke domain melalui MCX, atau didaftarkan di Chrome Enterprise Core.
+
+Ekstensi yang diinstal otomatis dengan pelanggaran non-malware akan tetap diaktifkan dalam kasus ini.
+
+Saat ini, ekstensi yang diinstal otomatis dengan pelanggaran non-malware tetap diinstal dan diaktifkan di Chrome.
+
+Jika kebijakan ini disetel ke Aktif, ekstensi yang diinstal otomatis akan berperilaku sama (yaitu, tetap diaktifkan) terlepas dari pelanggaran non-malware.
+
+Jika kebijakan disetel ke Nonaktif atau tidak disetel, ekstensi yang diinstal otomatis dengan pelanggaran non-malware akan dinonaktifkan.
+
+Kebijakan ini akan tersedia dalam 3 versi.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Aktifkan Profil Google Developer Program di Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Kebijakan ini mengontrol integrasi Google Developer Program dengan Chrome DevTools. Profil Google Developer Program pengguna ditampilkan di Chrome DevTools, dan pengguna menerima badge karena melakukan tindakan tertentu dalam Chrome DevTools.
+
+Jika kebijakan ini disetel ke 0 - 'Diaktifkan', atau jika nilai kebijakan tidak disetel, integrasi Google Developer Program dengan Chrome DevTools akan diizinkan, dan penggunaan alat Chrome DevTools akan diizinkan untuk dibagikan agar badge dapat diberikan.
+
+Jika kebijakan ini disetel ke 1 - 'Diaktifkan tanpa badge', integrasi Google Developer Program dengan Chrome DevTools akan diizinkan, tetapi penggunaan alat Chrome DevTools tidak akan dapat dibagikan ke Google Developer Program. Tidak ada badge yang akan diberikan.
+
+Jika kebijakan ini disetel ke 2 - 'Nonaktif', integrasi Google Developer Program dengan Chrome DevTools tidak akan diizinkan.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Aktifkan integrasi Google Developer Program di Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Aktifkan integrasi Google Developer Program di Chrome DevTools, tetapi tanpa membagikan penggunaan alat (untuk pemberian badge).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Jangan aktifkan integrasi Google Developer Program di Chrome DevTools.</string>
+      <string id="LocalNetworkAccessSettings_group">Setelan Akses Jaringan Lokal</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Menentukan apakah akan (sementara) menonaktifkan pembatasan Akses Jaringan Lokal</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Jika kebijakan ini disetel ke Aktif, permintaan Local Network Access
+hanya akan menampilkan peringatan di Chrome DevTools karena pemeriksaan Local Network Access gagal.
+
+Jika kebijakan ini disetel ke Nonaktif atau tidak disetel, permintaan Local Network Access akan menggunakan
+penanganan default untuk permintaan ini.
+
+Lihat https://wicg.github.io/local-network-access/ untuk melihat batasan Local Network Access.
+
+Kebijakan perusahaan ini bersifat sementara, dan akan dihapus setelah M146.
+
+Dalam jangka panjang, kebijakan LocalNetworkAccessAllowedForUrls
+dapat digunakan untuk memasukkan pola URL ke daftar yang diizinkan yang harus otomatis diberikan
+izin Local Network Access.
+
+Perhatikan bahwa jika kebijakan LocalNetworkAccessRestrictionsEnabled
+disetel ke aktif, kebijakan tersebut akan lebih diprioritaskan daripada kebijakan ini.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Mengizinkan integrasi aplikasi Gemini untuk langsung bertindak di halaman web</dropdownList></presentation>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Aktifkan Profil Google Developer Program di Chrome DevTools</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

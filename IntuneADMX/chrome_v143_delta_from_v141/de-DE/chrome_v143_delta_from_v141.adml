@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 oder höher</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="LocalNetworkAccessSettings_group">Einstellungen für den Zugriff auf das lokale Netzwerk</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Legt fest, ob Einschränkungen für den Zugriff auf das lokale Netzwerk (vorübergehend) deaktiviert werden sollen</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Wenn diese Richtlinie aktiviert ist, werden bei Anfragen vom Typ „Local Network Access“ in den Chrome DevTools nur Warnungen aufgrund fehlgeschlagener „Local Network Access“-Prüfungen angezeigt.
+
+Ist diese Richtlinie deaktiviert oder nicht konfiguriert, werden Anfragen vom Typ „Local Network Access“ gemäß dem standardmäßigen Verarbeitungsprozess für diesen Anfragetyp verarbeitet.
+
+Informationen zu Einschränkungen für den Local Network Access findest du unter https://wicg.github.io/local-network-access/.
+
+Diese Unternehmensrichtlinie ist nur vorübergehend verfügbar und wird nach M146 entfernt.
+
+Langfristig kann die Richtlinie „LocalNetworkAccessAllowedForUrls“ verwendet werden, um URL-Muster auf die Zulassungsliste zu setzen, für die automatisch die Berechtigung „Local Network Access“ gewährt werden soll.
+
+Wenn die Richtlinie „LocalNetworkAccessRestrictionsEnabled“ aktiviert ist, hat sie Vorrang vor dieser Richtlinie.</string>
+      <string id="Extensions_group">Erweiterungen</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Erweiterungen mit erzwungener Installation und Verstößen, bei denen es nicht um Malware geht, aktivieren</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Mit dieser Richtlinie kann festgelegt werden, ob die Installation von Erweiterungen, die aufgrund von Verstößen, bei denen es nicht um Malware geht, entfernt wurden, in Umgebungen mit geringem Vertrauensgrad weiterhin erzwungen werden kann.
+
+Weitere Informationen zu Verstößen, bei denen es nicht um Malware geht, und zur Entfernung findest du hier: https://developer.chrome.com/docs/webstore/review-process#warning
+
+Sobald ein Verstoß, bei dem es nicht um Malware geht, behoben wurde, bleibt die Erweiterung aktiviert und kann nicht deaktiviert oder entfernt werden.
+
+Unter Microsoft® Windows® steht diese Richtlinie nur bei Instanzen zur Verfügung, die Teil einer Microsoft® Active Directory®-Domain oder von Microsoft® Azure® Active Directory® sind oder die in Chrome Enterprise Core angemeldet sind.
+
+Unter macOS steht diese Richtlinie nur bei Instanzen zur Verfügung, die über die Mobilgeräteverwaltung verwaltet werden, die über MCX Teil einer Domain sind oder die in Chrome Enterprise Core angemeldet sind.
+
+Erweiterungen mit erzwungener Installation und Verstößen, bei denen es nicht um Malware geht, bleiben in diesen Fällen aktiviert.
+
+Momentan bleibt eine Erweiterung mit erzwungener Installation und Verstößen, bei denen es nicht um Malware geht, in Chrome installiert und aktiviert.
+
+Wenn die Richtlinie aktiviert ist, verhalten sich Erweiterungen mit erzwungener Installation unabhängig von Verstößen, bei denen es nicht um Malware geht, gleich (d. h. sie bleiben aktiviert).
+
+Wenn die Richtlinie deaktiviert oder nicht konfiguriert ist, werden Erweiterungen mit erzwungener Installation und Verstößen, bei denen es nicht um Malware geht, deaktiviert.
+
+Diese Richtlinie ist für 3 Meilensteine verfügbar.</string>
+      <string id="GenerativeAI_group">Generative KI</string>
+      <string id="GeminiActOnWebSettings">Ermöglicht es Gemini-App-Integrationen, Aktionen direkt auf Webseiten auszuführen</string>
+      <string id="GeminiActOnWebSettings_Explain">Diese Richtlinie legt fest, ob die Gemini App im Namen des Nutzers Aktionen auf Webseiten ausführen darf.
+
+0 / nicht festgelegt = Die Gemini App darf Aktionen auf Webseiten ausführen.
+
+1 = Die Gemini App darf keine Aktionen auf Webseiten ausführen.
+
+Diese Richtlinie hat keine Auswirkungen, wenn die Gemini App deaktiviert ist. Beispielsweise kann die Gemini App durch die Richtlinie „GeminiSettings“ deaktiviert werden.
+
+Unter https://support.google.com/chrome/a/answer/16291696 findest du weitere Informationen zu Gemini in Chrome.
+
+Gemini kann nicht in allen Ländern und Sprachen Aktionen ausführen. Auch wenn du diese Richtlinie festlegst, kann die Funktion möglicherweise nicht aktiviert werden, da sie von der Verfügbarkeit abhängig ist. Weitere Informationen zur Einführung der Funktion findest du in den Versionshinweisen für Chrome Enterprise: https://support.google.com/chrome/a/answer/7679408?</string>
+      <string id="GeminiActOnWebSettings_Enabled">Zulassen, dass die Gemini App Aktionen auf Webseiten ausführt.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Nicht zulassen, dass die Gemini App Aktionen auf Webseiten ausführt.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Google Developer Program-Profile in „Chrome DevTools“ aktivieren</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Mit dieser Richtlinie wird die Einbindung des Google Developer Program in „Chrome DevTools“ gesteuert. Das Google Developer Program-Profil des Nutzers wird in „Chrome DevTools“ angezeigt und Nutzer erhalten Logos für die Ausführung bestimmter Aktionen in „Chrome DevTools“.
+
+Wenn die Richtlinie auf „0“ (Aktiviert) festgelegt oder kein Richtlinienwert festgelegt wird, ist die Einbindung des Google Developer Program in „Chrome DevTools“ möglich und die Nutzung des Tools „Chrome DevTools“ wird freigegeben, damit Logos vergeben werden können.
+
+Wenn die Richtlinie auf „1“ (Aktiviert ohne Logos) festgelegt wird, ist die Einbindung des Google Developer Program in „Chrome DevTools“ möglich, aber die Nutzung des Tools „Chrome DevTools“ wird für das Google Developer Program nicht freigegeben. Es werden keine Logos vergeben.
+
+Wenn die Richtlinie auf „2“ (Deaktiviert) festgelegt wird, ist die Einbindung des Google Developer Program in „Chrome DevTools“ nicht möglich.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Einbindung des Google Developer Program in „Chrome DevTools“ aktivieren.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Einbindung des Google Developer Program in „Chrome DevTools“ aktivieren, jedoch ohne die Nutzung von Tools freizugeben (zur Vergabe von Logos).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Einbindung des Google Developer Program in „Chrome DevTools“ nicht aktivieren.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Ermöglicht es Gemini-App-Integrationen, Aktionen direkt auf Webseiten auszuführen</dropdownList></presentation>
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Google Developer Program-Profile in „Chrome DevTools“ aktivieren</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

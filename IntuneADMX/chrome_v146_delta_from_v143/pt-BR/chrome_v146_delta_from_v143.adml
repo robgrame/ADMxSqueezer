@@ -1,0 +1,400 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v143-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 ou versão posterior</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - Configurações padrão (podem ser substituídas pelos usuários)</string>
+      <string id="LocalNetworkAccessSettings_group">Configurações de acesso à rede local</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">Substituir mapeamentos de espaço de endereço IP</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">A política pode ser usada para tratar determinados intervalos de endereços internos como "públicos" e, portanto, não sujeitos a verificações de Local Network Access. Da mesma maneira, pode ser usada para tratar determinados intervalos de endereços públicos com possível uso interno como endereços "locais" para que fiquem protegidos por verificações de Local Network Access.
+
+As substituições de espaço de endereço IP têm duas formas:
+
+[cidr]=[public|local|loopback]
+
+Nesta, [cidr] é um intervalo de endereço IP na notação CIDR (consulte a seção 3.1 de https://tools.ietf.org/html/rfc4632 para IPv4 e a seção 2.3 de https://tools.ietf.org/html/rfc4291 para IPv6). Endereços IPv6 precisam ser especificados em formato seguro para URL (entre colchetes). As substituições de CIDR se aplicam a todas as portas.
+
+ou
+
+[ip-address]:[port]=[public|local|loopback]
+
+Para saber mais sobre o Local Network Access, consulte https://wicg.github.io/local-network-access/ e https://developer.chrome.com/blog/local-network-access.
+
+Esta política não é compatível com atualização dinâmica.
+
+As substituições da chave de linha de comando --ip-address-space-overrides têm precedência sobre as definidas por esta política.
+
+Exemplo de valor:
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">Permitir que subframes sem delegação explícita solicitem acesso à rede local (LNA)</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">Por padrão, as permissões de acesso à rede local (LNA) só podem ser solicitadas em subframes de origem cruzada quando há delegação explícita. Esta política pode ser usada para substituir o comportamento padrão, porque ela transmite automaticamente para os subframes as permissões de LNA, a menos que sejam explicitamente negadas na política de permissões.
+
+Se a política estiver ativada, os subframes recebem por padrão todas as permissões de LNA e podem fazer solicitações à rede local, o que aciona o aviso de permissão.
+
+Se a política estiver desativada ou sem uma configuração definida, os subframes precisarão receber a delegação explícita da permissão para fazer solicitações à rede local e acionar o comando de permissão.
+
+Esta política se aplica aos recursos da política de permissões "local-network-access", "loopback-network" e "local-network".
+
+Para mais informações sobre o acesso à rede local, consulte https://wicg.github.io/local-network-access/ (em inglês) e https://developer.chrome.com/blog/local-network-access?hl=pt-br.
+
+Para mais informações sobre a política de permissões, consulte https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy (em inglês).</string>
+      <string id="LocalNetworkAllowedForUrls">Permitir que sites façam solicitações de rede para endpoints da rede local.</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">Lista de padrões de URL. Solicitações de rede iniciadas em sites que têm as mesmas origens dos endpoints da rede local não estão sujeitas a verificações de Local Network Access.
+
+Se as origens não corresponderem aos padrões especificados aqui, a configuração pessoal do usuário será aplicada.
+
+Para saber mais sobre padrões de URL válidos, acesse https://chromeenterprise.google/policies/url-patterns/.
+
+Consulte as restrições de Local Network Access em https://wicg.github.io/local-network-access/ (em inglês).
+
+Várias políticas listam origens que afetam as solicitações para endpoints da rede local. Se mais de uma das políticas abaixo estiver associada à origem, elas serão aplicadas nesta ordem:
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Exemplo de valor:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">Impedir que sites façam solicitações de rede para endpoints da rede local.</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">Lista de padrões de URL. Solicitações de rede iniciadas em sites que têm as mesmas origens dos endpoints da rede local são bloqueadas e não podem pedirLocal Network Access.
+
+Se as origens não corresponderem aos padrões especificados aqui, a configuração pessoal do usuário será aplicada.
+
+Para saber mais sobre padrões de URL válidos, acesse https://chromeenterprise.google/policies/url-patterns/.
+
+Consulte as restrições de Local Network Access em https://wicg.github.io/local-network-access/ (em inglês).
+
+Várias políticas listam origens que afetam as solicitações para endpoints da rede local. Se mais de uma das políticas abaixo estiver associada à origem, elas serão aplicadas nesta ordem:
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Exemplo de valor:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">Permitir que sites façam solicitações de rede para o dispositivo local.</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">Lista de padrões de URL. Solicitações de rede iniciadas em sites que têm as mesmas origens do dispositivo local não estão sujeitas a verificações de Local Network Access.
+
+Se as origens não corresponderem aos padrões especificados aqui, a configuração pessoal do usuário será aplicada.
+
+Para saber mais sobre padrões de URL válidos, acesse https://chromeenterprise.google/policies/url-patterns/.
+
+Consulte as restrições de Local Network Access em https://wicg.github.io/local-network-access/ (em inglês).
+
+Várias políticas listam origens que afetam as solicitações enviadas para o dispositivo local. Se mais de uma das políticas abaixo estiver associada à origem, elas serão aplicadas nesta ordem:
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Exemplo de valor:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">Impedir que sites façam solicitações de rede para o dispositivo local.</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">Lista de padrões de URL. Solicitações de rede iniciadas em sites que têm as mesmas origens do dispositivo local são bloqueadas e não podem pedir Local Network Access.
+
+Se as origens não corresponderem aos padrões especificados aqui, a configuração pessoal do usuário será aplicada.
+
+Para saber mais sobre padrões de URL válidos, acesse https://chromeenterprise.google/policies/url-patterns/.
+
+Consulte as restrições de Local Network Access em https://wicg.github.io/local-network-access/ (em inglês).
+
+Várias políticas listam origens que afetam as solicitações enviadas para o dispositivo local. Se mais de uma das políticas abaixo estiver associada à origem, elas serão aplicadas nesta ordem:
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Exemplo de valor:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="ContentSettings_group">Configurações de conteúdo</string>
+      <string id="DefaultIdleDetectionSetting">Configuração padrão de detecção de inatividade</string>
+      <string id="DefaultIdleDetectionSetting_Explain">Permite definir se os sites têm permissão para usar a API Idle Detection.
+
+Quando essa política é definida como 1 (AllowIdleDetection), os sites podem usar a API sem a permissão ao usuário.
+
+Quando ela é definida como 2 (BlockIdleDetection), os sites não podem usar a API, independentemente da permissão do usuário.
+
+Quando ela é definida como 3 (AskIdleDetection) ou deixada sem definição, os sites não podem usar a API sem a permissão do usuário.</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">Permitir que sites detectem o estado de inatividade sem pedir permissão ao usuário</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">Não permitir que sites detectem o estado de inatividade do usuário</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">Perguntar sempre que um site quiser detectar o estado de inatividade do usuário</string>
+      <string id="GeolocationBlockedForUrls">Bloquear a geolocalização nestes sites</string>
+      <string id="GeolocationBlockedForUrls_Explain">Se a política for definida, será possível configurar uma lista de padrões de URL que especifica os sites que não têm permissão para acessar a geolocalização do usuário e também não podem pedir permissão do usuário para fazer isso.
+
+Se a política não for definida, DefaultGeolocationSetting será aplicada a todos os sites, se estiver definida. Caso contrário, a configuração pessoal do usuário será aplicada.
+
+Para informações detalhadas sobre padrões de url válidos, consulte https://chromeenterprise.google/policies/url-patterns. Caracteres curinga (*) são permitidos.
+
+Exemplo de valor:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">Permitir a detecção de inatividade nestes sites</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">Permite definir uma lista de padrões de URL que especificam os sites que podem usar a API Idle Detection sem pedir permissão ao usuário. As entradas da lista de bloqueio têm mais prioridade do que as entradas da lista de permissões, que têm menos prioridade do que o valor padrão configurado.
+
+Para saber mais sobre padrões de URL válidos, consulte https://chromeenterprise.google/policies/url-patterns. Caracteres curinga (*) são permitidos. A política só faz a correspondência de origens, então os caminhos no padrão do URL serão ignorados.
+
+Se essa política não for definida, o valor padrão global será usado para todos os sites, o que é definido pela configuração pessoal do usuário ou pela política DefaultIdleDetectionSetting (Configuração padrão de detecção de inatividade), se ela for definida.
+
+Exemplo de valor:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">Bloquear a detecção de inatividade nestes sites</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">Permite definir uma lista de padrões de URL que especificam os sites que não têm permissão para usar a API Idle Detection.
+
+Para saber mais sobre padrões de URL válidos, consulte https://chromeenterprise.google/policies/url-patterns. Caracteres curinga (*) são permitidos. A política só faz a correspondência de origens, então os caminhos no padrão do URL serão ignorados.
+
+Se essa política não for definida, o valor padrão global será usado para todos os sites, o que é definido pela configuração pessoal do usuário ou pela política DefaultIdleDetectionSetting (Configuração padrão de detecção de inatividade), se ela for definida.
+
+Exemplo de valor:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">Permitir a geolocalização exata nestes sites</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">Se a política for definida, será possível configurar uma lista de padrões de URL que especifica os sites que podem acessar a geolocalização de alta precisão do usuário sem precisar pedir permissão para isso.
+
+Se a política ficar sem definição, DefaultGeolocationSetting será aplicada a todos os sites, se estiver definida. Caso contrário, a configuração pessoal do usuário será aplicada.
+
+Para informações detalhadas sobre padrões de url válidos, consulte https://chromeenterprise.google/policies/url-patterns. Caracteres curinga (*) são permitidos.
+
+Exemplo de valor:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="CacheEncryptionEnabled">Com esta política, os administradores podem criptografar o cache HTTP no disco.</string>
+      <string id="CacheEncryptionEnabled_Explain">Esta política permite que os administradores criptografem o cache http do navegador no disco.
+
+Quando esta política está ativada, o cache do navegador é criptografado.
+
+Quando esta política está desativada ou não é definida, o cache do navegador não é criptografado.
+
+A criptografia do cache do navegador pode afetar o desempenho.</string>
+      <string id="ForceForegroundPriorityForAllTabs">Forçar a prioridade de primeiro plano para todas as guias</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">Esta política define se o conteúdo da web em segundo plano é forçado a ser executado com prioridade de primeiro plano.
+
+Por padrão, o navegador reduz a prioridade das guias em segundo plano para otimizar recursos. Ativar esta política mudará o comportamento padrão, e as guias em segundo plano serão processadas da mesma forma que a guia ativa.
+
+Forçar a priorização do conteúdo em segundo plano pode afetar a capacidade de resposta da guia ativa.
+
+Se esta política estiver ativada, todo o conteúdo da web será executado com prioridade de primeiro plano, mesmo que esteja em outra guia.
+
+Se esta política estiver desativada ou sem uma configuração definida, o navegador determinará a prioridade de forma prática (por exemplo, desconsiderando conteúdo que não esteja visível, reproduzindo áudio ou sendo usado em videochamadas).</string>
+      <string id="HttpsOnlyMode">Permitir que o HTTPS-Only Mode seja ativado</string>
+      <string id="HttpsOnlyMode_Explain">Esta política controla se os usuários podem ativar o modo somente HTTPS (Sempre usar conexões seguras) nas Configurações. O modo somente HTTPS faz upgrade de todas as navegações para HTTPS.
+
+Se esta configuração for deixada sem definição ou definida como "permitida", os usuários poderão ativar o modo somente HTTPS.
+
+Se ela for definida como "não permitida", o modo somente HTTPS será desativado.
+
+Se ela for definida como "force_enabled", o modo somente HTTPS será ativado no modo estrito.
+
+Se ela for definida como "force_balanced_enabled", o modo somente HTTPS será ativado no modo equilibrado.
+
+A opção "force_enabled" está disponível a partir da versão M112, enquanto "force_balanced_enabled" está disponível a partir da M129.
+
+Também é possível recomendar "force_enabled" e "force_balanced_enabled" aos usuários.
+Inicialmente, o modo somente HTTPS será definido como "estrito" ou "equilibrado", mas os usuários poderão
+mudar a configuração.
+
+Se você definir essa política para um valor que não é compatível com a versão do Chrome que a recebe, o navegador vai usar a configuração permitida por padrão.
+
+A política HttpAllowlist separada
+pode ser usada para evitar que determinados nomes de host ou padrões de nome do host sejam
+atualizados para HTTPS por esse recurso.
+
+Exemplo de valor: disallowed</string>
+      <string id="HttpsOnlyMode_allowed">Não restringir a configuração do modo somente HTTPS</string>
+      <string id="HttpsOnlyMode_disallowed">Desativar o modo somente HTTPS</string>
+      <string id="HttpsOnlyMode_force_enabled">Ativar o modo somente HTTPS no modo estrito</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">Ativar o modo somente HTTPS no modo equilibrado</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">Restringir contas do Google qualificadas para salvar arquivos PDF no Google Drive pelo visualizador de PDF do Google Chrome</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">Contém uma expressão regular para determinar as contas do Google qualificadas para salvar arquivos PDF no Google Drive pelo visualizador de PDF do Google Chrome.
+
+Uma mensagem de erro será exibida se um usuário tentar fazer upload de um arquivo PDF para o Google Drive usando uma conta que não corresponda a esse padrão.
+
+Se esta política não for definida ou for deixada em branco, o usuário poderá usar qualquer Conta do Google para salvar arquivos PDF no Google Drive.
+
+Exemplo de valor: .*@example\.com</string>
+      <string id="SilentPrintingEnabled">Ativar impressão silenciosa</string>
+      <string id="SilentPrintingEnabled_Explain">Se a política for definida como true, a impressão silenciosa será ativada. Isso fecha imediatamente
+a janela de visualização de impressão quando ela é aberta e usa a impressora padrão com
+as opções padrão. Se a opção de impressão padrão for "Salvar como PDF", o arquivo será
+salvo na pasta "Downloads".
+
+Se esta política não for definida ou for definida como false, a impressão silenciosa será desativada.
+Assim, a janela de visualização de impressão não será fechada automaticamente e vai exigir
+que uma seleção seja feita como de costume.</string>
+      <string id="StaticStorageQuotaEnabled">Controlar se as APIs de cota de armazenamento vão retornar valores estáticos</string>
+      <string id="StaticStorageQuotaEnabled_Explain">Quando ativadas, as APIs de cota de armazenamento vão retornar um valor estático igual ao uso e mais um mínimo de 10 GiB de disco, arredondado para o próximo 1 GiB.
+Quando desativadas, as APIs de cota de armazenamento geralmente vão retornar um valor dinâmico proporcional ao espaço total disponível no dispositivo, não importando o uso.
+Se forem deixadas sem definição, as APIs de cota de armazenamento vão usar o comportamento padrão do Chrome.
+Os sites com permissões de armazenamento ilimitado não são afetados por essa configuração. A cota obrigatória também não é impactada.</string>
+      <string id="WebAppInstallByUserEnabled">Permitir instalação de apps da web pelo navegador</string>
+      <string id="WebAppInstallByUserEnabled_Explain">Esta política controla se os usuários podem instalar apps da web pelo navegador.
+Se ela for ativada ou não for configurada, os usuários poderão instalar apps da web pelo navegador.
+Se ela for desativada, não vai permitir que os usuários instalem apps da web, e o tipo de dado "Apps" será excluído da sincronização para o Chrome Sync.
+A política não tem atualização dinâmica. Qualquer alteração, seja para ativar, desativar ou não definir a política só vai entrar em vigor depois que o navegador for reiniciado.
+Esta política não afeta a "WebAppInstallForceList".</string>
+      <string id="XSLTEnabled">Controlar a disponibilidade do recurso XSLT</string>
+      <string id="XSLTEnabled_Explain">Política que controla a disponibilidade do recurso XSLT (a API JavaScript XSLTProcessor e a instrução de processamento XSL).
+Quando ela é ativada, o XSLT fica disponível, mesmo que esteja desativado por padrão no navegador.
+Quando ela é desativada, o XSLT fica indisponível, mesmo que esteja ativado por padrão no navegador.
+Se a política não for configurada, a disponibilidade do XSLT será definida pelas configurações padrão do navegador e pelos testes de campo.
+Esta política é uma medida temporária e será removida na versão M164.</string>
+      <string id="GenerativeAI_group">IA generativa</string>
+      <string id="GeminiActOnWebAllowedForURLs">Permitir que integrações do app do Gemini ajam diretamente em sites especificados</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">Permite definir uma lista de padrões de URL que especificam sites em que integrações do app Gemini podem agir diretamente em páginas da web.
+
+Os URLs que não correspondem à lista de permissões nem à lista de bloqueio usam GeminiActOnWebSettings.
+
+Os URLs que correspondem à lista de permissões e à lista de bloqueio são permitidos.
+
+Encontre informações detalhadas sobre padrões do URL válidos em https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Exemplo de valor:
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">Bloquear a ação direta de integrações do app do Gemini em sites especificados</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">Permite definir uma lista de padrões do URL que especificam sites em que integrações do app Gemini não podem agir diretamente em páginas da web.
+
+Os URLs que não correspondem à lista de permissões nem à lista de bloqueio usam GeminiActOnWebSettings.
+
+Os URLs que correspondem à lista de permissões e à lista de bloqueio são permitidos.
+
+Encontre informações detalhadas sobre padrões do URL válidos em https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Exemplo de valor:
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="SearchContentSharingSettings">Ativar o compartilhamento de conteúdo com integrações do Google AI Mode e do Lens</string>
+      <string id="SearchContentSharingSettings_Explain">Política que controla o compartilhamento do conteúdo de páginas e arquivos com o Google AI Mode e o Lens pelo painel lateral ou pelas guias do Google Chrome.
+
+Ela não afeta o Google AI Mode na web. Esta política só controla como os usuários podem compartilhar informações com esse recurso quando usarem o Google Chrome.
+
+Se ela for definida como "0" ou não for configurada, os usuários poderão compartilhar o conteúdo de páginas ou arquivos com o Google AI Mode.
+
+Se ela for definida como "1", os usuários não poderão compartilhar o conteúdo de páginas ou arquivos com o Google AI Mode. Os pontos de entrada para compartilhamento de contexto e o painel lateral serão desativados ou ocultados.
+
+Esta política será ignorada quando o Google Search não for o mecanismo de pesquisa padrão dos usuários, já que o recurso está desativado.
+
+Ela é independente da política AIModeSettings. A política AIModeSettings controla apenas os pontos de entrada na caixa de pesquisa da omnibox ou da página "Nova guia". Já esta política controla o compartilhamento de contexto pelo painel lateral ou pelas guias.
+
+Além disso, esta política não controla a integração do Google Gemini, que pode ser desativada pela GeminiSettings.
+
+Se esta política não for definida, o comportamento dela será determinado pela política GenAiDefaultSettings.
+
+Para mais informações sobre como tratar dados de recursos de IA generativa, consulte https://support.google.com/chrome/a?p=generative_ai_settings.</string>
+      <string id="SearchContentSharingSettings_Allowed">Permitir o compartilhamento de conteúdo com integrações do Google AI Mode.</string>
+      <string id="SearchContentSharingSettings_Disabled">Não permitir o compartilhamento de conteúdo com integrações do Google AI Mode.</string>
+      <string id="CryptographyCompliance_group">Políticas de compliance de criptografia</string>
+      <string id="PreferSlowCiphers">Preferir algoritmos de criptografia específicos para TLS</string>
+      <string id="PreferSlowCiphers_Explain">Esta política configura o Google Chrome de modo que o produto ordene as criptografias no TLS 1.3 para refletir uma preferência por algoritmos que foram aprovados por um regime de compliance específico.
+
+A definição desta política não garante que algoritmos específicos sejam negociados.
+
+Esta política existe para permitir que operadores de servidores que querem oferecer suporte a clientes com e sem requisitos de compliance façam a diferenciação entre esses clientes e usem apenas determinados algoritmos não padrão com maior força criptográfica para aqueles que os preferem explicitamente.
+
+Definir a política como "cnsa" configura o Google Chrome para preferir cifras necessárias para a compliance com as versões 1.0 e 2.0 do Commercial National Security Algorithm Suite (CNSA 1.0 e 2.0), um conjunto de algoritmos criptográficos promulgado pela Agência de Segurança Nacional dos EUA.
+
+Se a política não for definida ou for definida como "default", o Google Chrome vai usar as criptografias padrão.
+
+A definição desta política não é necessária para a segurança. A criptografia padrão usada pelo Google Chrome é forte o suficiente para resistir a um ataque de força bruta usando toda a energia do Sol.
+
+A definição desta política vai fazer com que o Google Chrome fique mais lento ao acessar sites.
+
+Esta política afeta apenas o TLS 1.3 e o QUIC, e não as versões anteriores do TLS.
+
+Exemplo de valor: cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">Preferir criptografias que atendam aos requisitos do CNSA 1.0 e 2.0</string>
+      <string id="PreferSlowCiphers_Default">Usar a ordem de criptografia padrão do Google Chrome</string>
+      <string id="PreferSlowKexAlgorithms">Preferir algoritmos de troca de chaves específicos para TLS</string>
+      <string id="PreferSlowKexAlgorithms_Explain">Esta política configura o Google Chrome para ordenar os algoritmos de contrato de chave preferidos (grupos aceitos) no TLS 1.3 para refletir uma preferência por algoritmos que foram aprovados por um regime de compliance específico.
+
+A definição desta política não garante que algoritmos específicos sejam negociados.
+
+Esta política existe para permitir que operadores de servidores que querem oferecer suporte a clientes com e sem requisitos de compliance façam a diferenciação entre esses clientes e usem apenas determinados algoritmos não padrão com maior força criptográfica para aqueles que os preferem explicitamente.
+
+Definir a política como "cnsa2" configura o Google Chrome para preferir métodos de troca de chaves necessários para a compliance com a versão 2.0 do Commercial National Security Algorithm Suite (CNSA 2.0), um conjunto de algoritmos criptográficos promulgado pela Agência de Segurança Nacional dos EUA.
+
+Se a política não for definida ou for definida como "default", o Google Chrome vai usar os métodos de troca de chaves padrão.
+
+Se esta política for definida com um valor que configure o Google Chrome para preferir um algoritmo de contrato de chave pós-quântica, mas PostQuantumKeyAgreementEnabled estiver desativada, a configuração de PostQuantumKeyAgreementEnabled terá precedência.
+
+A definição desta política não é necessária para a segurança. A criptografia padrão usada pelo Google Chrome é forte o suficiente para resistir a um ataque de força bruta usando toda a energia do Sol.
+
+A definição desta política vai fazer com que o Google Chrome fique mais lento ao acessar sites.
+
+Esta política afeta apenas o TLS 1.3 e o QUIC, e não as versões anteriores do TLS.
+
+Exemplo de valor: cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">Preferir métodos de troca de chaves que atendam aos requisitos do CNSA 2.0</string>
+      <string id="PreferSlowKexAlgorithms_Default">Usar os grupos padrão compatíveis do Google Chrome</string>
+      <string id="Proxy_group">Servidor proxy</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">Controla quais usuários gerenciados podem definir a política ProxyOverrideRules.</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">Quando esta política for definida como 0 ou deixada sem definição, a política ProxyOverrideRules será aplicada apenas no escopo do usuário para os afiliados.
+Se for definida como 1, a política ProxyOverrideRules será aplicada no escopo do usuário, mesmo que ele não seja afiliado.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">Substituir mapeamentos de espaço de endereço IP</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">Permitir que sites façam solicitações de rede para endpoints da rede local.</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">Impedir que sites façam solicitações de rede para endpoints da rede local.</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">Permitir que sites façam solicitações de rede para o dispositivo local.</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">Impedir que sites façam solicitações de rede para o dispositivo local.</listBox></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">Detecção de inatividade</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">Bloquear a geolocalização nestes sites</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">Sites permitidos para detecção de inatividade</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">Sites bloqueados para detecção de inatividade</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">Permitir a geolocalização exata nestes sites</listBox></presentation>
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">Permitir que o HTTPS-Only Mode seja ativado</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>Restringir contas do Google qualificadas para salvar arquivos PDF no Google Drive pelo visualizador de PDF do Google Chrome</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">Permitir que integrações do app do Gemini ajam diretamente em sites especificados</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">Bloquear a ação direta de integrações do app do Gemini em sites especificados</listBox></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">Ativar o compartilhamento de conteúdo com integrações do Google AI Mode e do Lens</dropdownList></presentation>
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">Preferir algoritmos de criptografia específicos para TLS</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">Preferir algoritmos de troca de chaves específicos para TLS</dropdownList></presentation>
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">Controla quais usuários gerenciados podem definir a política ProxyOverrideRules.:</decimalTextBox></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

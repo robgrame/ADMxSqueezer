@@ -1,0 +1,392 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v143-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 oder höher</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - Standardeinstellungen (können vom Nutzer überschrieben werden)</string>
+      <string id="LocalNetworkAccessSettings_group">Einstellungen für den Zugriff auf das lokale Netzwerk</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">Zuordnungen von IP-Adressbereichen überschreiben</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">Damit können bestimmte interne Adressbereiche als „öffentlich“ behandelt und somit nicht Local Network Access-Prüfungen unterzogen werden. Umgekehrt kann dies verwendet werden, um bestimmte öffentliche Adressbereiche, die möglicherweise intern verwendet werden, als „lokal“ zu behandeln, sodass sie durch Local Network Access-Prüfungen geschützt sind.
+
+Überschreibungen des IP-Adressbereichs haben zwei Formen:
+
+[cidr]=[public|local|loopback]
+
+Dabei ist [cidr] ein IP-Adressbereich in CIDR-Notation (siehe Abschnitt 3.1 von https://tools.ietf.org/html/rfc4632 für IPv4 und Abschnitt 2.3 von https://tools.ietf.org/html/rfc4291 für IPv6). IPv6-Adressen müssen im URL-sicheren Format (in Klammern) angegeben werden. CIDR-Überschreibungen gelten für alle Ports.
+
+oder
+
+[ip-address]:[port]=[public|local|loopback]
+
+Weitere Informationen zu Local Network Access findest du unter https://wicg.github.io/local-network-access/ und https://developer.chrome.com/blog/local-network-access.
+
+Diese Richtlinie unterstützt die dynamische Aktualisierung nicht.
+
+Überschreibungen über die Befehlszeilenoption „--ip-address-space-overrides“ haben Vorrang vor Überschreibungen, die durch diese Richtlinie festgelegt werden.
+
+Beispielwert
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">Anfragen für den Zugriff auf das lokale Netzwerk (Local Network Access, LNA) in Unterframes ohne explizite Delegierung zulassen</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">Standardmäßig dürfen Berechtigungen für den Zugriff auf das lokale Netzwerk (Local Network Access, LNA) nur in Unterframes mit unterschiedlicher Herkunft angefordert werden, wenn sie explizit delegiert wurden. Mit dieser Richtlinie kann dieses Standardverhalten überschrieben werden, sodass LNA-Berechtigungen standardmäßig in Unterframes übernommen werden, es sei denn, dies wird in der Berechtigungsrichtlinie explizit abgelehnt.
+
+Wenn diese Richtlinie aktiviert ist, werden standardmäßig alle Funktionen der LNA-Berechtigungsrichtlinien an Unterframes delegiert und sie können Anfragen an das lokale Netzwerk senden (wodurch die Berechtigungsaufforderung ausgelöst wird).
+
+Wenn diese Richtlinie deaktiviert oder nicht konfiguriert ist, muss die Funktion der Berechtigungsrichtlinie explizit an Unterframes delegiert werden, damit sie lokale Netzwerkanfragen stellen und die Berechtigungsaufforderung auslösen können.
+
+Diese Richtlinie gilt für die Funktionen „"local-network-access"“, „"loopback-network"“ und „"local-network"“ der Berechtigungsrichtlinie.
+
+Weitere Informationen zum Zugriff auf das lokale Netzwerk findest du unter https://wicg.github.io/local-network-access/ und https://developer.chrome.com/blog/local-network-access.
+
+Weitere Informationen zur Berechtigungsrichtlinie findest du unter https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy.</string>
+      <string id="LocalNetworkAllowedForUrls">Websites erlauben, Netzwerkanfragen an lokale Netzwerkendpunkte zu senden.</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">Liste der URL-Muster. Netzwerkanfragen, die von Websites initiiert werden, die durch übereinstimmende Ursprünge bereitgestellt werden, und an lokale Netzwerkendpunkte gerichtet sind, unterliegen keinen Local Network Access-Prüfungen.
+
+Bei Ursprüngen, die durch die hier angegebenen Muster nicht abgedeckt sind, kommt die persönliche Konfiguration des Nutzers zum Einsatz.
+
+Ausführliche Informationen zu gültigen URL-Mustern findest du unter https://chromeenterprise.google/policies/url-patterns/.
+
+Informationen zu Einschränkungen für Local Network Access findest du unter https://wicg.github.io/local-network-access/.
+
+Es gibt mehrere Richtlinien, die Ursprünge auflisten, die sich auf Anfragen an lokale Netzwerkendpunkte auswirken. Wenn ein Ursprung mit mehr als einer der folgenden Richtlinien übereinstimmt, haben die Richtlinien in der folgenden Reihenfolge Vorrang:
+
+– LocalNetworkBlockedForUrls
+– LocalNetworkAllowedForUrls
+– LocalNetworkAccessBlockedForUrls
+– LocalNetworkAccessAllowedForUrls
+
+Beispielwert
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">Websites daran hindern, Netzwerkanfragen an lokale Netzwerkendpunkte zu senden.</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">Liste der URL-Muster. Netzwerkanfragen, die von Websites initiiert werden, die durch übereinstimmende Ursprünge bereitgestellt werden, und an lokale Netzwerkendpunkte gerichtet sind, können keine Local Network Access-Anfragen senden.
+
+Bei Ursprüngen, die durch die hier angegebenen Muster nicht abgedeckt sind, kommt die persönliche Konfiguration des Nutzers zum Einsatz.
+
+Ausführliche Informationen zu gültigen URL-Mustern findest du unter https://chromeenterprise.google/policies/url-patterns/.
+
+Informationen zu Einschränkungen für Local Network Access findest du unter https://wicg.github.io/local-network-access/.
+
+Es gibt mehrere Richtlinien, die Ursprünge auflisten, die sich auf Anfragen an lokale Netzwerkendpunkte auswirken. Wenn ein Ursprung mit mehr als einer der folgenden Richtlinien übereinstimmt, haben die Richtlinien in der folgenden Reihenfolge Vorrang:
+
+– LocalNetworkBlockedForUrls
+– LocalNetworkAllowedForUrls
+– LocalNetworkAccessBlockedForUrls
+– LocalNetworkAccessAllowedForUrls
+
+Beispielwert
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">Websites erlauben, Netzwerkanfragen an das lokale Gerät zu senden.</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">Liste der URL-Muster. Netzwerkanfragen, die von Websites initiiert werden, die durch übereinstimmende Ursprünge bereitgestellt werden, und an das lokale Gerät gerichtet sind, unterliegen keinen Local Network Access-Prüfungen.
+
+Bei Ursprüngen, die durch die hier angegebenen Muster nicht abgedeckt sind, kommt die persönliche Konfiguration des Nutzers zum Einsatz.
+
+Ausführliche Informationen zu gültigen URL-Mustern findest du unter https://chromeenterprise.google/policies/url-patterns/.
+
+Informationen zu Einschränkungen für Local Network Access findest du unter https://wicg.github.io/local-network-access/.
+
+Es gibt mehrere Richtlinien, die Ursprünge auflisten, die sich auf Anfragen an das lokale Gerät auswirken. Wenn ein Ursprung mit mehr als einer der folgenden Richtlinien übereinstimmt, haben die Richtlinien in der folgenden Reihenfolge Vorrang:
+
+– LoopbackNetworkBlockedForUrls
+– LoopbackNetworkAllowedForUrls
+– LocalNetworkAccessBlockedForUrls
+– LocalNetworkAccessAllowedForUrls
+
+Beispielwert
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">Websites daran hindern, Netzwerkanfragen an das lokale Gerät zu senden.</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">Liste der URL-Muster. Netzwerkanfragen, die von Websites initiiert werden, die durch übereinstimmende Ursprünge bereitgestellt werden, und an das lokale Gerät gerichtet sind, können keine Local Network Access-Anfragen senden.
+
+Bei Ursprüngen, die durch die hier angegebenen Muster nicht abgedeckt sind, kommt die persönliche Konfiguration des Nutzers zum Einsatz.
+
+Ausführliche Informationen zu gültigen URL-Mustern findest du unter https://chromeenterprise.google/policies/url-patterns/.
+
+Informationen zu Einschränkungen für Local Network Access findest du unter https://wicg.github.io/local-network-access/.
+
+Es gibt mehrere Richtlinien, die Ursprünge auflisten, die sich auf Anfragen an das lokale Gerät auswirken. Wenn ein Ursprung mit mehr als einer der folgenden Richtlinien übereinstimmt, haben die Richtlinien in der folgenden Reihenfolge Vorrang:
+
+– LoopbackNetworkBlockedForUrls
+– LoopbackNetworkAllowedForUrls
+– LocalNetworkAccessBlockedForUrls
+– LocalNetworkAccessAllowedForUrls
+
+Beispielwert
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="GenerativeAI_group">Generative KI</string>
+      <string id="GeminiActOnWebAllowedForURLs">Gemini-App-Integrationen erlauben, Aktionen direkt auf bestimmten Websites auszuführen</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">Mit dieser Richtlinie kannst du eine Liste mit URL-Mustern festlegen, die angeben, auf welchen Websites Gemini-App-Integrationen direkte Aktionen auf Webseiten ausführen dürfen.
+
+URLs, die weder mit der Zulassungs- noch mit der Sperrliste übereinstimmen, verwenden GeminiActOnWebSettings.
+
+URLs, die sowohl mit der Zulassungs- als auch mit der Sperrliste übereinstimmen, sind zulässig.
+
+Weitere Informationen zu gültigen URL-Mustern findest du unter https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Beispielwert
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">Gemini-App-Integrationen blockieren, damit sie keine Aktionen direkt auf bestimmten Websites ausführen können</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">Mit dieser Richtlinie kannst du eine Liste mit URL-Mustern festlegen, die angeben, auf welchen Websites Gemini-App-Integrationen keine direkten Aktionen auf Webseiten ausführen dürfen.
+
+URLs, die weder mit der Zulassungs- noch mit der Sperrliste übereinstimmen, verwenden GeminiActOnWebSettings.
+
+URLs, die sowohl mit der Zulassungs- als auch mit der Sperrliste übereinstimmen, sind zulässig.
+
+Weitere Informationen zu gültigen URL-Mustern findest du unter https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Beispielwert
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="SearchContentSharingSettings">Teilen von Inhalten mit Google AI Mode- und Lens-Integrationen aktivieren</string>
+      <string id="SearchContentSharingSettings_Explain">Mit dieser Richtlinie wird das Teilen von Seiten- und Dateiinhalten mit Google AI Mode und Lens über die Seitenleiste oder Tabs von Google Chrome gesteuert.
+
+Diese Richtlinie wirkt sich nicht auf die Webversion von Google AI Mode aus. Sie legt nur fest, wie Nutzer Informationen teilen können, wenn sie Google Chrome verwenden.
+
+0 / nicht festgelegt = Nutzer können Seiten- oder Dateiinhalte mit Google AI Mode teilen.
+
+1 = Nutzer können keine Seiten- oder Dateiinhalte mit Google AI Mode teilen. Die Zugangspunkte zum Teilen von Kontext und die Seitenleiste werden deaktiviert oder ausgeblendet.
+
+Diese Richtlinie wird ignoriert, wenn Google Search nicht die Standardsuchmaschine der Nutzer ist, da die Funktion deaktiviert ist.
+
+Diese Richtlinie ist unabhängig von der Richtlinie „AIModeSettings“. Die Richtlinie „AIModeSettings“ steuert nur Zugangspunkte in der Omnibox oder im Suchfeld auf der Seite „Neuer Tab“, während diese Richtlinie das Teilen von Kontext über die Seitenleiste oder Tabs steuert.
+
+Diese Richtlinie steuert auch nicht die Google Gemini-Integration, die von GeminiSettings deaktiviert werden kann.
+
+Wenn diese Richtlinie nicht konfiguriert ist, wird das Verhalten der Funktion durch die Richtlinie „GenAiDefaultSettings“ bestimmt.
+
+Weitere Informationen zur Datenverarbeitung bei auf generativer KI basierenden Funktionen findest du unter https://support.google.com/chrome/a?p=generative_ai_settings.</string>
+      <string id="SearchContentSharingSettings_Allowed">Teilen von Inhalten mit Google AI Mode-Integrationen zulassen.</string>
+      <string id="SearchContentSharingSettings_Disabled">Teilen von Inhalten mit Google AI Mode-Integrationen nicht zulassen.</string>
+      <string id="ContentSettings_group">Inhaltseinstellungen</string>
+      <string id="DefaultIdleDetectionSetting">Standardeinstellung für die Inaktivitätserkennung</string>
+      <string id="DefaultIdleDetectionSetting_Explain">Mit dieser Richtlinie kannst du festlegen, ob Websites die Idle Detection API verwenden dürfen.
+
+Wenn diese Richtlinie auf „1“ (AllowIdleDetection) festgelegt ist, können Websites die API verwenden, ohne den Nutzer um Erlaubnis zu bitten.
+
+Wenn diese Richtlinie auf „2“ (BlockIdleDetection) festgelegt ist, können Websites die API nicht verwenden, unabhängig von der Berechtigung des Nutzers.
+
+Wenn diese Richtlinie auf „3“ (AskIdleDetection) festgelegt oder nicht konfiguriert ist, können Websites die API nicht ohne die Erlaubnis des Nutzers verwenden.</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">Websites erlauben, den Inaktivitätsstatus zu erkennen, ohne den Nutzer fragen zu müssen</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">Keiner Website erlauben, den Inaktivitätsstatus des Nutzers zu erkennen</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">Jedes Mal nachfragen, wenn eine Website den Inaktivitätsstatus des Nutzers ermitteln möchte</string>
+      <string id="GeolocationBlockedForUrls">Standortbestimmung auf diesen Websites blockieren</string>
+      <string id="GeolocationBlockedForUrls_Explain">Wenn diese Richtlinie konfiguriert ist, kannst du eine Liste mit URL-Mustern erstellen, die Websites angeben, die nicht auf den Standort des Nutzers zugreifen dürfen und auch keine Nutzerberechtigung dafür anfordern können.
+
+Wenn die Richtlinie nicht konfiguriert ist, gilt die Einstellung „DefaultGeolocationSetting“ für alle Websites, sofern sie festgelegt ist. Falls nicht, wird die persönliche Einstellung des Nutzers verwendet.
+
+Ausführliche Informationen zu gültigen url-Mustern findest du unter https://chromeenterprise.google/policies/url-patterns. Platzhalter wie * sind zulässig.
+
+Beispielwert
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">Inaktivitätserkennung auf diesen Websites zulassen</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">Mit dieser Richtlinie kannst du eine Liste mit URL‑Mustern festlegen, durch die angegeben wird, welche Websites die Idle Detection API verwenden dürfen, ohne den Nutzer vorher fragen zu müssen. Einträge auf der Sperrliste haben eine höhere Priorität als Einträge auf der Zulassungsliste, die wiederum eine höhere Priorität als der konfigurierte Standardwert haben.
+
+Ausführliche Informationen zu gültigen Website-URL‑Mustern findest du unter https://chromeenterprise.google/policies/url-patterns. Platzhalter wie „*“ sind zulässig. Diese Richtlinie gleicht nur anhand des Ursprungs ab, daher werden alle Pfade des URL‑Musters ignoriert.
+
+Wenn diese Richtlinie nicht konfiguriert ist, wird für alle Websites der globale Standardwert verwendet, der durch die Richtlinie „DefaultIdleDetectionSetting“ (Standardeinstellung für die Inaktivitätserkennung) konfiguriert wird, sofern diese konfiguriert ist, oder andernfalls durch die persönliche Konfiguration des Nutzers.
+
+Beispielwert
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">Inaktivitätserkennung auf diesen Websites blockieren</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">Mit dieser Richtlinie kannst du eine Liste mit URL‑Mustern erstellen, durch die angegeben wird, welche Websites die Idle Detection API nicht verwenden dürfen.
+
+Ausführliche Informationen zu gültigen Website-URL‑Mustern findest du unter https://chromeenterprise.google/policies/url-patterns. Platzhalter wie „*“ sind zulässig. Diese Richtlinie gleicht nur anhand des Ursprungs ab, daher werden alle Pfade des URL‑Musters ignoriert.
+
+Wenn diese Richtlinie nicht konfiguriert ist, wird für alle Websites der globale Standardwert verwendet, der durch die Richtlinie „DefaultIdleDetectionSetting“ (Standardeinstellung für die Inaktivitätserkennung) konfiguriert wird, sofern diese konfiguriert ist, oder andernfalls durch die persönliche Konfiguration des Nutzers.
+
+Beispielwert
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">Genaue Standortbestimmung auf diesen Websites zulassen</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">Wenn diese Richtlinie konfiguriert ist, kannst du eine Liste mit URL-Mustern erstellen, durch die angegeben wird, welchen Websites der Zugriff auf den im Modus „Hohe Genauigkeit“ ermittelten Standort des Nutzers erlaubt ist, ohne dass sie zuerst die Erlaubnis des Nutzers dafür einholen müssen.
+
+Wenn die Richtlinie nicht konfiguriert ist, gilt für alle Websites die Einstellung „DefaultGeolocationSetting“, sofern sie festgelegt ist. Ist sie nicht festgelegt, wird die persönliche Einstellung des Nutzers verwendet.
+
+Ausführliche Informationen zu gültigen url‑Mustern findest du unter https://chromeenterprise.google/policies/url-patterns. Platzhalter wie * sind zulässig.
+
+Beispielwert
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="Proxy_group">Proxyserver</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">Bestimmt, welche verwalteten Nutzer die Richtlinie „ProxyOverrideRules“ festlegen können.</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">Wenn diese Richtlinie auf „0“ festgelegt oder nicht konfiguriert ist, wird die Richtlinie „ProxyOverrideRules“ nur auf Nutzerebene für Nutzer angewendet, die mit einer Organisation verknüpft sind.
+Wenn diese Richtlinie auf „1“ festgelegt ist, wird die Richtlinie „ProxyOverrideRules“ auf Nutzerebene angewendet, auch wenn der Nutzer nicht mit einer Organisation verknüpft ist.</string>
+      <string id="CryptographyCompliance_group">Richtlinien zur Einhaltung der Kryptografie</string>
+      <string id="PreferSlowCiphers">Bestimmte Algorithmen für Verschlüsselungschiffren für TLS bevorzugen</string>
+      <string id="PreferSlowCiphers_Explain">Diese Richtlinie konfiguriert Google Chrome so, dass die bevorzugten Chiffren für Verschlüsselungen in TLS 1.3 nach einer bestimmten Compliance-Regelung genehmigte Algorithmen bevorzugen.
+
+Durch das Festlegen dieser Richtlinie wird nicht garantiert, dass bestimmte Algorithmen ausgehandelt werden.
+
+Diese Richtlinie ermöglicht es Serverbetreibern, die Clients mit und ohne Compliance-Anforderungen unterstützen möchten, zwischen diesen Clients zu unterscheiden. Bestimmte nicht-standardmäßige Algorithmen mit erhöhter kryptographischer Stärke werden nur für diejenigen Clients verwendet, die ausdrücklich so konfiguriert wurden, dass sie diese bevorzugen.
+
+Wird die Richtlinie auf „cnsa“ festgelegt, wird Google Chrome so konfiguriert, dass die für die Compliance mit der Commercial National Security Algorithm Suite 1.0 und 2.0 (CNSA 1.0 und 2.0) erforderlichen Chiffren bevorzugt werden.
+
+Wenn die Richtlinie nicht konfiguriert oder auf „default“ gesetzt ist, verwendet Google Chrome die standardmäßigen Chiffren.
+
+Das Festlegen dieser Richtlinie ist für die Sicherheit nicht erforderlich. Die Standardkryptografie, die von Google Chrome verwendet wird, ist stark genug, um einem Brute-Force-Angriff mit der gesamten Energie der Sonne standzuhalten.
+
+Wenn du diese Richtlinie festlegst, wird Google Chrome beim Zugriff auf Websites langsamer.
+
+Diese Richtlinie wirkt sich nur auf TLS 1.3 und QUIC aus, nicht auf frühere Versionen von TLS.
+
+Beispielwert cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">Chiffren bevorzugen, die die Anforderungen von CNSA 1.0 und 2.0 erfüllen</string>
+      <string id="PreferSlowCiphers_Default">Standardreihenfolge von Google Chrome für Chiffren verwenden</string>
+      <string id="PreferSlowKexAlgorithms">Bestimmte Algorithmen zum Schlüsselaustausch für TLS bevorzugen</string>
+      <string id="PreferSlowKexAlgorithms_Explain">Diese Richtlinie konfiguriert Google Chrome so, dass die bevorzugten Algorithmen für Schlüsselvereinbarungen (unterstützte Gruppen) in TLS 1.3 nach einer bestimmten Compliance-Regelung genehmigte Algorithmen bevorzugen.
+
+Durch das Festlegen dieser Richtlinie wird nicht garantiert, dass bestimmte Algorithmen ausgehandelt werden.
+
+Diese Richtlinie ermöglicht es Serverbetreibern, die Clients mit und ohne Compliance-Anforderungen unterstützen möchten, zwischen diesen Clients zu unterscheiden. Bestimmte nicht-standardmäßige Algorithmen mit erhöhter kryptographischer Stärke werden nur für diejenigen Clients verwendet, die ausdrücklich so konfiguriert wurden, dass sie diese bevorzugen.
+
+Wird die Richtlinie auf „cnsa2“ festgelegt, wird Google Chrome so konfiguriert, dass die für die Compliance mit der Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) erforderlichen Methoden zum Schlüsselaustausch bevorzugt werden.
+
+Wenn die Richtlinie nicht konfiguriert oder auf „default“ gesetzt ist, verwendet Google Chrome die standardmäßigen Methoden für den Schlüsselaustausch.
+
+Wenn diese Richtlinie auf einen Wert festgelegt wird, sodass Google Chrome einen Post-Quanten-Algorithmus für Schlüsselvereinbarungen bevorzugt, PostQuantumKeyAgreementEnabled aber deaktiviert ist, hat die Einstellung von PostQuantumKeyAgreementEnabled Vorrang.
+
+Das Festlegen dieser Richtlinie ist für die Sicherheit nicht erforderlich. Die Standardkryptografie, die von Google Chrome verwendet wird, ist stark genug, um einem Brute-Force-Angriff mit der gesamten Energie der Sonne standzuhalten.
+
+Wenn du diese Richtlinie festlegst, wird Google Chrome beim Zugriff auf Websites langsamer.
+
+Diese Richtlinie wirkt sich nur auf TLS 1.3 und QUIC aus, nicht auf frühere Versionen von TLS.
+
+Beispielwert cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">Schlüsselaustauschmethoden bevorzugen, die die Anforderungen von CNSA 2.0 erfüllen</string>
+      <string id="PreferSlowKexAlgorithms_Default">Standardmäßig unterstützte Gruppen von Google Chrome verwenden</string>
+      <string id="CacheEncryptionEnabled">Mit dieser Richtlinie können Administratoren den HTTP-Cache auf dem Datenträger verschlüsseln.</string>
+      <string id="CacheEncryptionEnabled_Explain">Mit dieser Richtlinie können Administratoren den HTTP-Cache des Browsers auf dem Datenträger verschlüsseln.
+
+Wenn diese Richtlinie aktiviert ist, wird der Browser-Cache verschlüsselt.
+
+Wenn diese Richtlinie deaktiviert oder nicht konfiguriert ist, wird der Browser-Cache nicht verschlüsselt.
+
+Die Verschlüsselung des Browser-Caches kann sich auf die Leistung auswirken.</string>
+      <string id="ForceForegroundPriorityForAllTabs">Vordergrundpriorität für alle Tabs erzwingen</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">Mit dieser Richtlinie wird festgelegt, ob im Hintergrund ausgeführte Webinhalte mit Vordergrundpriorität ausgeführt werden müssen.
+
+Standardmäßig optimiert der Browser Ressourcen, indem er Inhalte von im Hintergrund ausgeführten Tabs weniger priorisiert. Wenn du diese Richtlinie aktivierst, wird dieses Verhalten überschrieben und Tabs im Hintergrund werden genauso geplant wie der aktive Tab.
+
+Beachte, dass das Erzwingen der Vordergrundpriorität für im Hintergrund ausgeführte Inhalte die Reaktionsfähigkeit des aktiven Tabs leicht beeinträchtigen kann.
+
+Wenn diese Richtlinie aktiviert ist, werden alle Webinhalte mit Vordergrundpriorität ausgeführt, unabhängig von ihrem Sichtbarkeitsstatus.
+
+Wenn diese Richtlinie deaktiviert oder nicht konfiguriert ist, bestimmt der Browser die Priorität anhand der Standardheuristik (z. B. indem Inhalte weniger priorisiert werden, die nicht sichtbar sind, keinen Ton wiedergeben oder nicht an Videoanrufen beteiligt sind).</string>
+      <string id="HttpsOnlyMode">Aktivieren des Nur-HTTPS-Modus erlauben</string>
+      <string id="HttpsOnlyMode_Explain">Mit dieser Richtlinie wird festgelegt, ob Nutzer den Nur-HTTPS-Modus („Immer verschlüsselte Verbindungen verwenden“) in den Einstellungen aktivieren können. Über den Nur-HTTPS-Modus werden alle Aufrufe von Websites auf HTTPS umgestellt.
+
+Wenn diese Einstellung nicht konfiguriert oder auf „Zugelassen“ festgelegt ist, dürfen Nutzer den Nur-HTTPS-Modus aktivieren.
+
+Ist sie auf „Nicht zugelassen“ festgelegt, wird der Nur-HTTPS-Modus deaktiviert.
+
+Wenn diese Einstellung auf „force_enabled“ festgelegt ist, wird der Nur-HTTPS-Modus im strikten Modus aktiviert.
+
+Ist sie auf „force_balanced_enabled“ festgelegt, wird der Nur-HTTPS-Modus im ausgewogenen Modus aktiviert.
+
+„force_enabled“ wird ab M112 unterstützt, „force_balanced_enabled“ ab M129.
+
+„force_enabled“ und „force_balanced_enabled“ können Nutzern ebenfalls empfohlen werden.
+Der Nur-HTTPS-Modus wird anfänglich auf „Strikt“ oder „Ausgewogen“ festgelegt, aber Nutzer dürfen ihn ändern.
+
+Wird die Richtlinie auf einen Wert festgelegt, der von der Chrome-Version, die diese Richtlinie erhält, nicht unterstützt wird, wird in Chrome standardmäßig die Einstellung auf „Zugelassen“ gesetzt.
+
+Die separate Richtlinie „HttpAllowlist“ kann verwendet werden, um bestimmte Hostnamen oder Hostnamenmuster von der Aktualisierung auf HTTPS durch diese Funktion auszuschließen.
+
+Beispielwert disallowed</string>
+      <string id="HttpsOnlyMode_allowed">Einstellung für den Nur-HTTPS-Modus von Nutzern nicht einschränken</string>
+      <string id="HttpsOnlyMode_disallowed">Nur-HTTPS-Modus deaktivieren</string>
+      <string id="HttpsOnlyMode_force_enabled">Nur-HTTPS-Modus im strikten Modus aktivieren</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">Nur-HTTPS-Modus im ausgewogenen Modus aktivieren</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">Das Speichern von PDF-Dateien in Google Drive über den PDF-Viewer von Google Chrome auf zulässige Google-Konten beschränken</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">Enthält einen regulären Ausdruck, um die zulässigen Google-Konten zu bestimmen, die zum Speichern von PDF-Dateien in Google Drive über den PDF-Viewer von Google Chrome berechtigt sind.
+
+Wenn ein Nutzer versucht, eine PDF-Datei mit einem Konto, das nicht diesem Muster entspricht, in Google Drive hochzuladen, wird ein Fehler angezeigt.
+
+Wenn diese Richtlinie nicht konfiguriert oder leer ist, kann der Nutzer jedes Google-Konto verwenden, um PDF-Dateien in Google Drive zu speichern.
+
+Beispielwert .*@example\.com</string>
+      <string id="SilentPrintingEnabled">Stummes Drucken aktivieren</string>
+      <string id="SilentPrintingEnabled_Explain">Wird diese Richtlinie auf „True“ gesetzt, wird das stumme Drucken aktiviert. Dabei wird das Druckvorschaufenster nach dem Öffnen sofort geschlossen und der Druckvorgang wird mit den Standardeinstellungen auf dem Standarddrucker gestartet. Wenn unter „Standarddrucker“ die Option „Als PDF speichern“ ausgewählt ist, wird die Datei im Ordner „Downloads“ gespeichert.
+
+Wird diese Richtlinie nicht konfiguriert oder auf „False“ festgelegt, wird das stumme Drucken deaktiviert. In diesem Fall wird das Druckvorschaufenster nicht automatisch geschlossen und der Nutzer muss wie gewohnt eine Auswahl treffen.</string>
+      <string id="StaticStorageQuotaEnabled">Steuern, ob Speicherkontingent-APIs statische Werte zurückgeben</string>
+      <string id="StaticStorageQuotaEnabled_Explain">Wenn diese Richtlinie aktiviert ist, geben die Speicherkontingent-APIs einen statischen Wert zurück, der dem belegten Speicherplatz + mindestens 10 GiB (Laufwerk wird auf das nächste GiB aufgerundet) entspricht.
+Wenn diese Richtlinie deaktiviert ist, geben die Speicherkontingent-APIs in der Regel einen dynamischen Wert zurück, der proportional zum auf dem Gerät verfügbaren Gesamtspeicherplatz berechnet wird, unabhängig davon, wie viel Speicherplatz belegt ist.
+Ist diese Richtlinie nicht konfiguriert, verwenden die Speicherkontingent-APIs das Standardverhalten von Chrome.
+Websites mit der Berechtigung zur unbegrenzten Speicherung sind von dieser Einstellung nicht betroffen. Auch das erzwungene Kontingent ist davon nicht betroffen.</string>
+      <string id="WebAppInstallByUserEnabled">Installation von Web-Apps durch Nutzer über den Browser aktivieren</string>
+      <string id="WebAppInstallByUserEnabled_Explain">Mit dieser Richtlinie wird festgelegt, ob Nutzer Web-Apps über den Browser installieren können.
+Wenn du diese Richtlinie aktivierst oder nicht konfigurierst, können Nutzer Web-Apps über den Browser installieren.
+Wenn du diese Richtlinie deaktivierst, können Nutzer keine Web-Apps über den Browser installieren und der Datentyp „Apps“ wird für Chrome Sync von der Synchronisierung ausgeschlossen.
+Diese Richtlinie unterstützt die dynamische Aktualisierung nicht. Änderungen, z. B. das Aktivieren, Deaktivieren oder Nichtkonfigurieren, werden erst nach einem Neustart des Browsers wirksam.
+Diese Richtlinie hat keine Auswirkungen auf die Richtlinie „WebAppInstallForceList“.</string>
+      <string id="XSLTEnabled">Verfügbarkeit der XSLT-Funktion steuern</string>
+      <string id="XSLTEnabled_Explain">Mit dieser Richtlinie wird die Verfügbarkeit der XSLT-Funktion (XSLTProcessor JavaScript API und XSL-Verarbeitungsanweisung) gesteuert.
+Wenn diese Richtlinie aktiviert ist, ist XSLT unabhängig vom Standardstatus der Funktion im Browser verfügbar.
+Wenn diese Richtlinie deaktiviert ist, ist XSLT unabhängig vom Standardstatus der Funktion im Browser nicht verfügbar.
+Wenn diese Richtlinie nicht konfiguriert ist, wird die Verfügbarkeit von XSLT durch die Standardeinstellungen des Browsers und Field Trials bestimmt.
+Diese Richtlinie ist eine vorübergehende Maßnahme und wird in M164 entfernt.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">Zuordnungen von IP-Adressbereichen überschreiben</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">Websites erlauben, Netzwerkanfragen an lokale Netzwerkendpunkte zu senden.</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">Websites daran hindern, Netzwerkanfragen an lokale Netzwerkendpunkte zu senden.</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">Websites erlauben, Netzwerkanfragen an das lokale Gerät zu senden.</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">Websites daran hindern, Netzwerkanfragen an das lokale Gerät zu senden.</listBox></presentation>
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">Gemini-App-Integrationen erlauben, Aktionen direkt auf bestimmten Websites auszuführen</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">Gemini-App-Integrationen blockieren, damit sie keine Aktionen direkt auf bestimmten Websites ausführen können</listBox></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">Teilen von Inhalten mit Google AI Mode- und Lens-Integrationen aktivieren</dropdownList></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">Inaktivitätserkennung</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">Standortbestimmung auf diesen Websites blockieren</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">Zulässige Websites für die Inaktivitätserkennung</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">Für die Inaktivitätserkennung blockierte Websites</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">Genaue Standortbestimmung auf diesen Websites zulassen</listBox></presentation>
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">Bestimmt, welche verwalteten Nutzer die Richtlinie „ProxyOverrideRules“ festlegen können.:</decimalTextBox></presentation>
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">Bestimmte Algorithmen für Verschlüsselungschiffren für TLS bevorzugen</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">Bestimmte Algorithmen zum Schlüsselaustausch für TLS bevorzugen</dropdownList></presentation>
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">Aktivieren des Nur-HTTPS-Modus erlauben</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>Das Speichern von PDF-Dateien in Google Drive über den PDF-Viewer von Google Chrome auf zulässige Google-Konten beschränken</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

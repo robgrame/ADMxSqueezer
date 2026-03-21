@@ -1,0 +1,390 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v143-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 и более поздних версиях</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - Настройки по умолчанию (пользователи могут менять)</string>
+      <string id="GenerativeAI_group">Генеративный ИИ</string>
+      <string id="GeminiActOnWebAllowedForURLs">Разрешить интеграциям приложения Gemini напрямую действовать на указанных сайтах</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">Позволяет задать список шаблонов URL, чтобы указать сайты, на веб-страницах которых интеграции приложения Gemini могут действовать напрямую.
+
+Для URL, не соответствующих ни белому, ни черному списку, используется правило GeminiActOnWebSettings.
+
+Если URL входит в оба списка, он считается разрешенным.
+
+Сведения о допустимых шаблонах URL доступны на странице https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Пример значения:
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">Запретить интеграциям приложения Gemini напрямую действовать на указанных сайтах</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">Позволяет задать список шаблонов URL, чтобы указать сайты, на веб-страницах которых интеграции приложения Gemini не могут действовать напрямую.
+
+Для URL, не соответствующих ни белому, ни черному списку, используется правило GeminiActOnWebSettings.
+
+Если URL входит в оба списка, он считается разрешенным.
+
+Сведения о допустимых шаблонах URL доступны на странице https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Пример значения:
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="SearchContentSharingSettings">Включить обмен контентом с интеграциями "Google AI Mode" и "Lens"</string>
+      <string id="SearchContentSharingSettings_Explain">Правило определяет, можно ли делиться с сервисами "Google AI Mode" и "Lens" содержимым страниц и файлов через боковую панель или вкладки Google Chrome.
+
+Обратите внимание, что правило не влияет на сервис "Google AI Mode", доступный на веб-страницах. Оно управляет только обменом данными в Google Chrome.
+
+Если правило не настроено или задано значение "0", пользователи смогут предоставлять сервису "Google AI Mode" доступ к содержимому страниц и файлов.
+
+При значении "1" делиться такой информацией с функцией "Google AI Mode" будет нельзя. Точки входа для передачи контекста и боковая панель будут отключены или скрыты.
+
+Правило игнорируется, если сервис "Google Search" не задан пользователем как поисковая система по умолчанию, так как в этом случае функция отключена.
+
+Это правило не зависит от AIModeSettings. AIModeSettings управляет только точками входа в омнибоксе или окне поиска на странице быстрого доступа, а это правило определяет, можно ли делиться контекстом через боковую панель или вкладки.
+
+Это правило также не влияет на интеграцию сервиса "Google Gemini", которая отключается с помощью GeminiSettings.
+
+Если это правило не настроено, применяется GenAiDefaultSettings.
+
+Подробнее о том, как обрабатываются данные при использовании функций на основе генеративного ИИ: https://support.google.com/chrome/a?p=generative_ai_settings.</string>
+      <string id="SearchContentSharingSettings_Allowed">Разрешить обмен контентом с интеграциями, использующими Google AI Mode</string>
+      <string id="SearchContentSharingSettings_Disabled">Запретить обмен контентом с интеграциями, использующими Google AI Mode</string>
+      <string id="CacheEncryptionEnabled">С помощью этого правила администраторы могут шифровать кеш HTTP на диске.</string>
+      <string id="CacheEncryptionEnabled_Explain">С помощью этого правила администраторы могут шифровать кеш HTTP на диске.
+
+Если правило включено, кеш в браузере будет шифроваться.
+
+Если оно отключено или не настроено, этот кеш шифроваться не будет.
+
+Шифрование кеша в браузере может отразиться на производительности.</string>
+      <string id="ForceForegroundPriorityForAllTabs">Принудительно установить приоритет активного режима для всех вкладок</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">Правило определяет, будет ли фоновый веб-контент принудительно выполняться в активном режиме.
+
+По умолчанию браузер оптимизирует ресурсы, понижая приоритет контента на фоновых вкладках. Если правило включено, фоновые вкладки будут обрабатываться так же, как активные.
+
+Обратите внимание, что принудительное выполнение фонового контента в активном режиме может незначительно замедлить отклик активной вкладки.
+
+Если правило включено, весь веб-контент выполняется в активном режиме независимо от того, виден он или нет.
+
+Если правило отключено или не настроено, браузер определяет приоритет на основе стандартных эвристических алгоритмов (например, понижает приоритет контента, который не виден, в котором не воспроизводится аудио или не ведется видеовызов и т. д.).</string>
+      <string id="HttpsOnlyMode">Разрешить включать режим "Только HTTPS"</string>
+      <string id="HttpsOnlyMode_Explain">Правило определяет, могут ли пользователи включать в настройках режим "Только HTTPS" (функцию "Всегда использовать безопасные подключения"). Если этот режим активирован, используется только протокол HTTPS.
+
+Если правило не настроено или для него установлено значение allowed, пользователи смогут включать режим "Только HTTPS".
+
+Если выбрано значение disallowed, режим "Только HTTPS" отключен.
+
+Если установлено значение force_enabled, будет включен режим "Только HTTPS" строгого типа.
+
+Если задано значение force_balanced_enabled, будет включен режим "Только HTTPS" сбалансированного типа.
+
+Значение force_enabled поддерживается в версиях M112 и более новых, а значение force_balanced_enabled – в версиях M129 и более новых.
+
+Параметры force_enabled и force_balanced_enabled также можно рекомендовать пользователям.
+Изначально устанавливается режим "Только HTTPS" строгого или сбалансированного типа, но пользователи смогут его изменить.
+
+Если вы укажете значение, не поддерживаемое в браузере Chrome, для которого предназначено правило, то по умолчанию будет использоваться значение allowed.
+
+Чтобы отключить переход на протокол HTTPS для определенных имен хостов или их шаблонов, можно настроить отдельное правило HttpAllowlist.
+
+Пример значения: disallowed</string>
+      <string id="HttpsOnlyMode_allowed">Не ограничивать для пользователей возможность включать режим "Только HTTPS"</string>
+      <string id="HttpsOnlyMode_disallowed">Отключить режим "Только HTTPS"</string>
+      <string id="HttpsOnlyMode_force_enabled">Включить режим "Только HTTPS" строгого типа</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">Принудительно включить режим "Только HTTPS" сбалансированного типа</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">Ограничить число аккаунтов Google, в которых PDF-файлы можно сохранять на Google Диск из Google Chrome PDF Viewer</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">Содержит регулярное выражение, которое позволяет определить, в каких аккаунтах Google можно сохранять на Google Диск PDF-файлы из Google Chrome PDF Viewer.
+
+При попытке загрузить PDF-файл на Google Диск, используя аккаунт, который не соответствует указанному шаблону, появится сообщение об ошибке.
+
+Если правило не настроено или регулярное выражение не задано, пользователь может сохранять PDF-файлы на Google Диск через любой аккаунт Google.
+
+Пример значения: .*@example\.com</string>
+      <string id="SilentPrintingEnabled">Включить печать в фоновом режиме</string>
+      <string id="SilentPrintingEnabled_Explain">Задав для этого правила значение True, вы разрешите печать в фоновом режиме, в котором окно предпросмотра документа сразу закрывается, а файл печатается на принтере и с настройками по умолчанию. Если в качестве принтера выбран вариант "Сохранить как PDF", документ будет помещен в папку со скачанными файлами.
+
+Если правило не настроено или задано значение False, печать в фоновом режиме отключена. Окно предпросмотра не закрывается автоматически, и пользователю нужно выбрать параметры вручную.</string>
+      <string id="StaticStorageQuotaEnabled">Управлять тем, будут ли API, определяющие доступное место в хранилище, возвращать статические значения</string>
+      <string id="StaticStorageQuotaEnabled_Explain">Если правило включено, API, определяющие доступное место в хранилище, будут возвращать статическое значение, равное использованному объему, к которому добавляется меньшее из двух значений: 10 ГиБ или объем диска, округленный до ближайшего 1 ГиБ.
+Если правило отключено, такие API обычно возвращают динамическое значение, пропорциональное общему объему свободного пространства на устройстве, независимо от занятого места.
+Если правило не настроено, для таких API используется поведение Chrome по умолчанию.
+Этот параметр не влияет на сайты, где доступное пространство хранения не ограничено. Доступное пространство, установленное принудительно, также не изменится.</string>
+      <string id="WebAppInstallByUserEnabled">Включить установку веб-приложений пользователями из браузера</string>
+      <string id="WebAppInstallByUserEnabled_Explain">Это правило определяет, могут ли пользователи устанавливать веб-приложения через браузер.
+Если правило включено или не настроено, пользователи могут устанавливать веб-приложения через браузер.
+Если правило отключено, пользователи не могут устанавливать веб-приложения через браузер, а тип данных "Приложения" исключается из синхронизации для Chrome Sync.
+Это правило не поддерживает динамическое обновление. Любые изменения, например включение, отключение или сброс, вступают в силу только после перезапуска браузера.
+Это правило не влияет на правило WebAppInstallForceList.</string>
+      <string id="XSLTEnabled">Управление доступностью функции XSLT</string>
+      <string id="XSLTEnabled_Explain">Это правило определяет, доступна ли функция XSLT (XSLTProcessor JavaScript API и инструкция по обработке XSL).
+Если правило включено, функция XSLT доступна независимо от ее состояния по умолчанию в браузере.
+Если правило отключено, функция XSLT недоступна независимо от ее состояния по умолчанию в браузере.
+Если правило не настроено, доступность XSLT определяется настройками браузера по умолчанию и экспериментальными функциями.
+Это временное правило, которое будет удалено в версии M164.</string>
+      <string id="LocalNetworkAccessSettings_group">Настройки доступа к локальным сетям</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">Переопределить сопоставления адресного пространства IP-адресов</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">Позволяет отметить определенные диапазоны внутренних адресов как общедоступные, чтобы к ним не применялись проверки типа "Local Network Access". Также позволяет отметить определенные диапазоны общедоступных адресов, которые могут использоваться внутри компании, как локальные, чтобы они защищались проверками типа "Local Network Access".
+
+Переопределение адресного пространства IP-адресов может быть двух видов:
+
+[cidr]=[public|local|loopback]
+
+Где [cidr] – диапазон IP-адресов в нотации CIDR (подробные сведения можно найти в разделе 3.1 на странице https://tools.ietf.org/html/rfc4632 для IPv4 и разделе 2.3 на странице https://tools.ietf.org/html/rfc4291 для IPv6). IP-адреса IPv6 должны быть указаны в безопасном для URL формате (в скобках). Переопределения CIDR применяются ко всем портам.
+
+[ip-адрес]:[порт]=[public|local|loopback]
+
+Узнать больше о проверке типа "Local Network Access" можно на страницах https://wicg.github.io/local-network-access/ и https://developer.chrome.com/blog/local-network-access.
+
+Это правило не поддерживает динамическое обновление.
+
+Переопределения, установленные с помощью параметра командной строки --ip-address-space-overrides, имеют приоритет над заданными этим правилом.
+
+Пример значения:
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">Разрешить запросы на доступ к локальной сети в субфреймах без явного делегирования</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">По умолчанию доступ к локальной сети можно запрашивать в субфреймах из других источников, только если соответствующие разрешения предоставлены явным образом. Это правило позволяет переопределить режим работы по умолчанию, чтобы разрешения на доступ к локальной сети по умолчанию наследовались в субфреймах, если не были явно запрещены в правиле для настройки разрешений.
+
+Если правило включено, субфреймы по умолчанию получают все разрешения запрашивать доступ к локальной сети и могут вызывать такой запрос.
+
+Если правило отключено или не настроено, субфреймам нужно явно предоставлять возможность запрашивать доступ к локальной сети и вызывать этот запрос.
+
+Правило применяется к следующим функциям правила для настройки разрешений: "local-network-access", "loopback-network" и "local-network".
+
+Подробнее о доступе к локальной сети: https://wicg.github.io/local-network-access/ и https://developer.chrome.com/blog/local-network-access.
+
+Чтобы узнать больше о правиле для настройки разрешений, перейдите на страницу https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy.</string>
+      <string id="LocalNetworkAllowedForUrls">Разрешить сайтам отправлять запросы конечным точкам локальной сети</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">Список шаблонов URL. Сетевые запросы, отправляемые конечным точкам локальной сети с сайтов, источники которых совпадают с указанными шаблонами, не должны проходить проверки типа "Local Network Access".
+
+Для источников, не совпадающих с этими шаблонами, действуют пользовательские настройки.
+
+Подробнее о допустимых шаблонах URL: https://chromeenterprise.google/policies/url-patterns/.
+
+Дополнительные сведения об ограничениях типа "Local Network Access" можно найти на странице https://wicg.github.io/local-network-access/.
+
+Есть несколько правил со списками источников, которые влияют на запросы к конечным точкам локальной сети. Если источник соответствует шаблонам из нескольких перечисленных ниже правил, эти правила применяются в следующем порядке:
+
+- LocalNetworkBlockedForUrls;
+- LocalNetworkAllowedForUrls;
+- LocalNetworkAccessBlockedForUrls;
+- LocalNetworkAccessAllowedForUrls.
+
+Пример значения:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">Запретить сайтам отправлять сетевые запросы конечным точкам локальной сети</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">Список шаблонов URL. Правило запрещает отправлять конечным точкам локальной сети сетевые запросы типа "Local Network Access" с сайтов, источники которых совпадают с указанными шаблонами.
+
+Для источников, не совпадающих с этими шаблонами, действуют пользовательские настройки.
+
+Подробнее о допустимых шаблонах URL: https://chromeenterprise.google/policies/url-patterns/.
+
+Дополнительные сведения об ограничениях типа "Local Network Access" можно найти на странице https://wicg.github.io/local-network-access/.
+
+Есть несколько правил со списками источников, которые влияют на запросы к конечным точкам локальной сети. Если источник соответствует шаблонам из нескольких перечисленных ниже правил, эти правила применяются в следующем порядке:
+
+- LocalNetworkBlockedForUrls;
+- LocalNetworkAllowedForUrls;
+- LocalNetworkAccessBlockedForUrls;
+- LocalNetworkAccessAllowedForUrls.
+
+Пример значения:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">Разрешить сайтам отправлять сетевые запросы локальному устройству</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">Список шаблонов URL. Сетевые запросы к локальному устройству с сайтов, источники которых совпадают с указанными шаблонами, не должны проходить проверки типа "Local Network Access".
+
+Для источников, не совпадающих с этими шаблонами, действуют пользовательские настройки.
+
+Подробнее о допустимых шаблонах URL: https://chromeenterprise.google/policies/url-patterns/.
+
+Дополнительные сведения об ограничениях типа "Local Network Access" можно найти на странице https://wicg.github.io/local-network-access/.
+
+Есть несколько правил со списками источников, которые влияют на запросы к локальному устройству. Если источник соответствует шаблонам из нескольких перечисленных ниже правил, эти правила применяются в следующем порядке:
+
+- LoopbackNetworkBlockedForUrls;
+- LoopbackNetworkAllowedForUrls;
+- LocalNetworkAccessBlockedForUrls;
+- LocalNetworkAccessAllowedForUrls.
+
+Пример значения:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">Запретить сайтам отправлять сетевые запросы локальному устройству</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">Список шаблонов URL. Правило запрещает отправлять локальному устройству сетевые запросы типа "Local Network Access" с сайтов, источники которых совпадают с указанными шаблонами.
+
+Для источников, не совпадающих с этими шаблонами, действуют пользовательские настройки.
+
+Подробнее о допустимых шаблонах URL: https://chromeenterprise.google/policies/url-patterns/.
+
+Дополнительные сведения об ограничениях типа "Local Network Access" можно найти на странице https://wicg.github.io/local-network-access/.
+
+Есть несколько правил со списками источников, которые влияют на запросы к локальному устройству. Если источник соответствует шаблонам из нескольких перечисленных ниже правил, эти правила применяются в следующем порядке:
+
+- LoopbackNetworkBlockedForUrls;
+- LoopbackNetworkAllowedForUrls;
+- LocalNetworkAccessBlockedForUrls;
+- LocalNetworkAccessAllowedForUrls.
+
+Пример значения:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="ContentSettings_group">Настройки контента</string>
+      <string id="DefaultIdleDetectionSetting">Настройка определения бездействия по умолчанию</string>
+      <string id="DefaultIdleDetectionSetting_Explain">Правило позволяет разрешить или запретить сайтам использовать Idle Detection API.
+
+Если установлено значение 1 (AllowIdleDetection), сайты могут использовать API без запроса разрешения у пользователя.
+
+Если задано значение 2 (BlockIdleDetection), сайты не могут использовать API независимо от того, предоставил ли пользователь разрешение.
+
+Если правило не настроено или для него указано значение 3 (AskIdleDetection), сайты не могут использовать API без разрешения пользователя.</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">Разрешить сайтам определять состояние бездействия, не спрашивая пользователя</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">Запретить сайтам определять состояние бездействия пользователя</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">Спрашивать каждый раз, когда сайт запрашивает разрешение на определение состояния бездействия пользователя</string>
+      <string id="GeolocationBlockedForUrls">Блокировать доступ к геоданным на этих сайтах</string>
+      <string id="GeolocationBlockedForUrls_Explain">Правило позволяет задать список шаблонов URL для указания сайтов, которым запрещено получать доступ к геоданным пользователя и запрашивать у него разрешение на это.
+
+Если правило не настроено, для всех сайтов применяется правило DefaultGeolocationSetting при условии, что оно задано. В противном случае действуют персональные настройки пользователя.
+
+Подробнее о допустимых шаблонах url: https://chromeenterprise.google/policies/url-patterns. Допустимы подстановочные знаки (*).
+
+Пример значения:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">Разрешить определять состояние бездействия этим сайтам</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">Позволяет задать список шаблонов URL сайтов, которые могут использовать Idle Detection API без запроса разрешения у пользователя. Записи черного списка приоритетнее записей белого списка, которые, в свою очередь, приоритетнее значения по умолчанию.
+
+Подробнее о допустимых шаблонах URL: https://chromeenterprise.google/policies/url-patterns. Разрешается использовать подстановочные знаки: *. Это правило работает только с адресами сайтов-источников, поэтому пути в шаблонах URL не учитываются.
+
+Если правило не настроено, для всех сайтов будет использоваться глобальное значение по умолчанию, заданное в правиле DefaultIdleDetectionSetting ("Настройка обнаружения бездействия по умолчанию"), при условии, что оно задано. В противном случае применяется пользовательская конфигурация.
+
+Пример значения:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">Блокировать попытки обнаружения бездействия этими сайтами</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">Позволяет задать список шаблонов URL сайтов, которым запрещено использовать Idle Detection API.
+
+Подробнее о допустимых шаблонах URL: https://chromeenterprise.google/policies/url-patterns. Разрешается использовать подстановочные знаки (*). Это правило работает только с адресами сайтов-источников, поэтому пути в шаблонах URL не учитываются.
+
+Если правило не настроено, для всех сайтов будет использоваться глобальное значение по умолчанию, заданное в правиле DefaultIdleDetectionSetting (Настройка обнаружения бездействия по умолчанию), если оно настроено. В противном случае действует пользовательская конфигурация.
+
+Пример значения:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">Разрешить точную геолокацию на этих сайтах</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">Правило позволяет задать список шаблонов URL, чтобы указать сайты, которые могут получать доступ к точной геолокации пользователя без запроса разрешения.
+
+Если правило не настроено, на все сайты распространяется правило DefaultGeolocationSetting при условии, что оно задано. В противном случае действуют персональные настройки пользователя.
+
+Подробнее о допустимых шаблонах url: https://chromeenterprise.google/policies/url-patterns. Можно использовать подстановочные знаки (*).
+
+Пример значения:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="CryptographyCompliance_group">Правила обеспечения соответствия криптографическим стандартам</string>
+      <string id="PreferSlowCiphers">Предпочитать определенные алгоритмы шифрования для TLS</string>
+      <string id="PreferSlowCiphers_Explain">Правило настраивает Google Chrome так, чтобы в TLS 1.3 алгоритмы шифрования упорядочивались с учетом приоритета тех, которые одобрены по определенному стандарту соответствия.
+
+Это правило не гарантирует, что будут согласованы конкретные алгоритмы.
+
+С его помощью операторы сервера могут поддерживать клиенты как с требованиями к соответствию, так и без них, и применять отдельные нестандартные алгоритмы с повышенной криптографической стойкостью только для тех, которые настроены отдавать предпочтение этим алгоритмам.
+
+Правило с заданными значением "cnsa" настраивает Google Chrome так, чтобы предпочтение отдавалось шифрам в соответствии с набором Commercial National Security Algorithm Suite 1.0 и 2.0 (CNSA 1.0 и 2.0).
+
+Если правило не настроено или установлено значение "default", Google Chrome будет использовать стандартные шифры.
+
+Правило необязательно для обеспечения безопасности. Криптография, которую Google Chrome использует по умолчанию, достаточно надежна, чтобы противостоять атаке методом подбора с максимально возможной мощностью.
+
+Если настроить это правило, скорость работы Google Chrome при просмотре сайтов снизится.
+
+Правило затрагивает только TLS 1.3 и QUIC; оно не касается более поздних версий TLS.
+
+Пример значения: cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">Предпочитать шифры, соответствующие требованиям CNSA 1.0 и 2.0</string>
+      <string id="PreferSlowCiphers_Default">Использовать стандартный порядок шифров Google Chrome</string>
+      <string id="PreferSlowKexAlgorithms">Предпочитать определенные алгоритмы обмена ключами для TLS</string>
+      <string id="PreferSlowKexAlgorithms_Explain">Правило настраивает Google Chrome так, чтобы в TLS 1.3 алгоритмы согласования ключей (поддерживаемые группы) упорядочивались с учетом приоритета тех, которые одобрены по определенному стандарту соответствия.
+
+Это правило не гарантирует, что будут согласованы конкретные алгоритмы.
+
+С его помощью операторы сервера могут поддерживать клиенты как с требованиями к соответствию, так и без них, и применять отдельные нестандартные алгоритмы с повышенной криптографической стойкостью только для тех, которые настроены отдавать предпочтение этим алгоритмам.
+
+Правило с заданным значением "cnsa2" настраивает Google Chrome так, чтобы предпочтение отдавалось методам обмена ключами в соответствии с набором Commercial National Security Algorithm Suite 2.0 (CNSA 2.0).
+
+Если правило не настроено или задано значение "default", Google Chrome будет использовать стандартные методы обмена ключами.
+
+Если правило установлено так, что Google Chrome отдает предпочтение постквантовому алгоритму согласования ключей, а правило PostQuantumKeyAgreementEnabled отключено, приоритет имеет PostQuantumKeyAgreementEnabled.
+
+Правило необязательно для обеспечения безопасности. Криптография, которую Google Chrome использует по умолчанию, достаточно надежна, чтобы противостоять атаке методом подбора с максимально возможной мощностью.
+
+Если настроить это правило, скорость работы Google Chrome при просмотре сайтов снизится.
+
+Правило затрагивает только TLS 1.3 и QUIC; оно не касается более поздних версий TLS.
+
+Пример значения: cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">Предпочитать методы обмена ключами, соответствующие требованиям CNSA 2.0</string>
+      <string id="PreferSlowKexAlgorithms_Default">Использовать стандартные поддерживаемые группы Google Chrome</string>
+      <string id="Proxy_group">Прокси-сервер</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">Это правило определяет, какие пользователи с управляемым аккаунтом могут настраивать правило ProxyOverrideRules</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">Если это правило не настроено или для него установлено значение 0, ProxyOverrideRules применяется только на уровне пользователя и только если он аффилирован.
+Если указано значение 1, ProxyOverrideRules действует на уровне пользователя, даже если он не аффилирован.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">Разрешить интеграциям приложения Gemini напрямую действовать на указанных сайтах</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">Запретить интеграциям приложения Gemini напрямую действовать на указанных сайтах</listBox></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">Включить обмен контентом с интеграциями "Google AI Mode" и "Lens"</dropdownList></presentation>
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">Разрешить включать режим "Только HTTPS"</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>Ограничить число аккаунтов Google, в которых PDF-файлы можно сохранять на Google Диск из Google Chrome PDF Viewer</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">Переопределить сопоставления адресного пространства IP-адресов</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">Разрешить сайтам отправлять запросы конечным точкам локальной сети</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">Запретить сайтам отправлять сетевые запросы конечным точкам локальной сети</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">Разрешить сайтам отправлять сетевые запросы локальному устройству</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">Запретить сайтам отправлять сетевые запросы локальному устройству</listBox></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">Определение бездействия</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">Блокировать доступ к геоданным на этих сайтах</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">Сайты, которым разрешено определять состояние бездействия</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">Сайты, которым запрещено определять состояние бездействия</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">Разрешить точную геолокацию на этих сайтах</listBox></presentation>
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">Предпочитать определенные алгоритмы шифрования для TLS</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">Предпочитать определенные алгоритмы обмена ключами для TLS</dropdownList></presentation>
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">Это правило определяет, какие пользователи с управляемым аккаунтом могут настраивать правило ProxyOverrideRules:</decimalTextBox></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

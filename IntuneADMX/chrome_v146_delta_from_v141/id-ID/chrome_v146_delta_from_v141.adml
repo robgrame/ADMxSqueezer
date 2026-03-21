@@ -1,0 +1,451 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 atau lebih baru</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - Setelan Default (pengguna dapat menggantinya)</string>
+      <string id="GenerativeAI_group">AI Generatif</string>
+      <string id="GeminiActOnWebAllowedForURLs">Mengizinkan integrasi aplikasi Gemini untuk langsung bertindak di situs tertentu</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">Memungkinkan untuk menetapkan daftar pola URL yang menentukan situs tempat integrasi aplikasi Gemini dapat langsung bertindak di halaman web.
+
+URL yang tidak cocok dengan daftar yang diizinkan atau daftar yang tidak diizinkan menggunakan GeminiActOnWebSettings.
+
+URL yang cocok dengan daftar yang diizinkan dan daftar yang tidak diizinkan akan diizinkan.
+
+Untuk informasi selengkapnya tentang pola yang valid, lihat https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Nilai contoh:
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">Memblokir integrasi aplikasi Gemini untuk langsung bertindak di situs tertentu</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">Memungkinkan untuk menetapkan daftar pola URL yang menentukan situs tempat integrasi aplikasi Gemini tidak dapat langsung bertindak di halaman web.
+
+URL yang tidak cocok dengan daftar yang diizinkan atau daftar yang tidak diizinkan menggunakan GeminiActOnWebSettings.
+
+URL yang cocok dengan daftar yang diizinkan dan daftar yang tidak diizinkan akan diizinkan.
+
+Untuk informasi selengkapnya tentang pola yang valid, lihat https://support.google.com/chrome/a?p=url_blocklist_filter_format.
+
+Nilai contoh:
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebSettings">Mengizinkan integrasi aplikasi Gemini untuk langsung bertindak di halaman web</string>
+      <string id="GeminiActOnWebSettings_Explain">Mengontrol apakah aplikasi Gemini diizinkan untuk mengambil tindakan di halaman web atas nama pengguna.
+
+0/tidak disetel = Aplikasi Gemini diizinkan untuk mengambil tindakan di halaman web.
+
+1 = Aplikasi Gemini tidak diizinkan untuk mengambil tindakan di halaman web.
+
+Kebijakan ini tidak akan berpengaruh jika aplikasi Gemini dinonaktifkan. Misalnya, aplikasi Gemini dapat dinonaktifkan oleh kebijakan GeminiSettings.
+
+Untuk mengetahui informasi selengkapnya tentang Gemini di Chrome, lihat https://support.google.com/chrome/a/answer/16291696.
+
+Aktivasi Gemini hanya tersedia di negara atau bahasa tertentu. Menyetel kebijakan ini tidak menjamin fitur akan diaktifkan; fitur tetap bergantung pada ketersediaan. Untuk mengetahui info selengkapnya tentang peluncuran, baca Catatan Rilis Enterprise: https://support.google.com/chrome/a/answer/7679408?hl=id</string>
+      <string id="GeminiActOnWebSettings_Enabled">Izinkan aplikasi Gemini melakukan tindakan di halaman web.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Jangan izinkan aplikasi Gemini mengambil tindakan di halaman web.</string>
+      <string id="SearchContentSharingSettings">Aktifkan berbagi konten dengan integrasi Google AI Mode dan Lens</string>
+      <string id="SearchContentSharingSettings_Explain">Kebijakan ini mengontrol berbagi konten halaman dan file dengan Google AI Mode dan Lens melalui panel samping atau tab Google Chrome.
+
+Perhatikan bahwa kebijakan ini tidak memengaruhi Google AI Mode di web. Kebijakan ini hanya mengontrol kemampuan pengguna untuk berbagi informasi dengannya saat menggunakan Google Chrome.
+
+0/tidak disetel = pengguna dapat membagikan konten halaman atau file ke Google AI Mode.
+
+1 = pengguna tidak dapat membagikan konten halaman atau file ke Google AI Mode. Titik entri untuk berbagi konteks dan panel samping akan dinonaktifkan atau disembunyikan.
+
+Kebijakan ini akan diabaikan jika Google Search bukan mesin telusur default pengguna karena fitur ini dinonaktifkan.
+
+Kebijakan ini terpisah dari kebijakan AIModeSettings. Kebijakan AIModeSettings hanya mengontrol titik entri di kotak penelusuran omnibox atau NTP, sedangkan kebijakan ini mengontrol berbagi konteks melalui panel samping atau tab.
+
+Kebijakan ini juga tidak mengontrol integrasi Google Gemini yang dapat dinonaktifkan oleh GeminiSettings.
+
+Jika kebijakan ini tidak disetel, perilakunya akan ditentukan oleh kebijakan GenAiDefaultSettings.
+
+Untuk mengetahui informasi selengkapnya tentang penanganan data untuk fitur AI generatif, lihat https://support.google.com/chrome/a?p=generative_ai_settings.</string>
+      <string id="SearchContentSharingSettings_Allowed">Izinkan berbagi konten dengan integrasi Google AI Mode.</string>
+      <string id="SearchContentSharingSettings_Disabled">Jangan izinkan berbagi konten dengan integrasi Google AI Mode.</string>
+      <string id="CryptographyCompliance_group">Kebijakan kepatuhan kriptografi</string>
+      <string id="PreferSlowCiphers">Memilih algoritma cipher enkripsi tertentu untuk TLS</string>
+      <string id="PreferSlowCiphers_Explain">Kebijakan ini mengonfigurasi Google Chrome untuk mengurutkan cipher enkripsi pilihannya di TLS 1.3 agar sesuai dengan algoritma yang telah disetujui oleh skema kepatuhan tertentu.
+
+Menyetel kebijakan ini tidak menjamin bahwa algoritma tertentu akan digunakan.
+
+Kebijakan ini dibuat bagi operator server, yang ingin mendukung klien dengan dan tanpa persyaratan kepatuhan, agar dapat membedakan kedua klien tersebut. Kebijakan ini hanya menggunakan algoritma non-default tertentu dengan peningkatan kekuatan kriptografi untuk klien yang secara eksplisit dikonfigurasi untuk memilih algoritma.
+
+Menyetel kebijakan ke 'cnsa' akan mengonfigurasi Google Chrome untuk memilih cipher yang diperlukan agar sesuai dengan Commercial National Security Algorithm Suite versi 1.0 dan 2.0 (CNSA 1.0 dan 2.0).
+
+Jika kebijakan ini tidak disetel atau disetel ke 'default', Google Chrome akan dikonfigurasi untuk menggunakan cipher defaultnya.
+
+Setelan kebijakan ini tidak diperlukan untuk keamanan. Kriptografi default yang digunakan oleh Google Chrome sudah cukup kuat untuk menahan serangan brute force bahkan dengan daya sebesar Matahari.
+
+Jika kebijakan ini disetel, Google Chrome akan menjadi lebih lambat saat mengakses situs.
+
+Kebijakan ini hanya memengaruhi TLS 1.3 dan QUIC; kebijakan ini tidak memengaruhi TLS versi sebelumnya.
+
+Nilai contoh: cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">Pilih cipher yang memenuhi persyaratan CNSA 1.0 dan 2.0</string>
+      <string id="PreferSlowCiphers_Default">Gunakan urutan cipher default Google Chrome</string>
+      <string id="PreferSlowKexAlgorithms">Pilih algoritma pertukaran kunci tertentu untuk TLS</string>
+      <string id="PreferSlowKexAlgorithms_Explain">Kebijakan ini mengonfigurasi Google Chrome untuk mengurutkan algoritma perjanjian kunci pilihannya (grup yang didukung) di TLS 1.3 agar sesuai dengan algoritma yang telah disetujui oleh skema kepatuhan tertentu.
+
+Menyetel kebijakan ini tidak menjamin bahwa algoritma tertentu akan digunakan.
+
+Kebijakan ini dibuat bagi operator server, yang ingin mendukung klien dengan dan tanpa persyaratan kepatuhan, agar dapat membedakan kedua klien tersebut. Kebijakan ini hanya menggunakan algoritma non-default tertentu dengan peningkatan kekuatan kriptografi untuk klien yang secara eksplisit dikonfigurasi untuk memilih algoritma.
+
+Menyetel kebijakan ke 'cnsa2' akan mengonfigurasi Google Chrome untuk memilih metode pertukaran kunci yang diperlukan agar sesuai dengan Commercial National Security Algorithm Suite 2.0 (CNSA 2.0).
+
+Jika kebijakan ini tidak disetel, atau disetel ke 'default', Google Chrome akan dikonfigurasi untuk menggunakan metode pertukaran kunci defaultnya.
+
+Jika kebijakan ini disetel ke nilai yang akan mengonfigurasi Google Chrome untuk memilih algoritma perjanjian kunci pasca-kuantum, tetapi PostQuantumKeyAgreementEnabled disetel ke Nonaktif, setelan PostQuantumKeyAgreementEnabled akan diprioritaskan.
+
+Setelan kebijakan ini tidak diperlukan untuk keamanan. Kriptografi default yang digunakan oleh Google Chrome sudah cukup kuat untuk menahan serangan brute force bahkan dengan daya sebesar Matahari.
+
+Jika kebijakan ini disetel, Google Chrome akan menjadi lebih lambat saat mengakses situs.
+
+Kebijakan ini hanya memengaruhi TLS 1.3 dan QUIC; kebijakan ini tidak memengaruhi TLS versi sebelumnya.
+
+Nilai contoh: cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">Pilih metode pertukaran kunci yang memenuhi persyaratan CNSA 2.0</string>
+      <string id="PreferSlowKexAlgorithms_Default">Gunakan grup default yang didukung Google Chrome</string>
+      <string id="RemovedPolicies_group">Kebijakan yang dihapus</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Aktifkan Ekstensi yang Diinstal Otomatis dengan Pelanggaran Non-Malware</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Kebijakan ini dihapus. Kebijakan ini tidak kompatibel dengan versi Google Chrome ini. Baca selengkapnya di https://support.google.com/chrome/a/answer/7643500</string>
+      <string id="CacheEncryptionEnabled">Kebijakan ini memungkinkan administrator mengenkripsi cache http di disk.</string>
+      <string id="CacheEncryptionEnabled_Explain">Kebijakan ini memungkinkan administrator mengenkripsi cache http browser di disk.
+
+Jika kebijakan ini disetel ke Aktif, cache browser akan dienkripsi.
+
+Jika kebijakan ini disetel ke Nonaktif atau tidak disetel, cache browser tidak akan dienkripsi.
+
+Enkripsi cache browser dapat menyebabkan dampak performa.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Aktifkan Profil Google Developer Program di Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Kebijakan ini mengontrol integrasi Google Developer Program dengan Chrome DevTools. Profil Google Developer Program pengguna ditampilkan di Chrome DevTools, dan pengguna menerima badge karena melakukan tindakan tertentu dalam Chrome DevTools.
+
+Jika kebijakan ini disetel ke 0 - 'Diaktifkan', atau jika nilai kebijakan tidak disetel, integrasi Google Developer Program dengan Chrome DevTools akan diizinkan, dan penggunaan alat Chrome DevTools akan diizinkan untuk dibagikan agar badge dapat diberikan.
+
+Jika kebijakan ini disetel ke 1 - 'Diaktifkan tanpa badge', integrasi Google Developer Program dengan Chrome DevTools akan diizinkan, tetapi penggunaan alat Chrome DevTools tidak akan dapat dibagikan ke Google Developer Program. Tidak ada badge yang akan diberikan.
+
+Jika kebijakan ini disetel ke 2 - 'Nonaktif', integrasi Google Developer Program dengan Chrome DevTools tidak akan diizinkan.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Aktifkan integrasi Google Developer Program di Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Aktifkan integrasi Google Developer Program di Chrome DevTools, tetapi tanpa membagikan penggunaan alat (untuk pemberian badge).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Jangan aktifkan integrasi Google Developer Program di Chrome DevTools.</string>
+      <string id="ForceForegroundPriorityForAllTabs">Terapkan prioritas latar depan untuk semua tab</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">Kebijakan ini mengontrol apakah konten web latar belakang dipaksa berjalan pada
+prioritas latar depan.
+
+Secara default, browser mengoptimalkan resource dengan menurunkan prioritas konten di
+tab latar belakang. Mengaktifkan kebijakan ini akan mengganti perilaku tersebut, sehingga tab latar belakang dijadwalkan dengan cara yang sama seperti tab aktif.
+
+Perhatikan bahwa memaksa konten latar belakang untuk berjalan pada prioritas latar depan dapat sedikit memengaruhi responsivitas tab aktif.
+
+Jika kebijakan ini disetel ke Aktif, semua konten web akan berjalan pada prioritas latar depan
+terlepas dari status visibilitasnya.
+
+Jika kebijakan ini disetel ke Nonaktif atau tidak disetel, browser akan menentukan prioritas
+berdasarkan heuristik standar (misalnya, menurunkan prioritas konten yang tidak
+terlihat, tidak memutar audio, tidak berpartisipasi dalam panggilan video...).</string>
+      <string id="HttpsOnlyMode">Mengizinkan pengaktifan Mode Khusus HTTPS</string>
+      <string id="HttpsOnlyMode_Explain">Kebijakan ini mengontrol apakah pengguna dapat mengaktifkan Mode Khusus HTTPS (Selalu Gunakan Koneksi Aman) di Setelan. Mode Khusus HTTPS mengupgrade semua navigasi ke HTTPS.
+
+Jika setelan ini tidak disetel atau disetel ke "allowed", pengguna akan diizinkan mengaktifkan Mode Khusus HTTPS.
+
+Jika setelan ini disetel ke "disallowed", Mode Khusus HTTPS akan dinonaktifkan.
+
+Jika setelan ini disetel ke "force_enabled", Mode Khusus HTTPS akan diaktifkan dalam mode Ketat.
+
+Jika setelan ini disetel ke "force_balanced_enabled", Mode Khusus HTTPS akan diaktifkan dalam mode Seimbang.
+
+"force_enabled" didukung mulai M112 dan seterusnya, "force_balanced_enabled" didukung mulai M129 dan seterusnya.
+
+"force_enabled" dan "force_balanced_enabled" juga dapat direkomendasikan kepada pengguna.
+Mode Khusus HTTPS akan disetel ke Ketat atau Seimbang pada awalnya, tetapi pengguna diizinkan untuk
+mengubahnya.
+
+Jika Anda menyetel kebijakan ini ke nilai yang tidak didukung oleh versi Chrome yang menerima kebijakan, Chrome akan secara default ditetapkan ke setelan yang diizinkan.
+
+Kebijakan HttpAllowlist terpisah
+dapat digunakan untuk mengecualikan nama host atau pola nama host tertentu agar tidak
+diupgrade ke HTTPS oleh fitur ini.
+
+Nilai contoh: disallowed</string>
+      <string id="HttpsOnlyMode_allowed">Jangan batasi setelan Mode Khusus HTTPS pengguna</string>
+      <string id="HttpsOnlyMode_disallowed">Nonaktifkan Mode Khusus HTTPS</string>
+      <string id="HttpsOnlyMode_force_enabled">Aktifkan Mode Khusus HTTPS dalam mode Ketat</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">Aktifkan Mode Khusus HTTPS dalam Mode Seimbang</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">Batasi Akun Google yang memenuhi syarat untuk menyimpan file PDF ke Google Drive dari Penampil PDF Google Chrome</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">Berisi ekspresi reguler untuk menentukan Akun Google yang memenuhi syarat untuk menyimpan file PDF ke Google Drive dari Penampil PDF Google Chrome.
+
+Error akan ditampilkan jika pengguna mencoba mengupload file PDF ke Google Drive menggunakan akun yang tidak cocok dengan pola ini.
+
+Jika kebijakan ini tidak disetel atau dibiarkan kosong, pengguna dapat menggunakan Akun Google mana pun untuk menyimpan file PDF ke Google Drive.
+
+Nilai contoh: .*@example\.com</string>
+      <string id="SilentPrintingEnabled">Aktifkan Pencetakan Senyap</string>
+      <string id="SilentPrintingEnabled_Explain">Mengatur kebijakan ini ke benar (true) akan mengaktifkan pencetakan senyap, yang akan langsung menutup
+jendela pratinjau cetak saat dibuka dan mencetak ke printer default dengan
+opsi default. Jika printer default adalah 'Simpan sebagai PDF', file akan
+disimpan ke folder Download.
+
+Jika kebijakan ini tidak disetel atau disetel ke salah (false), pencetakan
+senyap akan dinonaktifkan, yang tidak otomatis menutup jendela pratinjau cetak dan mengharuskan
+pengguna untuk membuat pilihan seperti biasa.</string>
+      <string id="StaticStorageQuotaEnabled">Mengontrol apakah API kuota penyimpanan akan menampilkan nilai statis</string>
+      <string id="StaticStorageQuotaEnabled_Explain">Jika kebijakan ini diaktifkan, API kuota penyimpanan akan menampilkan nilai statis yang sama dengan penggunaan + min(10 GiB, disk dibulatkan ke 1 GiB terdekat).
+Jika kebijakan ini dinonaktifkan, API kuota penyimpanan umumnya akan menampilkan nilai dinamis yang proporsional dengan total ruang yang tersedia di perangkat, terlepas dari penggunaan.
+Jika kebijakan ini tidak disetel, API kuota penyimpanan akan menggunakan perilaku Chrome default.
+Situs dengan izin penyimpanan tak terbatas tidak akan terpengaruh oleh setelan ini. Kuota yang diterapkan juga tidak akan terpengaruh.</string>
+      <string id="WebAppInstallByUserEnabled">Aktifkan Penginstalan Aplikasi Web Pengguna dari Browser</string>
+      <string id="WebAppInstallByUserEnabled_Explain">Kebijakan ini mengontrol apakah pengguna dapat menginstal aplikasi web melalui browser.
+Jika Anda mengaktifkan atau tidak mengonfigurasi kebijakan ini, pengguna dapat menginstal aplikasi web melalui browser.
+Jika Anda menonaktifkan kebijakan ini, pengguna tidak dapat menginstal aplikasi web melalui browser dan jenis data "aplikasi" akan dikecualikan dari sinkronisasi untuk Chrome Sync.
+Kebijakan ini tidak mendukung pemuatan ulang dinamis. Semua perubahan, baik mengaktifkan, menonaktifkan, atau menghapus setelan, hanya akan berlaku setelah browser dimulai ulang.
+Kebijakan ini tidak memengaruhi kebijakan 'WebAppInstallForceList'.</string>
+      <string id="XSLTEnabled">Mengontrol ketersediaan fitur XSLT</string>
+      <string id="XSLTEnabled_Explain">Kebijakan ini mengontrol ketersediaan fitur XSLT (XSLTProcessor JavaScript API dan petunjuk pemrosesan XSL).
+Jika kebijakan ini disetel ke Aktif, XSLT akan tersedia terlepas dari status default fitur tersebut di browser.
+Jika kebijakan ini disetel ke Nonaktif, XSLT tidak akan tersedia terlepas dari status default fitur tersebut di browser.
+Jika kebijakan ini tidak disetel, ketersediaan XSLT akan ditentukan oleh setelan default browser dan uji coba di lingkungan sebenarnya.
+Kebijakan ini bersifat sementara, dan akan dihapus di M164.</string>
+      <string id="Proxy_group">Server proxy</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">Mengontrol pengguna terkelola mana yang dapat menetapkan kebijakan ProxyOverrideRules.</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">Jika kebijakan ini disetel ke 0 atau tidak disetel, kebijakan ProxyOverrideRules hanya akan diterapkan pada cakupan pengguna untuk pengguna terafiliasi.
+Jika kebijakan ini disetel ke 1, kebijakan ProxyOverrideRules akan diterapkan pada cakupan pengguna, meskipun pengguna tersebut tidak terafiliasi.</string>
+      <string id="LocalNetworkAccessSettings_group">Setelan Akses Jaringan Lokal</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">Ganti pemetaan ruang alamat IP</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">Kebijakan ini dapat digunakan untuk memperlakukan rentang alamat internal tertentu sebagai "publik" sehingga tidak melalui pemeriksaan Local Network Access. Sebaliknya, kebijakan ini dapat digunakan untuk memperlakukan rentang alamat publik tertentu yang mungkin digunakan secara internal sebagai "lokal" sehingga dilindungi dengan pemeriksaan Local Network Access.
+
+Penggantian ruang alamat IP memiliki dua bentuk:
+
+[cidr]=[public|local|loopback]
+
+dengan [cidr] adalah rentang alamat IP dalam notasi CIDR (lihat bagian 3.1 dari https://tools.ietf.org/html/rfc4632 untuk IPv4 dan bagian 2.3 dari https://tools.ietf.org/html/rfc4291 untuk IPv6). Alamat IPv6 harus ditentukan dalam format yang aman untuk URL (dalam tanda kurung). Penggantian CIDR berlaku untuk semua port.
+
+atau
+
+[ip-address]:[port]=[public|local|loopback]
+
+Untuk mengetahui informasi selengkapnya tentang Local Network Access, lihat https://wicg.github.io/local-network-access/ dan https://developer.chrome.com/blog/local-network-access.
+
+Kebijakan ini tidak mendukung pemuatan ulang dinamis.
+
+Penggantian yang berasal dari switch command line --ip-address-space-overrides lebih diprioritaskan daripada penggantian yang ditetapkan oleh kebijakan ini.
+
+Nilai contoh:
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">Izinkan permintaan Akses Jaringan Lokal (LNA) di subframe tanpa pendelegasian eksplisit</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">Secara default, izin untuk Akses Jaringan Lokal (LNA) hanya dapat diminta di subframe lintas origin jika izin tersebut didelegasikan secara eksplisit. Kebijakan ini dapat digunakan untuk mengganti perilaku default ini sehingga izin LNA diwariskan secara default ke subframe, kecuali jika permintaan ditolak secara eksplisit dalam kebijakan izin.
+
+Jika kebijakan ini disetel ke aktif, subframe secara default mewarisi semua fitur kebijakan izin LNA dan dapat membuat permintaan jaringan lokal (memicu dialog izin).
+
+Jika kebijakan ini disetel ke nonaktif atau tidak disetel, fitur kebijakan izin harus diwariskan secara eksplisit ke subframe agar dapat membuat permintaan jaringan lokal dan memicu dialog izin.
+
+Kebijakan ini berlaku untuk fitur kebijakan izin "local-network-access", "loopback-network", dan "local-network".
+
+Untuk mengetahui informasi selengkapnya tentang Akses Jaringan Lokal, lihat https://wicg.github.io/local-network-access/ dan https://developer.chrome.com/blog/local-network-access.
+
+Untuk mengetahui informasi selengkapnya tentang kebijakan izin, lihat https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy.</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Menentukan apakah akan (sementara) menonaktifkan pembatasan Akses Jaringan Lokal</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Jika kebijakan ini disetel ke Aktif, permintaan Local Network Access
+hanya akan menampilkan peringatan di Chrome DevTools karena pemeriksaan Local Network Access gagal.
+
+Jika kebijakan ini disetel ke Nonaktif atau tidak disetel, permintaan Local Network Access akan menggunakan
+penanganan default untuk permintaan ini.
+
+Lihat https://wicg.github.io/local-network-access/ untuk melihat batasan Local Network Access.
+
+Kebijakan perusahaan ini bersifat sementara, dan akan dihapus setelah M152.
+
+Dalam jangka panjang, kebijakan LocalNetworkAccessAllowedForUrls
+dapat digunakan untuk memasukkan pola URL ke daftar yang diizinkan yang harus otomatis diberikan
+izin Local Network Access.</string>
+      <string id="LocalNetworkAllowedForUrls">Mengizinkan situs membuat permintaan jaringan ke endpoint jaringan lokal.</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">Daftar pola URL. Permintaan jaringan yang dimulai dari situs yang disajikan dengan pencocokan origin ke endpoint jaringan lokal tidak tunduk pada pemeriksaan Local Network Access.
+
+Untuk origin yang tidak dicakup oleh pola yang ditentukan di sini, konfigurasi pribadi pengguna akan berlaku.
+
+Untuk mengetahui informasi selengkapnya tentang pola URL yang valid, kunjungi https://chromeenterprise.google/policies/url-patterns/.
+
+Kunjungi https://wicg.github.io/local-network-access/ untuk mengetahui batasan Local Network Access.
+
+Ada beberapa kebijakan yang mencantumkan origin yang memengaruhi permintaan ke endpoint jaringan lokal. Jika origin cocok dengan lebih dari satu kebijakan berikut, kebijakan akan diprioritaskan dalam urutan berikut:
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Nilai contoh:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">Memblokir situs agar tidak membuat permintaan jaringan ke endpoint jaringan lokal.</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">Daftar pola URL. Permintaan jaringan yang dimulai dari situs yang disajikan dengan pencocokan origin ke endpoint jaringan lokal akan diblokir untuk mengajukan permintaan Local Network Access.
+
+Untuk origin yang tidak dicakup oleh pola yang ditentukan di sini, konfigurasi pribadi pengguna akan berlaku.
+
+Untuk mengetahui informasi selengkapnya tentang pola URL yang valid, kunjungi https://chromeenterprise.google/policies/url-patterns/.
+
+Kunjungi https://wicg.github.io/local-network-access/ untuk mengetahui batasan Local Network Access.
+
+Ada beberapa kebijakan yang mencantumkan origin yang memengaruhi permintaan ke endpoint jaringan lokal. Jika origin cocok dengan lebih dari satu kebijakan berikut, kebijakan akan diprioritaskan dalam urutan berikut:
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Nilai contoh:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">Mengizinkan situs membuat permintaan jaringan ke perangkat lokal.</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">Daftar pola URL. Permintaan jaringan yang dimulai dari situs yang disajikan dengan pencocokan origin ke perangkat lokal tidak tunduk pada pemeriksaan Local Network Access.
+
+Untuk origin yang tidak dicakup oleh pola yang ditentukan di sini, konfigurasi pribadi pengguna akan berlaku.
+
+Untuk mengetahui informasi selengkapnya tentang pola URL yang valid, kunjungi https://chromeenterprise.google/policies/url-patterns/.
+
+Kunjungi https://wicg.github.io/local-network-access/ untuk mengetahui batasan Local Network Access.
+
+Ada beberapa kebijakan yang mencantumkan origin yang memengaruhi permintaan ke perangkat lokal. Jika origin cocok dengan lebih dari satu kebijakan berikut, kebijakan akan diprioritaskan dalam urutan berikut:
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Nilai contoh:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">Memblokir situs agar tidak membuat permintaan jaringan ke perangkat lokal.</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">Daftar pola URL. Permintaan jaringan yang dimulai dari situs yang disajikan dengan pencocokan origin ke perangkat lokal akan diblokir untuk mengajukan permintaan Local Network Access.
+
+Untuk origin yang tidak dicakup oleh pola yang ditentukan di sini, konfigurasi pribadi pengguna akan berlaku.
+
+Untuk mengetahui informasi selengkapnya tentang pola URL yang valid, kunjungi https://chromeenterprise.google/policies/url-patterns/.
+
+Kunjungi https://wicg.github.io/local-network-access/ untuk mengetahui batasan Local Network Access.
+
+Ada beberapa kebijakan yang mencantumkan origin yang memengaruhi permintaan ke perangkat lokal. Jika origin cocok dengan lebih dari satu kebijakan berikut, kebijakan akan diprioritaskan dalam urutan berikut:
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Nilai contoh:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="ContentSettings_group">Setelan konten</string>
+      <string id="DefaultIdleDetectionSetting">Setelan deteksi tidak ada aktivitas default</string>
+      <string id="DefaultIdleDetectionSetting_Explain">Memungkinkan Anda menetapkan apakah situs diizinkan menggunakan Idle Detection API.
+
+Jika kebijakan ini disetel ke 1 - AllowIdleDetection, situs dapat menggunakan API tanpa meminta izin kepada pengguna.
+
+Jika kebijakan ini disetel ke 2 - BlockIdleDetection, situs tidak dapat menggunakan API, terlepas dari izin pengguna.
+
+Jika kebijakan ini disetel ke 3 - AskIdleDetection atau tidak disetel, situs tidak dapat menggunakan API tanpa izin pengguna.</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">Izinkan situs mendeteksi status tidak ada aktivitas tanpa meminta izin pengguna</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">Jangan izinkan situs mana pun mendeteksi status tidak ada aktivitas pengguna</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">Tanyakan setiap kali situs ingin mendeteksi status tidak ada aktivitas pengguna</string>
+      <string id="GeolocationBlockedForUrls">Blokir geolokasi di situs ini</string>
+      <string id="GeolocationBlockedForUrls_Explain">Jika kebijakan ini disetel, Anda dapat menetapkan daftar pola URL yang menentukan situs yang tidak diizinkan untuk mengakses geolokasi pengguna, dan juga tidak diizinkan untuk meminta izin pengguna untuk melakukannya.
+
+Jika kebijakan ini tidak disetel, DefaultGeolocationSetting akan berlaku untuk semua situs, jika disetel. Jika tidak, setelan pribadi pengguna akan digunakan.
+
+Untuk mengetahui informasi selengkapnya tentang pola url yang valid, lihat https://chromeenterprise.google/policies/url-patterns. Karakter pengganti, *, diizinkan.
+
+Nilai contoh:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">Mengizinkan deteksi tidak ada aktivitas di situs ini</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">Memungkinkan Anda menetapkan daftar pola URL yang menentukan situs yang diizinkan menggunakan Idle Detection API tanpa meminta izin pengguna. Entri daftar yang tidak diizinkan memiliki prioritas lebih tinggi daripada entri daftar yang diizinkan, yang berarti bahwa entri daftar yang tidak diizinkan juga memiliki prioritas lebih tinggi daripada nilai default yang dikonfigurasi.
+
+Untuk mengetahui informasi selengkapnya tentang pola URL situs yang valid, lihat https://chromeenterprise.google/policies/url-patterns. Karakter pengganti, *, diizinkan. Kebijakan ini hanya mencocokkan berdasarkan origin, sehingga jalur apa pun di pola URL akan diabaikan.
+
+Jika kebijakan ini tidak disetel, nilai default global akan digunakan untuk semua situs, yang dikonfigurasi oleh kebijakan DefaultIdleDetectionSetting (Setelan deteksi tidak ada aktivitas default), jika disetel, atau oleh konfigurasi pribadi pengguna jika kebijakan tidak disetel.
+
+Nilai contoh:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">Memblokir deteksi tidak ada aktivitas di situs ini</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">Memungkinkan Anda menetapkan daftar pola URL yang menentukan situs yang tidak diizinkan menggunakan Idle Detection API.
+
+Untuk mengetahui informasi selengkapnya tentang pola URL situs yang valid, lihat https://chromeenterprise.google/policies/url-patterns. Karakter pengganti, *, diizinkan. Kebijakan ini hanya mencocokkan berdasarkan origin, sehingga jalur apa pun di pola URL akan diabaikan.
+
+Jika kebijakan ini tidak disetel, nilai default global akan digunakan untuk semua situs, yang dikonfigurasi oleh kebijakan DefaultIdleDetectionSetting (Setelan deteksi tidak ada aktivitas default), jika disetel, atau oleh konfigurasi pribadi pengguna jika kebijakan tidak disetel.
+
+Nilai contoh:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">Izinkan geolokasi presisi di situs ini</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">Jika kebijakan ini disetel, Anda akan dapat menetapkan daftar pola URL yang menentukan situs yang diizinkan untuk mengakses geolokasi akurasi tinggi pengguna tanpa harus meminta izin kepada pengguna terlebih dahulu untuk melakukannya.
+
+Jika kebijakan ini tidak disetel, DefaultGeolocationSetting akan berlaku untuk semua situs, jika disetel. Jika tidak disetel, setelan pribadi pengguna akan berlaku.
+
+Untuk mengetahui informasi selengkapnya tentang pola url yang valid, lihat https://chromeenterprise.google/policies/url-patterns. Karakter pengganti, *, diizinkan.
+
+Nilai contoh:
+
+https://www.example.com
+[*.]example.edu</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">Mengizinkan integrasi aplikasi Gemini untuk langsung bertindak di situs tertentu</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">Memblokir integrasi aplikasi Gemini untuk langsung bertindak di situs tertentu</listBox></presentation>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Mengizinkan integrasi aplikasi Gemini untuk langsung bertindak di halaman web</dropdownList></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">Aktifkan berbagi konten dengan integrasi Google AI Mode dan Lens</dropdownList></presentation>
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">Memilih algoritma cipher enkripsi tertentu untuk TLS</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">Pilih algoritma pertukaran kunci tertentu untuk TLS</dropdownList></presentation>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Aktifkan Profil Google Developer Program di Chrome DevTools</dropdownList></presentation>
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">Mengizinkan pengaktifan Mode Khusus HTTPS</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>Batasi Akun Google yang memenuhi syarat untuk menyimpan file PDF ke Google Drive dari Penampil PDF Google Chrome</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">Mengontrol pengguna terkelola mana yang dapat menetapkan kebijakan ProxyOverrideRules.:</decimalTextBox></presentation>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">Ganti pemetaan ruang alamat IP</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">Mengizinkan situs membuat permintaan jaringan ke endpoint jaringan lokal.</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">Memblokir situs agar tidak membuat permintaan jaringan ke endpoint jaringan lokal.</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">Mengizinkan situs membuat permintaan jaringan ke perangkat lokal.</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">Memblokir situs agar tidak membuat permintaan jaringan ke perangkat lokal.</listBox></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">Deteksi tidak ada aktivitas</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">Blokir geolokasi di situs ini</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">Situs yang diizinkan untuk deteksi tidak ada aktivitas</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">Situs yang diblokir untuk deteksi tidak ada aktivitas</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">Izinkan geolokasi presisi di situs ini</listBox></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 以上版本</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">在 Chrome DevTools啟用 Google Developer Program 設定檔</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">這項政策可控管 Google Developer Program 與 Chrome DevTools的整合情形。使用者的 Google Developer Program 設定檔會顯示在 Chrome DevTools，只要使用者在 Chrome DevTools執行特定動作，就能獲得徽章。
+
+如果將政策設為 0 -「啟用」，或未設定任何政策值，表示允許整合 Google Developer Program 與 Chrome DevTools，並分享 Chrome DevTools使用情形，以便頒發徽章。
+
+如果將政策設為 1 -「啟用但不頒發徽章」，表示允許整合 Google Developer Program 與 Chrome DevTools，但不允許將 Chrome DevTools使用情形分享給 Google Developer Program，因此不會頒發任何徽章。
+
+如果將政策設為 2 -「停用」，表示不允許整合 Google Developer Program 與 Chrome DevTools。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">在 Chrome DevTools啟用 Google Developer Program 整合作業。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">在 Chrome DevTools啟用 Google Developer Program 整合作業，但不分享工具使用情形 (用於頒發徽章)。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">不要在 Chrome DevTools啟用 Google Developer Program 整合作業。</string>
+      <string id="LocalNetworkAccessSettings_group">區域網路存取權設定</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">指定是否要 (暫時) 停止區域網路存取權限制</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">如果將這項政策設為啟用，Local Network Access要求只會在 Chrome DevTools中顯示Local Network Access檢查失敗的警告。如果將這項政策設為停用或未設定，系統會使用預設處理方式處理Local Network Access要求。
+
+如要瞭解Local Network Access限制，請前往 https://wicg.github.io/local-network-access/。
+
+這項企業政策只是臨時措施，將於 M146 版之後移除。
+
+長期來看，使用 LocalNetworkAccessAllowedForUrls 政策將網址模式加入許可清單，就能自動授予Local Network Access權限。
+
+請注意，如果啟用 LocalNetworkAccessRestrictionsEnabled 政策，該政策的優先順序會高於本政策。</string>
+      <string id="Extensions_group">擴充功能</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">啟用違反非惡意軟體規定的強制安裝擴充功能</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">控管因違反非惡意軟體規定而遭下架的擴充功能，是否仍可強制安裝在低信任環境中。
+
+如要進一步瞭解非惡意軟體違規情況和下架原因，請前往 https://developer.chrome.com/docs/webstore/review-process#warning。
+
+解決非惡意軟體違規問題後，擴充功能會保持啟用狀態，無法停用或移除。
+
+如果 Microsoft® Windows® 執行個體加入 Microsoft® Active Directory® 網域或 Microsoft® Azure® Active Directory®，或者註冊 Chrome Enterprise Core，就無法使用這項政策。
+
+如果 macOS 執行個體透過行動裝置管理 (MDM) 軟體管理、透過 MCX 加入網域，或者註冊 Chrome Enterprise Core，就無法使用這項政策。在這些情況下，違反非惡意軟體規定的強制安裝擴充功能仍會保持啟用狀態。
+
+目前，如果強制安裝的擴充功能違反非惡意軟體相關規定，仍會安裝在 Chrome 中並保持啟用狀態。
+
+如果將這項政策設為啟用，無論是否違反非惡意軟體相關規定，強制安裝的擴充功能都會保持啟用狀態。
+
+如果將這項政策設為停用或不設定，系統會停用違反非惡意軟體規定的強制安裝擴充功能。
+
+這項政策將適用於 3 個版本。</string>
+      <string id="GenerativeAI_group">生成式 AI</string>
+      <string id="GeminiActOnWebSettings">允許 Gemini 應用程式整合功能直接在網頁執行動作</string>
+      <string id="GeminiActOnWebSettings_Explain">控管 Gemini 應用程式能否代表使用者在網頁執行動作。
+
+0/未設定  = 允許 Gemini 應用程式在網頁執行動作。
+
+1 = 禁止 Gemini 應用程式在網頁執行動作。
+
+如果停用 Gemini 應用程式，這項政策就沒有任何作用。例如，GeminiSettings 政策可能會停用 Gemini 應用程式。
+
+如要進一步瞭解 Chrome 內建的 Gemini，請參閱 https://support.google.com/chrome/a/answer/16291696。
+
+Gemini 啟動功能僅支援部分國家/地區和語言。設定這項政策無法保證一定會啟用這項功能，仍須視可用情形而定。如要進一步瞭解推出情況，請參閱 Chrome Enterprise 版本資訊：https://support.google.com/chrome/a/answer/7679408?hl=zh-Hant</string>
+      <string id="GeminiActOnWebSettings_Enabled">允許 Gemini 應用程式在網頁執行動作。</string>
+      <string id="GeminiActOnWebSettings_Disabled">禁止 Gemini 應用程式在網頁執行動作。</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">在 Chrome DevTools啟用 Google Developer Program 設定檔</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">允許 Gemini 應用程式整合功能直接在網頁執行動作</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

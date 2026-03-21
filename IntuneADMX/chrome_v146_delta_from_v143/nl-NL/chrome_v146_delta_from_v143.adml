@@ -1,0 +1,392 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v143-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 of later</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - Standaardinstellingen (gebruikers kunnen overschrijven)</string>
+      <string id="GenerativeAI_group">Generatieve AI</string>
+      <string id="GeminiActOnWebAllowedForURLs">Toestaan dat Gemini-app-integraties rechtstreeks acties uitvoeren op aangegeven sites</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">Hiermee kun je een lijst met URL-patronen instellen om aan te geven op welke sites Gemini-app-integraties rechtstreeks acties kunnen uitvoeren op webpagina's.
+
+URL's die niet overeenkomen met de toelatingslijst of de blokkeerlijst, gebruiken GeminiActOnWebSettings.
+
+URL's die overeenkomen met zowel de toelatingslijst als de blokkeerlijst, zijn toegestaan.
+
+Ga naar https://support.google.com/chrome/a?p=url_blocklist_filter_format voor uitgebreide informatie over geldige URL-patronen.
+
+Voorbeeldwaarde:
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">Niet toestaan dat Gemini-app-integraties rechtstreeks acties uitvoeren op aangegeven sites</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">Hiermee kun je een lijst met URL-patronen instellen om aan te geven op welke sites Gemini-app-integraties niet rechtstreeks acties kunnen uitvoeren op webpagina's.
+
+URL's die niet overeenkomen met de toelatingslijst of de blokkeerlijst, gebruiken GeminiActOnWebSettings.
+
+URL's die overeenkomen met zowel de toelatingslijst als de blokkeerlijst, zijn toegestaan.
+
+Ga naar https://support.google.com/chrome/a?p=url_blocklist_filter_format voor uitgebreide informatie over geldige URL-patronen.
+
+Voorbeeldwaarde:
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="SearchContentSharingSettings">Content delen met Google AI Mode- en Lens-integraties aanzetten</string>
+      <string id="SearchContentSharingSettings_Explain">Met dit beleid bepaal je of pagina- en bestandscontent kan worden gedeeld met Google AI Mode en Lens via het zijvenster of de tabbladen van Google Chrome.
+
+Dit beleid heeft geen invloed op Google AI Mode op het web. Het bepaalt alleen hoe gebruikers informatie met het product kunnen delen als ze Google Chrome gebruiken.
+
+0/niet ingesteld = gebruikers kunnen pagina- of bestandscontent delen met Google AI Mode.
+
+1 = gebruikers kunnen pagina- of bestandscontent niet delen met Google AI Mode. De startpunten voor context delen en het zijvenster worden uitgezet of verborgen.
+
+Dit beleid wordt genegeerd als Google Search niet de standaard zoekmachine van gebruikers is, omdat de functie dan uitstaat.
+
+Dit beleid is onafhankelijk van het beleid AIModeSettings. Het beleid AIModeSettings bepaalt alleen startpunten in de omnibox of het zoekvak op de pagina Nieuw tabblad, terwijl dit beleid het delen van context via het zijvenster of tabbladen beheert.
+
+Dit beleid beheert ook niet de integratie van Google Gemini. Deze kan worden uitgezet door GeminiSettings.
+
+Als je dit beleid niet instelt, wordt het gedrag bepaald door het beleid GenAiDefaultSettings.
+
+Ga naar https://support.google.com/chrome/a?p=generative_ai_settings voor meer informatie over gegevensverwerking voor generatieve AI-functies.</string>
+      <string id="SearchContentSharingSettings_Allowed">Content delen met Google AI Mode-integraties toestaan.</string>
+      <string id="SearchContentSharingSettings_Disabled">Content delen met Google AI Mode-integraties niet toestaan.</string>
+      <string id="ContentSettings_group">Instellingen voor content</string>
+      <string id="DefaultIdleDetectionSetting">Standaardinstelling voor inactiviteitsdetectie</string>
+      <string id="DefaultIdleDetectionSetting_Explain">Hiermee kun je instellen of websites de Idle Detection API mogen gebruiken.
+
+Als je dit beleid instelt op 1 (AllowIdleDetection), kunnen websites de API gebruiken zonder de gebruiker om toestemming te vragen.
+
+Als je dit beleid instelt op 2 (BlockIdleDetection), kunnen websites de API niet gebruiken, ongeacht de toestemming van de gebruiker.
+
+Als je dit beleid instelt op 3 (AskIdleDetection) of niet instelt, kunnen websites de API niet gebruiken zonder toestemming van de gebruiker.</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">Toestaan dat sites de inactieve status detecteren zonder de gebruiker om toestemming te vragen</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">Niet toestaan dat sites de inactieve status van de gebruiker detecteren</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">Altijd vragen als een site de inactieve status van de gebruiker wil detecteren</string>
+      <string id="GeolocationBlockedForUrls">Geolocatie blokkeren op deze sites</string>
+      <string id="GeolocationBlockedForUrls_Explain">Als je het beleid instelt, kun je een lijst met URL-patronen instellen voor sites die geen toegang tot de geolocatie van de gebruiker hebben en die de gebruiker ook niet om toestemming kunnen vragen.
+
+Als je het beleid niet instelt, is DefaultGeolocationSetting van toepassing op alle sites (als dit is ingesteld). Zo niet, dan gelden de persoonlijke instellingen van de gebruiker.
+
+Ga naar https://chromeenterprise.google/policies/url-patterns voor gedetailleerde informatie over geldige url-patronen. Jokertekens (*) zijn toegestaan.
+
+Voorbeeldwaarde:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">Inactiviteitsdetectie op deze sites toestaan</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">Hiermee kun je een lijst met URL-patronen instellen voor sites die de Idle Detection API mogen gebruiken zonder de gebruiker om toestemming te vragen. Vermeldingen op de blokkeerlijst hebben een hogere prioriteit dan vermeldingen op de toelatingslijst, die op hun beurt een hogere prioriteit hebben dan de ingestelde standaardwaarde.
+
+Ga naar https://chromeenterprise.google/policies/url-patterns voor gedetailleerde informatie over geldige site-URL-patronen. Jokertekens (*) zijn toegestaan. Dit beleid zoekt alleen overeenkomsten op basis van de herkomst, dus elk pad in het URL-patroon wordt genegeerd.
+
+Als je dit beleid niet instelt, wordt de algemene standaardwaarde gebruikt voor alle sites. Deze wordt ingesteld door het beleid DefaultIdleDetectionSetting (standaardinstelling voor inactiviteitsdetectie) als dit is ingesteld, of anders door de persoonlijke configuratie van de gebruiker.
+
+Voorbeeldwaarde:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">Inactiviteitsdetectie blokkeren op deze sites</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">Hiermee kun je een lijst met URL-patronen instellen om aan te geven welke sites de Idle Detection API niet mogen gebruiken.
+
+Ga naar https://chromeenterprise.google/policies/url-patterns voor gedetailleerde informatie over geldige site-URL-patronen. Jokertekens (*) zijn toegestaan. Dit beleid zoekt alleen overeenkomsten op basis van de herkomst, dus elk pad in het URL-patroon wordt genegeerd.
+
+Als je dit beleid niet instelt, wordt de algemene standaardwaarde gebruikt voor alle sites. Deze wordt ingesteld door het beleid DefaultIdleDetectionSetting (standaardinstelling voor inactiviteitsdetectie) als dit is ingesteld, of anders door de persoonlijke configuratie van de gebruiker.
+
+Voorbeeldwaarde:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">Exacte geolocatie toestaan op deze sites</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">Als je het beleid instelt, kun je een lijst met URL-patronen instellen voor sites die toegang tot de geolocatie met hoge nauwkeurigheid van de gebruiker hebben zonder de gebruiker eerst om toestemming te vragen.
+
+Als je het beleid niet instelt, geldt DefaultGeolocationSetting voor alle sites (als dit is ingesteld). Zo niet, dan gelden de persoonlijke instellingen van de gebruiker.
+
+Ga naar https://chromeenterprise.google/policies/url-patterns voor gedetailleerde informatie over geldige url-patronen. Jokertekens (*) zijn toegestaan.
+
+Voorbeeldwaarde:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="LocalNetworkAccessSettings_group">Instellingen voor toegang tot lokaal netwerk</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">Toewijzingen van IP-adresruimtes overschrijven</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">Dit kan worden gebruikt om bepaalde interne adresbereiken te behandelen als 'openbaar', wat inhoudt dat ze niet onder Local Network Access-controles vallen. Omgekeerd kan dit worden gebruikt om bepaalde openbare adresbereiken die intern kunnen worden gebruikt, te behandelen als 'lokaal' zodat ze worden beschermd door Local Network Access-controles.
+
+Er zijn 2 vormen van overschrijvingen van IP-adresruimtes:
+
+[cidr]=[public|local|loopback]
+
+waarbij [cidr] een IP-adresbereik is in CIDR-notatie (zie paragraaf 3.1 van https://tools.ietf.org/html/rfc4632 voor IPv4 en paragraaf 2.3 van https://tools.ietf.org/html/rfc4291 voor IPv6). IPv6-adressen moeten worden ingevoerd in een voor URL's geschikte indeling (met haakjes). CIDR-overschrijvingen zijn van toepassing op alle poorten.
+
+of
+
+[ip-address]:[port]=[public|local|loopback]
+
+Ga voor meer informatie over Local Network Access naar https://wicg.github.io/local-network-access/ en https://developer.chrome.com/blog/local-network-access.
+
+Dit beleid ondersteunt geen dynamische vernieuwing.
+
+Overschrijvingen via de opdrachtregelschakelaar --ip-address-space-overrides hebben voorrang op overschrijvingen die zijn ingesteld via dit beleid.
+
+Voorbeeldwaarde:
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">Verzoeken voor lokale netwerktoegang (Local Network Access, LNA) in subframes toestaan zonder expliciete machtiging</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">Standaard kunnen de rechten voor lokale netwerktoegang (Local Network Access, LNA) alleen worden aangevraagd in cross-origin-subframes als ze expliciet zijn gemachtigd. Je kunt dit beleid gebruiken om dit standaardgedrag te overschrijven, zodat LNA-rechten standaard worden overgenomen in subframes, tenzij expliciet geweigerd in het rechtenbeleid.
+
+Als je dit beleid toepast, worden subframes standaard gemachtigd voor alle functies voor LNA-rechtenbeleid en kunnen ze lokale netwerkverzoeken doen (waardoor de rechtenprompt wordt geactiveerd).
+
+Als je dit beleid niet toepast of niet instelt, moeten subframes expliciet de functie voor rechtenbeleid krijgen om lokale netwerkverzoeken te doen en de rechtenprompt te activeren.
+
+Dit beleid is van toepassing op de functies "local-network-access", "loopback-network" en "local-network" van het rechtenbeleid.
+
+Ga voor meer informatie over lokale netwerktoegang naar https://wicg.github.io/local-network-access/ en https://developer.chrome.com/blog/local-network-access.
+
+Ga naar https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy voor meer informatie over rechtenbeleid.</string>
+      <string id="LocalNetworkAllowedForUrls">Toestaan dat sites netwerkverzoeken naar lokale netwerkeindpunten sturen.</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">Lijst met URL-patronen. Netwerkverzoeken die worden gestart vanaf websites die via overeenkomende oorsprongen worden geleverd aan lokale netwerkeindpunten, worden niet onderworpen aan Local Network Access-checks.
+
+Voor oorsprongen die niet overeenkomen met de hier genoemde patronen, is de persoonlijke configuratie van de gebruiker van toepassing.
+
+Ga naar https://chromeenterprise.google/policies/url-patterns voor gedetailleerde informatie over geldige URL-patronen.
+
+Zie https://wicg.github.io/local-network-access/ voor beperkingen voor Local Network Access.
+
+Er zijn meerdere beleidsregels met oorsprongen die van invloed zijn op verzoeken aan lokale netwerkeindpunten. Als een oorsprong overeenkomt met meer dan één van de volgende beleidsregels, hebben de beleidsregels voorrang in deze volgorde:
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Voorbeeldwaarde:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">Voorkomen dat sites netwerkverzoeken naar lokale netwerkeindpunten sturen.</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">Lijst met URL-patronen. Voor netwerkverzoeken die worden gestart vanaf websites die via overeenkomende oorsprongen worden geleverd aan lokale netwerkeindpunten, wordt voorkomen dat ze Local Network Access-verzoeken indienen.
+
+Voor oorsprongen die niet overeenkomen met de hier genoemde patronen, is de persoonlijke configuratie van de gebruiker van toepassing.
+
+Ga naar https://chromeenterprise.google/policies/url-patterns voor gedetailleerde informatie over geldige URL-patronen.
+
+Zie https://wicg.github.io/local-network-access/ voor beperkingen voor Local Network Access.
+
+Er zijn meerdere beleidsregels met oorsprongen die van invloed zijn op verzoeken aan lokale netwerkeindpunten. Als een oorsprong overeenkomt met meer dan één van de volgende beleidsregels, hebben de beleidsregels voorrang in deze volgorde:
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Voorbeeldwaarde:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">Toestaan dat sites netwerkverzoeken naar het lokale apparaat sturen.</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">Lijst met URL-patronen. Netwerkverzoeken die worden gestart vanaf websites die via overeenkomende oorsprongen worden geleverd aan het lokale apparaat, worden niet onderworpen aan Local Network Access-checks.
+
+Voor oorsprongen die niet overeenkomen met de hier genoemde patronen, is de persoonlijke configuratie van de gebruiker van toepassing.
+
+Ga naar https://chromeenterprise.google/policies/url-patterns voor gedetailleerde informatie over geldige URL-patronen.
+
+Zie https://wicg.github.io/local-network-access/ voor beperkingen voor Local Network Access.
+
+Er zijn meerdere beleidsregels met oorsprongen die van invloed zijn op verzoeken aan het lokale apparaat. Als een oorsprong overeenkomt met meer dan één van de volgende beleidsregels, hebben de beleidsregels voorrang in deze volgorde:
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Voorbeeldwaarde:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">Voorkomen dat sites netwerkverzoeken naar het lokale apparaat sturen.</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">Lijst met URL-patronen. Voor netwerkverzoeken die worden gestart vanaf websites die via overeenkomende oorsprongen worden geleverd aan het lokale apparaat, wordt voorkomen dat ze Local Network Access-verzoeken indienen.
+
+Voor oorsprongen die niet overeenkomen met de hier genoemde patronen, is de persoonlijke configuratie van de gebruiker van toepassing.
+
+Ga naar https://chromeenterprise.google/policies/url-patterns voor gedetailleerde informatie over geldige URL-patronen.
+
+Zie https://wicg.github.io/local-network-access/ voor beperkingen voor Local Network Access.
+
+Er zijn meerdere beleidsregels met oorsprongen die van invloed zijn op verzoeken aan het lokale apparaat. Als een oorsprong overeenkomt met meer dan één van de volgende beleidsregels, hebben de beleidsregels voorrang in deze volgorde:
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Voorbeeldwaarde:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="CryptographyCompliance_group">Nalevingsbeleid voor cryptografie</string>
+      <string id="PreferSlowCiphers">Specifieke versleutelingsalgoritmen voor TLS gebruiken</string>
+      <string id="PreferSlowCiphers_Explain">Met dit beleid stel je Google Chrome in om de voorkeursversleutelingsalgoritmen in TLS 1.3 te ordenen op basis van een voorkeur voor algoritmen die zijn goedgekeurd door een specifiek nalevingsregime.
+
+Als je dit beleid instelt, garandeert dit niet dat er specifieke algoritmen worden onderhandeld.
+
+Dit beleid is bedoeld om serverbeheerders die clients met en zonder nalevingsvereisten willen ondersteunen, onderscheid te laten maken tussen deze clients en alleen bepaalde niet-standaard algoritmen met verhoogde cryptografische sterkte te laten gebruiken voor clients die expliciet zijn ingesteld om deze te gebruiken.
+
+Als je het beleid instelt op cnsa, wordt Google Chrome zo ingesteld dat het de voorkeur geeft aan versleutelingen die nodig zijn voor naleving van de Commercial National Security Algorithm Suite versie 1.0 en 2.0 (CNSA 1.0 en 2.0).
+
+Als je het beleid niet instelt of instelt op default, wordt Google Chrome ingesteld om de standaardcijfers te gebruiken.
+
+Het is niet nodig om dit beleid in te stellen voor de beveiliging. De standaardversleuteling die Google Chrome gebruikt, is sterk genoeg om een brute-force-aanval te weerstaan met de hele kracht van de zon.
+
+Als je dit beleid instelt, wordt Google Chrome trager als je websites opent.
+
+Dit beleid heeft alleen invloed op TLS 1.3 en QUIC. Het heeft geen invloed op eerdere versies van TLS.
+
+Voorbeeldwaarde: cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">Voorkeur geven aan versleutelingen die voldoen aan de vereisten van CNSA 1.0 en 2.0</string>
+      <string id="PreferSlowCiphers_Default">Standaard coderingsvolgorde van Google Chrome gebruiken</string>
+      <string id="PreferSlowKexAlgorithms">Specifieke sleuteluitwisselingsalgoritmen voor TLS gebruiken</string>
+      <string id="PreferSlowKexAlgorithms_Explain">Met dit beleid stel je Google Chrome in om de voorkeursalgoritmen voor sleutelovereenkomst (ondersteunde groepen) in TLS 1.3 te ordenen op basis van een voorkeur voor algoritmen die zijn goedgekeurd door een specifiek nalevingsregime.
+
+Als je dit beleid instelt, garandeert dit niet dat er specifieke algoritmen worden onderhandeld.
+
+Dit beleid is bedoeld om serverbeheerders die clients met en zonder nalevingsvereisten willen ondersteunen, onderscheid te laten maken tussen deze clients en alleen bepaalde niet-standaard algoritmen met verhoogde cryptografische sterkte te laten gebruiken voor clients die expliciet zijn ingesteld om deze te gebruiken.
+
+Als je het beleid instelt op cnsa2, wordt Google Chrome zo ingesteld dat het de voorkeur geeft aan sleuteluitwisselingsmethoden die nodig zijn voor naleving van de Commercial National Security Algorithm Suite 2.0 (CNSA 2.0).
+
+Als je het beleid niet instelt of instelt op default, wordt Google Chrome ingesteld om de standaardmethoden voor sleuteluitwisseling te gebruiken.
+
+Als je dit beleid instelt op een waarde waarmee je Google Chrome instelt om een algoritme voor de post-quantum sleutelovereenkomst te gebruiken, maar PostQuantumKeyAgreementEnabled niet toepast, heeft de instelling van PostQuantumKeyAgreementEnabled voorrang.
+
+Het is niet nodig om dit beleid in te stellen voor de beveiliging. De standaardversleuteling die Google Chrome gebruikt, is sterk genoeg om een brute-force-aanval te weerstaan met de hele kracht van de zon.
+
+Als je dit beleid instelt, wordt Google Chrome trager als je websites opent.
+
+Dit beleid heeft alleen invloed op TLS 1.3 en QUIC. Het heeft geen invloed op eerdere versies van TLS.
+
+Voorbeeldwaarde: cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">Voorkeur geven aan sleuteluitwisselingsmethoden die voldoen aan de vereisten van CNSA 2.0</string>
+      <string id="PreferSlowKexAlgorithms_Default">Standaard ondersteunde groepen van Google Chrome gebruiken</string>
+      <string id="CacheEncryptionEnabled">Met dit beleid kunnen beheerders het HTTP-cachegeheugen op de schijf versleutelen.</string>
+      <string id="CacheEncryptionEnabled_Explain">Met dit beleid kunnen beheerders het HTTP-browsercachegeheugen op de schijf versleutelen.
+
+Als je dit beleid toepast, wordt het browsercachegeheugen versleuteld.
+
+Als je dit beleid niet toepast of niet instelt, wordt het browsercachegeheugen niet versleuteld.
+
+Versleuteling van het browsercachegeheugen kan invloed hebben op de prestaties.</string>
+      <string id="ForceForegroundPriorityForAllTabs">Voorgrondprioriteit afdwingen voor alle tabbladen</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">Met dit beleid bepaal je of webcontent op de achtergrond moet worden uitgevoerd met prioriteit op de voorgrond.
+
+De browser optimaliseert standaard resources door content op tabbladen op de achtergrond minder prioriteit te geven. Als je dit beleid aanzet, wordt dat gedrag overschreven en worden achtergrondtabbladen op dezelfde manier gepland als het actieve tabblad.
+
+Als je achtergrondcontent dwingt om te worden uitgevoerd met voorgrondprioriteit, kan dit de reactiesnelheid van het actieve tabblad enigszins beïnvloeden.
+
+Als je dit beleid toepast, wordt alle webcontent uitgevoerd met prioriteit op de voorgrond, ongeacht de zichtbaarheidsstatus.
+
+Als je dit beleid niet toepast of niet instelt, bepaalt de browser de prioriteit op basis van standaardheuristiek (bijvoorbeeld door content met een lagere prioriteit te geven die niet zichtbaar is, geen audio afspeelt of niet deelneemt aan videogesprekken).</string>
+      <string id="HttpsOnlyMode">Toestaan dat de modus 'Alleen HTTPS' wordt aangezet</string>
+      <string id="HttpsOnlyMode_Explain">Met dit beleid wordt bepaald of gebruikers de modus Alleen HTTPS (Altijd beveiligde verbindingen gebruiken) kunnen aanzetten in Instellingen. Met de modus Alleen HTTPS wordt een upgrade naar HTTPS doorgevoerd voor alle navigaties.
+
+Als je deze instelling niet instelt of instelt op 'allowed', kunnen gebruikers de modus Alleen HTTPS aanzetten.
+
+Als je deze instelling instelt op 'disallowed', wordt de modus Alleen HTTPS uitgezet.
+
+Als je deze instelling instelt op 'force_enabled', wordt de modus Alleen HTTPS aangezet in de strikte modus.
+
+Als je deze instelling instelt op 'force_balanced_enabled', wordt de modus Alleen HTTPS aangezet in de gebalanceerde modus.
+
+'force_enabled' wordt ondersteund vanaf M112 en 'force_balanced_enabled' wordt ondersteund vanaf M129.
+
+'force_enabled' en 'force_balanced_enabled' kunnen ook worden aanbevolen aan gebruikers.
+De modus Alleen HTTPS wordt in eerste instantie ingesteld op Strikt of Gebalanceerd, maar gebruikers kunnen dit wijzigen.
+
+Als je dit beleid instelt op een waarde die niet wordt ondersteund door de versie van Chrome die het beleid ontvangt, gebruikt Chrome standaard de toegestane instelling.
+
+Het afzonderlijke beleid HttpAllowlist kan worden gebruikt om te voorkomen dat specifieke hostnamen of hostnaampatronen door deze functie worden geüpgraded naar HTTPS.
+
+Voorbeeldwaarde: disallowed</string>
+      <string id="HttpsOnlyMode_allowed">Instelling voor de modus Alleen HTTPS van gebruikers niet beperken</string>
+      <string id="HttpsOnlyMode_disallowed">De modus Alleen HTTPS uitzetten</string>
+      <string id="HttpsOnlyMode_force_enabled">De modus Alleen HTTPS aanzetten in de strikte modus</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">De modus Alleen HTTPS aanzetten in de gebalanceerde modus</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">Beperk in aanmerking komende Google-accounts voor het opslaan van pdf-bestanden in Google Drive vanuit Google Chrome PDF Viewer</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">Bevat een reguliere expressie om te bepalen welke Google-accounts in aanmerking komen om pdf-bestanden op te slaan in Google Drive vanuit Google Chrome PDF Viewer.
+
+Er wordt een foutmelding getoond als een gebruiker een pdf-bestand probeert te uploaden naar Google Drive met een account dat niet overeenkomt met dit patroon.
+
+Als je dit beleid niet instelt of leeg laat, kan de gebruiker elk Google-account gebruiken om pdf-bestanden op te slaan in Google Drive.
+
+Voorbeeldwaarde: .*@example\.com</string>
+      <string id="SilentPrintingEnabled">Stil afdrukken aanzetten</string>
+      <string id="SilentPrintingEnabled_Explain">Als je dit beleid instelt op Waar, wordt stil afdrukken aangezet. Het venster voor afdrukvoorbeeld wordt dan meteen gesloten als het wordt geopend en er wordt afgedrukt naar de standaardprinter met de standaardopties. Als de standaardprinter Opslaan als pdf is, wordt het bestand opgeslagen in de map Downloads.
+
+Als je dit beleid niet instelt of instelt op Onwaar, wordt stil afdrukken uitgezet. Het venster voor afdrukvoorbeeld wordt dan niet automatisch gesloten en de gebruiker moet zoals gewoonlijk een selectie maken.</string>
+      <string id="StaticStorageQuotaEnabled">Bepalen of API's voor opslagquotum statische waarden retourneren</string>
+      <string id="StaticStorageQuotaEnabled_Explain">Als dit beleid wordt toegepast, retourneren de API's voor opslagquotum een statische waarde die gelijk is aan gebruik + min (10 GiB, schijf afgerond naar boven naar de dichtstbijzijnde 1 GiB).
+Als het beleid niet wordt toegepast, retourneren de API's voor opslagquotum meestal een dynamische waarde die evenredig is aan de totale beschikbare ruimte op het apparaat, ongeacht het gebruik.
+Als je dit beleid niet instelt, gebruiken de API's voor opslagquotum het standaardgedrag van Chrome.
+Deze instelling heeft geen invloed op sites met rechten voor onbeperkte opslag. Dit heeft ook geen invloed op het afgedwongen quotum.</string>
+      <string id="WebAppInstallByUserEnabled">Installatie van web-apps door gebruikers vanuit browser aanzetten</string>
+      <string id="WebAppInstallByUserEnabled_Explain">Met dit beleid wordt bepaald of gebruikers web-apps kunnen installeren via de browser.
+Als je dit beleid toepast of niet instelt, kunnen gebruikers web-apps installeren via de browser.
+Als je dit beleid niet toepast, kunnen gebruikers geen web-apps installeren via de browser en wordt het gegevenstype Apps uitgesloten van synchronisatie voor Chrome Sync.
+Dit beleid ondersteunt geen dynamische vernieuwing. Wijzigingen, zoals instellingen aan- of uitzetten of instellingen verwijderen, worden pas van kracht nadat de browser opnieuw is opgestart.
+Dit beleid heeft geen invloed op het beleid WebAppInstallForceList.</string>
+      <string id="XSLTEnabled">De beschikbaarheid van de XSLT-functie bepalen</string>
+      <string id="XSLTEnabled_Explain">Dit beleid bepaalt de beschikbaarheid van de XSLT-functie (de XSLTProcessor Javascript API en de XSL-verwerkingsinstructie).
+Als je dit beleid toepast, is XSLT beschikbaar, ongeacht de standaardstatus van de functie in de browser.
+Als je dit beleid niet toepast, is XSLT niet beschikbaar, ongeacht de standaardstatus van de functie in de browser.
+Als je dit beleid niet instelt, wordt de beschikbaarheid van XSLT bepaald door de standaardinstellingen van de browser en praktijktests.
+Dit beleid is een tijdelijke maatregel en wordt verwijderd in M164.</string>
+      <string id="Proxy_group">Proxyserver</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">Hiermee wordt bepaald welke beheerde gebruikers het beleid ProxyOverrideRules kunnen instellen.</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">Als je dit beleid instelt op 0 of niet instelt, wordt het beleid ProxyOverrideRules alleen toegepast op gebruikersniveau voor aangesloten gebruikers.
+Als je dit beleid instelt op 1, wordt het beleid ProxyOverrideRules toegepast op gebruikersniveau, ook als die gebruiker niet is aangesloten.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">Toestaan dat Gemini-app-integraties rechtstreeks acties uitvoeren op aangegeven sites</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">Niet toestaan dat Gemini-app-integraties rechtstreeks acties uitvoeren op aangegeven sites</listBox></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">Content delen met Google AI Mode- en Lens-integraties aanzetten</dropdownList></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">Inactiviteitsdetectie</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">Geolocatie blokkeren op deze sites</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">Toegestane sites voor inactiviteitsdetectie</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">Geblokkeerde sites voor inactiviteitsdetectie</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">Exacte geolocatie toestaan op deze sites</listBox></presentation>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">Toewijzingen van IP-adresruimtes overschrijven</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">Toestaan dat sites netwerkverzoeken naar lokale netwerkeindpunten sturen.</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">Voorkomen dat sites netwerkverzoeken naar lokale netwerkeindpunten sturen.</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">Toestaan dat sites netwerkverzoeken naar het lokale apparaat sturen.</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">Voorkomen dat sites netwerkverzoeken naar het lokale apparaat sturen.</listBox></presentation>
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">Specifieke versleutelingsalgoritmen voor TLS gebruiken</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">Specifieke sleuteluitwisselingsalgoritmen voor TLS gebruiken</dropdownList></presentation>
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">Toestaan dat de modus 'Alleen HTTPS' wordt aangezet</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>Beperk in aanmerking komende Google-accounts voor het opslaan van pdf-bestanden in Google Drive vanuit Google Chrome PDF Viewer</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">Hiermee wordt bepaald welke beheerde gebruikers het beleid ProxyOverrideRules kunnen instellen.:</decimalTextBox></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

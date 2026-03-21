@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 或更高版本</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="LocalNetworkAccessSettings_group">“本地网络访问权限”设置</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">指定是否（暂时）停止本地网络访问权限限制</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">如果此政策设为启用，Local Network Access请求将仅在 Chrome DevTools中显示警告，因为Local Network Access检查失败。
+
+如果此政策设为停用或未设置，系统将会通过默认方式处理Local Network Access请求。
+
+如需了解Local Network Access限制，请访问 https://wicg.github.io/local-network-access/。
+
+这项企业政策只是暂时性政策，将在 M146 之后移除。
+
+从长远来看，可以使用政策 LocalNetworkAccessAllowedForUrls 将网址格式列入许可名单，以便自动向这些网址授予Local Network Access权限。
+
+请注意，如果启用了政策 LocalNetworkAccessRestrictionsEnabled，它将优先于此政策。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">在 Chrome DevTools中启用 Google 开发者计划资料</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">此政策会控制 Google 开发者计划与 Chrome DevTools的集成。用户的 Google 开发者计划资料会显示在 Chrome DevTools中，并且用户在 Chrome DevTools中执行特定操作后会获得徽章。
+
+如果将此政策设为 0 -“已启用”，或者未设置任何政策值，则允许将 Google 开发者计划与 Chrome DevTools集成，并允许分享 Chrome DevTools工具使用情况，以便能够获得徽章。
+
+如果将此政策设为 1 -“已启用，但不获得徽章”，则允许将 Google 开发者计划与 Chrome DevTools集成，但不允许与 Google 开发者计划分享 Chrome DevTools工具使用情况。这种情况下，不会获得任何徽章。
+
+如果将此政策设为 2 -“已停用”，则不允许将 Google 开发者计划与 Chrome DevTools集成。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">在 Chrome DevTools中启用 Google 开发者计划集成功能。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">在 Chrome DevTools中启用 Google 开发者计划集成功能，但不分享工具使用情况（用于获得徽章）。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">不在 Chrome DevTools中启用 Google 开发者计划集成功能。</string>
+      <string id="Extensions_group">扩展程序</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">启用存在非恶意软件违规问题的强制安装扩展程序</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">控制因非恶意软件违规问题而被下架的扩展程序，是否仍可在低信任环境中强制安装。
+
+如需详细了解非恶意软件违规问题和下架原因，请访问：https://developer.chrome.com/docs/webstore/review-process#warning
+
+解决非恶意软件违规问题后，扩展程序将保持启用状态，无法停用或移除。
+
+在 Microsoft® Windows® 上，此政策仅适用于已加入 Microsoft® Active Directory® 网域的实例、已加入 Microsoft® Azure® Active Directory® 的实例或已在 Chrome Enterprise Core中注册的实例。
+
+在 macOS 上，此政策不适用于通过 MDM 进行管理的实例、已通过 MCX 加入网域的实例或已在 Chrome Enterprise Core中注册的实例。
+
+在这些情况下，存在非恶意软件违规问题的强制安装扩展程序仍会保持启用状态。
+
+目前，存在非恶意软件违规问题的强制安装扩展程序仍会在 Chrome 中安装并启用。
+
+如果此政策已启用，强制安装的扩展程序将始终保持启用状态，无论是否存在非恶意软件违规问题。
+
+如果此政策已停用或未设置，系统会停用存在非恶意软件违规问题的强制安装扩展程序。
+
+此政策将在 3 个里程碑版本中提供。</string>
+      <string id="GenerativeAI_group">生成式 AI</string>
+      <string id="GeminiActOnWebSettings">允许 Gemini 应用集成功能直接对网页执行操作</string>
+      <string id="GeminiActOnWebSettings_Explain">控制 Gemini 应用是否可以代表用户在网页上执行操作。
+
+0/未设置 = Gemini 应用可以在网页上执行操作。
+
+1 = Gemini 应用不得在网页上执行操作。
+
+如果 Gemini 应用已停用，此政策将不会产生任何影响。例如，可通过 GeminiSettings 政策停用 Gemini 应用。
+
+如需详细了解 Chrome 中的 Gemini，请访问 https://support.google.com/chrome/a/answer/16291696。
+
+Gemini 只能在部分国家/地区启用，并且仅支持部分语言。设置此政策并不能保证该功能会启用，仍需取决于实际可用情况。如需详细了解推出情况，请查看企业版版本说明：https://support.google.com/chrome/a/answer/7679408?hl=en</string>
+      <string id="GeminiActOnWebSettings_Enabled">允许 Gemini 应用在网页上执行操作。</string>
+      <string id="GeminiActOnWebSettings_Disabled">禁止 Gemini 应用在网页上执行操作。</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">在 Chrome DevTools中启用 Google 开发者计划资料</dropdownList></presentation>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">允许 Gemini 应用集成功能直接对网页执行操作</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

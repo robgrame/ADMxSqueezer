@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 or later</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="Extensions_group">Extensions</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Enable Force-installed Extensions With Non-Malware Violations</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Controls whether extensions that are taken down due to non-malware violations can still be force installed in low-trust environments.
+
+More information about non-malware violations and taken down can be found here. https://developer.chrome.com/docs/webstore/review-process#warning
+
+Once the non-malware violation has been resolved, the extension will remain enabled and cannot be disabled or removed.
+
+On Microsoft® Windows®, this policy is not available on instances that are joined to a Microsoft® Active Directory® domain, joined to Microsoft® Azure® Active Directory® or enrolled in Chrome Enterprise Core`.
+
+On macOS, this policy is not available on instances that are managed via MDM, joined to a domain via MCX or enrolled in Chrome Enterprise Core.
+
+Force-installed extensions with non-malware violations will remain enabled in these instances.
+
+Currently, a force-installed extension with non-malware violations remains installed and enabled in Chrome.
+
+Setting the policy to Enabled will cause force-installed extensions to behave the same (i.e., remain enabled) regardless of non-malware violations.
+
+Setting the policy to Disabled or not setting the policy will cause force-installed extensions with non-malware violations to be disabled.
+
+This policy will be available for 3 milestones.</string>
+      <string id="GenerativeAI_group">Generative AI</string>
+      <string id="GeminiActOnWebSettings">Allows Gemini app integrations to directly act on web pages</string>
+      <string id="GeminiActOnWebSettings_Explain">Controls if the Gemini app is allowed to take action on the web pages on behalf of the user.
+
+0/unset  = Gemini app is allowed to take action on the web pages.
+
+1 = Gemini app is not allowed to take action on the web pages.
+
+This policy has no effect when the Gemini app is disabled. For example, the Gemini app can be disabled by GeminiSettings policy.
+
+For more information on Gemini in Chrome, please see https://support.google.com/chrome/a/answer/16291696.
+
+Gemini's actuation is not available in all countries or all languages. Setting this policy does not guarantee the feature will be enabled; it remains subject to availability. For more info on the roll-out, check the Enterprise Release Notes: https://support.google.com/chrome/a/answer/7679408?hl=en</string>
+      <string id="GeminiActOnWebSettings_Enabled">Allow the Gemini app to take action on the web pages.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Disallow the Gemini app to take action on the web pages.</string>
+      <string id="LocalNetworkAccessSettings_group">Local Network Access settings</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Specifies whether to (temporarily) opt out of Local Network Access restrictions</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">When this policy is set to Enabled, Local Network Access
+requests will only display warnings in Chrome DevTools due to Local Network Access checks failing.
+
+When this policy is set to Disabled or unset, Local Network Access requests will use the
+default handling of these requests.
+
+See https://wicg.github.io/local-network-access/ for Local Network Access restrictions.
+
+This enterprise policy is temporary, and will be removed after M146.
+
+Long term, the policy LocalNetworkAccessAllowedForUrls
+can be used to allowlist URL patterns that should be automatically granted
+the Local Network Access permission.
+
+Note that if the policy LocalNetworkAccessRestrictionsEnabled
+is enabled, it will take precedence over this policy.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Enable Google Developer Program Profiles in Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">This policy controls the integration of the Google Developer Program with Chrome DevTools. The user's Google Developer Program profile is shown in Chrome DevTools, and users receive badges for performing specific actions within Chrome DevTools.
+
+Setting the policy to 0 - 'Enabled', or not setting any policy value, allows the integration of the Google Developer Program with Chrome DevTools, and allows sharing of Chrome DevTools tool usage in order to be able to award badges.
+
+Setting the policy to 1 - 'Enabled without badges', allows the integration of the Google Developer Program with Chrome DevTools, but does not allow sharing Chrome DevTools tool usage with the Google Developer Program. No badges will be awarded.
+
+Setting the policy to 2 - 'Disabled', does not allow the integration of the Google Developer Program with Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Enable Google Developer Program integration in Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Enable Google Developer Program integration in Chrome DevTools, but without sharing tool usage (for awarding badges).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Do not enable Google Developer Program integration in Chrome DevTools.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Allows Gemini app integrations to directly act on web pages</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Enable Google Developer Program Profiles in Chrome DevTools</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,447 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 veya sonraki sürümler</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - Varsayılan Ayarlar (kullanıcılar geçersiz kılabilir)</string>
+      <string id="RemovedPolicies_group">Kaldırılan politikalar</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Kötü Amaçlı Yazılım Dışı İhlal İçeren Zorunlu Yüklenmiş Uzantıları Etkinleştir</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Bu politika kullanımdan kaldırılmıştır. Google Chrome ürününün bu versiyonuyla uyumlu değildir. Daha fazla bilgiyi https://support.google.com/chrome/a/answer/7643500 adresinde bulabilirsiniz</string>
+      <string id="CryptographyCompliance_group">Kriptografi uygunluk politikaları</string>
+      <string id="PreferSlowCiphers">TLS için belirli şifreleme şifre algoritmalarını tercih et</string>
+      <string id="PreferSlowCiphers_Explain">Bu politika, Google Chrome ürününü, TLS 1.3'te tercih edilen şifreleme şifrelerini belirli bir uyumluluk rejimi tarafından onaylanmış algoritmalara öncelik verecek şekilde sıralamak için yapılandırır.
+
+Bu politikanın ayarlanması, belirli herhangi bir algoritmada anlaşılacağını garanti edilmez.
+
+Bu politika, uyumluluk gereksinimlerini karşılayan ve karşılamayan istemcileri desteklemek isteyen sunucu operatörlerinin, bu istemcileri ayırt etmesine ve yalnızca açıkça tercih edecek şekilde yapılandırılmış istemciler için kriptografik gücü artırılmış belirli, varsayılan olmayan algoritmaları kullanmasına olanak tanımak amacıyla tasarlanmıştır.
+
+Politika, "cnsa" değerine ayarlanırsa Google Chrome, Commercial National Security Algorithm Suite 1.0 ve 2.0 (CNSA 1.0 ve 2.0) ile uygunluk için gerekli olan şifreleri tercih edecek şekilde yapılandırılır.
+
+Politika ayarlanmazsa veya "default" değerine ayarlanırsa Google Chrome, varsayılan şifrelerini kullanacak şekilde yapılandırılır.
+
+Güvenlik için bu politikanın ayarlanması gerekmez. Google Chrome tarafından kullanılan varsayılan kriptografi, Güneş'teki tüm enerjiyi kullanarak yapılacak kaba kuvvet saldırısına dayanacak kadar güçlüdür.
+
+Bu politika ayarlanırsa web sitelerine erişirken Google Chrome daha yavaş çalışır.
+
+Bu politika yalnızca TLS 1.3 ve QUIC'i etkiler. TLS'nin önceki sürümlerini etkilemez.
+
+Örnek değer: cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">CNSA 1.0 ve 2.0 koşullarını karşılayan şifreleri tercih et</string>
+      <string id="PreferSlowCiphers_Default">Google Chrome ürünündeki varsayılan şifre sırasını kullan</string>
+      <string id="PreferSlowKexAlgorithms">TLS için belirli anahtar değişimi algoritmalarını tercih edin</string>
+      <string id="PreferSlowKexAlgorithms_Explain">Bu politika, Google Chrome ürününü, TLS 1.3'te tercih edilen anahtar anlaşması algoritmalarını (desteklenen gruplar) belirli bir uyumluluk rejimi tarafından onaylanmış algoritmalara öncelik verecek şekilde sıralamak için yapılandırır.
+
+Bu politikanın ayarlanması, belirli herhangi bir algoritmada anlaşılacağını garanti edilmez.
+
+Bu politika, uyumluluk gereksinimlerini karşılayan ve karşılamayan istemcileri desteklemek isteyen sunucu operatörlerinin, bu istemcileri ayırt etmesine ve yalnızca açıkça tercih edecek şekilde yapılandırılmış istemciler için kriptografik gücü artırılmış belirli, varsayılan olmayan algoritmaları kullanmasına olanak tanımak amacıyla tasarlanmıştır.
+
+Politika, "cnsa2" değerine ayarlanırsa Google Chrome, Commercial National Security Algorithm Suite 2.0 (CNSA 2.0) ile uygunluk için gerekli olan anahtar değişim yöntemlerini tercih edecek şekilde yapılandırılır.
+
+Politika ayarlanmazsa veya "default" değerine ayarlanırsa Google Chrome, varsayılan anahtar değişimi yöntemlerini kullanacak şekilde yapılandırılır.
+
+Bu politika, Google Chrome ürününü kuantum sonrası anahtar anlaşması algoritmasını tercih edecek şekilde yapılandıracak bir değere ayarlanır ancak PostQuantumKeyAgreementEnabled, Devre Dışı bırakılmışsa PostQuantumKeyAgreementEnabled için ayarlar daha önceliklidir.
+
+Güvenlik için bu politikanın ayarlanması gerekmez. Google Chrome tarafından kullanılan varsayılan kriptografi, Güneş'teki tüm enerjiyi kullanarak yapılacak kaba kuvvet saldırısına dayanacak kadar güçlüdür.
+
+Bu politika ayarlanırsa web sitelerine erişirken Google Chrome daha yavaş çalışır.
+
+Bu politika yalnızca TLS 1.3 ve QUIC'i etkiler. TLS'nin önceki sürümlerini etkilemez.
+
+Örnek değer: cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">CNSA 2.0 gereksinimlerini karşılayan anahtar değişimi yöntemlerini tercih edin</string>
+      <string id="PreferSlowKexAlgorithms_Default">Google Chrome ürünündeki varsayılan desteklenen grupları kullan</string>
+      <string id="Proxy_group">Proxy sunucu</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">ProxyOverrideRules politikasını hangi yönetilen kullanıcı hesaplarının ayarlayabileceğini kontrol eder.</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">Bu politika 0 değerine ayarlanır veya ayarlanmadan bırakılırsa ProxyOverrideRules politikası yalnızca ilişkili kullanıcılar için kullanıcı kapsamına uygulanır.
+Bu politika 1 değerine ayarlanırsa ProxyOverrideRules politikası, ilişkili olmayan kullanıcılar için bile kullanıcı kapsamına uygulanır.</string>
+      <string id="LocalNetworkAccessSettings_group">Yerel Ağ Erişimi ayarları</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">IP adresi alanı eşlemelerini geçersiz kıl</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">Bu, belirli dahili adres aralıklarını "herkese açık" olarak değerlendirmek ve dolayısıyla Local Network Access kontrollerine tabi tutmamak için kullanılabilir. Diğer taraftan, dahili olarak kullanılabilecek belirli herkese açık adres aralıklarını "yerel" olarak değerlendirmek için de kullanılabilir. Böylece, bu adresler Local Network Access kontrolleriyle korunur.
+
+IP adresi alanı, iki şekilde geçersiz kılınabilir:
+
+[cidr]=[public|local|loopback]
+
+Burada [cidr], CIDR gösteriminde bir IP adresi aralığıdır (IPv4 için https://tools.ietf.org/html/rfc4632 adresindeki 3.1. bölüme ve IPv6 için ise https://tools.ietf.org/html/rfc4291 adresindeki 2.3. bölümüne bakın). IPv6 adresleri, URL açısından güvenli (köşeli parantezli) biçimde belirtilmelidir. CIDR geçersiz kılmaları, tüm bağlantı noktaları için geçerlidir.
+
+veya
+
+[ip-address]:[port]=[public|local|loopback]
+
+Local Network Access hakkında daha fazla bilgi için https://wicg.github.io/local-network-access/ ve https://developer.chrome.com/blog/local-network-access adreslerini ziyaret edin.
+
+Bu politika, dinamik yenilemeyi desteklemez.
+
+--ip-address-space-overrides komut satırı anahtarından yapılan geçersiz kılmalar, bu politika tarafından ayarlanan geçersiz kılmalara göre önceliklidir.
+
+Örnek değer:
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">Açıkça yetki verilmeden alt çerçevelerde yerel ağ erişimi (LNA) isteklerine izin ver</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">Varsayılan olarak, yerel ağ erişimi (LNA) izinlerinin kaynaklar arası alt çerçevelerde istenmesine yalnızca açıkça yetkilendirildikleri takdirde izin verilir. Bu politika, bu varsayılan davranışı geçersiz kılmak için kullanılabilir. Böylece LNA izinleri, izin politikasında açıkça reddedilmediği sürece alt çerçevelere varsayılan olarak devredilir.
+
+Bu politika, etkin değerine ayarlanırsa alt çerçeveler tüm LNA izin politikası özellikleri için varsayılan olarak yetkilendirilir ve yerel ağ isteği gönderebilir (bu işlem, izin istemini tetikler).
+
+Bu politika, devre dışı değerine ayarlanır veya ayarlanmadan bırakılırsa alt çerçevelerin yerel ağ isteği gönderebilmesi ve izin istemini tetikleyebilmesi için izin politikası özelliğiyle açıkça yetkilendirilmesi gerekir.
+
+Bu politika; "local-network-access", "loopback-network" ve "local-network" izin politikası özellikleri için geçerlidir.
+
+Yerel ağ erişimi hakkında daha fazla bilgiyi https://wicg.github.io/local-network-access/ ve https://developer.chrome.com/blog/local-network-access sayfasında bulabilirsiniz.
+
+İzin politikası hakkında daha fazla bilgiyi https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy sayfasında bulabilirsiniz.</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Yerel ağ erişimi kısıtlamalarının (geçici olarak) devre dışı bırakılıp bırakılmayacağını belirtir</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Bu politika, Etkin değerine ayarlanırsa Local Network Access
+istekleri, Local Network Access kontrollerinin başarısız olması nedeniyle yalnızca Chrome DevTools içinde uyarı gösterir.
+
+Bu politika, Devre Dışı değerine ayarlanır veya ayarlanmadan bırakılırsa Local Network Access istekleri, bu istekler için varsayılan yöntemle işlenir.
+
+Local Network Access kısıtlamaları için https://wicg.github.io/local-network-access/ sayfasına bakabilirsiniz.
+
+Bu kurumsal politika geçici olup M152 sürümünden sonra kaldırılacaktır.
+
+Uzun vadede, Local Network Access izninin otomatik olarak verilmesi gereken URL kalıplarının izin verilenler listesine eklenmesi için LocalNetworkAccessAllowedForUrls politikası kullanılabilir.</string>
+      <string id="LocalNetworkAllowedForUrls">Sitelerin yerel ağ uç noktalarına istekte bulunmasına izin ver.</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">URL kalıplarının listesi. Eşleşen kaynakların sunduğu web sitelerinden başlatılan yerel ağ uç noktalarına yönelik ağ istekleri, Local Network Access kontrollerine tabi değildir.
+
+Burada belirtilen kalıpların dışında kalan kaynaklar için kullanıcının kişisel yapılandırması geçerli olur.
+
+Geçerli URL kalıpları hakkında ayrıntılı bilgi için https://chromeenterprise.google/policies/url-patterns/ adresine bakabilirsiniz.
+
+Local Network Access kısıtlamaları için https://wicg.github.io/local-network-access/ sayfasına bakabilirsiniz.
+
+Yerel ağ uç noktalarına yönelik istekleri etkileyen ve içinde kaynakların listelendiği birden fazla politika vardır. Bir kaynak aşağıdaki politikalardan birden fazlasıyla eşleşirse politikalar aşağıdaki öncelik sırasına göre uygulanır:
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Örnek değer:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">Sitelerin yerel ağ uç noktalarına istekte bulunmasını engelle</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">URL kalıplarının listesi. Eşleşen kaynakların sunduğu web sitelerinden başlatılan yerel ağ uç noktalarına yönelik ağ isteklerinin Local Network Access isteği göndermesi engellenir.
+
+Burada belirtilen kalıpların dışında kalan kaynaklar için kullanıcının kişisel yapılandırması geçerli olur.
+
+Geçerli URL kalıpları hakkında ayrıntılı bilgi için https://chromeenterprise.google/policies/url-patterns/ adresine bakabilirsiniz.
+
+Local Network Access kısıtlamaları için https://wicg.github.io/local-network-access/ sayfasına bakabilirsiniz.
+
+Yerel ağ uç noktalarına yönelik istekleri etkileyen ve içinde kaynakların listelendiği birden fazla politika vardır. Bir kaynak aşağıdaki politikalardan birden fazlasıyla eşleşirse politikalar aşağıdaki öncelik sırasına göre uygulanır:
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Örnek değer:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">Sitelerin yerel cihaza ağ isteği göndermesine izin ver.</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">URL kalıplarının listesi. Eşleşen kaynakların sunduğu web sitelerinden başlatılan yerel cihaza yönelik ağ istekleri, Local Network Access kontrollerine tabi değildir.
+
+Burada belirtilen kalıpların dışında kalan kaynaklar için kullanıcının kişisel yapılandırması geçerli olur.
+
+Geçerli URL kalıpları hakkında ayrıntılı bilgi için https://chromeenterprise.google/policies/url-patterns/ adresine bakabilirsiniz.
+
+Local Network Access kısıtlamaları için https://wicg.github.io/local-network-access/ sayfasına bakabilirsiniz.
+
+Yerel cihaza yönelik istekleri etkileyen ve içinde kaynakların listelendiği birden fazla politika vardır. Bir kaynak aşağıdaki politikalardan birden fazlasıyla eşleşirse politikalar aşağıdaki öncelik sırasına göre uygulanır:
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Örnek değer:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">Sitelerin yerel cihaza ağ isteği göndermesini engelle.</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">URL kalıplarının listesi. Eşleşen kaynakların sunduğu web sitelerinden başlatılan yerel cihaza yönelik ağ isteklerinin Local Network Access isteği göndermesi engellenir.
+
+Burada belirtilen kalıpların dışında kalan kaynaklar için kullanıcının kişisel yapılandırması geçerli olur.
+
+Geçerli URL kalıpları hakkında ayrıntılı bilgi için https://chromeenterprise.google/policies/url-patterns/ adresine bakabilirsiniz.
+
+Local Network Access kısıtlamaları için https://wicg.github.io/local-network-access/ sayfasına bakabilirsiniz.
+
+Yerel cihaza yönelik istekleri etkileyen ve içinde kaynakların listelendiği birden fazla politika vardır. Bir kaynak aşağıdaki politikalardan birden fazlasıyla eşleşirse politikalar aşağıdaki öncelik sırasına göre uygulanır:
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+Örnek değer:
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="CacheEncryptionEnabled">Bu politika, yöneticilerin HTTP önbelleğini diskte şifrelemesine olanak tanır.</string>
+      <string id="CacheEncryptionEnabled_Explain">Bu politika, yöneticilerin tarayıcı HTTP önbelleğini diskte şifrelemesine olanak tanır.
+
+Bu politika etkinleştirildiğinde tarayıcı önbelleği şifrelenir.
+
+Bu politika devre dışı bırakıldığında veya ayarlanmadığında tarayıcı önbelleği şifrelenmez.
+
+Tarayıcı önbelleği şifreleme, performansı etkileyebilir.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Chrome DevTools içinde Google Developer Program profillerini etkinleştirin</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Bu politika, Google Developer Program'ın Chrome DevTools ile entegrasyonunu kontrol eder. Kullanıcının Google Developer Program profili Chrome DevTools içinde gösterilir ve kullanıcılar Chrome DevTools içinde belirli işlemleri gerçekleştirdiklerinde rozet kazanır.
+
+Politika, 0 (Etkin) olarak ayarlanırsa veya herhangi bir politika değeri ayarlanmazsa Google Developer Program'ın Chrome DevTools ile entegrasyonuna izin verilir ve rozet verilebilmesi için Chrome DevTools araç kullanımının paylaşılmasına izin verilir.
+
+Politika, 1 - "Rozetler olmadan etkin" olarak ayarlanırsa Google Developer Program'ın Chrome DevTools ile entegrasyonuna izin verilir ancak Chrome DevTools araç kullanımının Google Developer Program ile paylaşılmasına izin verilmez. Rozet verilmeyecek.
+
+Politika, 2 - "Devre Dışı" değerine ayarlanırsa Google Developer Program'ın Chrome DevTools ile entegrasyonuna izin verilmez.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Chrome DevTools içinde Google Developer Program entegrasyonunu etkinleştirin.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Chrome DevTools içinde Google Developer Program entegrasyonunu etkinleştirin ancak araç kullanımını paylaşmayın (rozet kazanmak için).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Chrome DevTools içinde Google Developer Program entegrasyonunu etkinleştirmeyin.</string>
+      <string id="ForceForegroundPriorityForAllTabs">Tüm sekmeler için ön plan önceliğini zorla</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">Bu politika, arka plandaki web içeriğinin ön plan önceliğinde çalışmaya zorlanıp zorlanmayacağını
+kontrol eder.
+
+Tarayıcı, varsayılan olarak kaynakları optimize etmek için arka plan sekmelerindeki içeriğin
+önceliğini düşürür. Bu politika etkinleştirildiğinde bu davranış geçersiz
+kılınır ve arka plan sekmeleri, etkin sekme ile aynı şekilde planlanır.
+
+Arka plandaki içeriği ön planda öncelikli olarak çalışmaya zorlamanın, etkin sekmenin
+yanıt verme hızını biraz etkileyebileceğini unutmayın.
+
+Bu politika, Etkin değerine ayarlanırsa tüm web içeriği görünürlük durumundan bağımsız
+olarak ön plan önceliğinde çalışır.
+
+Bu politika, Devre Dışı değerine ayarlanırsa veya ayarlanmadan bırakılırsa tarayıcı,
+önceliği standart buluşsal yöntemlere (ör. görünmeyen, ses çalmayan, görüntülü görüşmelere
+katılmayan içeriklerin önceliğini düşürme) göre belirler.</string>
+      <string id="HttpsOnlyMode">Yalnızca HTTPS Modunun etkinleştirilmesine izin ver</string>
+      <string id="HttpsOnlyMode_Explain">Bu politika, kullanıcıların Yalnızca HTTPS Modu'nu (Her Zaman Güvenli Bağlantılar Kullan) Ayarlar'da etkinleştirip etkinleştiremeyeceğini kontrol eder. Yalnızca HTTPS Modu, tüm gezinmeleri HTTPS'ye yükseltir.
+
+Bu ayar belirtilmezse veya "izin verildi" olarak seçilirse kullanıcılar Yalnızca HTTPS Modu'nu etkinleştirebilir.
+
+Bu ayar "izin verilmedi" olarak ayarlanırsa Yalnızca HTTPS Modu devre dışı bırakılır.
+
+Bu ayar, "force_enabled" değerine ayarlanırsa Yalnızca HTTPS Modu, Yüksek Düzey Modu'nda etkinleştirilir.
+
+Bu ayar, "force_balanced_enabled" değerine ayarlanırsa Yalnızca HTTPS Modu, Dengeli Mod'da etkinleştirilir.
+
+"force_enabled" M112 ve sonraki sürümlerde, "force_balanced_enabled" ise M129 ve sonraki sürümlerde desteklenir.
+
+"force_enabled" ve "force_balanced_enabled" da kullanıcılara önerilebilir.
+Yalnızca HTTPS Modu başlangıçta Yüksek Düzey veya Dengeli olarak ayarlanır ancak kullanıcılar bu ayarı değiştirebilir.
+
+Bu politikayı, politikayı alan Chrome sürümünün desteklemediği bir değere ayarlarsanız Chrome, varsayılan olarak izin verilen ayara geçer.
+
+Belirli ana makine adlarının veya ana makine adı kalıplarının bu özellik tarafından HTTPS'ye yükseltilmesini engellemek için ayrı HttpAllowlist politikası kullanılabilir.
+
+Örnek değer: disallowed</string>
+      <string id="HttpsOnlyMode_allowed">Kullanıcıların Yalnızca HTTPS Modu ayarını kısıtlama</string>
+      <string id="HttpsOnlyMode_disallowed">Yalnızca HTTPS Modu'nu devre dışı bırak</string>
+      <string id="HttpsOnlyMode_force_enabled">Yüksek Düzey Modu'nda Yalnızca HTTPS Modu'nu etkinleştir</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">Dengeli Mod'da Yalnızca HTTPS Modu'nu etkinleştir</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">Google Chrome PDF görüntüleyicideki PDF dosyalarını Google Drive'a kaydetmeye uygun Google Hesaplarını kısıtla</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">Google Chrome PDF görüntüleyicideki PDF dosyalarını Google Drive'a kaydetmeye uygun Google Hesaplarını belirleyen bir normal ifade içerir.
+
+Bir kullanıcı, bu kalıpla eşleşmeyen bir hesap kullanarak Google Drive'a PDF dosyası yüklemeye çalışırsa hata mesajı gösterilir.
+
+Bu politika ayarlanmadan bırakılır veya boş bırakılırsa kullanıcı, PDF dosyalarını Google Drive'a kaydetmek için herhangi bir Google Hesabı'nı kullanabilir.
+
+Örnek değer: .*@example\.com</string>
+      <string id="SilentPrintingEnabled">Sessiz Yazdırma özelliğini etkinleştir</string>
+      <string id="SilentPrintingEnabled_Explain">Bu politika Doğru değerine ayarlandığında Sessiz Yazdırma özelliği etkinleştirilir.
+Sessiz Yazdırma, açıldığında yazdırma önizleme penceresini hemen kapatır ve varsayılan seçeneklerle
+varsayılan yazıcıda yazdırır. Varsayılan yazıcı "PDF olarak kaydet" şeklinde görünüyorsa
+dosya, İndirilenler klasörüne kaydedilir.
+
+Bu politika ayarlanmadan bırakılır veya Yanlış değerine ayarlanırsa Sessiz Yazdırma
+devre dışı bırakılır. Bu durumda, yazdırma önizleme penceresi otomatik olarak kapatılmaz ve kullanıcının
+her zamanki gibi seçim yapması gerekir.</string>
+      <string id="StaticStorageQuotaEnabled">Depolama alanı kotası API'lerinin statik değerler döndürüp döndürmeyeceğini kontrol et</string>
+      <string id="StaticStorageQuotaEnabled_Explain">Bu politika etkinleştirildiğinde depolama alanı kotası API'leri, kullanım + minimum (10 GiB, disk en yakın 1 GiB'a yuvarlanır) değere eşit statik bir değer döndürür.
+Politika devre dışı bırakıldığında depolama alanı kotası API'leri, genellikle kullanımdan bağımsız olarak cihazda mevcut toplam alanla orantılı dinamik bir değer döndürür.
+Politika ayarlanmadan bırakılırsa depolama alanı kotası API'leri varsayılan Chrome davranışını kullanır.
+Sınırsız depolama izni olan siteler bu ayardan etkilenmez. Zorunlu kılınan kota da etkilenmez.</string>
+      <string id="WebAppInstallByUserEnabled">Kullanıcıların Tarayıcıdan Web Uygulaması Yüklemesine İzin Ver</string>
+      <string id="WebAppInstallByUserEnabled_Explain">Bu politika, kullanıcıların tarayıcı üzerinden web uygulamaları yükleyip yükleyemeyeceğini kontrol eder.
+Bu politikayı etkinleştirir veya yapılandırmazsanız kullanıcılar web uygulamalarını tarayıcı üzerinden yükleyebilir.
+Bu politikayı devre dışı bırakırsanız kullanıcılar, web uygulamalarını tarayıcı üzerinden yükleyemez ve "uygulamalar" veri türü, Chrome Sync için senkronizasyonun dışında tutulur.
+Bu politika, dinamik yenilemeyi desteklemez. Etkinleştirme, devre dışı bırakma veya ayarı geri alma gibi tüm değişiklikler yalnızca tarayıcı yeniden başlatıldıktan sonra geçerli olur.
+Bu politika, "WebAppInstallForceList" politikasını etkilemez.</string>
+      <string id="XSLTEnabled">XSLT özelliğinin kullanılabilirliğini kontrol et</string>
+      <string id="XSLTEnabled_Explain">Bu politika, XSLT özelliğinin (XSLTProcessor JavaScript API ve XSL işleme talimatı) kullanılabilirliğini kontrol eder.
+Bu politika, Etkin değerine ayarlanırsa özelliğin tarayıcıdaki varsayılan durumundan bağımsız olarak XSLT kullanılabilir.
+Bu politika, Devre Dışı değerine ayarlanırsa özelliğin tarayıcıdaki varsayılan durumundan bağımsız olarak XSLT kullanılamaz.
+Bu politika ayarlanmadan bırakılırsa XSLT'nin kullanılabilirliği, tarayıcının varsayılan ayarlarına ve saha denemelerine göre belirlenir.
+Bu politika geçici bir çözüm olup M164 sürümünde kaldırılacaktır.</string>
+      <string id="GenerativeAI_group">Üretken yapay zeka</string>
+      <string id="GeminiActOnWebAllowedForURLs">Gemini uygulaması entegrasyonlarının belirtilen sitelerde doğrudan işlem yapmasına izin ver</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">Gemini uygulaması entegrasyonlarının web sayfalarında doğrudan işlem yapabileceği sitelerin belirtildiği URL kalıpları listesinin ayarlanmasına olanak tanır.
+
+İzin verilenler listesi veya engellenenler listesiyle eşleşmeyen URL'lerde GeminiActOnWebSettings kullanılır.
+
+Hem izin verilenler hem de engellenenler listesiyle eşleşen URL'lere izin verilir.
+
+Geçerli url kalıpları hakkında ayrıntılı bilgi için https://support.google.com/chrome/a?p=url_blocklist_filter_format adresine bakabilirsiniz.
+
+Örnek değer:
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">Gemini uygulaması entegrasyonlarının belirtilen sitelerde doğrudan işlem yapmasını engelle</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">Gemini uygulaması entegrasyonlarının web sayfalarında doğrudan işlem yapamayacağı sitelerin belirtildiği URL kalıpları listesinin ayarlanmasına olanak tanır.
+
+İzin verilenler listesi veya engellenenler listesiyle eşleşmeyen URL'lerde GeminiActOnWebSettings kullanılır.
+
+Hem izin verilenler hem de engellenenler listesiyle eşleşen URL'lere izin verilir.
+
+Geçerli url kalıpları hakkında ayrıntılı bilgi için https://support.google.com/chrome/a?p=url_blocklist_filter_format adresine bakabilirsiniz.
+
+Örnek değer:
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebSettings">Gemini uygulaması entegrasyonlarının doğrudan web sayfalarında işlem yapmasına izin verir</string>
+      <string id="GeminiActOnWebSettings_Explain">Gemini uygulamasının, web sayfalarında kullanıcı adına işlem yapmasına izin verilip verilmeyeceğini kontrol eder.
+
+0/ayarlanmadı  = Gemini uygulamasının web sayfalarında işlem yapmasına izin verilir.
+
+1 = Gemini uygulamasının, web sayfalarında işlem yapmasına izin verilmez.
+
+Gemini uygulaması devre dışı bırakıldığında bu politikanın etkisi olmaz. Örneğin, Gemini uygulaması GeminiSettings politikası tarafından devre dışı bırakılabilir.
+
+Chrome'da Gemini hakkında daha fazla bilgi için lütfen https://support.google.com/chrome/a/answer/16291696 adresini ziyaret edin.
+
+Gemini'ın etkinleştirilmesi tüm ülkelerde veya dillerde kullanılamaz. Bu politikanın ayarlanması, özelliğin etkinleştirileceğini garanti etmez. Özellik, kullanılabilirliğe bağlı olarak etkinleştirilir. Özelliğin kullanılabilirliğiyle ilgili daha fazla bilgi için Enterprise sürüm notlarını inceleyin: https://support.google.com/chrome/a/answer/7679408?hl=tr</string>
+      <string id="GeminiActOnWebSettings_Enabled">Gemini uygulamasının, web sayfalarında işlem yapmasına izin ver.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Gemini uygulamasının, web sayfalarında işlem yapmasına izin verme.</string>
+      <string id="SearchContentSharingSettings">Google AI Mode ve Lens entegrasyonlarıyla içerik paylaşımını etkinleştir</string>
+      <string id="SearchContentSharingSettings_Explain">Bu politika, Google Chrome yan paneli veya sekmeleri aracılığıyla sayfa ve dosya içeriğinin Google AI Mode ve Lens ile paylaşılmasını kontrol eder.
+
+Bu politikanın web'deki Google AI Mode özelliğini etkilemediğini unutmayın. Yalnızca kullanıcıların Google Chrome kullanırken bu özellikle nasıl bilgi paylaşabileceğini kontrol eder.
+
+0/ayarlanmadı = Kullanıcılar, sayfa veya dosya içeriğini Google AI Mode ile paylaşabilir.
+
+1 = Kullanıcılar, sayfa veya dosya içeriğini Google AI Mode ile paylaşamaz. Bağlam paylaşımı için giriş noktaları ve yan panel devre dışı bırakılır veya gizlenir.
+
+Bu politika, Google Search kullanıcıların varsayılan arama motoru olmadığında, özellik devre dışı bırakıldığından yok sayılır.
+
+Bu politika, AIModeSettings politikasından bağımsızdır. AIModeSettings politikası yalnızca çok amaçlı adres çubuğu veya yeni sekme sayfası arama kutusundaki giriş noktalarını kontrol ederken bu politika, yan panel veya sekmeler aracılığıyla bağlam paylaşımını kontrol eder.
+
+Bu politika, GeminiSettings tarafından devre dışı bırakılabilen Google Gemini entegrasyonunu da kontrol etmez.
+
+Politika ayarlanmadan bırakılırsa davranışı GenAiDefaultSettings politikasına göre belirlenir.
+
+Üretken yapay zeka özelliklerinde verilerin nasıl işlendiği hakkında daha fazla bilgi için lütfen https://support.google.com/chrome/a?p=generative_ai_settings adresine göz atın.</string>
+      <string id="SearchContentSharingSettings_Allowed">Google AI Mode entegrasyonuyla içerik paylaşımına izin ver.</string>
+      <string id="SearchContentSharingSettings_Disabled">Google AI Mode entegrasyonlarıyla içerik paylaşımına izin verme.</string>
+      <string id="ContentSettings_group">İçerik ayarları</string>
+      <string id="DefaultIdleDetectionSetting">Varsayılan boşta kalma algılama ayarı</string>
+      <string id="DefaultIdleDetectionSetting_Explain">Web sitelerinin Idle Detection API'yi kullanmasına izin verilip verilmeyeceğini ayarlamanıza olanak tanır.
+
+Bu politika 1 - AllowIdleDetection değerine ayarlandığında web siteleri, kullanıcıdan izin istemeden API'yi kullanabilir.
+
+Bu politika 2 - BlockIdleDetection değerine ayarlandığında kullanıcının izni ne olursa olsun web siteleri API'yi kullanamaz.
+
+Bu politika 3 - AskIdleDetection değerine ayarlanır veya ayarlanmadan bırakılırsa web siteleri, kullanıcının izni olmadan API'yi kullanamaz.</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">Sitelerin, kullanıcıya sormadan boşta kalma durumunu algılamasına izin ver</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">Hiçbir sitenin kullanıcının boşta kalma durumunu algılamasına izin verme</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">Bir site, kullanıcının boşta kalma durumunu her algılamak istediğinde sor</string>
+      <string id="GeolocationBlockedForUrls">Bu sitelerde coğrafi konumu engelle</string>
+      <string id="GeolocationBlockedForUrls_Explain">Bu politikayı ayarlayarak kullanıcının coğrafi konumuna erişmesine izin verilmeyen ve bunu yapmak için kullanıcı izni istemesi engellenen sitelerin belirtildiği URL kalıplarının listesini oluşturabilirsiniz.
+
+Politika ayarlanmadan bırakılırsa tüm sitelerde DefaultGeolocationSetting (ayarlanmışsa) geçerli olur. Aksi takdirde kullanıcının kişisel ayarları geçerlidir.
+
+Geçerli url kalıpları hakkında ayrıntılı bilgi için https://chromeenterprise.google/policies/url-patterns adresine bakabilirsiniz. Joker karakterlere (*) izin verilir.
+
+Örnek değer:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">Bu sitelerde boşta kalma algılamaya izin ver</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">Kullanıcıya sormadan Idle Detection API'yi kullanmasına izin verilen sitelerin belirtildiği URL kalıpları listesini ayarlamanıza olanak tanır. Engellenenler listesindeki girişler, izin verilenler listesindeki girişlere göre daha yüksek önceliğe sahiptir. İzin verilenler listesindeki girişler de yapılandırılmış varsayılan değere göre daha yüksek önceliğe sahiptir.
+
+Geçerli site URL kalıpları hakkında ayrıntılı bilgi için https://chromeenterprise.google/policies/url-patterns adresine bakabilirsiniz. Joker karakterlere (*) izin verilir. Bu politika, yalnızca kaynağa göre eşleşir. Dolayısıyla, URL kalıbındaki yollar yoksayılır.
+
+Bu politika ayarlanmazsa tüm siteler için genel varsayılan değer kullanılır. Bu değer, ayarlanması halinde DefaultIdleDetectionSetting (varsayılan boşta kalma algılama ayarı) politikasıyla, aksi takdirde kullanıcının kişisel yapılandırmasıyla belirlenir.
+
+Örnek değer:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">Bu sitelerde boşta kalma algılamayı engelle</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">Idle Detection API'yi kullanmasına izin verilmeyen siteleri belirten URL kalıpları listesini ayarlamanıza olanak tanır.
+
+Geçerli site URL kalıpları hakkında ayrıntılı bilgi için https://chromeenterprise.google/policies/url-patterns adresine bakabilirsiniz. Joker karakterlere (*) izin verilir. Bu politika, yalnızca kaynağa göre eşleşir. Dolayısıyla, URL kalıbındaki yollar yoksayılır.
+
+Bu politika ayarlanmazsa tüm siteler için genel varsayılan değer kullanılır. Bu değer, ayarlanması halinde DefaultIdleDetectionSetting (varsayılan boşta kalma algılama ayarı) politikasıyla, aksi takdirde kullanıcının kişisel yapılandırmasıyla belirlenir.
+
+Örnek değer:
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">Bu sitelerde tam coğrafi konum kullanımına izin ver</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">Bu politikayı ayarlayarak kullanıcının yüksek doğruluğu olan coğrafi konumuna erişmek için önce izin istemek zorunda olmayan sitelerin belirtildiği URL kalıplarının listesini oluşturabilirsiniz.
+
+Politika ayarlanmadan bırakılırsa tüm sitelerde DefaultGeolocationSetting (ayarlanmışsa) geçerli olur. Aksi takdirde kullanıcının kişisel ayarları geçerlidir.
+
+Geçerli url kalıpları hakkında ayrıntılı bilgi için https://chromeenterprise.google/policies/url-patterns adresine bakabilirsiniz. Joker karakterlere (*) izin verilir.
+
+Örnek değer:
+
+https://www.example.com
+[*.]example.edu</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">TLS için belirli şifreleme şifre algoritmalarını tercih et</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">TLS için belirli anahtar değişimi algoritmalarını tercih edin</dropdownList></presentation>
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">ProxyOverrideRules politikasını hangi yönetilen kullanıcı hesaplarının ayarlayabileceğini kontrol eder.:</decimalTextBox></presentation>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">IP adresi alanı eşlemelerini geçersiz kıl</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">Sitelerin yerel ağ uç noktalarına istekte bulunmasına izin ver.</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">Sitelerin yerel ağ uç noktalarına istekte bulunmasını engelle</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">Sitelerin yerel cihaza ağ isteği göndermesine izin ver.</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">Sitelerin yerel cihaza ağ isteği göndermesini engelle.</listBox></presentation>
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Chrome DevTools içinde Google Developer Program profillerini etkinleştirin</dropdownList></presentation>
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">Yalnızca HTTPS Modunun etkinleştirilmesine izin ver</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>Google Chrome PDF görüntüleyicideki PDF dosyalarını Google Drive'a kaydetmeye uygun Google Hesaplarını kısıtla</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">Gemini uygulaması entegrasyonlarının belirtilen sitelerde doğrudan işlem yapmasına izin ver</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">Gemini uygulaması entegrasyonlarının belirtilen sitelerde doğrudan işlem yapmasını engelle</listBox></presentation>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Gemini uygulaması entegrasyonlarının doğrudan web sayfalarında işlem yapmasına izin verir</dropdownList></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">Google AI Mode ve Lens entegrasyonlarıyla içerik paylaşımını etkinleştir</dropdownList></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">Boşta kalma algılama</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">Bu sitelerde coğrafi konumu engelle</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">Sitelere, boşta kalma algılama için izin verildi</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">Siteler, boşta kalma algılama için engellendi</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">Bu sitelerde tam coğrafi konum kullanımına izin ver</listBox></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 trở lên</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="GenerativeAI_group">AI tạo sinh</string>
+      <string id="GeminiActOnWebSettings">Cho phép tích hợp ứng dụng Gemini để trực tiếp thực hiện hành động trên các trang web</string>
+      <string id="GeminiActOnWebSettings_Explain">Kiểm soát việc ứng dụng Gemini có được phép hành động trên các trang web thay mặt người dùng hay không.
+
+0/không đặt  = Ứng dụng Gemini được phép hành động trên các trang web.
+
+1 = Ứng dụng Gemini không được phép hành động trên các trang web.
+
+Chính sách này không có hiệu lực khi ứng dụng Gemini bị tắt. Ví dụ: Ứng dụng Gemini có thể bị tắt theo chính sách GeminiSettings.
+
+Để biết thêm thông tin về Gemini trong Chrome, vui lòng truy cập https://support.google.com/chrome/a/answer/16291696.
+
+Một số quốc gia hoặc một số ngôn ngữ không hỗ trợ việc kích hoạt các tính năng của Gemini. Việc thiết lập chính sách này không đảm bảo rằng tính năng sẽ được kích hoạt; điều này vẫn tuỳ thuộc vào khả năng sử dụng tính năng. Để biết thêm thông tin về việc ra mắt tính năng, hãy xem Ghi chú phát hành của Enterprise: https://support.google.com/chrome/a/answer/7679408?hl=en</string>
+      <string id="GeminiActOnWebSettings_Enabled">Cho phép ứng dụng Gemini thực hiện hành động trên các trang web.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Không cho phép ứng dụng Gemini thực hiện hành động trên các trang web.</string>
+      <string id="LocalNetworkAccessSettings_group">Cài đặt Quyền truy cập mạng cục bộ</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Chỉ định xem có (tạm thời) chọn không áp dụng các quy định hạn chế về Quyền truy cập mạng cục bộ hay không</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Khi bạn đặt chính sách này thành Enabled (Bật), các yêu cầu Local Network Access sẽ chỉ hiển thị cảnh báo trong Chrome DevTools do không kiểm tra được Local Network Access.
+
+Nếu bạn đặt chính sách này thành Disabled (Tắt) hoặc không đặt chính sách này, các yêu cầu Local Network Access sẽ sử dụng chế độ xử lý mặc định cho các yêu cầu này.
+
+Hãy truy cập vào https://wicg.github.io/local-network-access/ để biết các quy định hạn chế về Local Network Access.
+
+Chính sách doanh nghiệp này chỉ có hiệu lực tạm thời và sẽ bị xoá sau phiên bản M146.
+
+Về lâu dài, bạn có thể sử dụng chính sách LocalNetworkAccessAllowedForUrls để đưa các mẫu URL vào danh sách cho phép. Các mẫu URL này sẽ tự động được cấp quyền Local Network Access.
+
+Xin lưu ý rằng nếu bạn bật chính sách LocalNetworkAccessRestrictionsEnabled thì chính sách đó sẽ được ưu tiên hơn chính sách này.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Bật Hồ sơ Google Developer Program trong Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Chính sách này kiểm soát việc tích hợp Google Developer Program với Chrome DevTools. Hồ sơ của người dùng trong Google Developer Program được hiển thị trong Chrome DevTools và người dùng nhận được huy hiệu khi thực hiện các hành động cụ thể trong Chrome DevTools.
+
+Việc đặt chính sách này thành 0 – "Đã bật" hoặc không đặt giá trị chính sách nào sẽ cho phép tích hợp Google Developer Program với Chrome DevTools và cho phép chia sẻ thông tin về việc sử dụng công cụ Chrome DevTools để có thể trao huy hiệu.
+
+Khi bạn đặt chính sách này thành 1 ("Đã bật mà không có huy hiệu"), bạn có thể tích hợp Google Developer Program với Chrome DevTools nhưng không thể chia sẻ thông tin về việc sử dụng công cụ Chrome DevTools với Google Developer Program. Không có huy hiệu nào được trao.
+
+Nếu bạn đặt chính sách này thành 2 – "Đã tắt", thì bạn sẽ không thể tích hợp Google Developer Program với Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Bật tính năng tích hợp Google Developer Program trong Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Bật tính năng tích hợp Google Developer Program trong Chrome DevTools, nhưng không chia sẻ thông tin về việc sử dụng công cụ (để trao huy hiệu).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Không bật tính năng tích hợp Google Developer Program trong Chrome DevTools.</string>
+      <string id="Extensions_group">Tiện ích</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Bật các tiện ích bị buộc cài đặt có hành vi vi phạm không liên quan đến phần mềm độc hại</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Kiểm soát việc các tiện ích bị gỡ bỏ do vi phạm không liên quan đến phần mềm độc hại có thể bị buộc cài đặt trong các môi trường có độ tin cậy thấp nữa hay không.
+
+Bạn có thể xem thêm thông tin về các trường hợp vi phạm không liên quan đến phần mềm độc hại và bị gỡ bỏ tại đây. https://developer.chrome.com/docs/webstore/review-process#warning
+
+Sau khi trường hợp vi phạm không liên quan đến phần mềm độc hại được giải quyết, tiện ích sẽ vẫn bật và không thể tắt hay gỡ bỏ.
+
+Trên Microsoft® Windows®, chính sách này không có trên các phiên bản đã liên kết với một miền Microsoft® Active Directory®, Microsoft® Azure® Active Directory® hoặc đã đăng ký Chrome Enterprise Core`.
+
+Trên macOS, chính sách này không có trên các phiên bản được quản lý qua MDM (Quản lý thiết bị di động), đã liên kết với một miền qua MCX hoặc đã đăng ký Chrome Enterprise Core.
+
+Trong những phiên bản này, các tiện ích bị buộc cài đặt có hành vi vi phạm không liên quan đến phần mềm độc hại sẽ vẫn được bật.
+
+Hiện tại, một tiện ích bị buộc cài đặt có hành vi vi phạm không liên quan đến phần mềm độc hại vẫn được cài đặt và bật trong Chrome.
+
+Nếu bạn đặt chính sách này thành Enabled (Bật), các tiện ích bị buộc cài đặt sẽ hoạt động như cũ (tức là vẫn bật) bất kể có vi phạm không liên quan đến phần mềm độc hại hay không.
+
+Nếu bạn đặt chính sách này thành Disabled (Tắt) hoặc không đặt chính sách này, các tiện ích bị buộc cài đặt có hành vi vi phạm không liên quan đến phần mềm độc hại sẽ bị tắt.
+
+Chính sách này sẽ áp dụng cho 3 mốc thời gian.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Cho phép tích hợp ứng dụng Gemini để trực tiếp thực hiện hành động trên các trang web</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Bật Hồ sơ Google Developer Program trong Chrome DevTools</dropdownList></presentation>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

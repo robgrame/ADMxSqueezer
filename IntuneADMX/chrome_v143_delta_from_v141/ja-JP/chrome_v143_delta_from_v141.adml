@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 以降</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Chrome DevTools で Google Developer Program プロフィールを有効にする</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">このポリシーでは、Google Developer Program と Chrome DevTools の統合を管理します。ユーザーの Google Developer Program プロフィールが Chrome DevTools に表示され、ユーザーが Chrome DevTools で特定のアクションを行うとバッジが付与されます。
+
+ポリシーを 0（「有効」）に設定するか、ポリシーの値を設定しない場合、Google デベロッパー プログラムと Chrome DevTools の統合が許可され、バッジを付与するために Chrome DevTools ツールの使用状況が共有されます。
+
+ポリシーを 1（「バッジなしで有効」）に設定した場合、Google デベロッパー プログラムと Chrome DevTools の統合が許可されますが、Chrome DevTools ツールの使用状況は Google デベロッパー プログラムと共有されません。バッジは付与されません。
+
+ポリシーを 2（「無効」）に設定した場合、Google デベロッパー プログラムと Chrome DevTools の統合は許可されません。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Chrome DevTools で Google Developer Program の統合を有効にする。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Chrome DevTools で Google Developer Program の統合を有効にする（ただし、バッジを付与するためのツールの使用状況の共有は行わない）。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Chrome DevTools で Google Developer Program の統合を有効にしない。</string>
+      <string id="LocalNetworkAccessSettings_group">ローカル ネットワーク アクセスの設定</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">ローカル ネットワーク アクセスの制限を（一時的に）無効にするかどうかを指定する</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">このポリシーを有効に設定した場合、Local Network Access リクエストでは、Local Network Access チェックが失敗となり、Chrome DevTools に警告のみが表示されます。
+
+このポリシーを無効に設定するか未設定のままにした場合、Local Network Access リクエストでは、これらのリクエストのデフォルトの処理を使用します。
+
+Local Network Access の制限については、https://wicg.github.io/local-network-access/ をご覧ください。
+
+このエンタープライズ ポリシーは一時的なものであり、M146 以降で削除される予定です。
+
+長期的には、ポリシー LocalNetworkAccessAllowedForUrls を使用して、Local Network Access 権限を自動的に付与する URL パターンの許可リストを指定するという方法があります。
+
+なお、ポリシー LocalNetworkAccessRestrictionsEnabled が有効になっている場合は、このポリシーより優先されます。</string>
+      <string id="Extensions_group">拡張機能</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">マルウェア以外の違反がある自動インストールの拡張機能を有効にする</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">マルウェア以外の違反が原因で削除された拡張機能を、信頼度の低い環境で引き続き自動インストールできるようにするかどうかを制御します。
+
+マルウェア以外の違反と削除について詳しくは、https://developer.chrome.com/docs/webstore/review-process#warning をご覧ください。
+
+マルウェア以外の違反が解消されると、拡張機能は引き続き有効になり、無効にしたり削除したりすることはできません。
+
+Microsoft® Windows® の場合、このポリシーは Microsoft® Active Directory® ドメインに追加されたインスタンス、Microsoft® Azure® Active Directory® に追加されたインスタンス、「Chrome Enterprise Core」に登録されているインスタンスでは使用できません。
+
+macOS の場合、このポリシーは MDM を介して管理されているインスタンス、MCX を介してドメインに追加されたインスタンス、「Chrome Enterprise Core」に登録されているインスタンスでは使用できません。
+
+これらのインスタンスでは、マルウェア以外の違反がある自動インストールの拡張機能は引き続き有効になります。
+
+現在、マルウェア以外の違反がある自動インストールの拡張機能は、引き続き Chrome にインストールされ、有効になります。
+
+このポリシーを有効に設定した場合、自動インストールの拡張機能は、マルウェア以外の違反の有無に関係なく、同じように動作します（引き続き有効になるなど）。
+
+このポリシーを無効に設定するか未設定のままにした場合、マルウェア以外の違反がある自動インストールの拡張機能は無効になります。
+
+このポリシーは 3 つのマイルストーンで使用できます。</string>
+      <string id="GenerativeAI_group">生成 AI</string>
+      <string id="GeminiActOnWebSettings">Gemini アプリの統合を許可し、ウェブページで直接操作できるようにする</string>
+      <string id="GeminiActOnWebSettings_Explain">Gemini アプリにユーザーの代わりにウェブページでの操作を許可するかどうかを制御します。
+
+0 / 未設定  = Gemini アプリにウェブページでの操作を許可する。
+
+1 = Gemini アプリにウェブページでの操作を許可しない。
+
+Gemini アプリが無効になっている場合、このポリシーは無視されます。たとえば、Gemini アプリは GeminiSettings ポリシーで無効にできます。
+
+Gemini in Chrome について詳しくは、https://support.google.com/chrome/a/answer/16291696 をご覧ください。
+
+Gemini による操作は、一部の国や言語ではご利用いただけません。このポリシーを設定しても、機能が有効になるとは限りません。有効になるかどうかは、国や言語での提供状況によって異なります。リリースについて詳しくは、Enterprise リリースノート（https://support.google.com/chrome/a/answer/7679408?hl=ja）をご覧ください。</string>
+      <string id="GeminiActOnWebSettings_Enabled">Gemini アプリにウェブページでの操作を許可する。</string>
+      <string id="GeminiActOnWebSettings_Disabled">Gemini アプリにウェブページでの操作を許可しない。</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Chrome DevTools で Google Developer Program プロフィールを有効にする</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Gemini アプリの統合を許可し、ウェブページで直接操作できるようにする</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

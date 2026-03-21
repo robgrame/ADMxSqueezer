@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 o versiones posteriores</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="LocalNetworkAccessSettings_group">Configuración de acceso a la red local</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Especificar si se deben inhabilitar (temporalmente) las restricciones de acceso a la red local</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Si habilitas esta política, las solicitudes de Local Network Access
+solo mostrarán advertencias en Chrome DevTools debido a errores en las verificaciones de Local Network Access.
+
+Si la inhabilitas o no la estableces, las solicitudes de Local Network Access usarán el
+manejo predeterminado de estas solicitudes.
+
+Para conocer las restricciones de Local Network Access, consulta https://wicg.github.io/local-network-access/.
+
+Esta política empresarial es temporal y se quitará después de la versión M146.
+
+A largo plazo, la política LocalNetworkAccessAllowedForUrls
+se puede usar para crear una lista de entidades permitidas de patrones de URL a los que se les debe otorgar automáticamente
+el permiso Local Network Access.
+
+Ten en cuenta que si se habilita la política LocalNetworkAccessRestrictionsEnabled, tendrá prioridad sobre esta política.</string>
+      <string id="Extensions_group">Extensiones</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Habilitar las extensiones instaladas de manera automática con incumplimientos que no son de software malicioso</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Controla si las extensiones que se quitan debido a infracciones que no son de software malicioso aún se pueden instalar de forma forzosa en entornos de baja confianza.
+
+Obtén más información sobre las infracciones que no son de software malicioso y las eliminaciones aquí: https://developer.chrome.com/docs/webstore/review-process#warning
+
+Una vez que se resuelva la infracción que no es de software malicioso, la extensión permanecerá habilitada y no se podrá inhabilitar ni quitar.
+
+En Microsoft® Windows®, esta política solo está disponible en instancias que están vinculadas a un dominio de Microsoft® Active Directory®, vinculadas a Microsoft® Azure® Active Directory® o inscritas en Chrome Enterprise Core.
+
+En macOS, esta política solo está disponible en instancias administradas con MDM, vinculadas a un dominio a través de MCX o inscritas en Chrome Enterprise Core.
+
+Las extensiones instaladas de manera forzosa con incumplimientos que no sean de software malicioso permanecerán habilitadas en estos casos.
+
+Actualmente, una extensión instalada de manera automática con infracciones que no son de software malicioso permanece instalada y habilitada en Chrome.
+
+Si habilitas la política, las extensiones instaladas de forma forzosa se comportarán de la misma manera (es decir, permanecerán habilitadas) independientemente de las infracciones que no sean de software malicioso.
+
+Si inhabilitas la política o no la estableces, se inhabilitarán las extensiones instaladas de forma forzosa que tengan infracciones que no sean de software malicioso.
+
+Esta política estará disponible durante 3 hitos.</string>
+      <string id="GenerativeAI_group">IA generativa</string>
+      <string id="GeminiActOnWebSettings">Permite que las integraciones de la app de Gemini actúen directamente en las páginas web.</string>
+      <string id="GeminiActOnWebSettings_Explain">Controla si la app de Gemini puede realizar acciones en las páginas web en nombre del usuario.
+
+0 o no establecida = La app de Gemini puede realizar acciones en las páginas web.
+
+1 = La app de Gemini no tiene permiso para realizar acciones en las páginas web.
+
+Esta política no tiene efecto cuando se inhabilita la app de Gemini. Por ejemplo, la política de GeminiSettings puede inhabilitar la app de Gemini.
+
+Para obtener más información sobre Gemini en Chrome, consulta https://support.google.com/chrome/a/answer/16291696.
+
+La activación de Gemini no está disponible en todos los países ni idiomas. Si estableces esta política, no se garantiza que se habilitará la función, ya que sigue sujeta a la disponibilidad. Para obtener más información sobre el lanzamiento, consulta las notas de la versión de Enterprise: https://support.google.com/chrome/a/answer/7679408?hl=es-419</string>
+      <string id="GeminiActOnWebSettings_Enabled">Permite que la app de Gemini realice acciones en las páginas web.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Impide que la app de Gemini realice acciones en las páginas web.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Habilitar los perfiles de Google Developer Program en Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Esta política controla la integración de Google Developer Program con Chrome DevTools. El perfil del usuario en Google Developer Program se muestra en Chrome DevTools, y los usuarios reciben insignias por realizar acciones específicas en Chrome DevTools.
+
+Si estableces la política en 0 - "Habilitada" o no estableces ningún valor de política, se permitirá la integración de Google Developer Program con Chrome DevTools y se permitirá compartir el uso de la herramienta Chrome DevTools para poder otorgar insignias.
+
+Si estableces la política en 1 - "Habilitada sin insignias", se permite la integración de Google Developer Program con Chrome DevTools, pero no se permite compartir el uso de la herramienta Chrome DevTools con Google Developer Program. No se otorgarán insignias.
+
+Si estableces la política en 2 - "Inhabilitada", no se permitirá la integración de Google Developer Program con Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Habilitar la integración de Google Developer Program en Chrome DevTools.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Habilitar la integración de Google Developer Program en Chrome DevTools, pero sin compartir el uso de la herramienta (para otorgar insignias).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">No habilitar la integración de Google Developer Program en Chrome DevTools.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Permite que las integraciones de la app de Gemini actúen directamente en las páginas web.</dropdownList></presentation>
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Habilitar los perfiles de Google Developer Program en Chrome DevTools.</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

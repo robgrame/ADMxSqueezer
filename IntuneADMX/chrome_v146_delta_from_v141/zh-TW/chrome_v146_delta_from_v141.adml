@@ -1,0 +1,410 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 146.0.7680.154-->
+  <!--delta: policies added in v146 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 以上版本</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="googlechrome_recommended">Google Chrome - 預設設定 (使用者可覆寫)</string>
+      <string id="Proxy_group">Proxy 伺服器：</string>
+      <string id="EnableProxyOverrideRulesForAllUsers">控管哪些受管理使用者可以設定 ProxyOverrideRules 政策。</string>
+      <string id="EnableProxyOverrideRulesForAllUsers_Explain">如果將這項政策設為 0 或未設定，系統只會在關聯使用者的使用者範圍套用 ProxyOverrideRules 政策。如果將這項政策設為 1，就算使用者受其他網域管理，系統仍會在使用者範圍套用 ProxyOverrideRules 政策。</string>
+      <string id="ContentSettings_group">內容設定</string>
+      <string id="DefaultIdleDetectionSetting">閒置狀態偵測預設設定</string>
+      <string id="DefaultIdleDetectionSetting_Explain">你可以設定是否允許網站使用 Idle Detection API。
+
+如果將這項政策設為 1 - AllowIdleDetection，網站就能使用這個 API，不必要求使用者授權。
+
+如果將這項政策設為 2 - BlockIdleDetection，無論使用者是否授權，網站都無法使用這個 API。
+
+如果將這項政策設為 3 - AskIdleDetection 或未設定，網站必須取得使用者授權，才能使用這個 API。</string>
+      <string id="DefaultIdleDetectionSetting_AllowIdleDetection">允許網站偵測閒置狀態，不必詢問使用者</string>
+      <string id="DefaultIdleDetectionSetting_BlockIdleDetection">禁止任何網站偵測使用者的閒置狀態</string>
+      <string id="DefaultIdleDetectionSetting_AskIdleDetection">每次網站要偵測使用者的閒置狀態時都要詢問</string>
+      <string id="GeolocationBlockedForUrls">禁止這些網站存取地理位置</string>
+      <string id="GeolocationBlockedForUrls_Explain">設定這項政策後，你可以使用網址模式清單，指定哪些網站不得存取使用者的地理位置，也不能要求使用者授予這項權限。
+
+如果未設定這項政策，DefaultGeolocationSetting 政策 (如已設定) 就會套用至所有網站，否則會套用使用者的個人設定。
+
+如要進一步瞭解有效的url模式，請參閱 https://chromeenterprise.google/policies/url-patterns。指定時可使用萬用字元 (*)。
+
+範例值：
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionAllowedForUrls">允許這些網站偵測閒置狀態</string>
+      <string id="IdleDetectionAllowedForUrls_Explain">你可以設定網址模式清單，指定哪些網站能使用 Idle Detection API，不必徵求使用者同意。封鎖清單項目的優先順序高於許可清單項目，而許可清單項目的優先順序高於預設值。
+
+如要進一步瞭解有效的網站網址模式，請參閱 https://chromeenterprise.google/policies/url-patterns。指定時可使用萬用字元 (*)。這項政策只會根據來源進行比對，因此會忽略網址模式中的路徑。
+
+如果未設定這項政策，系統會根據 DefaultIdleDetectionSetting (閒置狀態偵測預設設定) 政策 (如有設定) 或使用者的個人設定，將全域預設值套用至所有網站。
+
+範例值：
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="IdleDetectionBlockedForUrls">禁止這些網站偵測閒置狀態</string>
+      <string id="IdleDetectionBlockedForUrls_Explain">你可以設定網址模式清單，指定哪些網站不得使用 Idle Detection API。
+
+如要進一步瞭解有效的網站網址模式，請參閱 https://chromeenterprise.google/policies/url-patterns。指定時可使用萬用字元 (*)。這項政策只會根據來源進行比對，因此會忽略網址模式中的路徑。
+
+如果未設定這項政策，系統會根據 DefaultIdleDetectionSetting (閒置狀態偵測預設設定) 政策 (如有設定) 或使用者的個人設定，將全域預設值套用至所有網站。
+
+範例值：
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="PreciseGeolocationAllowedForUrls">允許這些網站使用精確地理位置</string>
+      <string id="PreciseGeolocationAllowedForUrls_Explain">設定這項政策後，你可以使用網址模式清單，指定哪些網站可存取使用者的高精確度地理位置資訊，不必先要求使用者授權。
+
+如果未設定這項政策，系統會將 DefaultGeolocationSetting 套用至所有網站 (如果已設定)，否則會套用使用者的個人設定。
+
+如要進一步瞭解有效的url模式，請參閱 https://chromeenterprise.google/policies/url-patterns。系統允許使用萬用字元 (*)。
+
+範例值：
+
+https://www.example.com
+[*.]example.edu</string>
+      <string id="CacheEncryptionEnabled">這項政策可讓管理員加密磁碟上的 HTTP 快取。</string>
+      <string id="CacheEncryptionEnabled_Explain">這項政策可讓管理員加密磁碟上的瀏覽器 HTTP 快取。
+
+如果啟用這項政策，系統會加密瀏覽器快取。
+
+如果停用這項政策或不設定，系統就不會加密瀏覽器快取。
+
+加密瀏覽器快取可能會影響效能。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">在 Chrome DevTools啟用 Google Developer Program 設定檔</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">這項政策可控管 Google Developer Program 與 Chrome DevTools的整合情形。使用者的 Google Developer Program 設定檔會顯示在 Chrome DevTools，只要使用者在 Chrome DevTools執行特定動作，就能獲得徽章。
+
+如果將政策設為 0 -「啟用」，或未設定任何政策值，表示允許整合 Google Developer Program 與 Chrome DevTools，並分享 Chrome DevTools使用情形，以便頒發徽章。
+
+如果將政策設為 1 -「啟用但不頒發徽章」，表示允許整合 Google Developer Program 與 Chrome DevTools，但不允許將 Chrome DevTools使用情形分享給 Google Developer Program，因此不會頒發任何徽章。
+
+如果將政策設為 2 -「停用」，表示不允許整合 Google Developer Program 與 Chrome DevTools。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">在 Chrome DevTools啟用 Google Developer Program 整合作業。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">在 Chrome DevTools啟用 Google Developer Program 整合作業，但不分享工具使用情形 (用於頒發徽章)。</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">不要在 Chrome DevTools啟用 Google Developer Program 整合作業。</string>
+      <string id="ForceForegroundPriorityForAllTabs">強制將所有分頁設為前景優先</string>
+      <string id="ForceForegroundPriorityForAllTabs_Explain">這項政策可控管是否要強制以前景優先執行背景網頁內容。
+
+根據預設，瀏覽器會降低背景分頁的內容優先順序，以提升資源效率。啟用這項政策會覆寫該行為，讓背景分頁與使用中分頁的排程方式相同。
+
+請注意，強制背景內容以前景優先的方式執行，可能會稍微影響使用中分頁的回應速度。
+
+如果啟用這項政策，所有網頁內容無論是否顯示，都會以前景優先執行。
+
+如果停用或未設定這項政策，瀏覽器會根據標準經驗法則判斷優先順序，例如降低未顯示內容、未播放音訊、未參與視訊通話的優先順序。</string>
+      <string id="HttpsOnlyMode">允許啟用僅限 HTTPS 模式</string>
+      <string id="HttpsOnlyMode_Explain">這項政策可控管使用者能否在「設定」中啟用僅限 HTTPS 模式 (一律使用安全連線)。此模式會將所有瀏覽作業升級為僅限 HTTPS。
+
+如果將這項政策設為「允許」或不設定，使用者將可啟用僅限 HTTPS 模式。
+如果將這項政策設為「禁止」，系統會停用僅限 HTTPS 模式。
+
+如果將這項政策設為「force_enabled」，系統會在嚴格模式下啟用僅限 HTTPS 模式。
+
+如果將這項政策設為「force_balanced_enabled」，系統會在平衡模式中啟用僅限 HTTPS 模式。
+
+系統將自 M112 版起支援「force_enabled」，並自 M129 版起支援「force_balanced_enabled」。
+
+您也可以向使用者建議「force_enabled」和「force_balanced_enabled」。
+系統一開始會將僅限 HTTPS 模式設為在嚴格或平衡模式下啟用，但使用者可以變更。
+
+如果適用這項政策的 Chrome 版本不支援你在政策中設定的值，Chrome 將預設為允許。
+
+獨立的 HttpAllowlist 政策可排除特定主機名稱或主機名稱模式，避免這項功能將其升級為 HTTPS。
+
+範例值： disallowed</string>
+      <string id="HttpsOnlyMode_allowed">不限制使用者的僅限 HTTPS 模式設定</string>
+      <string id="HttpsOnlyMode_disallowed">停用僅限 HTTPS 模式</string>
+      <string id="HttpsOnlyMode_force_enabled">在嚴格模式下強制啟用僅限 HTTPS 模式</string>
+      <string id="HttpsOnlyMode_force_balanced_enabled">在平衡模式下強制啟用僅限 HTTPS 模式</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern">限制符合資格的 Google 帳戶，禁止透過 Google Chrome PDF 檢視器將 PDF 檔案儲存至 Google 雲端硬碟</string>
+      <string id="RestrictPdfSaveToGoogleDriveAccountsToPattern_Explain">內含規則運算式，可判斷哪些 Google 帳戶有資格透過 Google Chrome PDF 檢視器將 PDF 檔案儲存至 Google 雲端硬碟。
+
+如果使用者嘗試使用不符合這個模式的帳戶，將 PDF 檔案上傳至 Google 雲端硬碟，系統就會顯示錯誤訊息。
+
+如果不設定這項政策或將設定保留空白，使用者就能使用任何 Google 帳戶將 PDF 檔案儲存至 Google 雲端硬碟。
+
+範例值： .*@example\.com</string>
+      <string id="SilentPrintingEnabled">啟用靜默列印</string>
+      <string id="SilentPrintingEnabled_Explain">如果將這項政策設為 True 來啟用靜默列印功能，系統會立即關閉開啟的列印預覽視窗，並使用預設選項在預設印表機上列印。如果預設印表機是「另存為 PDF」，檔案會儲存至「下載」資料夾。
+
+如果將這項政策設為 False 或不設定，系統會停用靜默列印功能，不會自動關閉列印預覽視窗，使用者必須照常選取列印選項。</string>
+      <string id="StaticStorageQuotaEnabled">控管儲存空間配額 API 是否傳回靜態值</string>
+      <string id="StaticStorageQuotaEnabled_Explain">設為啟用後，儲存空間配額 API 會傳回靜態值，該值等於用量 + min(10 GiB，磁碟空間四捨五入至最接近的 1 GiB)。
+如果設為停用，無論用量為何，儲存空間配額 API 通常都會傳回與裝置可用總空間成比例的動態值。
+如未設定，儲存空間配額 API 會採用預設的 Chrome 行為。
+這項設定不會影響具備無限儲存空間權限的網站，也不會影響強制執行的配額限制。</string>
+      <string id="WebAppInstallByUserEnabled">允許使用者透過瀏覽器安裝網頁應用程式</string>
+      <string id="WebAppInstallByUserEnabled_Explain">這項政策可控管使用者是否能透過瀏覽器安裝網頁應用程式。
+如果啟用或未設定這項政策，使用者就能透過瀏覽器安裝網頁應用程式。
+如果停用這項政策，使用者就無法透過瀏覽器安裝網頁應用程式，且「應用程式」資料類型會從「Chrome Sync」作業排除，無法保持同步。
+這項政策不支援動態重新整理。無論是啟用、停用或取消設定，變更都只會在瀏覽器重新啟動後生效。
+這項政策不會影響「WebAppInstallForceList」政策。</string>
+      <string id="XSLTEnabled">控管 XSLT 功能是否可用</string>
+      <string id="XSLTEnabled_Explain">這項政策會控管 XSLT 功能 (XSLTProcessor Javascript API 和 XSL 處理指令) 是否開放使用。如果將這項政策設為啟用，無論瀏覽器中的預設狀態為何，系統都會提供 XSLT。如果將這項政策設為停用，無論瀏覽器中的預設狀態為何，XSLT 都無法使用。如果不設定這項政策，XSLT 是否可用會取決於瀏覽器的預設設定和實測。這項政策只是暫時性措施，將在 M164 中移除。</string>
+      <string id="CryptographyCompliance_group">加密編譯法規遵循政策</string>
+      <string id="PreferSlowCiphers">優先採用特定的傳輸層安全標準 (TLS) 加密演算法</string>
+      <string id="PreferSlowCiphers_Explain">這項政策會設定 Google Chrome 在 TLS 1.3 中偏好的加密演算法順序，優先採用特定法規遵循標準核准的演算法。
+
+設定這項政策無法保證一定會協商採用特定演算法。
+
+這項政策讓伺服器業者可區分用戶端是否有法規遵循需求，並只在用戶端明確指定偏好時，使用加密強度更高的特定非預設演算法。
+
+如果將政策設為「cnsa」，Google Chrome 就會優先採用符合商用國家安全演算法套件 1.0 和 2.0 版 (CNSA 1.0 和 2.0) 規定的加密演算法。
+
+如果不設定這項政策或設為「default」，Google Chrome 會使用預設的加密演算法。
+
+設定這項政策並非安全性必要措施。Google Chrome 預設使用的加密技術強度極高，即使用盡太陽的全部能量發動蠻力攻擊，也無法攻破。
+
+如果設定這項政策，Google Chrome 存取網站的速度會變慢。
+
+這項政策只會影響 TLS 1.3 和 QUIC，不影響舊版 TLS。
+
+範例值： cnsa</string>
+      <string id="PreferSlowCiphers_CNSA">優先採用符合 CNSA 1.0 和 2.0 規定的加密演算法</string>
+      <string id="PreferSlowCiphers_Default">使用 Google Chrome 的預設加密演算法順序</string>
+      <string id="PreferSlowKexAlgorithms">優先採用特定的傳輸層安全標準 (TLS) 金鑰交換演算法</string>
+      <string id="PreferSlowKexAlgorithms_Explain">這項政策會設定 Google Chrome 在 TLS 1.3 中偏好的金鑰協議演算法 (支援的群組) 順序，優先採用特定法規遵循標準核准的演算法。
+
+設定這項政策無法保證一定會協商採用特定演算法。
+
+這項政策讓伺服器業者可區分用戶端是否有法規遵循需求，並只在用戶端明確指定偏好時，使用加密強度更高的特定非預設演算法。
+
+如果將政策設為「cnsa2」，Google Chrome 就會優先採用符合商用國家安全演算法套件 2.0 (CNSA 2.0) 規定的金鑰交換方法。
+
+如果不設定這項政策或設為「default」，Google Chrome 會採用預設的金鑰交換方法。
+
+如果設定的政策值會指定 Google Chrome 優先採用後量子金鑰協議演算法，但 PostQuantumKeyAgreementEnabled 處於「已停用」狀態，系統就會以 PostQuantumKeyAgreementEnabled 的設定為準。
+
+設定這項政策並非安全性必要措施。Google Chrome 預設使用的加密技術強度極高，即使用盡太陽的全部能量發動蠻力攻擊，也無法攻破。
+
+如果設定這項政策，Google Chrome 存取網站的速度會變慢。
+
+這項政策只會影響 TLS 1.3 和 QUIC，不影響舊版 TLS。
+
+範例值： cnsa2</string>
+      <string id="PreferSlowKexAlgorithms_CNSA2_0">優先採用符合 CNSA 2.0 規定的金鑰交換方法</string>
+      <string id="PreferSlowKexAlgorithms_Default">使用 Google Chrome 的預設支援群組</string>
+      <string id="LocalNetworkAccessSettings_group">區域網路存取權設定</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides">覆寫 IP 位址空間對應關係</string>
+      <string id="LocalNetworkAccessIpAddressSpaceOverrides_Explain">你可以將某些內部位址範圍視為「公開」，因此不會受到 Local Network Access 檢查。反之，如果某些公開位址範圍可能用於內部，你可以將其視為「本機」，讓 Local Network Access 檢查保護這些位址範圍。
+
+IP 位址空間覆寫有兩種形式：
+
+[cidr]=[public|local|loopback]
+
+其中 [cidr] 是採用 CIDR 標記法的 IP 位址範圍 (如要瞭解 IPv4，請參閱 https://tools.ietf.org/html/rfc4632 的第 3.1 節；如要瞭解 IPv6，請參閱 https://tools.ietf.org/html/rfc4291 的第 2.3 節)。IPv6 位址必須採用網址安全 (加括號) 格式。CIDR 覆寫設定會套用至所有通訊埠。
+
+或
+
+[IP 位址]:[通訊埠]=[public|local|loopback]
+
+如要進一步瞭解Local Network Access，請參閱 https://wicg.github.io/local-network-access/ 和 https://developer.chrome.com/blog/local-network-access。
+
+這項政策不支援動態重新整理。
+
+指令列參數 --ip-address-space-overrides 的覆寫設定優先於這項政策設定的覆寫設定。
+
+範例值：
+
+100.64.0.0/10=public
+[2001:db8::]/32=local
+192.168.0.1:8000=public
+[2001:DB8::8:800:200C:417A]:8080=local</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled">允許子框架在未獲得明確委派下提出區域網路存取 (LNA) 要求</string>
+      <string id="LocalNetworkAccessPermissionsPolicyDefaultEnabled_Explain">根據預設，只有明確委派時，才能在跨來源子框架中要求區域網路存取 (LNA) 權限。你可以使用這項政策覆寫預設行為，讓子框架預設繼承 LNA 權限，除非權限政策明確拒絕。
+
+如果將這項政策設為啟用，子框架預設會取得所有 LNA 權限政策功能，並可提出區域網路要求 (觸發權限提示)。
+
+如果將這項政策設為停用或不設定，子框架必須獲得該權限政策功能的明確委派，才能提出區域網路要求及觸發權限提示。
+
+這項政策適用於權限政策功能「"local-network-access"」、「"loopback-network"」和「"local-network"」。
+
+如要進一步瞭解區域網路存取權，請參閱 https://wicg.github.io/local-network-access/ 和 https://developer.chrome.com/blog/local-network-access。
+
+如要進一步瞭解權限政策，請參閱 https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy。</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">指定是否要 (暫時) 停止區域網路存取權限制</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">如果將這項政策設為啟用，Local Network Access要求只會在 Chrome DevTools中顯示Local Network Access檢查失敗的警告。如果將這項政策設為停用或未設定，系統會使用預設處理方式處理Local Network Access要求。
+
+如要瞭解Local Network Access限制，請前往 https://wicg.github.io/local-network-access/。
+
+這項企業政策只是臨時措施，將於 M152 版之後移除。
+
+長期來看，使用 LocalNetworkAccessAllowedForUrls 政策將網址模式加入許可清單，就能自動授予Local Network Access權限。</string>
+      <string id="LocalNetworkAllowedForUrls">允許網站向區域網路端點發出網路要求。</string>
+      <string id="LocalNetworkAllowedForUrls_Explain">網址模式清單。如果網站來自相符來源，向區域網路端點發出的網路要求就不會經過Local Network Access檢查。
+
+如果來源不符合此處指定的模式，將套用使用者的個人設定。
+
+如要進一步瞭解有效的網址模式，請參閱 https://chromeenterprise.google/policies/url-patterns/。
+
+如要瞭解Local Network Access限制，請前往 https://wicg.github.io/local-network-access/。
+
+有多項政策列出會影響可傳送要求至區域網路端點的來源。如果來源比對符合下列多項政策，系統會按照下列順序優先採用政策：
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+範例值：
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LocalNetworkBlockedForUrls">禁止網站向區域網路端點發出網路要求。</string>
+      <string id="LocalNetworkBlockedForUrls_Explain">網址模式清單。如果傳送網路要求的網站來自相符來源，將無法向區域網路端點發出Local Network Access要求。
+
+如果來源不符合此處指定的模式，將套用使用者的個人設定。
+
+如要進一步瞭解有效的網址模式，請參閱 https://chromeenterprise.google/policies/url-patterns/。
+
+如要瞭解Local Network Access限制，請前往 https://wicg.github.io/local-network-access/。
+
+有多項政策列出會影響可傳送要求至區域網路端點的來源。如果來源比對符合下列多項政策，系統會按照下列順序優先採用政策：
+
+- LocalNetworkBlockedForUrls
+- LocalNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+範例值：
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkAllowedForUrls">允許網站向本機裝置發出網路要求。</string>
+      <string id="LoopbackNetworkAllowedForUrls_Explain">網址模式清單。如果網站來自相符來源，向本機裝置發出的網路要求就不會經過Local Network Access檢查。
+
+如果來源不符合此處指定的模式，將套用使用者的個人設定。
+
+如要進一步瞭解有效的網址模式，請參閱 https://chromeenterprise.google/policies/url-patterns/。
+
+如要瞭解Local Network Access限制，請前往 https://wicg.github.io/local-network-access/。
+
+有多項政策列出會影響可傳送要求至本機裝置的來源。如果來源比對符合下列多項政策，系統會依序優先採用這些政策：
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+範例值：
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="LoopbackNetworkBlockedForUrls">禁止網站向本機裝置發出網路要求。</string>
+      <string id="LoopbackNetworkBlockedForUrls_Explain">網址模式清單。如果傳送網路要求的網站來自相符來源，將無法向本機裝置發出Local Network Access要求。
+
+如果來源不符合此處指定的模式，將套用使用者的個人設定。
+
+如要進一步瞭解有效的網址模式，請參閱 https://chromeenterprise.google/policies/url-patterns/。
+
+如要瞭解Local Network Access限制，請前往 https://wicg.github.io/local-network-access/。
+
+有多項政策列出會影響可傳送要求至本機裝置的來源。如果來源比對符合下列多項政策，系統會依序優先採用這些政策：
+
+- LoopbackNetworkBlockedForUrls
+- LoopbackNetworkAllowedForUrls
+- LocalNetworkAccessBlockedForUrls
+- LocalNetworkAccessAllowedForUrls
+
+範例值：
+
+http://www.example.com:8080
+[*.]example.edu
+*</string>
+      <string id="RemovedPolicies_group">已移除的政策</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">啟用違反非惡意軟體規定的強制安裝擴充功能</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">這項政策已遭到移除，因此與這個版本的 Google Chrome 不相容。詳情請參閱 https://support.google.com/chrome/a/answer/7643500</string>
+      <string id="GenerativeAI_group">生成式 AI</string>
+      <string id="GeminiActOnWebAllowedForURLs">允許 Gemini 應用程式整合功能直接在指定網站執行動作</string>
+      <string id="GeminiActOnWebAllowedForURLs_Explain">你可以設定網址模式清單，指定 Gemini 應用程式整合功能可直接在哪些網站的網頁執行動作。
+
+如果網址既不符合許可清單也不符合封鎖清單，則會使用 GeminiActOnWebSettings。
+
+如果網址同時符合許可清單和封鎖清單，系統會允許存取該網址。
+
+如要進一步瞭解有效的模式，請參閱 https://support.google.com/chrome/a?p=url_blocklist_filter_format。
+
+範例值：
+
+example.com
+https://ssl.server.com
+hosting.com/good_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebBlockedForURLs">禁止 Gemini 應用程式整合功能直接在指定網站執行動作</string>
+      <string id="GeminiActOnWebBlockedForURLs_Explain">你可以設定網址模式清單，指定哪些網站不允許 Gemini 應用程式整合功能直接在網頁執行動作。
+
+如果網址既不符合許可清單也不符合封鎖清單，則會使用 GeminiActOnWebSettings。
+
+如果網址同時符合許可清單和封鎖清單，系統會允許存取該網址。
+
+如要進一步瞭解有效的模式，請參閱 https://support.google.com/chrome/a?p=url_blocklist_filter_format。
+
+範例值：
+
+example.com
+https://ssl.server.com
+hosting.com/bad_path
+https://server:8080/path
+.exact.hostname.com</string>
+      <string id="GeminiActOnWebSettings">允許 Gemini 應用程式整合功能直接在網頁執行動作</string>
+      <string id="GeminiActOnWebSettings_Explain">控管 Gemini 應用程式能否代表使用者在網頁執行動作。
+
+0/未設定  = 允許 Gemini 應用程式在網頁執行動作。
+
+1 = 禁止 Gemini 應用程式在網頁執行動作。
+
+如果停用 Gemini 應用程式，這項政策就沒有任何作用。例如，GeminiSettings 政策可能會停用 Gemini 應用程式。
+
+如要進一步瞭解 Chrome 內建的 Gemini，請參閱 https://support.google.com/chrome/a/answer/16291696。
+
+Gemini 啟動功能僅支援部分國家/地區和語言。設定這項政策無法保證一定會啟用這項功能，仍須視可用情形而定。如要進一步瞭解推出情況，請參閱 Chrome Enterprise 版本資訊：https://support.google.com/chrome/a/answer/7679408?hl=zh-Hant</string>
+      <string id="GeminiActOnWebSettings_Enabled">允許 Gemini 應用程式在網頁執行動作。</string>
+      <string id="GeminiActOnWebSettings_Disabled">禁止 Gemini 應用程式在網頁執行動作。</string>
+      <string id="SearchContentSharingSettings">與 Google AI Mode和Lens整合功能共用內容</string>
+      <string id="SearchContentSharingSettings_Explain">這項政策控管是否可透過 Google Chrome 側邊面板或分頁，將網頁和檔案內容分享給 Google AI Mode和Lens。請注意，這項政策不會影響 Google AI Mode在網頁的運作方式，只會控管使用者在 Google Chrome 中共用資訊的方式。0/未設定 = 使用者可以與 Google AI Mode共用網頁或檔案內容。1 = 使用者無法與 Google AI Mode共用網頁或檔案內容。系統會停用或隱藏共用內容的進入點和側邊面板。如果預設搜尋引擎不是 Google Search，系統會因功能已停用而忽略這項政策。這項政策與 AIModeSettings 政策無關。AIModeSettings 政策只會控管網址列或新分頁搜尋框的進入點，這項政策則控管透過側邊面板或分頁共用內容的功能。這項政策也不會控管 Google Gemini 整合功能，該功能可由 GeminiSettings 停用。如果未設定這項政策，系統就會以 GenAiDefaultSettings 政策決定行為。如要進一步瞭解生成式 AI 功能的資料處理方式，請前往 https://support.google.com/chrome/a?p=generative_ai_settings。</string>
+      <string id="SearchContentSharingSettings_Allowed">允許與 Google AI Mode整合共用內容。</string>
+      <string id="SearchContentSharingSettings_Disabled">禁止與 Google AI Mode整合共用內容。</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="EnableProxyOverrideRulesForAllUsers"><decimalTextBox refId="EnableProxyOverrideRulesForAllUsers">控管哪些受管理使用者可以設定 ProxyOverrideRules 政策。:</decimalTextBox></presentation>
+      <presentation id="DefaultIdleDetectionSetting"><dropdownList refId="DefaultIdleDetectionSetting">閒置狀態偵測</dropdownList></presentation>
+      <presentation id="GeolocationBlockedForUrls"><listBox refId="GeolocationBlockedForUrlsDesc">禁止這些網站存取地理位置</listBox></presentation>
+      <presentation id="IdleDetectionAllowedForUrls"><listBox refId="IdleDetectionAllowedForUrlsDesc">允許網站偵測閒置狀態</listBox></presentation>
+      <presentation id="IdleDetectionBlockedForUrls"><listBox refId="IdleDetectionBlockedForUrlsDesc">禁止網站偵測閒置狀態</listBox></presentation>
+      <presentation id="PreciseGeolocationAllowedForUrls"><listBox refId="PreciseGeolocationAllowedForUrlsDesc">允許這些網站使用精確地理位置</listBox></presentation>
+      <presentation id="CacheEncryptionEnabled" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">在 Chrome DevTools啟用 Google Developer Program 設定檔</dropdownList></presentation>
+      <presentation id="ForceForegroundPriorityForAllTabs" />
+      <presentation id="HttpsOnlyMode"><dropdownList refId="HttpsOnlyMode">允許啟用僅限 HTTPS 模式</dropdownList></presentation>
+      <presentation id="RestrictPdfSaveToGoogleDriveAccountsToPattern"><textBox refId="RestrictPdfSaveToGoogleDriveAccountsToPattern"><label>限制符合資格的 Google 帳戶，禁止透過 Google Chrome PDF 檢視器將 PDF 檔案儲存至 Google 雲端硬碟</label></textBox></presentation>
+      <presentation id="SilentPrintingEnabled" />
+      <presentation id="StaticStorageQuotaEnabled" />
+      <presentation id="WebAppInstallByUserEnabled" />
+      <presentation id="XSLTEnabled" />
+      <presentation id="PreferSlowCiphers"><dropdownList refId="PreferSlowCiphers">優先採用特定的傳輸層安全標準 (TLS) 加密演算法</dropdownList></presentation>
+      <presentation id="PreferSlowKexAlgorithms"><dropdownList refId="PreferSlowKexAlgorithms">優先採用特定的傳輸層安全標準 (TLS) 金鑰交換演算法</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessIpAddressSpaceOverrides"><listBox refId="LocalNetworkAccessIpAddressSpaceOverridesDesc">覆寫 IP 位址空間對應關係</listBox></presentation>
+      <presentation id="LocalNetworkAccessPermissionsPolicyDefaultEnabled" />
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="LocalNetworkAllowedForUrls"><listBox refId="LocalNetworkAllowedForUrlsDesc">允許網站向區域網路端點發出網路要求。</listBox></presentation>
+      <presentation id="LocalNetworkBlockedForUrls"><listBox refId="LocalNetworkBlockedForUrlsDesc">禁止網站向區域網路端點發出網路要求。</listBox></presentation>
+      <presentation id="LoopbackNetworkAllowedForUrls"><listBox refId="LoopbackNetworkAllowedForUrlsDesc">允許網站向本機裝置發出網路要求。</listBox></presentation>
+      <presentation id="LoopbackNetworkBlockedForUrls"><listBox refId="LoopbackNetworkBlockedForUrlsDesc">禁止網站向本機裝置發出網路要求。</listBox></presentation>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="GeminiActOnWebAllowedForURLs"><listBox refId="GeminiActOnWebAllowedForURLsDesc">允許 Gemini 應用程式整合功能直接在指定網站執行動作</listBox></presentation>
+      <presentation id="GeminiActOnWebBlockedForURLs"><listBox refId="GeminiActOnWebBlockedForURLsDesc">禁止 Gemini 應用程式整合功能直接在指定網站執行動作</listBox></presentation>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">允許 Gemini 應用程式整合功能直接在網頁執行動作</dropdownList></presentation>
+      <presentation id="SearchContentSharingSettings"><dropdownList refId="SearchContentSharingSettings">與 Google AI Mode和Lens整合功能共用內容</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

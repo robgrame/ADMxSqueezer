@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 veya sonraki sürümler</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="Extensions_group">Uzantılar</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Kötü Amaçlı Yazılım Dışı İhlal İçeren Zorunlu Yüklenmiş Uzantıları Etkinleştir</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Kötü amaçlı yazılım dışı ihlaller nedeniyle kaldırılan uzantıların, düşük güven düzeyine sahip ortamlarda zorunlu olarak yüklenip yüklenemeyeceğini kontrol eder.
+
+Kötü amaçlı yazılım dışı ihlaller ve kaldırma işlemleri hakkında daha fazla bilgiyi https://developer.chrome.com/docs/webstore/review-process#warning adresinde bulabilirsiniz.
+
+Kötü amaçlı yazılım dışı ihlal çözüldükten sonra uzantı etkin kalır ve devre dışı bırakılamaz veya kaldırılamaz.
+
+Microsoft® Windows® işletim sisteminde bu politika bir Microsoft® Active Directory® veya Microsoft® Azure® Active Directory® alan adına katılmış ya da "Chrome Enterprise Core öğesine kaydolmuş örneklerde kullanılamaz.
+
+macOS işletim sisteminde bu politika MDM üzerinden yönetilen, MCX aracılığıyla bir alan adına katılmış veya "Chrome Enterprise Core" öğesine kaydolmuş örneklerde kullanılamaz.
+
+Kötü amaçlı yazılım dışı ihlal içeren zorunlu yüklenmiş uzantılar bu durumlarda etkin kalır.
+
+Şu anda kötü amaçlı yazılım dışı ihlal içeren zorunlu yüklenmiş bir uzantı Chrome'da yüklü ve etkin durumda.
+
+Politika, Etkin değerine ayarlanırsa zorunlu yüklenmiş uzantılar, kötü amaçlı yazılım dışı ihlallerden bağımsız olarak aynı davranır (etkin kalır).
+
+Politika, Devre Dışı değerine ayarlanır veya ayarlanmadan bırakılırsa kötü amaçlı yazılım dışı ihlal içeren zorunlu yüklenmiş uzantılar devre dışı bırakılır.
+
+Bu politika 3 aşama boyunca kullanılabilir.</string>
+      <string id="LocalNetworkAccessSettings_group">Yerel Ağ Erişimi ayarları</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Yerel ağ erişimi kısıtlamalarının (geçici olarak) devre dışı bırakılıp bırakılmayacağını belirtir</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Bu politika, Etkin değerine ayarlanırsa Local Network Access
+istekleri, Local Network Access kontrollerinin başarısız olması nedeniyle yalnızca Chrome DevTools içinde uyarı gösterir.
+
+Bu politika, Devre Dışı değerine ayarlanır veya ayarlanmadan bırakılırsa Local Network Access istekleri, bu istekler için varsayılan yöntemle işlenir.
+
+Local Network Access kısıtlamaları için https://wicg.github.io/local-network-access/ sayfasına bakabilirsiniz.
+
+Bu kurumsal politika geçici olup M146 sürümünden sonra kaldırılacaktır.
+
+Uzun vadede, Local Network Access izninin otomatik olarak verilmesi gereken URL kalıplarının izin verilenler listesine eklenmesi için LocalNetworkAccessAllowedForUrls politikası kullanılabilir.
+
+LocalNetworkAccessRestrictionsEnabled politikası etkinleştirilirse bu politikaya göre öncelikli olacağını unutmayın.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Chrome DevTools içinde Google Developer Program profillerini etkinleştirin</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Bu politika, Google Developer Program'ın Chrome DevTools ile entegrasyonunu kontrol eder. Kullanıcının Google Developer Program profili Chrome DevTools içinde gösterilir ve kullanıcılar Chrome DevTools içinde belirli işlemleri gerçekleştirdiklerinde rozet kazanır.
+
+Politika, 0 (Etkin) olarak ayarlanırsa veya herhangi bir politika değeri ayarlanmazsa Google Developer Program'ın Chrome DevTools ile entegrasyonuna izin verilir ve rozet verilebilmesi için Chrome DevTools araç kullanımının paylaşılmasına izin verilir.
+
+Politika, 1 - "Rozetler olmadan etkin" olarak ayarlanırsa Google Developer Program'ın Chrome DevTools ile entegrasyonuna izin verilir ancak Chrome DevTools araç kullanımının Google Developer Program ile paylaşılmasına izin verilmez. Rozet verilmeyecek.
+
+Politika, 2 - "Devre Dışı" değerine ayarlanırsa Google Developer Program'ın Chrome DevTools ile entegrasyonuna izin verilmez.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Chrome DevTools içinde Google Developer Program entegrasyonunu etkinleştirin.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Chrome DevTools içinde Google Developer Program entegrasyonunu etkinleştirin ancak araç kullanımını paylaşmayın (rozet kazanmak için).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Chrome DevTools içinde Google Developer Program entegrasyonunu etkinleştirmeyin.</string>
+      <string id="GenerativeAI_group">Üretken yapay zeka</string>
+      <string id="GeminiActOnWebSettings">Gemini uygulaması entegrasyonlarının doğrudan web sayfalarında işlem yapmasına izin verir</string>
+      <string id="GeminiActOnWebSettings_Explain">Gemini uygulamasının, web sayfalarında kullanıcı adına işlem yapmasına izin verilip verilmeyeceğini kontrol eder.
+
+0/ayarlanmadı  = Gemini uygulamasının web sayfalarında işlem yapmasına izin verilir.
+
+1 = Gemini uygulamasının, web sayfalarında işlem yapmasına izin verilmez.
+
+Gemini uygulaması devre dışı bırakıldığında bu politikanın etkisi olmaz. Örneğin, Gemini uygulaması GeminiSettings politikası tarafından devre dışı bırakılabilir.
+
+Chrome'da Gemini hakkında daha fazla bilgi için lütfen https://support.google.com/chrome/a/answer/16291696 adresini ziyaret edin.
+
+Gemini'ın etkinleştirilmesi tüm ülkelerde veya dillerde kullanılamaz. Bu politikanın ayarlanması, özelliğin etkinleştirileceğini garanti etmez. Özellik, kullanılabilirliğe bağlı olarak etkinleştirilir. Özelliğin kullanılabilirliğiyle ilgili daha fazla bilgi için Enterprise sürüm notlarını inceleyin: https://support.google.com/chrome/a/answer/7679408?hl=tr</string>
+      <string id="GeminiActOnWebSettings_Enabled">Gemini uygulamasının, web sayfalarında işlem yapmasına izin ver.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Gemini uygulamasının, web sayfalarında işlem yapmasına izin verme.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Chrome DevTools içinde Google Developer Program profillerini etkinleştirin</dropdownList></presentation>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Gemini uygulaması entegrasyonlarının doğrudan web sayfalarında işlem yapmasına izin verir</dropdownList></presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 і новіших версій</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Увімкнути профілі Google Developer Program у сервісі "Chrome DevTools"</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Це правило керує інтеграцією Google Developer Program у сервісі "Chrome DevTools". Профіль користувача в Google Developer Program відображається в сервісі "Chrome DevTools", а користувачі отримують значки за виконання певних дій у сервісі "Chrome DevTools".
+
+Якщо вибрати значення "0" ("Увімкнено") або не налаштувати це правило, буде дозволено інтегрувати Google Developer Program у сервісі "Chrome DevTools" і ділитися даними про використання сервісу "Chrome DevTools", щоб отримувати значки.
+
+Якщо вибрати значення "1" ("Увімкнено без значків"), буде дозволено інтегрувати Google Developer Program у сервісі "Chrome DevTools", але дані про використання сервісу "Chrome DevTools" не надсилатимуться в Google Developer Program. Значки не присвоюватимуться.
+
+Якщо для цього правила вибрати значення "2" ("Вимкнено"), буде заборонено інтегрувати Google Developer Program у сервісі "Chrome DevTools".</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Увімкнути інтеграцію Google Developer Program у сервісі "Chrome DevTools".</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Увімкнути інтеграцію Google Developer Program у сервісі "Chrome DevTools", але не ділитися даними про використання інструментів (для присвоєння значків).</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Не вмикати інтеграцію Google Developer Program у сервісі "Chrome DevTools".</string>
+      <string id="GenerativeAI_group">Генеративний штучний інтелект</string>
+      <string id="GeminiActOnWebSettings">Дозволяє інтеграціям додатка Gemini виконувати дії безпосередньо на вебсторінках</string>
+      <string id="GeminiActOnWebSettings_Explain">Це правило визначає, чи може додаток Gemini виконувати дії на вебсторінках від імені користувача.
+
+Якщо вибрати для цього правила значення 0 або не налаштувати його, додаток Gemini зможе виконувати дії на вебсторінках.
+
+Якщо вибрати значення 1, додаток Gemini не зможе цього робити.
+
+Це правило не діє, якщо додаток Gemini вимкнено (наприклад, відповідно до правила GeminiSettings).
+
+Щоб дізнатися більше про Gemini у Chrome, перегляньте інформацію за цим посиланням: https://support.google.com/chrome/a/answer/16291696.
+
+Сервіс Gemini доступний не в усіх країнах і лише певними мовами. Налаштування цього правила не гарантує, що відповідний сервіс буде ввімкнено, оскільки це залежить від його доступності. Щоб дізнатися більше про запуск, перегляньте примітки до випуску Chrome Enterprise: https://support.google.com/chrome/a/answer/7679408?hl=uk</string>
+      <string id="GeminiActOnWebSettings_Enabled">Дозволити додатку Gemini виконувати дії на вебсторінках.</string>
+      <string id="GeminiActOnWebSettings_Disabled">Заборонити додатку Gemini виконувати дії на вебсторінках.</string>
+      <string id="LocalNetworkAccessSettings_group">Налаштування доступу до локальної мережі</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Визначає, чи потрібно (тимчасово) вимкнути обмеження доступу до локальної мережі</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Якщо ввімкнути це правило, у сервісі Chrome DevTools для запитів Local Network Access відображатимуться лише попередження, пов’язані з непройденими перевірками Local Network Access.
+
+Якщо це правило вимкнути або не налаштувати, запити Local Network Access оброблятимуться за умовчанням.
+
+Докладнішу інформацію про обмеження Local Network Access наведено на сторінці https://wicg.github.io/local-network-access/.
+
+Це тимчасове корпоративне правило. Його буде вилучено, починаючи з версії M146.
+
+У довгостроковій перспективі можна використовувати правило LocalNetworkAccessAllowedForUrls, щоб додавати в білий список шаблони URL-адрес, яким автоматично надаватиметься дозвіл Local Network Access.
+
+Зверніть увагу: якщо ввімкнути правило LocalNetworkAccessRestrictionsEnabled, воно матиме перевагу над цим правилом.</string>
+      <string id="Extensions_group">Розширення</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Увімкнути примусово встановлені розширення, які порушують правила, не пов’язані зі зловмисним програмним забезпеченням</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Визначає, чи можна примусово встановлювати розширення, вилучені через порушення, не пов’язані зі зловмисним програмним забезпеченням, у середовищах із низьким рівнем довіри.
+
+З додатковою інформацією про вилучення й порушення, не пов’язані зі зловмисним програмним забезпеченням, можна ознайомитися тут: https://developer.chrome.com/docs/webstore/review-process#warning
+
+Коли порушення, не пов’язане зі зловмисним програмним забезпеченням, буде усунуто, розширення залишиться ввімкненим, і його не можна буде вимкнути або вилучити.
+
+У Microsoft® Windows® це правило не застосовується для екземплярів, які зареєстровано в доменах Microsoft® Active Directory®, Microsoft® Azure® Active Directory® чи сервісі Chrome Enterprise Core.
+
+У macOS це правило доступне лише для екземплярів, які контролюються через Керування мобільними пристроями, зареєстровані в домені через MCX або в сервісі Chrome Enterprise Core.
+
+У таких екземплярах примусово встановлені розширення, які порушують правила, не пов’язані зі зловмисним програмним забезпеченням, залишатимуться ввімкненими.
+
+Зараз примусово встановлене розширення, яке порушує правила, не пов’язані зі шкідливим програмним забезпеченням, залишається встановленим і ввімкненим у Chrome.
+
+Якщо ввімкнути це правило, примусово встановлені розширення працюватимуть однаково (тобто залишатимуться ввімкненими) незалежно від наявності порушень, не пов’язаних зі зловмисним програмним забезпеченням.
+
+Якщо вимкнути або не налаштувати це правило, примусово встановлені розширення, що порушують правила, не пов’язані зі зловмисним програмним забезпеченням, буде вимкнено.
+
+Це правило буде доступне протягом трьох версій.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Увімкнути профілі Google Developer Program у сервісі "Chrome DevTools"</dropdownList></presentation>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Дозволяє інтеграціям додатка Gemini виконувати дії безпосередньо на вебсторінках</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

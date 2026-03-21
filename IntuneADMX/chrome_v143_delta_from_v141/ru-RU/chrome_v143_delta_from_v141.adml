@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <!--chrome version: 143.0.7499.41-->
+  <!--delta: policies added in v143 vs v141-->
+  <displayName/>
+  <description/>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_WIN7">Microsoft Windows 7 и более поздних версиях</string>
+      <string id="SUPPORTED_WIN7_ONLY">Microsoft Windows 7</string>
+      <string id="googlechrome">Google Chrome</string>
+      <string id="GenerativeAI_group">Генеративный ИИ</string>
+      <string id="GeminiActOnWebSettings">Разрешить интеграциям приложения Gemini напрямую действовать на веб-страницах</string>
+      <string id="GeminiActOnWebSettings_Explain">Позволяет указать, может ли приложение Gemini выполнять действия на веб-страницах от лица пользователя.
+
+Если правило не настроено или выбрано значение 0, приложению Gemini разрешено выполнять действия на веб-страницах.
+
+Если установлено значение 1, приложение Gemini не может выполнять действия на них.
+
+Это правило не работает, если приложение Gemini отключено, например правилом GeminiSettings.
+
+Подробнее о Gemini в Chrome: https://support.google.com/chrome/a/answer/16291696.
+
+Gemini доступен не во всех странах и не на всех языках. Если правило настроено, это не гарантирует, что функция будет работать. Она может быть недоступна. Подробную информацию о развертывании можно найти в примечаниях к выпуску Enterprise: https://support.google.com/chrome/a/answer/7679408?hl=ru.</string>
+      <string id="GeminiActOnWebSettings_Enabled">Разрешить приложению Gemini выполнять действия на веб-страницах</string>
+      <string id="GeminiActOnWebSettings_Disabled">Запретить приложению Gemini выполнять действия на веб-страницах</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability">Включить профили Google Developer Program в Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Explain">Это правило управляет интеграцией Google Developer Program с Chrome DevTools. Профиль пользователя Google Developer Program показывается в Chrome DevTools, и за определенные действия в Chrome DevTools присваиваются значки.
+
+Если для правила задано значение 0 (включено) или поле оставлено пустым, включается интеграция Google Developer Program с Chrome DevTools и разрешается передача данных об использовании инструмента Chrome DevTools для присвоения значков.
+
+Если для правила задано значение 1 (включено, но без значков), включается интеграция Google Developer Program с Chrome DevTools, но передача данных об использовании инструмента Chrome DevTools с Google Developer Program не разрешается. Значки не присваиваются.
+
+Если для правила задано значение 2 (отключено), интеграция Google Developer Program с Chrome DevTools не разрешается.</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Enabled">Включить интеграцию Google Developer Program в Chrome DevTools</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_EnabledWithoutBadges">Включить интеграцию Google Developer Program в Chrome DevTools, не передавая данные об использовании инструмента (для присвоения значков)</string>
+      <string id="DevToolsGoogleDeveloperProgramProfileAvailability_Disabled">Отключить интеграцию Google Developer Program в Chrome DevTools</string>
+      <string id="LocalNetworkAccessSettings_group">Настройки доступа к локальным сетям</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut">Определяет, будет ли (временно) отключен режим ограниченного доступа к локальной сети</string>
+      <string id="LocalNetworkAccessRestrictionsTemporaryOptOut_Explain">Если правило включено, в ответ на запросы типа Local Network Access
+показываются только предупреждения в инструменте Chrome DevTools, поскольку запросы типа Local Network Access не проходят проверку.
+
+Если правило отключено или не настроено, запросы типа Local Network Access обрабатываются по умолчанию.
+
+Дополнительные сведения об ограничениях запросов типа Local Network Access можно найти на странице https://wicg.github.io/local-network-access/.
+
+Это корпоративное правило введено на время и будет удалено после выхода M146.
+
+В долгосрочной перспективе LocalNetworkAccessAllowedForUrls
+может использоваться для включения шаблонов URL в белый список, в котором будет автоматически предоставляться разрешение
+Local Network Access.
+
+Если параметр LocalNetworkAccessRestrictionsEnabled включен,
+он будет иметь приоритет над этим правилом.</string>
+      <string id="Extensions_group">Расширения</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled">Разрешить принудительно устанавливать расширения с нарушениями, не связанными с вредоносным ПО</string>
+      <string id="ExtensionForceInstallWithNonMalwareViolationsEnabled_Explain">Правило определяет, можно ли принудительно устанавливать в малонадежных средах расширения, удаленные за нарушения, не связанные с вредоносным ПО.
+
+Узнайте больше о таких нарушениях и удалении расширений: https://developer.chrome.com/docs/webstore/review-process#warning.
+
+После устранения нарушения расширение останется включенным и его будет невозможно отключить или удалить.
+
+В Microsoft® Windows® это правило нельзя настроить на устройствах, которые входят в домен Microsoft® Active Directory®, добавлены в Microsoft® Azure® Active Directory® или зарегистрированы в программе Chrome Enterprise Core.
+
+В macOS правило не поддерживается на устройствах, которые контролируются с помощью ПО для управления мобильными устройствами, добавлены в домен через MCX или зарегистрированы в программе Chrome Enterprise Core.
+
+В этих случаях принудительно установленные расширения с нарушениями, не связанными с вредоносным ПО, останутся включенными.
+
+Принудительно установленные расширения с такими нарушениями не удаляются автоматически из Chrome и продолжают работать.
+
+Если правило включено, поведение будет таким же: принудительно установленные расширения не прекратят работу даже при наличии нарушений, не связанных с вредоносным ПО.
+
+Если правило отключено или не настроено, такие расширения будут отключены.
+
+Мы удалим это правило после трех крупных обновлений.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="GeminiActOnWebSettings"><dropdownList refId="GeminiActOnWebSettings">Разрешить интеграциям приложения Gemini напрямую действовать на веб-страницах</dropdownList></presentation>
+      <presentation id="DevToolsGoogleDeveloperProgramProfileAvailability"><dropdownList refId="DevToolsGoogleDeveloperProgramProfileAvailability">Включить профили Google Developer Program в Chrome DevTools</dropdownList></presentation>
+      <presentation id="LocalNetworkAccessRestrictionsTemporaryOptOut" />
+      <presentation id="ExtensionForceInstallWithNonMalwareViolationsEnabled" />
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
