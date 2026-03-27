@@ -1,3 +1,5 @@
+#Requires -Version 5.1
+
 <#
 .SYNOPSIS
     Checks if one or more Google Chrome policy names exist in the Intune Settings Catalog
@@ -10,6 +12,7 @@
     (e.g. Google > Google Chrome > Local Network Access settings > PolicyName).
 
     Requires the Microsoft.Graph PowerShell SDK (Microsoft.Graph.Authentication module).
+    Compatible with PowerShell 5.1 and later.
 
 .PARAMETER PolicyNames
     One or more Chrome policy names to search for (e.g. "GeminiActOnWebSettings").
@@ -37,7 +40,12 @@ function Connect-ToGraph {
     }
     $context = Get-MgContext
     if (-not $context) {
-        Connect-MgGraph -Scopes "DeviceManagementConfiguration.Read.All" -NoWelcome
+        $params = @{ Scopes = "DeviceManagementConfiguration.Read.All" }
+        # -NoWelcome was added in Microsoft.Graph 2.x
+        if ((Get-Command Connect-MgGraph).Parameters.ContainsKey('NoWelcome')) {
+            $params['NoWelcome'] = $true
+        }
+        Connect-MgGraph @params
     }
     return $true
 }
@@ -123,17 +131,19 @@ function Search-SettingsCatalog {
 }
 
 # --- Main ---
-Write-Host "`n🔍 Intune Settings Catalog - Chrome Policy Lookup" -ForegroundColor Green
-Write-Host ("=" * 55) -ForegroundColor Green
+Write-Host ""
+Write-Host "[SEARCH] Intune Settings Catalog - Chrome Policy Lookup" -ForegroundColor Green
+Write-Host ("=" * 58) -ForegroundColor Green
 
 Write-Host "`nConnecting to Microsoft Graph..." -ForegroundColor Yellow
 if (-not (Connect-ToGraph)) { exit 1 }
-Write-Host "✅ Connected`n" -ForegroundColor Green
+Write-Host "[OK] Connected" -ForegroundColor Green
+Write-Host ""
 
 $results = @()
 
 foreach ($policyName in $PolicyNames) {
-    Write-Host "🔎 $policyName" -ForegroundColor Cyan
+    Write-Host "[?] $policyName" -ForegroundColor Cyan
 
     $found = Search-SettingsCatalog -PolicyName $policyName
 
@@ -150,13 +160,13 @@ foreach ($policyName in $PolicyNames) {
             }
             if (-not $catalogPath) { $catalogPath = $policyName }
 
-            $platform = if ($setting.applicability.platform) { $setting.applicability.platform } else { "N/A" }
-            $tech = if ($setting.applicability.technologies) { $setting.applicability.technologies } else { "N/A" }
+            if ($setting.applicability.platform) { $platform = $setting.applicability.platform } else { $platform = "N/A" }
+            if ($setting.applicability.technologies) { $tech = $setting.applicability.technologies } else { $tech = "N/A" }
 
-            Write-Host "   ✅ Found in Settings Catalog" -ForegroundColor Green
-            Write-Host "   📂 $catalogPath" -ForegroundColor White
-            Write-Host "   📄 $($setting.displayName)" -ForegroundColor Gray
-            Write-Host "   💻 Platform: $platform | Technology: $tech" -ForegroundColor Gray
+            Write-Host "   [FOUND] In Settings Catalog" -ForegroundColor Green
+            Write-Host "   [PATH]  $catalogPath" -ForegroundColor White
+            Write-Host "   [NAME]  $($setting.displayName)" -ForegroundColor Gray
+            Write-Host "   [INFO]  Platform: $platform | Technology: $tech" -ForegroundColor Gray
             Write-Host ""
 
             $results += [PSCustomObject]@{
@@ -171,7 +181,7 @@ foreach ($policyName in $PolicyNames) {
         }
     }
     else {
-        Write-Host "   ❌ Not found — may require custom ADMX ingestion" -ForegroundColor Red
+        Write-Host "   [NOT FOUND] May require custom ADMX ingestion" -ForegroundColor Red
         Write-Host ""
 
         $results += [PSCustomObject]@{
@@ -187,6 +197,7 @@ foreach ($policyName in $PolicyNames) {
 }
 
 # Summary
-Write-Host "📋 Summary" -ForegroundColor Green
-Write-Host ("-" * 55)
+Write-Host ""
+Write-Host "[SUMMARY]" -ForegroundColor Green
+Write-Host ("-" * 58)
 $results | Format-Table -AutoSize -Wrap -Property PolicyName, Status, CatalogPath
